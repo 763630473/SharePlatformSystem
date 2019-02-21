@@ -1,31 +1,17 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.Mvc
-// Author           : yubaolee
-// Created          : 10-26-2015
-//
-// Last Modified By : yubaolee
-// Last Modified On : 10-26-2015
-// ***********************************************************************
-// <copyright file="AutofacExt.cs" company="www.cnblogs.com/yubaolee">
-//     Copyright (c) www.cnblogs.com/yubaolee. All rights reserved.
-// </copyright>
-// <summary>IOC扩展</summary>
-// ***********************************************************************
-
-using System.Linq;
+﻿using System.Linq;
 using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using Infrastructure.Cache;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using OpenAuth.App.Interface;
-using OpenAuth.App.SSO;
-using OpenAuth.Repository;
-using OpenAuth.Repository.Interface;
+using SharePlatform.Auth.EfRepository;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.SSO;
+using SharePlatformSystem.Infrastructure.Cache;
 using IContainer = Autofac.IContainer;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     public static  class AutofacExt
     {

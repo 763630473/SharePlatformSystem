@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using System.Collections.Generic;
 using System.Linq;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     public class ModuleManagerApp :BaseApp<Module>
     {

@@ -1,29 +1,12 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.App
-// Author           : 李玉宝
-// Created          : 06-06-2018
-//
-// Last Modified By : 李玉宝
-// Last Modified On : 07-04-2018
-// ***********************************************************************
-// <copyright file="NormalAuthStrategy.cs" company="OpenAuth.App">
-//     Copyright (c) http://www.openauth.me. All rights reserved.
-// </copyright>
-// <summary>
-// 普通用户授权策略
-// </summary>
-// ***********************************************************************
-
-
+﻿using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Infrastructure;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     /// <summary>
     /// 普通用户授权策略

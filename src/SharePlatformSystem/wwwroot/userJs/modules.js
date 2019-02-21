@@ -1,12 +1,12 @@
 layui.config({
     base: "/js/"
-}).use(['form', 'vue', 'ztree', 'layer', 'jquery', 'table', 'droptree', 'openauth', 'utils'], function () {
+}).use(['form', 'vue', 'ztree', 'layer', 'jquery', 'table', 'droptree', 'SharePlatformSystem', 'utils'], function () {
     var form = layui.form,
         layer = layui.layer,
         $ = layui.jquery;
   
     var table = layui.table;
-    var openauth = layui.openauth;
+    var SharePlatformSystem = layui.SharePlatformSystem;
     layui.droptree("/UserSession/GetModules", "#ParentName", "#ParentId", false);
    
     $("#menus").loadMenus("Module");
@@ -198,7 +198,7 @@ layui.config({
         btnDel: function () {      //删除模块
             var checkStatus = table.checkStatus('mainList')
                 , data = checkStatus.data;
-            openauth.del("/moduleManager/Delete",
+            SharePlatformSystem.del("/moduleManager/Delete",
                 data.map(function (e) { return e.Id; }),
                 function () {
                     mainList();
@@ -208,7 +208,7 @@ layui.config({
         , btnDelMenu: function () {      //删除菜单
             var checkStatus = table.checkStatus('menuList')
                 , data = checkStatus.data;
-            openauth.del("/moduleManager/DelMenu",
+            SharePlatformSystem.del("/moduleManager/DelMenu",
                 data.map(function (e) { return e.Id; }),
                 menuList);
         }

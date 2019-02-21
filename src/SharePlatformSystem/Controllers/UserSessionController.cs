@@ -1,29 +1,11 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.Mvc
-// Author           : 李玉宝
-// Created          : 06-08-2018
-//
-// Last Modified By : 李玉宝
-// Last Modified On : 07-04-2018
-// ***********************************************************************
-// <copyright file="UserSessionController.cs" company="OpenAuth.Mvc">
-//     Copyright (c) http://www.openauth.me. All rights reserved.
-// </copyright>
-// <summary>
-// 获取登录用户的全部信息
-// 所有和当前登录用户相关的操作都在这里
-// </summary>
-// ***********************************************************************
-
+﻿using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
 using System;
 using System.Diagnostics;
 using System.Linq;
-using Infrastructure;
-using OpenAuth.App;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Response;
-
-namespace OpenAuth.Mvc.Controllers
+namespace SharePlatformSystem.Controllers
 {
     public class UserSessionController : BaseController
     {

@@ -1,6 +1,6 @@
-﻿using OpenAuth.Repository.Domain;
+﻿using SharePlatform.Auth.EfRepository.Domain;
 
-namespace OpenAuth.App.Response
+namespace SharePlatformSystem.Auth.App.Response
 {
     public class FlowVerificationResp :FlowInstance
     {

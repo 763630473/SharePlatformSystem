@@ -1,19 +1,19 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using SharePlatform.Auth.EfRepository.Core;
+using SharePlatform.Auth.EfRepository.Interface;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Infrastructure;
-using Microsoft.EntityFrameworkCore;
-using OpenAuth.Repository.Core;
-using OpenAuth.Repository.Interface;
 using Z.EntityFramework.Plus;
+using SharePlatformSystem.Infrastructuretructure;
 
-namespace OpenAuth.Repository
+namespace SharePlatform.Auth.EfRepository
 {
    public  class BaseRepository<T> :IRepository<T> where T :Entity
    {
-       private OpenAuthDBContext _context;
+       private SharePlatformDBContext _context;
 
-       public BaseRepository(OpenAuthDBContext context)
+       public BaseRepository(SharePlatformDBContext context)
        {
            _context = context;
        }

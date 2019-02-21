@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     /// <summary>
     /// List转成Tree
-    /// <para>李玉宝新增于2016-10-09 19:54:07</para>
     /// </summary>
     public static class GenericHelpers
     {

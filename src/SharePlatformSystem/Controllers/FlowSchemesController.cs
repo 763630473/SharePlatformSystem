@@ -1,5 +1,11 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Infrastructure;
+using SharePlatformSystem.Models;
 
 namespace SharePlatformSystem.Controllers
 {

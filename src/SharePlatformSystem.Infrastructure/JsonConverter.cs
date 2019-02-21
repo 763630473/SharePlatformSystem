@@ -1,21 +1,7 @@
-﻿// ***********************************************************************
-// Assembly         : Infrastructure
-// Author           : Yubao Li
-// Created          : 09-07-2015
-//
-// Last Modified By : Yubao Li
-// Last Modified On : 09-07-2015
-// ***********************************************************************
-// <copyright file="GuidConverter.cs" company="">
-//     Copyright (c) . All rights reserved.
-// </copyright>
-// <summary>解决JSON转换空GUID问题</summary>
-// ***********************************************************************
-
-using System;
+﻿using System;
 using Newtonsoft.Json;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public class GuidConverter : JsonConverter
     {

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     public class OrgManagerApp : BaseApp<Org>
     {

@@ -1,7 +1,6 @@
-﻿
-using System;
+﻿using System;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public class CommonException : Exception
     {

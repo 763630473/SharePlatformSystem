@@ -1,21 +1,9 @@
-﻿// ***********************************************************************
-// Assembly         : FairUtility
-// Author           : Yubao Li
-// Created          : 08-12-2015
-//
-// Last Modified By : Yubao Li
-// Last Modified On : 08-12-2015
-// ***********************************************************************
-// <copyright file="JsonHelper.cs" company="">
-//     Copyright (c) . All rights reserved.
-// </copyright>
-// <summary>json序列化帮助类</summary>
-// ***********************************************************************
+﻿
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public class JsonHelper
     {

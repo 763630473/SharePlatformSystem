@@ -1,22 +1,8 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.Domain
-// Author           : yubaolee
-// Created          : 10-25-2015
-//
-// Last Modified By : yubaolee
-// Last Modified On : 10-25-2015
-// ***********************************************************************
-// <copyright file="IRepository.cs" company="www.cnblogs.com/yubaolee">
-//     Copyright (c) www.cnblogs.com/yubaolee. All rights reserved.
-// </copyright>
-// <summary>仓储接口</summary>
-// ***********************************************************************
-
-using System;
+﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace OpenAuth.Repository.Interface
+namespace SharePlatform.Auth.EfRepository.Interface
 {
     public interface IRepository<T> where T : class
     {

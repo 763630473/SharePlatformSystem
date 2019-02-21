@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     /// <summary>
     /// Json操作

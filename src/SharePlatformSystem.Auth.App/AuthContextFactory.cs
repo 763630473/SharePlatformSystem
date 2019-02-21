@@ -1,32 +1,15 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.App
-// Author           : 李玉宝
-// Created          : 07-05-2018
-//
-// Last Modified By : 李玉宝
-// Last Modified On : 07-05-2018
-// ***********************************************************************
-// <copyright file="AuthContextFactory.cs" company="OpenAuth.App">
-//     Copyright (c) http://www.openauth.me. All rights reserved.
-// </copyright>
-// <summary>
-// 用户权限策略工厂
-//</summary>
-// ***********************************************************************
+﻿using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
 
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
-
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     /// <summary>
     ///  加载用户所有可访问的资源/机构/模块
-    /// <para>李玉宝新增于2016-07-19 10:53:30</para>
     /// </summary>
     public class AuthContextFactory
     {
         private SystemAuthStrategy _systemAuth;
-        private NormalAuthStrategy _normalAuthStrategy;
+        private readonly NormalAuthStrategy _normalAuthStrategy;
         private readonly IUnitWork _unitWork;
 
         public AuthContextFactory(SystemAuthStrategy sysStrategy

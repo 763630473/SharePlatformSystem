@@ -1,4 +1,4 @@
-﻿namespace OpenAuth.App.Response
+﻿namespace SharePlatformSystem.Auth.App.Response
 {
     /// <summary>
     /// 用户ID

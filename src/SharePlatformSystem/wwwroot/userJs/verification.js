@@ -1,10 +1,10 @@
 ﻿layui.config({
     base: "/js/"
-}).use(['form', 'vue', 'ztree', 'layer', 'utils', 'element', 'slimscroll', 'jquery', 'droptree', 'openauth', 'flow/gooflow', 'flowlayout'], function () {
+}).use(['form', 'vue', 'ztree', 'layer', 'utils', 'element', 'slimscroll', 'jquery', 'droptree', 'SharePlatformSystem', 'flow/gooflow', 'flowlayout'], function () {
     var form = layui.form, element = layui.element,
 		layer = (top == undefined || top.layer === undefined )? layui.layer : top.layer,
         $ = layui.jquery;
-    var openauth = layui.openauth;
+    var SharePlatformSystem = layui.SharePlatformSystem;
     var index = layer.getFrameIndex(window.name); //获取窗口索引
 
    var id = $.getUrlParam("id");   //ID

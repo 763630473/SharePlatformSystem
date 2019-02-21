@@ -1,6 +1,6 @@
 ﻿layui.config({
     base: "/js/"
-}).use(['form', 'vue', 'ztree', 'layer', 'utils', 'element', 'jquery', 'table', 'slimscroll', 'openauth', 'flow/gooflow', 'flowlayout'], function () {
+}).use(['form', 'vue', 'ztree', 'layer', 'utils', 'element', 'jquery', 'table', 'slimscroll', 'SharePlatformSystem', 'flow/gooflow', 'flowlayout'], function () {
     var form = layui.form, element = layui.element,
         layer = layui.layer,
         $ = layui.jquery;

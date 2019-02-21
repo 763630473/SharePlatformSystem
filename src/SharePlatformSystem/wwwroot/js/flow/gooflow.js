@@ -1592,7 +1592,7 @@ GooFlow.prototype={
 	},
 	//载入一组数据
 	loadData: function (data) {
-	    this.clearData();  //载入之前先清空数据 yubaolee
+	    this.clearData();  //载入之前先清空数据 
 		var t=this.$editable;
 		this.$editable=false;
 		if(data.title)	this.setTitle(data.title);

@@ -1,6 +1,13 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
+using SharePlatformSystem.Models;
 
 namespace SharePlatformSystem.Controllers
 {

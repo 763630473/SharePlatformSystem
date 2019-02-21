@@ -5,8 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharePlatformSystem.Auth.App\SharePlatformSystem.Auth.App.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Infrastructure\SharePlatformSystem.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

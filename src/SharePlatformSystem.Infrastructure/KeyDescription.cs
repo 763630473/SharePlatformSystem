@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public class KeyDescription
     {

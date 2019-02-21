@@ -1,29 +1,17 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.WebApi
-// Author           : yubaolee
-// Created          : 07-11-2016
-//
-// Last Modified By : yubaolee
-// Last Modified On : 07-11-2016
-// Contact :
-// File: CheckController.cs
-// 登录相关的操作
-// ***********************************************************************
-
-using Infrastructure;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using OpenAuth.App;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Response;
-using OpenAuth.App.SSO;
-using OpenAuth.Repository.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
+using SharePlatformSystem.Infrastructure;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Auth.App;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App.SSO;
+using SharePlatformSystem.Auth.App.Interface;
 
-namespace OpenAuth.WebApi.Controllers
+namespace SharePlatformSystem.WebApi.Controllers
 {
     /// <inheritdoc />
     /// <summary>
@@ -86,8 +74,8 @@ namespace OpenAuth.WebApi.Controllers
                 {
                     result.Code = 500;
                     result.Message = ex.InnerException != null
-                        ? "OpenAuth.WebAPI数据库访问失败:" + ex.InnerException.Message
-                        : "OpenAuth.WebAPI数据库访问失败:" + ex.Message;
+                        ? "SharePlatformSystem.WebApi数据库访问失败:" + ex.InnerException.Message
+                        : "SharePlatformSystem.WebApi数据库访问失败:" + ex.Message;
                 }
 
             }
@@ -138,8 +126,8 @@ namespace OpenAuth.WebApi.Controllers
                 {
                     result.Code = 500;
                     result.Message = ex.InnerException != null
-                        ? "OpenAuth.WebAPI数据库访问失败:" + ex.InnerException.Message
-                        : "OpenAuth.WebAPI数据库访问失败:" + ex.Message;
+                        ? "SharePlatformSystem.WebApi数据库访问失败:" + ex.InnerException.Message
+                        : "SharePlatformSystem.WebApi数据库访问失败:" + ex.Message;
                 }
 
             }
@@ -202,8 +190,8 @@ namespace OpenAuth.WebApi.Controllers
                 {
                     result.Code = 500;
                     result.Message = ex.InnerException != null
-                        ? "OpenAuth.WebAPI数据库访问失败:" + ex.InnerException.Message
-                        : "OpenAuth.WebAPI数据库访问失败:" + ex.Message;
+                        ? "SharePlatformSystem.WebApi数据库访问失败:" + ex.InnerException.Message
+                        : "SharePlatformSystem.WebApi数据库访问失败:" + ex.Message;
                 }
 
             }
@@ -234,8 +222,8 @@ namespace OpenAuth.WebApi.Controllers
                 {
                     result.Code = 500;
                     result.Message = ex.InnerException != null
-                        ? "OpenAuth.WebAPI数据库访问失败:" + ex.InnerException.Message
-                        : "OpenAuth.WebAPI数据库访问失败:" + ex.Message;
+                        ? "SharePlatformSystem.WebApi数据库访问失败:" + ex.InnerException.Message
+                        : "SharePlatformSystem.WebApi数据库访问失败:" + ex.Message;
                 }
 
             }
@@ -262,8 +250,8 @@ namespace OpenAuth.WebApi.Controllers
                 {
                     result.Code = 500;
                     result.Message = ex.InnerException != null
-                        ? "OpenAuth.WebAPI数据库访问失败:" + ex.InnerException.Message
-                        : "OpenAuth.WebAPI数据库访问失败:" + ex.Message;
+                        ? "SharePlatformSystem.WebApi数据库访问失败:" + ex.InnerException.Message
+                        : "SharePlatformSystem.WebApi数据库访问失败:" + ex.Message;
                 }
                
             }

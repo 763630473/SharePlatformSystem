@@ -1,6 +1,6 @@
-using Infrastructure;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.App.SSO
+namespace SharePlatformSystem.Auth.App.SSO
 {
     public class LoginResult :Response<string>
     {

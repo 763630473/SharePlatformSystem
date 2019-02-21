@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
-using Infrastructure.Cache;
 
-namespace OpenAuth.App.SSO
+namespace SharePlatformSystem.Auth.App.SSO
 {
     public class AppInfoService 
     {
@@ -16,22 +15,22 @@ namespace OpenAuth.App.SSO
         {
             new AppInfo
             {
-                AppKey = "openauth",
+                AppKey = "SharePlatform",
                 Icon = "/Areas/SSO/Content/images/logo.png",
                 IsEnable = true,
-                Remark = "基于DDDLite的权限管理系统",
+                Remark = "SharePlatform",
                 ReturnUrl = "http://localhost:56813",
-                Title = "OpenAuth.Core",
+                Title = "SharePlatform.Core",
                 CreateTime = DateTime.Now,
             },
             new AppInfo
             {
-                AppKey = "openauthtest",
+                AppKey = "SharePlatformTest",
                 Icon = "/Areas/SSO/Content/images/logo.png",
                 IsEnable = true,
                 Remark = "这只是个模拟的测试站点",
                 ReturnUrl = "http://localhost:53050",
-                Title = "OpenAuth.Core测试站点",
+                Title = "SharePlatform测试站点",
                 CreateTime = DateTime.Now,
             }
         };

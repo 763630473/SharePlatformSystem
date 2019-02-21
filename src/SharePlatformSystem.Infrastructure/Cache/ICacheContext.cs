@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.Cache
+namespace SharePlatformSystem.Infrastructure.Cache
 {
     /// <summary>
     /// 缓存接口

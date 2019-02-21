@@ -1,21 +1,7 @@
-﻿// ***********************************************************************
-// Assembly         : FairUtility
-// Author           : Yubao Li
-// Created          : 10-13-2015
-//
-// Last Modified By : Yubao Li
-// Last Modified On : 10-13-2015
-// ***********************************************************************
-// <copyright file="GenerateId.cs" company="">
-//     Copyright (c) . All rights reserved.
-// </copyright>
-// <summary>创建唯一ID</summary>
-// ***********************************************************************
-
-using System;
+﻿using System;
 using System.Security.Cryptography;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public class GenerateId
     {
@@ -98,7 +84,7 @@ namespace Infrastructure
 
 
 
-        static string Seq = "s9LFkgy5RovixI1aOf8UhdY3r4DMplQZJXPqebE0WSjBn7wVzmN2Gc6THCAKut";
+        static readonly string Seq = "s9LFkgy5RovixI1aOf8UhdY3r4DMplQZJXPqebE0WSjBn7wVzmN2Gc6THCAKut";
 
         /// <summary>
         /// 10进制转换为62进制

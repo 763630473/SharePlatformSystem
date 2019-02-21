@@ -1,14 +1,14 @@
-﻿using System;
+﻿using SharePlatformSystem.Infrastructure;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Auth.App.Response;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Infrastructure;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Request;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
-
-namespace OpenAuth.App
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Infrastructuretructure;
+namespace SharePlatformSystem.Auth.App
 {
     /// <summary>
     /// 分类管理
@@ -66,7 +66,7 @@ namespace OpenAuth.App
                 resources = resources.Where(u => u.AppId == request.appId);
             }
 
-            var propertyStr = string.Join(',', properties.Select(u => u.Key));
+            var propertyStr = string.Join(",", properties.Select(u => u.Key));
             result.columnHeaders = properties;
             result.data = resources.OrderBy(u => u.TypeId)
                 .Skip((request.page - 1) * request.limit)

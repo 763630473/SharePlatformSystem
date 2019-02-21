@@ -1,11 +1,11 @@
 ﻿using System;
-using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using OpenAuth.App;
-using OpenAuth.App.Request;
-using OpenAuth.App.Response;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.WebApi.Controllers
+namespace SharePlatformSystem.WebApi.Controllers
 {
     /// <summary>
     /// 用户操作

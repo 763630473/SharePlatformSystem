@@ -1,25 +1,10 @@
-// ***********************************************************************
-// Assembly         : OpenAuth.App
-// Author           : 李玉宝
-// Created          : 07-05-2018
-//
-// Last Modified By : 李玉宝
-// Last Modified On : 07-05-2018
-// ***********************************************************************
-// <copyright file="ApiAuth.cs" company="OpenAuth.App">
-//     Copyright (c) http://www.openauth.me. All rights reserved.
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-
-
 using System;
-using Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-using OpenAuth.App.Interface;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.App.SSO
+namespace SharePlatformSystem.Auth.App.SSO
 {
     /// <summary>
     /// 第三方网站登录验证类
@@ -60,7 +45,7 @@ namespace OpenAuth.App.SSO
         /// <summary>
         /// 通过WebApi检验token是否有效
         /// </summary>
-        /// <remarks>http://www.openauth.me</remarks>
+        /// <remarks></remarks>
         public bool CheckLogin(string token="", string otherInfo = "")
         {
             if (string.IsNullOrEmpty(token))

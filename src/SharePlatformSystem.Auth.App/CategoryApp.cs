@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Infrastructure;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Request;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
-
-
-namespace OpenAuth.App
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
+using SharePlatformSystem.Infrastructuretructure;
+namespace SharePlatformSystem.Auth.App
 {
     public class CategoryApp : BaseApp<Category>
     {
@@ -34,7 +33,7 @@ namespace OpenAuth.App
                 throw new Exception("当前登录用户没有访问该模块字段的权限，请联系管理员配置");
             }
 
-            var propertyStr = string.Join(',', properties.Select(u =>u.Key));
+            var propertyStr = string.Join(",", properties.Select(u =>u.Key));
             return new TableData
             {
                 columnHeaders = properties,
