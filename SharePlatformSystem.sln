@@ -5,21 +5,21 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001-SharePlatformSystem.Webs", "001-SharePlatformSystem.Webs", "{39C66928-0F4E-4A5A-A221-1B0D8F702651}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem", "src\SharePlatformSystem\SharePlatformSystem.csproj", "{2BB2E1A2-B906-4778-A95B-F2E0B7F68A10}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "002-SharePlatformSystemInfrastructure", "002-SharePlatformSystemInfrastructure", "{CBB31DE9-685D-4C43-8F86-80CD12067D25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.Infrastructure", "src\SharePlatformSystem.Infrastructure\SharePlatformSystem.Infrastructure.csproj", "{D6808C96-896C-4E2C-B708-38CA79E45EE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Infrastructure", "src\SharePlatformSystem.Infrastructure\SharePlatformSystem.Infrastructure.csproj", "{D6808C96-896C-4E2C-B708-38CA79E45EE0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "003-SharePlatformSystemApp", "003-SharePlatformSystemApp", "{53C8401B-F6CA-4487-ADE7-9FA3582CC51E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.Auth.App", "src\SharePlatformSystem.Auth.App\SharePlatformSystem.Auth.App.csproj", "{0FAA6C20-A174-44EF-9EAD-B86F07501BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Auth.App", "src\SharePlatformSystem.Auth.App\SharePlatformSystem.Auth.App.csproj", "{0FAA6C20-A174-44EF-9EAD-B86F07501BDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "004-SharePlatformRepository", "004-SharePlatformRepository", "{502FD44B-23F3-4383-9B65-BECD52CE73D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatform.Auth.EfRepository", "src\SharePlatform.Auth.EfRepository\SharePlatform.Auth.EfRepository.csproj", "{48132124-F703-42E2-B622-8057500D6700}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatform.Auth.EfRepository", "src\SharePlatform.Auth.EfRepository\SharePlatform.Auth.EfRepository.csproj", "{48132124-F703-42E2-B622-8057500D6700}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.WebApi", "src\SharePlatformSystem.WebApi\SharePlatformSystem.WebApi.csproj", "{CBC0A54F-E501-4984-89B6-165B2DFA90DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem", "src\SharePlatformSystem\SharePlatformSystem.csproj", "{0DD4010B-B405-40E1-94D4-960EF040294D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.WebApi", "src\SharePlatformSystem.WebApi\SharePlatformSystem.WebApi.csproj", "{166D6C31-3FEF-4E35-9D69-449881A17097}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2BB2E1A2-B906-4778-A95B-F2E0B7F68A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BB2E1A2-B906-4778-A95B-F2E0B7F68A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BB2E1A2-B906-4778-A95B-F2E0B7F68A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BB2E1A2-B906-4778-A95B-F2E0B7F68A10}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6808C96-896C-4E2C-B708-38CA79E45EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6808C96-896C-4E2C-B708-38CA79E45EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6808C96-896C-4E2C-B708-38CA79E45EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,20 +39,24 @@ Global
 		{48132124-F703-42E2-B622-8057500D6700}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48132124-F703-42E2-B622-8057500D6700}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48132124-F703-42E2-B622-8057500D6700}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBC0A54F-E501-4984-89B6-165B2DFA90DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBC0A54F-E501-4984-89B6-165B2DFA90DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBC0A54F-E501-4984-89B6-165B2DFA90DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBC0A54F-E501-4984-89B6-165B2DFA90DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD4010B-B405-40E1-94D4-960EF040294D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD4010B-B405-40E1-94D4-960EF040294D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD4010B-B405-40E1-94D4-960EF040294D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD4010B-B405-40E1-94D4-960EF040294D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{166D6C31-3FEF-4E35-9D69-449881A17097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{166D6C31-3FEF-4E35-9D69-449881A17097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{166D6C31-3FEF-4E35-9D69-449881A17097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{166D6C31-3FEF-4E35-9D69-449881A17097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2BB2E1A2-B906-4778-A95B-F2E0B7F68A10} = {39C66928-0F4E-4A5A-A221-1B0D8F702651}
 		{D6808C96-896C-4E2C-B708-38CA79E45EE0} = {CBB31DE9-685D-4C43-8F86-80CD12067D25}
 		{0FAA6C20-A174-44EF-9EAD-B86F07501BDA} = {53C8401B-F6CA-4487-ADE7-9FA3582CC51E}
 		{48132124-F703-42E2-B622-8057500D6700} = {502FD44B-23F3-4383-9B65-BECD52CE73D2}
-		{CBC0A54F-E501-4984-89B6-165B2DFA90DE} = {39C66928-0F4E-4A5A-A221-1B0D8F702651}
+		{0DD4010B-B405-40E1-94D4-960EF040294D} = {39C66928-0F4E-4A5A-A221-1B0D8F702651}
+		{166D6C31-3FEF-4E35-9D69-449881A17097} = {39C66928-0F4E-4A5A-A221-1B0D8F702651}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10A18593-7E83-4122-A805-AA8A73D5F3E1}
