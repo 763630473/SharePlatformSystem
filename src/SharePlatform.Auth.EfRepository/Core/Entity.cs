@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenAuth.Repository.Core
+namespace SharePlatform.Auth.EfRepository.Core
 {
     public abstract class Entity
     {

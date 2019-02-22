@@ -2,13 +2,13 @@
  * 登录解析
  * 处理登录逻辑，验证客户段提交的账号密码，保存登录信息
  */
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Infrastructure.Cache;
 using System;
-using Infrastructure.Cache;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
 
 
-namespace OpenAuth.App.SSO
+namespace SharePlatformSystem.Auth.App.SSO
 {
     public class LoginParse
     {

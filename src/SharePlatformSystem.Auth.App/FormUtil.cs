@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Infrastructure;
 using Newtonsoft.Json.Linq;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     public class FormUtil {
 	

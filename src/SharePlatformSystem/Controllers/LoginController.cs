@@ -1,10 +1,13 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Infrastructure;
+
 namespace SharePlatformSystem.Controllers
 {
     public class LoginController : Controller
     {
-        private string _appKey = "openauth";
+        private string _appKey = "SharePlatform";
 
         private IAuth _authUtil;
 

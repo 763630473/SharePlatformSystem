@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SharePlatformSystem.Auth.App.Interface;
+
 namespace SharePlatformSystem.Controllers
 {
     public class HomeController : BaseController

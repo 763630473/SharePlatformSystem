@@ -1,4 +1,4 @@
-﻿namespace OpenAuth.App.Request
+﻿namespace SharePlatformSystem.Auth.App.Request
 {
     public class PageReq
     {

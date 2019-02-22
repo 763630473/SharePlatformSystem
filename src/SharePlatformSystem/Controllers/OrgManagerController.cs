@@ -1,13 +1,12 @@
-﻿using Infrastructure;
-using OpenAuth.App;
-using OpenAuth.Mvc.Models;
-using System;
+﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using OpenAuth.App.Interface;
-using OpenAuth.App.SSO;
-using OpenAuth.Repository.Domain;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Infrastructure;
+using SharePlatformSystem.Models;
 
-namespace OpenAuth.Mvc.Controllers
+namespace SharePlatformSystem.Controllers
 {
     public class OrgManagerController : BaseController
     {

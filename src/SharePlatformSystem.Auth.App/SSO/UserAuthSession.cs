@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenAuth.App.SSO
+namespace SharePlatformSystem.Auth.App.SSO
 {
     [Serializable]
     public class UserAuthSession

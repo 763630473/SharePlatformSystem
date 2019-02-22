@@ -1,14 +1,14 @@
-﻿using System;
+﻿using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Auth.App.Response;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Request;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
 
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     public class UserManagerApp : BaseApp<User>
     {

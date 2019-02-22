@@ -1,12 +1,12 @@
-using Infrastructure.Cache;
 using Microsoft.AspNetCore.Http;
-using OpenAuth.App.Interface;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Infrastructure.Cache;
 using System;
 
-namespace OpenAuth.App.SSO
+namespace SharePlatformSystem.Auth.App.SSO
 {
     /// <summary>
-    /// 使用本地登录。这个注入IAuth时，只需要OpenAuth.Mvc一个项目即可，无需webapi的支持
+    /// 使用本地登录。这个注入IAuth时，只需要SharePlatformSystem一个项目即可，无需webapi的支持
     /// </summary>
     public class LocalAuth : IAuth
     {

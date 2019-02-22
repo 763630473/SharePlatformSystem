@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public class TreeItem<T>
     {

@@ -2,14 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using OpenAuth.App;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.WebApi.Controllers
+namespace SharePlatformSystem.WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

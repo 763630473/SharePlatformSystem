@@ -1,11 +1,11 @@
 layui.config({
     base: "/js/"
-}).use(['form','vue', 'ztree', 'layer', 'jquery', 'table','droptree','openauth','utils'], function () {
+}).use(['form', 'vue', 'ztree', 'layer', 'jquery', 'table', 'droptree','SharePlatformSystem','utils'], function () {
     var form = layui.form,
         layer = layui.layer,
         $ = layui.jquery;
     var table = layui.table;
-    var openauth = layui.openauth;
+    var SharePlatformSystem = layui.SharePlatformSystem;
     layui.droptree("/UserSession/GetOrgs", "#ParentName", "#ParentId", false);
 
     $("#menus").loadMenus("Org");
@@ -131,7 +131,7 @@ layui.config({
         btnDel: function () {      //批量删除
             var checkStatus = table.checkStatus('mainList')
                 , data = checkStatus.data;
-            openauth.del("/OrgManager/Delete",
+            SharePlatformSystem.del("/OrgManager/Delete",
                 data.map(function (e) { return e.Id; }),
                 function() {
                     mainList();

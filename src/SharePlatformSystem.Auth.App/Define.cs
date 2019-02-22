@@ -1,4 +1,4 @@
-﻿namespace OpenAuth.App
+﻿namespace SharePlatformSystem.Auth.App
 {
     public static class Define
     {

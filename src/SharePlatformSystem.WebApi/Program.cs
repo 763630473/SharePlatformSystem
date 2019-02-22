@@ -18,7 +18,14 @@ namespace SharePlatformSystem.WebApi
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+            WebHost.CreateDefaultBuilder(args).ConfigureLogging((hostingContext, logging) =>
+            {
+                logging.ClearProviders();  //去掉默认的日志
+                logging.AddFilter("System", LogLevel.Warning);
+                logging.AddFilter("Microsoft", LogLevel.Warning);
+                logging.AddLog4Net();
+            })
+                .UseUrls("http://*:52789")
                 .UseStartup<Startup>();
     }
 }

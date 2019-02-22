@@ -1,12 +1,12 @@
 ﻿layui.config({
     base: "/js/"
-}).use(['form','vue', 'ztree', 'layer', 'jquery', 'table','droptree','openauth','utils'], function () {
+}).use(['form', 'vue', 'ztree', 'layer', 'jquery', 'table', 'droptree','SharePlatformSystem','utils'], function () {
     var form = layui.form,
         element = layui.element,
 		layer = (top == undefined || top.layer === undefined )? layui.layer : top.layer,
         $ = layui.jquery;
     var table = layui.table;
-    var openauth = layui.openauth;
+    var SharePlatformSystem = layui.SharePlatformSystem;
 
     var thiswin = (top == undefined) ? window : top.window;
 
@@ -123,7 +123,7 @@
         btnDel: function () {      //批量删除
             var checkStatus = table.checkStatus('mainList')
                 , data = checkStatus.data;
-            openauth.del("/Forms/Delete",
+            SharePlatformSystem.del("/Forms/Delete",
                 data.map(function (e) { return e.Id; }),
                 mainList);
         }

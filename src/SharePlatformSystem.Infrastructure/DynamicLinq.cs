@@ -1,24 +1,10 @@
-﻿// ***********************************************************************
-// Assembly         : FairUtility
-// Author           : Yubao Li
-// Created          : 08-18-2015
-//
-// Last Modified By : Yubao Li
-// Last Modified On : 08-18-2015
-// ***********************************************************************
-// <copyright file="DynamicLinq.cs" company="">
-//     Copyright (c) . All rights reserved.
-// </copyright>
-// <summary>动态linq</summary>
-// ***********************************************************************
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public static class DynamicLinq
     {

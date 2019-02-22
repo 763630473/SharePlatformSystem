@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using OpenAuth.Repository.Core;
-using OpenAuth.Repository.Interface;
+using SharePlatform.Auth.EfRepository.Core;
+using SharePlatform.Auth.EfRepository.Interface;
 using Z.EntityFramework.Plus;
-
-namespace OpenAuth.Repository
+using SharePlatformSystem.Infrastructuretructure;
+namespace SharePlatform.Auth.EfRepository
 {
    public  class UnitWork: IUnitWork
    {
-       private OpenAuthDBContext _context;
+       private SharePlatformDBContext _context;
 
-       public UnitWork(OpenAuthDBContext context)
+       public UnitWork(SharePlatformDBContext context)
        {
            _context = context;
        }
-       public OpenAuthDBContext GetDbContext()
+       public SharePlatformDBContext GetDbContext()
        {
            return _context;
        }

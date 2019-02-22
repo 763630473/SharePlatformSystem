@@ -1,8 +1,8 @@
-﻿using System;
-using Infrastructure;
-using OpenAuth.Repository.Domain;
+﻿using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Infrastructure;
+using System;
 
-namespace OpenAuth.App.Response
+namespace SharePlatformSystem.Auth.App.Response
 {
     public  class UserView
     {

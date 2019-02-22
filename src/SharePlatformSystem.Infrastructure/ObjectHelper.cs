@@ -1,27 +1,11 @@
-﻿// ***********************************************************************
-// Assembly         : Infrastructure
-// Author           : Yubao Li
-// Created          : 11-23-2015
-//
-// Last Modified By : Yubao Li
-// Last Modified On : 11-23-2015
-// ***********************************************************************
-// <copyright file="ObjectHelper.cs" company="">
-//     Copyright (c) . All rights reserved.
-// </copyright>
-// <summary>
-//对象COPY/初始化帮助，通常是防止从视图中传过来的对象属性为空，这其赋初始值
-//</summary>
-// ***********************************************************************
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public static class ObjectHelper
     {

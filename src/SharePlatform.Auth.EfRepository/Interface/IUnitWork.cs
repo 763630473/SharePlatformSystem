@@ -1,21 +1,8 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.Domain
-// Author           : yubaolee
-// Created          : 04-29-2016
-//
-// Last Modified By : yubaolee
-// Last Modified On : 04-29-2016
-// Contact : Microsoft
-// File: IUnitWork.cs
-// ***********************************************************************
-
+﻿using SharePlatform.Auth.EfRepository.Core;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
-using OpenAuth.Repository.Core;
-using OpenAuth.Repository.Domain;
-
-namespace OpenAuth.Repository.Interface
+namespace SharePlatform.Auth.EfRepository.Interface
 {
     /// <summary>
     /// 工作单元接口
@@ -26,7 +13,7 @@ namespace OpenAuth.Repository.Interface
     /// </summary>
     public interface IUnitWork
     {
-        OpenAuthDBContext GetDbContext();
+        SharePlatformDBContext GetDbContext();
         T FindSingle<T>(Expression<Func<T, bool>> exp = null) where T:class;
         bool IsExist<T>(Expression<Func<T, bool>> exp) where T:class;
         IQueryable<T> Find<T>(Expression<Func<T, bool>> exp = null) where T:class;

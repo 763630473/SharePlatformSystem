@@ -60,7 +60,7 @@ layui.config({
 
 	//系统基本参数
     $(".version").text("core 1.0");      //当前版本
-    $(".author").text("yubaolee");        //开发作者
+    $(".author").text("deng");        //开发作者
     $(".homePage").text("/Home/Index");    //网站首页
     $(".server").text("centos docker");        //服务器环境
     $(".dataBase").text("mysql 5.7");    //数据库版本

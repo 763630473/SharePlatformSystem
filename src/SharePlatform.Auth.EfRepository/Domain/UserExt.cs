@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenAuth.Repository.Domain
+namespace SharePlatform.Auth.EfRepository.Domain
 {
 	/// <summary>
 	/// 用户ID

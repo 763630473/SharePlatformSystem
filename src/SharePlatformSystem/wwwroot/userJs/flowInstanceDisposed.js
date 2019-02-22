@@ -1,11 +1,11 @@
 ﻿layui.config({
     base: "/js/"
-}).use(['form','vue', 'ztree', 'layer', 'jquery', 'table','droptree','openauth','utils'], function () {
+}).use(['form', 'vue', 'ztree', 'layer', 'jquery', 'table', 'droptree','SharePlatformSystem','utils'], function () {
     var form = layui.form,
 		layer = (top == undefined || top.layer === undefined )? layui.layer : top.layer,
         $ = layui.jquery;
     var table = layui.table;
-    var openauth = layui.openauth;
+    var SharePlatformSystem = layui.SharePlatformSystem;
     var thiswin = (top == undefined) ? window : top.window;
     layui.droptree("/UserSession/GetOrgs", "#Organizations", "#OrganizationIds");
 

@@ -1,4 +1,4 @@
-﻿namespace OpenAuth.App.Request
+﻿namespace SharePlatformSystem.Auth.App.Request
 {
     /// <summary>
     /// 比如给用户分配资源，那么firstId就是用户ID，secIds就是资源ID列表

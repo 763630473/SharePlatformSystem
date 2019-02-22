@@ -1,4 +1,4 @@
-﻿namespace OpenAuth.App.Flow
+﻿namespace SharePlatformSystem.Auth.App.Flow
 {
     /// <summary>
     /// 流程连线

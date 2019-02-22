@@ -1,11 +1,11 @@
 layui.config({
     base: "/js/"
-}).use(['form','vue', 'ztree', 'layer', 'jquery', 'table','droptree','openauth','utils'], function () {
+}).use(['form', 'vue', 'ztree', 'layer', 'jquery', 'table', 'droptree','SharePlatformSystem','utils'], function () {
     var form = layui.form,
         layer = layui.layer,
         $ = layui.jquery;
     var table = layui.table;
-    var openauth = layui.openauth;
+    var SharePlatformSystem = layui.SharePlatformSystem;
     var id = $.getUrlParam("id");      //待分配的id
     layui.droptree("/UserSession/GetOrgs", "#Organizations", "#OrganizationIds");
    

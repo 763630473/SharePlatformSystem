@@ -1,6 +1,4 @@
-﻿//Copyright (C) Microsoft Corporation.  All rights reserved.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,7 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructuretructure
 {
     public static class DynamicQueryable
     {
@@ -323,7 +321,7 @@ namespace Infrastructure
                     FieldInfo[] fields = GenerateProperties(tb, properties);
                     GenerateEquals(tb, fields);
                     GenerateGetHashCode(tb, fields);
-                    Type result = tb.CreateType();
+                    Type result = tb.CreateTypeInfo();
                     classCount++;
                     return result;
                 }

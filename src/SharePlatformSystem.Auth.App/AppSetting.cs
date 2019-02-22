@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     /// <summary>
     /// 配置项

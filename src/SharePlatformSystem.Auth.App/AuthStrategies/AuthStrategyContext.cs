@@ -1,26 +1,8 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.App
-// Author           : Yubao Li
-// Created          : 12-01-2015
-//
-// Last Modified By : Yubao Li
-// Last Modified On : 12-01-2015
-// ***********************************************************************
-// <copyright file="LoginUserVM.cs" company="">
-//     Copyright (c) . All rights reserved.
-// </copyright>
-// <summary>
-// 授权策略上下文，一个典型的策略模式
-// 根据用户账号的不同，采用不同的授权模式，以后可以扩展更多的授权方式
-// </summary>
-// ***********************************************************************
-
+﻿using SharePlatformSystem.Infrastructure;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App.Response;
 using System.Collections.Generic;
-using Infrastructure;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     /// <summary>
     ///  授权策略上下文，一个典型的策略模式

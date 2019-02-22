@@ -1,28 +1,12 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.App
-// Author           : 李玉宝
-// Created          : 06-06-2018
-//
-// Last Modified By : 李玉宝
-// Last Modified On : 07-05-2018
-// ***********************************************************************
-// <copyright file="SystemAuthStrategy.cs" company="OpenAuth.App">
-//     Copyright (c) http://www.openauth.me. All rights reserved.
-// </copyright>
-// <summary>
-// 超级管理员授权策略
-// </summary>
-// ***********************************************************************
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Infrastructure;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     /// <summary>
     /// 领域服务

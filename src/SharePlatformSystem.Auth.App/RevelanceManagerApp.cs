@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using OpenAuth.App.Request;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.App.Request;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     public class RevelanceManagerApp  :BaseApp<Relevance>
     {

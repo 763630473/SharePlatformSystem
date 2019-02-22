@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using Infrastructure;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using OpenAuth.Repository;
+using SharePlatform.Auth.EfRepository;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
    public  class DbExtension
    {
-       private OpenAuthDBContext _context;
+       private SharePlatformDBContext _context;
 
-       public DbExtension(OpenAuthDBContext context)
+       public DbExtension(SharePlatformDBContext context)
        {
            _context = context;
        }

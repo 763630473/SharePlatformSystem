@@ -1,12 +1,11 @@
-﻿
-using System;
-using Infrastructure;
+﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using OpenAuth.App;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Request;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.WebApi.Controllers
+namespace SharePlatformSystem.WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

@@ -1,27 +1,11 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.App
-// Author           : 李玉宝
-// Created          : 07-19-2018
-//
-// Last Modified By : 李玉宝
-// Last Modified On : 07-19-2018
-// ***********************************************************************
-// <copyright file="FlowRuntime.cs" company="OpenAuth.App">
-//     Copyright (c) http://www.openauth.me. All rights reserved.
-// </copyright>
-// <summary>
-// 一个正在运行中的流程实例
-//</summary>
-// ***********************************************************************
-
-using Infrastructure;
-using Newtonsoft.Json.Linq;
-using OpenAuth.Repository.Domain;
+﻿using Newtonsoft.Json.Linq;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OpenAuth.App.Flow
+namespace SharePlatformSystem.Auth.App.Flow
 {
     public class FlowRuntime
     {

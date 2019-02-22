@@ -1,12 +1,11 @@
 ﻿using System;
-using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using OpenAuth.App;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Request;
-using OpenAuth.App.SSO;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.Mvc.Controllers
+namespace SharePlatformSystem.Controllers
 {
     public class RelevanceManagerController : BaseController
     {

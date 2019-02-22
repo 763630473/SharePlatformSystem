@@ -1,10 +1,10 @@
 ﻿using System;
-using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using OpenAuth.App;
-using OpenAuth.Repository.Domain;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.WebApi.Controllers
+namespace SharePlatformSystem.WebApi.Controllers
 {
     /// <summary>
     /// 机构操作

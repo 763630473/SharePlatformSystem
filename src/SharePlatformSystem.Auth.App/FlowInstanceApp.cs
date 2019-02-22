@@ -1,30 +1,16 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.App
-// Author           : 李玉宝
-// Created          : 07-19-2018
-//
-// Last Modified By : 李玉宝
-// Last Modified On : 07-19-2018
-// ***********************************************************************
-// <copyright file="FlowInstanceApp.cs" company="OpenAuth.App">
-//     Copyright (c) http://www.openauth.me. All rights reserved.
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-
-using Infrastructure;
-using Newtonsoft.Json.Linq;
-using OpenAuth.App.Flow;
-using OpenAuth.App.Interface;
-using OpenAuth.App.Request;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
+﻿using Newtonsoft.Json.Linq;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.App.Flow;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     /// <summary>
     /// 工作流实例表操作
@@ -336,7 +322,6 @@ namespace OpenAuth.App
 
         /// <summary>
         /// 审核流程
-        /// <para>李玉宝于2017-01-20 15:44:45</para>
         /// </summary>
         public void Verification(VerificationReq request)
         {

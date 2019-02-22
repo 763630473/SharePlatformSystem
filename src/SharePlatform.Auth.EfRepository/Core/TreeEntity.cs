@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
-using OpenAuth.Repository.Domain;
 
-namespace OpenAuth.Repository.Core
+namespace SharePlatform.Auth.EfRepository.Core
 {
     /// <summary>
     /// 树状结构实体

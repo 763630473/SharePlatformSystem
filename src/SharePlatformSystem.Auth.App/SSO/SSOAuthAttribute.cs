@@ -1,14 +1,12 @@
-﻿using System;
-using System.Web;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using OpenAuth.App.Interface;
+using SharePlatformSystem.Auth.App.Interface;
 
-namespace OpenAuth.App.SSO
+namespace SharePlatformSystem.Auth.App.SSO
 {
     /// <summary>
     /// 采用Attribute的方式验证登录
-    /// <para>李玉宝新增于2016-11-09 10:08:10</para>
     /// </summary>
     public class SSOAuthAttribute : ActionFilterAttribute
     {

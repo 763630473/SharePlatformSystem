@@ -227,8 +227,8 @@ layui.config({
 	        btn: ['火速围观'],
 	        moveType: 1,
 	        content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;">' +
-	            '<p>喜大泪奔，OpenAuth.Core 1.0正式上线，OpenAuth.Net 跨平台.net core 2.1急速体验</p>' +
-	            '<p>喜欢的，快快star吧！</p></div>',
+	           '<p>我是公告</p>' +
+	            '<p>测试</p></div>',
 	        success: function(layero){
 				var btn = layero.find('.layui-layer-btn');
 				btn.css('text-align', 'center');
@@ -357,17 +357,4 @@ function addTab(_this){
 	tab.tabAdd(_this);
 }
 
-//捐赠弹窗
-function donation(){
-	layer.tab({
-		area : ['260px', '367px'],
-		tab : [{
-			title : "微信",
-			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='/images/wechat.jpg'></div>"
-		},{
-			title : "支付宝",
-			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='/images/alipay.jpg'></div>"
-		}]
-	})
-}
 

@@ -1,9 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using SharePlatformSystem.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
+using SharePlatformSystem.Auth.App;
+using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.App.SSO;
 using System;
 using System.Linq;
 using System.Reflection;
+using SharePlatformSystem.Models;
 
 namespace SharePlatformSystem.Controllers
 {

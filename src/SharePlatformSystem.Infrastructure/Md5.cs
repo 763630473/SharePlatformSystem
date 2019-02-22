@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     public class Md5
     {

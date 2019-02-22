@@ -1,20 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : OpenAuth.Mvc
-// Author           : yubaolee
-// Created          : 10-16-2016
-//
-// Last Modified By : yubaolee
-// Last Modified On : 10-16-2016
-// ***********************************************************************
-// <copyright file="droptree.js" company="www.cnblogs.com/yubaolee">
-//     版权所有 玉宝(C) 2017
-// </copyright>
-//单击文本框弹出的选择列表,可以多选。调用： 
-//var droptree = layui.droptree("/UserSession/GetOrgs", "#Organizations", "#OrganizationIds");
-// droptree.render();
-// ***********************************************************************
-
-layui.define(['jquery', 'layer'], function (exports) {
+﻿layui.define(['jquery', 'layer'], function (exports) {
     var $ = layui.jquery;
     var layer = layui.layer;
     var zTreeObj;

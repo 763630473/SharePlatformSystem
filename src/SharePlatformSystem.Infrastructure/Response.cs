@@ -1,4 +1,4 @@
-﻿namespace Infrastructure
+﻿namespace SharePlatformSystem.Infrastructure
 {
     public class Response
     {

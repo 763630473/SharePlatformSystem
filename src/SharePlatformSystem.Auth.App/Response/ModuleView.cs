@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Infrastructure;
-using OpenAuth.Repository.Domain;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Infrastructure;
 
-namespace OpenAuth.App.Response
+namespace SharePlatformSystem.Auth.App.Response
 {
     public class ModuleView
     {

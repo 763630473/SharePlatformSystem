@@ -1,4 +1,4 @@
-﻿namespace OpenAuth.App.Request
+﻿namespace SharePlatformSystem.Auth.App.Request
 {
     /// <summary>
     /// 为角色分配数据字段权限

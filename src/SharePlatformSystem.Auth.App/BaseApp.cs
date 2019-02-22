@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Linq;
-using OpenAuth.Repository.Core;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
+using SharePlatform.Auth.EfRepository.Core;
+using SharePlatform.Auth.EfRepository.Interface;
 
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     /// <summary>
     /// 业务层基类，UnitWork用于事务操作，Repository用于普通的数据库操作

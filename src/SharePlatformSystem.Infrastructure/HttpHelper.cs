@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace Infrastructure
+namespace SharePlatformSystem.Infrastructure
 {
     /// <summary>
     /// http请求类
@@ -13,7 +13,7 @@ namespace Infrastructure
     public class HttpHelper
     {
         private HttpClient _httpClient;
-        private string _baseIPAddress;
+        private readonly string _baseIPAddress;
 
         /// <param name="ipaddress">请求的基础IP，例如：http://192.168.0.33:8080/ </param>
         public HttpHelper(string ipaddress = "")
@@ -39,8 +39,7 @@ namespace Infrastructure
 
         /// <summary>
         /// Get请求数据
-        ///   /// <para>最终以url参数的方式提交</para>
-        /// <para>yubaolee 2016-3-3 重构与post同样异步调用</para>
+        /// <para>最终以url参数的方式提交</para>
         /// </summary>
         /// <param name="parameters">参数字典,可为空</param>
         /// <param name="requestUri">例如/api/Files/UploadFile</param>
@@ -97,7 +96,6 @@ namespace Infrastructure
         /// <summary>
         /// 提交字典类型的数据
         /// <para>最终以formurlencode的方式放置在http体中</para>
-        /// <para>李玉宝于2016-07-20 19:01:59</para>
         /// </summary>
         /// <returns>System.String.</returns>
         public string PostDicObj(Dictionary<string, object> para, string requestUri)
@@ -127,7 +125,6 @@ namespace Infrastructure
         /// <summary>
         /// Post Dic数据
         /// <para>最终以formurlencode的方式放置在http体中</para>
-        /// <para>李玉宝于2016-07-15 15:28:41</para>
         /// </summary>
         /// <returns>System.String.</returns>
         public string PostDic(Dictionary<string, string> temp, string requestUri)
@@ -152,7 +149,6 @@ namespace Infrastructure
 
         /// <summary>
         /// 把请求的URL相对路径组合成绝对路径
-        /// <para>李玉宝于2016-07-21 9:54:07</para>
         /// </summary>
         private string ConcatURL(string requestUrl)
         {

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Linq;
-using Infrastructure;
-using OpenAuth.App.Request;
-using OpenAuth.App.Response;
-using OpenAuth.Repository.Domain;
-using OpenAuth.Repository.Interface;
+using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.App.Request;
+using SharePlatformSystem.Auth.App.Response;
+using SharePlatformSystem.Infrastructure;
 
-
-namespace OpenAuth.App
+namespace SharePlatformSystem.Auth.App
 {
     public class FormApp : BaseApp<Form>
     {
