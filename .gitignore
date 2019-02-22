@@ -1,0 +1,10 @@
+/src/SharePlatform.Auth.EfRepository/obj
+/src/SharePlatform.Auth.EfRepository/bin
+/src/SharePlatformSystem/bin
+/src/SharePlatformSystem/obj
+/src/SharePlatformSystem.Auth.App/bin
+/src/SharePlatformSystem.Auth.App/obj
+/src/SharePlatformSystem.Infrastructure/bin
+/src/SharePlatformSystem.Infrastructure/obj
+/src/SharePlatformSystem.WebApi/bin
+/src/SharePlatformSystem.WebApi/obj
