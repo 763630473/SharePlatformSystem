@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
-using SharePlatform.Auth.EfRepository.Domain;
-using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.EfRepository.Interface;
 using SharePlatformSystem.Auth.App.Flow;
 using SharePlatformSystem.Auth.App.Interface;
 using SharePlatformSystem.Auth.App.Request;

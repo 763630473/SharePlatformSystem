@@ -12,3 +12,17 @@ G:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\bin\Debug\netstandard2.0
 G:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.csproj.CopyComplete
 G:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.dll
 G:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.pdb
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\bin\Debug\netstandard2.0\SharePlatformSystem.Auth.App.deps.json
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\bin\Debug\netstandard2.0\SharePlatformSystem.Auth.App.dll
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\bin\Debug\netstandard2.0\SharePlatformSystem.Auth.App.pdb
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\bin\Debug\netstandard2.0\SharePlatformSystem.Infrastructure.dll
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\bin\Debug\netstandard2.0\SharePlatformSystem.Infrastructure.pdb
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.csprojAssemblyReference.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.csproj.CoreCompileInputs.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.AssemblyInfoInputs.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.AssemblyInfo.cs
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.csproj.CopyComplete
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.dll
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\obj\Debug\netstandard2.0\SharePlatformSystem.Auth.App.pdb
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\bin\Debug\netstandard2.0\SharePlatformSystem.Auth.EfRepository.dll
+D:\SharePlatformSystem\src\SharePlatformSystem.Auth.App\bin\Debug\netstandard2.0\SharePlatformSystem.Auth.EfRepository.pdb

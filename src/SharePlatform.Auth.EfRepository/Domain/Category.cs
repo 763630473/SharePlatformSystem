@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using SharePlatform.Auth.EfRepository.Core;
+using SharePlatformSystem.Auth.EfRepository.Core;
 
-namespace SharePlatform.Auth.EfRepository.Domain
+namespace SharePlatformSystem.Auth.EfRepository.Domain
 {
     /// <summary>
 	/// 分类表，表示一个全集，比如：男、女、未知。关联的分类类型表示按什么进行的分类，如：按照性别对人类对象集进行分类

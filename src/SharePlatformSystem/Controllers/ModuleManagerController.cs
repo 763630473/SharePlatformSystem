@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.EfRepository.Domain;
 using SharePlatformSystem.Auth.App;
 using SharePlatformSystem.Auth.App.Interface;
 using SharePlatformSystem.Auth.App.Response;

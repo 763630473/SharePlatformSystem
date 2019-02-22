@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.EfRepository.Domain;
 
-namespace SharePlatform.Auth.EfRepository
+namespace SharePlatformSystem.Auth.EfRepository
 {
     public partial class SharePlatformDBContext : DbContext
     {

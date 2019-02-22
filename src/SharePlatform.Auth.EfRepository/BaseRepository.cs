@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SharePlatform.Auth.EfRepository.Core;
-using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.EfRepository.Core;
+using SharePlatformSystem.Auth.EfRepository.Interface;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 using Z.EntityFramework.Plus;
 using SharePlatformSystem.Infrastructuretructure;
 
-namespace SharePlatform.Auth.EfRepository
+namespace SharePlatformSystem.Auth.EfRepository
 {
    public  class BaseRepository<T> :IRepository<T> where T :Entity
    {

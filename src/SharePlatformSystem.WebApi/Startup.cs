@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using SharePlatform.Auth.EfRepository;
+using SharePlatformSystem.Auth.EfRepository;
 using SharePlatformSystem.Auth.App;
 using SharePlatformSystem.WebApi.Model;
 using Swashbuckle.AspNetCore.SwaggerUI;

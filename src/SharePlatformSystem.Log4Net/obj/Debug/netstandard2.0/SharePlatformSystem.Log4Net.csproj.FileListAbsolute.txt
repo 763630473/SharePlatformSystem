@@ -1,0 +1,6 @@
+D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\bin\Debug\netstandard2.0\SharePlatformSystem.Log4Net.deps.json
+D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\bin\Debug\netstandard2.0\SharePlatformSystem.Log4Net.dll
+D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.csprojAssemblyReference.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.csproj.CoreCompileInputs.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.AssemblyInfoInputs.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.AssemblyInfo.cs

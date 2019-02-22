@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.EfRepository.Domain;
 using SharePlatformSystem.Infrastructure;
 
 namespace SharePlatformSystem.Auth.App.Response

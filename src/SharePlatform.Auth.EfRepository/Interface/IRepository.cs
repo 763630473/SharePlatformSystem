@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace SharePlatform.Auth.EfRepository.Interface
+namespace SharePlatformSystem.Auth.EfRepository.Interface
 {
     public interface IRepository<T> where T : class
     {

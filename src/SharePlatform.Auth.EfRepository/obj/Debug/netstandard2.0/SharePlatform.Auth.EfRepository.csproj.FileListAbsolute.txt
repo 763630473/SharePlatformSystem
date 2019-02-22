@@ -10,3 +10,15 @@ G:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\bin\Debug\netstandard
 G:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.csproj.CopyComplete
 G:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.dll
 G:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.pdb
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\bin\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.deps.json
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\bin\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.dll
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\bin\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.pdb
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\bin\Debug\netstandard2.0\SharePlatformSystem.Infrastructure.dll
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\bin\Debug\netstandard2.0\SharePlatformSystem.Infrastructure.pdb
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.csprojAssemblyReference.cache
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.csproj.CoreCompileInputs.cache
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.AssemblyInfoInputs.cache
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.AssemblyInfo.cs
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.csproj.CopyComplete
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.dll
+D:\SharePlatformSystem\src\SharePlatform.Auth.EfRepository\obj\Debug\netstandard2.0\SharePlatform.Auth.EfRepository.pdb

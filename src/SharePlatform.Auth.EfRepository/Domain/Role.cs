@@ -1,11 +1,11 @@
 ﻿
-using SharePlatform.Auth.EfRepository.Core;
+using SharePlatformSystem.Auth.EfRepository.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SharePlatform.Auth.EfRepository.Domain
+namespace SharePlatformSystem.Auth.EfRepository.Domain
 {
     /// <summary>
 	/// 角色表

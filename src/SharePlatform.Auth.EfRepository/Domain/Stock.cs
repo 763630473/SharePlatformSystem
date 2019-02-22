@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
-using SharePlatform.Auth.EfRepository.Core;
+using SharePlatformSystem.Auth.EfRepository.Core;
 
-namespace SharePlatform.Auth.EfRepository.Domain
+namespace SharePlatformSystem.Auth.EfRepository.Domain
 {
     /// <summary>
 	/// 出入库信息表

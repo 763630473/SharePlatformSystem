@@ -5,7 +5,7 @@ using SharePlatformSystem.Auth.App;
 using SharePlatformSystem.Auth.App.Interface;
 using SharePlatformSystem.Auth.App.Request;
 using SharePlatformSystem.Auth.App.Response;
-using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.EfRepository.Domain;
 
 namespace SharePlatformSystem.Controllers
 {

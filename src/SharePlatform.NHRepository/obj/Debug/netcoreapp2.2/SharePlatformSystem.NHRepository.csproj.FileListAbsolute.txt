@@ -1,0 +1,9 @@
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\bin\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.deps.json
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\bin\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.dll
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\bin\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.pdb
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\obj\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.csprojAssemblyReference.cache
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\obj\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.csproj.CoreCompileInputs.cache
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\obj\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.AssemblyInfoInputs.cache
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\obj\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.AssemblyInfo.cs
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\obj\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.dll
+D:\SharePlatformSystem\src\SharePlatform.NHRepository\obj\Debug\netcoreapp2.2\SharePlatformSystem.NHRepository.pdb

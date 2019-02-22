@@ -1,4 +1,4 @@
-﻿using SharePlatform.Auth.EfRepository.Domain;
+﻿using SharePlatformSystem.Auth.EfRepository.Domain;
 
 namespace SharePlatformSystem.Auth.App.Response
 {

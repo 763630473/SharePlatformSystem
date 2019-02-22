@@ -40,7 +40,7 @@ namespace SharePlatformSystem.Auth.App.SSO
             if (!String.IsNullOrEmpty(token)) return token;
 
             var cookie = _httpContextAccessor.HttpContext.Request.Cookies["Token"];
-            return cookie == null ? String.Empty : cookie;
+            return cookie ?? String.Empty;
         }
         /// <summary>
         /// 通过WebApi检验token是否有效

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SharePlatform.Auth.EfRepository\SharePlatform.Auth.EfRepository.csproj" />
+    <ProjectReference Include="..\SharePlatform.Auth.EfRepository\SharePlatformSystem.Auth.EfRepository.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Infrastructure\SharePlatformSystem.Infrastructure.csproj" />
   </ItemGroup>
 

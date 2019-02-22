@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace SharePlatform.Auth.EfRepository.Core
+namespace SharePlatformSystem.Auth.EfRepository.Core
 {
     /// <summary>
     /// 树状结构实体

@@ -4,7 +4,7 @@ namespace SharePlatformSystem.Infrastructure
 {
     public class CommonException : Exception
     {
-        private int _code;
+        private readonly int _code;
 
         public CommonException(string message, int code)
             : base(message)

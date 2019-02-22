@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using SharePlatform.Auth.EfRepository.Core;
-using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.EfRepository.Core;
+using SharePlatformSystem.Auth.EfRepository.Interface;
 
 namespace SharePlatformSystem.Auth.App
 {

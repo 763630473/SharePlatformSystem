@@ -2,9 +2,9 @@
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using SharePlatform.Auth.EfRepository.Core;
+using SharePlatformSystem.Auth.EfRepository.Core;
 
-namespace SharePlatform.Auth.EfRepository.Domain
+namespace SharePlatformSystem.Auth.EfRepository.Domain
 {
     /// <summary>
 	/// 工作流流程实例表

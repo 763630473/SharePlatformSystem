@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using SharePlatformSystem.Infrastructure;
 using SharePlatformSystem.Auth.App.Response;
 using SharePlatformSystem.Auth.App;
-using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.EfRepository.Domain;
 using SharePlatformSystem.Auth.App.SSO;
 using SharePlatformSystem.Auth.App.Interface;
 

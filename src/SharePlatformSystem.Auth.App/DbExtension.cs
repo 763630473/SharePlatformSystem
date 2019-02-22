@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using SharePlatform.Auth.EfRepository;
+using SharePlatformSystem.Auth.EfRepository;
 using SharePlatformSystem.Infrastructure;
 
 namespace SharePlatformSystem.Auth.App

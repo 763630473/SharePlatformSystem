@@ -1,12 +1,12 @@
 ﻿using SharePlatformSystem.Infrastructure;
-using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.EfRepository.Domain;
 using SharePlatformSystem.Auth.App.Interface;
 using SharePlatformSystem.Auth.App.Request;
 using SharePlatformSystem.Auth.App.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SharePlatform.Auth.EfRepository.Interface;
+using SharePlatformSystem.Auth.EfRepository.Interface;
 using SharePlatformSystem.Infrastructuretructure;
 namespace SharePlatformSystem.Auth.App
 {

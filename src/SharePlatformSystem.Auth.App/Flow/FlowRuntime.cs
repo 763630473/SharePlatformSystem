@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using SharePlatform.Auth.EfRepository.Domain;
+using SharePlatformSystem.Auth.EfRepository.Domain;
 using SharePlatformSystem.Infrastructure;
 using System;
 using System.Collections.Generic;

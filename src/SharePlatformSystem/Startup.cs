@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SharePlatform.Auth.EfRepository;
+using SharePlatformSystem.Auth.EfRepository;
 using SharePlatformSystem.Auth.App;
 using SharePlatformSystem.Mvc;
 

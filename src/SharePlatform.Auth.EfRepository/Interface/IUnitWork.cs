@@ -1,8 +1,8 @@
-﻿using SharePlatform.Auth.EfRepository.Core;
+﻿using SharePlatformSystem.Auth.EfRepository.Core;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
-namespace SharePlatform.Auth.EfRepository.Interface
+namespace SharePlatformSystem.Auth.EfRepository.Interface
 {
     /// <summary>
     /// 工作单元接口
