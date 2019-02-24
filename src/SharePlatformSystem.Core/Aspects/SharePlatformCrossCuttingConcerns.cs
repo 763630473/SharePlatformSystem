@@ -7,10 +7,8 @@ namespace SharePlatformSystem.Aspects
 {
     internal static class SharePlatformCrossCuttingConcerns
     {
-        public const string Auditing = "AbpAuditing";
-        public const string Validation = "AbpValidation";
-        public const string UnitOfWork = "AbpUnitOfWork";
-        public const string Authorization = "AbpAuthorization";
+        public const string Auditing = "SharePlatformAuditing";
+        public const string UnitOfWork = "SharePlatformUnitOfWork";
 
         public static void AddApplied(object obj, params string[] concerns)
         {

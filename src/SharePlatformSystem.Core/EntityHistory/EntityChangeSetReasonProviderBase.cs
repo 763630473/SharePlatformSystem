@@ -5,7 +5,7 @@ namespace SharePlatformSystem.EntityHistory
 {
     public abstract class EntityChangeSetReasonProviderBase : IEntityChangeSetReasonProvider
     {
-        public const string ReasonOverrideContextKey = "Abp.EntityHistory.Reason.Override";
+        public const string ReasonOverrideContextKey = "SharePlatform.EntityHistory.Reason.Override";
 
         public abstract string Reason { get; }
 

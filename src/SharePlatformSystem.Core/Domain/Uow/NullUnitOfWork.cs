@@ -5,7 +5,7 @@ namespace SharePlatformSystem.Domain.Uow
     /// <summary>
     /// Null implementation of unit of work.
     /// It's used if no component registered for <see cref="IUnitOfWork"/>.
-    /// This ensures working ABP without a database.
+    /// This ensures working SharePlatform without a database.
     /// </summary>
     public sealed class NullUnitOfWork : UnitOfWorkBase
     {

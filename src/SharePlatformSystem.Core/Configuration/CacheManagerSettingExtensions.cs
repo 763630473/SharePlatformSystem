@@ -15,16 +15,7 @@ namespace SharePlatformSystem.Core.Configuration
         {
             return cacheManager
                 .GetCache<string, Dictionary<string, SettingInfo>>(SharePlatformCacheNames.ApplicationSettings);
-        }
-
-        /// <summary>
-        /// Gets tenant settings cache.
-        /// </summary>
-        public static ITypedCache<int, Dictionary<string, SettingInfo>> GetTenantSettingsCache(this ICacheManager cacheManager)
-        {
-            return cacheManager
-                .GetCache<int, Dictionary<string, SettingInfo>>(SharePlatformCacheNames.TenantSettings);
-        }
+        }       
 
         /// <summary>
         /// Gets user settings cache.

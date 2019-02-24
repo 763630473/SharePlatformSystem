@@ -8,9 +8,9 @@ namespace SharePlatformSystem.BackgroundJobs
         
         public ISharePlatformStartupConfiguration SharePlatformConfiguration { get; private set; }
 
-        public BackgroundJobConfiguration(ISharePlatformStartupConfiguration abpConfiguration)
+        public BackgroundJobConfiguration(ISharePlatformStartupConfiguration sharePlatformConfiguration)
         {
-            SharePlatformConfiguration = abpConfiguration;
+            SharePlatformConfiguration = sharePlatformConfiguration;
 
             IsJobExecutionEnabled = true;
         }

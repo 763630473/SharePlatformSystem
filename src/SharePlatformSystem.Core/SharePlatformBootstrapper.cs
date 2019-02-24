@@ -16,7 +16,7 @@ using SharePlatformSystem.EntityHistory;
 namespace SharePlatformSystem
 {
     /// <summary>
-    /// This is the main class that is responsible to start entire ABP system.
+    /// This is the main class that is responsible to start entire SharePlatform system.
     /// Prepares dependency injection and registers core components needed for startup.
     /// It must be instantiated and initialized (see <see cref="Initialize"/>) first in an application.
     /// </summary>
@@ -48,7 +48,7 @@ namespace SharePlatformSystem
         /// <summary>
         /// Creates a new <see cref="SharePlatformBootstrapper"/> instance.
         /// </summary>
-        /// <param name="startupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="AbpModule"/>.</param>
+        /// <param name="startupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="SharePlatformModule"/>.</param>
         /// <param name="optionsAction">An action to set options</param>
         private SharePlatformBootstrapper([NotNull] Type startupModule, [CanBeNull] Action<SharePlatformBootstrapperOptions> optionsAction = null)
         {
@@ -78,7 +78,7 @@ namespace SharePlatformSystem
         /// <summary>
         /// Creates a new <see cref="SharePlatformBootstrapper"/> instance.
         /// </summary>
-        /// <typeparam name="TStartupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="AbpModule"/>.</typeparam>
+        /// <typeparam name="TStartupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="SharePlatformModule"/>.</typeparam>
         /// <param name="optionsAction">An action to set options</param>
         public static SharePlatformBootstrapper Create<TStartupModule>([CanBeNull] Action<SharePlatformBootstrapperOptions> optionsAction = null)
             where TStartupModule : SharePlatformModule
@@ -89,7 +89,7 @@ namespace SharePlatformSystem
         /// <summary>
         /// Creates a new <see cref="SharePlatformBootstrapper"/> instance.
         /// </summary>
-        /// <param name="startupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="AbpModule"/>.</param>
+        /// <param name="startupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="SharePlatformModule"/>.</param>
         /// <param name="optionsAction">An action to set options</param>
         public static SharePlatformBootstrapper Create([NotNull] Type startupModule, [CanBeNull] Action<SharePlatformBootstrapperOptions> optionsAction = null)
         {
@@ -99,9 +99,9 @@ namespace SharePlatformSystem
         /// <summary>
         /// Creates a new <see cref="SharePlatformBootstrapper"/> instance.
         /// </summary>
-        /// <typeparam name="TStartupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="AbpModule"/>.</typeparam>
-        /// <param name="iocManager">IIocManager that is used to bootstrap the ABP system</param>
-        [Obsolete("Use overload with parameter type: Action<AbpBootstrapperOptions> optionsAction")]
+        /// <typeparam name="TStartupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="SharePlatformModule"/>.</typeparam>
+        /// <param name="iocManager">IIocManager that is used to bootstrap the SharePlatform system</param>
+        [Obsolete("Use overload with parameter type: Action<SharePlatformBootstrapperOptions> optionsAction")]
         public static SharePlatformBootstrapper Create<TStartupModule>([NotNull] IIocManager iocManager)
             where TStartupModule : SharePlatformModule
         {
@@ -114,9 +114,9 @@ namespace SharePlatformSystem
         /// <summary>
         /// Creates a new <see cref="SharePlatformBootstrapper"/> instance.
         /// </summary>
-        /// <param name="startupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="AbpModule"/>.</param>
-        /// <param name="iocManager">IIocManager that is used to bootstrap the ABP system</param>
-        [Obsolete("Use overload with parameter type: Action<AbpBootstrapperOptions> optionsAction")]
+        /// <param name="startupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="SharePlatformModule"/>.</param>
+        /// <param name="iocManager">IIocManager that is used to bootstrap the SharePlatform system</param>
+        [Obsolete("Use overload with parameter type: Action<SharePlatformBootstrapperOptions> optionsAction")]
         public static SharePlatformBootstrapper Create([NotNull] Type startupModule, [NotNull] IIocManager iocManager)
         {
             return new SharePlatformBootstrapper(startupModule, options =>
@@ -133,7 +133,7 @@ namespace SharePlatformSystem
         }
 
         /// <summary>
-        /// Initializes the ABP system.
+        /// Initializes the SharePlatform system.
         /// </summary>
         public virtual void Initialize()
         {
@@ -177,7 +177,7 @@ namespace SharePlatformSystem
         }
 
         /// <summary>
-        /// Disposes the ABP system.
+        /// Disposes the SharePlatform system.
         /// </summary>
         public virtual void Dispose()
         {

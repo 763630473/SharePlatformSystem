@@ -39,7 +39,7 @@ namespace SharePlatformSystem.Core.Localization.Sources.Resource
         }
 
         /// <summary>
-        /// This method is called by ABP before first usage.
+        /// This method is called by SharePlatform before first usage.
         /// </summary>
         public virtual void Initialize(ILocalizationConfiguration configuration, IIocResolver iocResolver)
         {

@@ -5,7 +5,7 @@ using System.Reflection;
 namespace SharePlatform.AspNetCore.SignalR
 {
     /// <summary>
-    /// ABP ASP.NET Core SignalR integration module.
+    /// SharePlatform ASP.NET Core SignalR integration module.
     /// </summary>
     [DependsOn(typeof(SharePlatformKernelModule))]
     public class SharePlatformAspNetCoreSignalRModule : SharePlatformModule

@@ -13,7 +13,7 @@ namespace SharePlatformSystem.BackgroundJobs
         bool IsJobExecutionEnabled { get; set; }
 
         /// <summary>
-        /// Gets the ABP configuration object.
+        /// Gets the SharePlatform configuration object.
         /// </summary>
         ISharePlatformStartupConfiguration SharePlatformConfiguration { get; }
     }

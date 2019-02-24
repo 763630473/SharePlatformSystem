@@ -8,7 +8,7 @@ namespace SharePlatformSystem.Domain.Uow
     public class SharePlatformDbConcurrencyException : SharePlatformException
     {
         /// <summary>
-        /// Creates a new <see cref="AbpDbConcurrencyException"/> object.
+        /// Creates a new <see cref="SharePlatformDbConcurrencyException"/> object.
         /// </summary>
         public SharePlatformDbConcurrencyException()
         {
@@ -25,7 +25,7 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="AbpDbConcurrencyException"/> object.
+        /// Creates a new <see cref="SharePlatformDbConcurrencyException"/> object.
         /// </summary>
         /// <param name="message">Exception message</param>
         public SharePlatformDbConcurrencyException(string message)
@@ -35,7 +35,7 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="AbpDbConcurrencyException"/> object.
+        /// Creates a new <see cref="SharePlatformDbConcurrencyException"/> object.
         /// </summary>
         /// <param name="message">Exception message</param>
         /// <param name="innerException">Inner exception</param>

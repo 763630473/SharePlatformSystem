@@ -11,7 +11,7 @@ namespace SharePlatformSystem.Runtime.Caching.Configuration
     public interface ICachingConfiguration
     {
         /// <summary>
-        /// Gets the ABP configuration object.
+        /// Gets the SharePlatform configuration object.
         /// </summary>
         ISharePlatformStartupConfiguration SharePlatformConfiguration { get; }
 

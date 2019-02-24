@@ -29,7 +29,6 @@ namespace SharePlatformSystem.Core.Configuration
 
         private readonly ISettingDefinitionManager _settingDefinitionManager;
         private readonly ITypedCache<string, Dictionary<string, SettingInfo>> _applicationSettingCache;
-        private readonly ITypedCache<int, Dictionary<string, SettingInfo>> _tenantSettingCache;
         private readonly ITypedCache<string, Dictionary<string, SettingInfo>> _userSettingCache;
 
         /// <inheritdoc/>
@@ -41,7 +40,6 @@ namespace SharePlatformSystem.Core.Configuration
             SettingStore = DefaultConfigSettingStore.Instance;
 
             _applicationSettingCache = cacheManager.GetApplicationSettingsCache();
-            _tenantSettingCache = cacheManager.GetTenantSettingsCache();
             _userSettingCache = cacheManager.GetUserSettingsCache();
         }
 

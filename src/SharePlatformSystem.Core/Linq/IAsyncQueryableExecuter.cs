@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Linq
 {
     /// <summary>
-    /// This interface is intended to be used by ABP.
+    /// This interface is intended to be used by SharePlatform.
     /// </summary>
     public interface IAsyncQueryableExecuter
     {

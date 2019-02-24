@@ -4,7 +4,7 @@ namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
     /// Defines a unit of work.
-    /// This interface is internally used by ABP.
+    /// This interface is internally used by SharePlatform.
     /// Use <see cref="IUnitOfWorkManager.Begin()"/> to start a new unit of work.
     /// </summary>
     public interface IUnitOfWork : IActiveUnitOfWork, IUnitOfWorkCompleteHandle

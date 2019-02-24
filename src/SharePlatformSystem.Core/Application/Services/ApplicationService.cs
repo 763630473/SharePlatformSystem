@@ -14,7 +14,7 @@ namespace SharePlatformSystem.Application.Services
         /// <summary>
         /// Gets current session information.
         /// </summary>
-        public ISharePlatformSession AbpSession { get; set; }
+        public ISharePlatformSession SharePlatformSession { get; set; }
         
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace SharePlatformSystem.Application.Services
         /// </summary>
         protected ApplicationService()
         {
-            AbpSession = NullSharePlatformSession.Instance;
+            SharePlatformSession = NullSharePlatformSession.Instance;
         }
     }
 }

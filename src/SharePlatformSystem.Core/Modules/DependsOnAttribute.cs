@@ -5,8 +5,8 @@ using System.Text;
 namespace SharePlatformSystem.Core.Modules
 {
     /// <summary>
-    ///用于定义abp模块与其他模块的依赖关系。
-    ///应该用于从“abpmodule”派生的类。
+    ///用于定义SharePlatform模块与其他模块的依赖关系。
+    ///应该用于从“SharePlatformmodule”派生的类。
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class DependsOnAttribute : Attribute

@@ -1,10 +1,11 @@
-﻿using System.Reflection;
-using Abp.Modules;
+﻿using SharePlatformSystem.Core.Modules;
+using SharePlatformSystem.Quartz;
+using System.Reflection;
 
 namespace SharePlatformSystem.AutoMapper.Tests
 {
-    [DependsOn(typeof(AbpQuartzModule))]
-    public class SharePlatformQuartzTestModule : AbpModule
+    [DependsOn(typeof(SharePlatformQuartzModule))]
+    public class SharePlatformQuartzTestModule : SharePlatformModule
     {
         public override void PreInitialize()
         {

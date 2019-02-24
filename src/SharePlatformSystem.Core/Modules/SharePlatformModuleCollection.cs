@@ -6,7 +6,7 @@ using System.Linq;
 namespace SharePlatformSystem.Core.Modules
 {
     /// <summary>
-    /// Used to store AbpModuleInfo objects as a dictionary.
+    /// Used to store SharePlatformModuleInfo objects as a dictionary.
     /// </summary>
     internal class SharePlatformModuleCollection : List<SharePlatformModuleInfo>
     {

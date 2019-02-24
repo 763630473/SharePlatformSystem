@@ -17,7 +17,7 @@ namespace SharePlatformSystem.Core.Localization.Sources
         string Name { get; }
 
         /// <summary>
-        /// This method is called by ABP before first usage.
+        /// This method is called by SharePlatform before first usage.
         /// </summary>
         void Initialize(ILocalizationConfiguration configuration, IIocResolver iocResolver);
 

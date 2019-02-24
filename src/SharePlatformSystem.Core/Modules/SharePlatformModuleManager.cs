@@ -24,12 +24,12 @@ namespace SharePlatformSystem.Core.Modules
         private SharePlatformModuleCollection _modules;
 
         private readonly IIocManager _iocManager;
-        private readonly ISharePlatformPlugInManager _abpPlugInManager;
+        private readonly ISharePlatformPlugInManager _sharePlatformPlugInManager;
 
-        public SharePlatformModuleManager(IIocManager iocManager, ISharePlatformPlugInManager abpPlugInManager)
+        public SharePlatformModuleManager(IIocManager iocManager, ISharePlatformPlugInManager sharePlatformPlugInManager)
         {
             _iocManager = iocManager;
-            _abpPlugInManager = abpPlugInManager;
+            _sharePlatformPlugInManager = sharePlatformPlugInManager;
 
             Logger = NullLogger.Instance;
         }
@@ -61,12 +61,12 @@ namespace SharePlatformSystem.Core.Modules
 
         private void LoadAllModules()
         {
-            Logger.Debug("Loading Abp modules...");
+            Logger.Debug("Loading SharePlatform modules...");
 
             List<Type> plugInModuleTypes;
             var moduleTypes = FindAllModuleTypes(out plugInModuleTypes).Distinct().ToList();
 
-            Logger.Debug("Found " + moduleTypes.Count + " ABP modules in total.");
+            Logger.Debug("Found " + moduleTypes.Count + " SharePlatform modules in total.");
 
             RegisterModules(moduleTypes);
             CreateModules(moduleTypes, plugInModuleTypes);
@@ -85,7 +85,7 @@ namespace SharePlatformSystem.Core.Modules
 
             var modules = SharePlatformModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(_modules.StartupModuleType);
             
-            foreach (var plugInModuleType in _abpPlugInManager.PlugInSources.GetAllModules())
+            foreach (var plugInModuleType in _sharePlatformPlugInManager.PlugInSources.GetAllModules())
             {
                 if (modules.AddIfNotContains(plugInModuleType))
                 {
@@ -103,7 +103,7 @@ namespace SharePlatformSystem.Core.Modules
                 var moduleObject = _iocManager.Resolve(moduleType) as SharePlatformModule;
                 if (moduleObject == null)
                 {
-                    throw new SharePlatformInitializationException("This type is not an ABP module: " + moduleType.AssemblyQualifiedName);
+                    throw new SharePlatformInitializationException("This type is not an SharePlatform module: " + moduleType.AssemblyQualifiedName);
                 }
 
                 moduleObject.IocManager = _iocManager;

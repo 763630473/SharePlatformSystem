@@ -8,7 +8,7 @@ namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
     /// Default implementation of <see cref="IConnectionStringResolver"/>.
-    /// Get connection string from <see cref="IAbpStartupConfiguration"/>,
+    /// Get connection string from <see cref="ISharePlatformStartupConfiguration"/>,
     /// or "Default" connection string in config file,
     /// or single connection string in config file.
     /// </summary>
@@ -44,7 +44,7 @@ namespace SharePlatformSystem.Domain.Uow
                 return ConfigurationManager.ConnectionStrings[0].ConnectionString;
             }
 
-            throw new SharePlatformException("Could not find a connection string definition for the application. Set IAbpStartupConfiguration.DefaultNameOrConnectionString or add a 'Default' connection string to application .config file.");
+            throw new SharePlatformException("Could not find a connection string definition for the application. Set ISharePlatformStartupConfiguration.DefaultNameOrConnectionString or add a 'Default' connection string to application .config file.");
         }
     }
 }

@@ -9,7 +9,7 @@ using SharePlatformSystem.Domain.Uow;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// Used to configure ABP and modules on startup.
+    /// Used to configure SharePlatform and modules on startup.
     /// </summary>
     public interface ISharePlatformStartupConfiguration : IDictionaryBasedConfig
     {
@@ -49,5 +49,9 @@ namespace SharePlatformSystem.Core.Configuration
         /// Used to configure background job system.
         /// </summary>
         IBackgroundJobConfiguration BackgroundJobs { get; }
+        /// <summary>
+        /// Used to configure <see cref="IEventBus"/>.
+        /// </summary>
+        IEventBusConfiguration EventBus { get; }
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SharePlatformSystem.Core.Exceptions
 {
-   /// <summary>
-   /// Base exception type for those are thrown by Abp system for Abp specific exceptions.
-   /// </summary>
+    /// <summary>
+    /// Base exception type for those are thrown by SharePlatform system for SharePlatform specific exceptions.
+    /// </summary>
     [Serializable]
     public class SharePlatformException : Exception
     {

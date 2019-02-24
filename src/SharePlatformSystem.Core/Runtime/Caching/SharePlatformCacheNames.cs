@@ -1,28 +1,23 @@
 namespace SharePlatformSystem.Runtime.Caching
 {
     /// <summary>
-    /// Names of standard caches used in ABP.
+    /// Names of standard caches used in SharePlatform.
     /// </summary>
     public static class SharePlatformCacheNames
     {
         /// <summary>
-        /// Application settings cache: AbpApplicationSettingsCache.
+        /// Application settings cache: SharePlatformApplicationSettingsCache.
         /// </summary>
-        public const string ApplicationSettings = "AbpApplicationSettingsCache";
+        public const string ApplicationSettings = "SharePlatformApplicationSettingsCache";
 
         /// <summary>
-        /// Tenant settings cache: AbpTenantSettingsCache.
+        /// User settings cache: SharePlatformUserSettingsCache.
         /// </summary>
-        public const string TenantSettings = "AbpTenantSettingsCache";
+        public const string UserSettings = "SharePlatformUserSettingsCache";
 
         /// <summary>
-        /// User settings cache: AbpUserSettingsCache.
+        /// Localization scripts cache: SharePlatformLocalizationScripts.
         /// </summary>
-        public const string UserSettings = "AbpUserSettingsCache";
-
-        /// <summary>
-        /// Localization scripts cache: AbpLocalizationScripts.
-        /// </summary>
-        public const string LocalizationScripts = "AbpLocalizationScripts";
+        public const string LocalizationScripts = "SharePlatformLocalizationScripts";
     }
 }

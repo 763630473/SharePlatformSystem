@@ -7,14 +7,14 @@ namespace SharePlatformSystem.Runtime.Caching.Memory
     /// <summary>
     /// Implements <see cref="ICacheManager"/> to work with MemoryCache.
     /// </summary>
-    public class AbpMemoryCacheManager : CacheManagerBase
+    public class SharePlatformMemoryCacheManager : CacheManagerBase
     {
         public ILogger Logger { get; set; }
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public AbpMemoryCacheManager(IIocManager iocManager, ICachingConfiguration configuration)
+        public SharePlatformMemoryCacheManager(IIocManager iocManager, ICachingConfiguration configuration)
             : base(iocManager, configuration)
         {
             Logger = NullLogger.Instance;

@@ -26,7 +26,7 @@ namespace SharePlatformSystem.Core.Modules
         protected internal IIocManager IocManager { get; internal set; }
 
         /// <summary>
-        /// Gets a reference to the ABP configuration.
+        /// Gets a reference to the SharePlatform configuration.
         /// </summary>
         protected internal ISharePlatformStartupConfiguration Configuration { get; internal set; }
 
@@ -79,10 +79,10 @@ namespace SharePlatformSystem.Core.Modules
         }
 
         /// <summary>
-        /// Checks if given type is an Abp module class.
+        /// Checks if given type is an SharePlatform module class.
         /// </summary>
         /// <param name="type">Type to check</param>
-        public static bool IsAbpModule(Type type)
+        public static bool IsSharePlatformModule(Type type)
         {
             var typeInfo = type.GetTypeInfo();
             return
@@ -97,7 +97,7 @@ namespace SharePlatformSystem.Core.Modules
         /// </summary>
         public static List<Type> FindDependedModuleTypes(Type moduleType)
         {
-            if (!IsAbpModule(moduleType))
+            if (!IsSharePlatformModule(moduleType))
             {
                 throw new SharePlatformInitializationException("此类型不是SharePlatform模块: " + moduleType.AssemblyQualifiedName);
             }
@@ -129,9 +129,9 @@ namespace SharePlatformSystem.Core.Modules
 
         private static void AddModuleAndDependenciesRecursively(List<Type> modules, Type module)
         {
-            if (!IsAbpModule(module))
+            if (!IsSharePlatformModule(module))
             {
-                throw new SharePlatformInitializationException("This type is not an ABP module: " + module.AssemblyQualifiedName);
+                throw new SharePlatformInitializationException("This type is not an SharePlatform module: " + module.AssemblyQualifiedName);
             }
 
             if (modules.Contains(module))

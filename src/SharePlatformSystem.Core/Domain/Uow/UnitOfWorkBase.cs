@@ -58,7 +58,7 @@ namespace SharePlatformSystem.Domain.Uow
         public bool IsDisposed { get; private set; }
 
         /// <summary>
-        /// Reference to current ABP session.
+        /// Reference to current SharePlatform session.
         /// </summary>
         public ISharePlatformSession SharePlatformSystemSession { protected get; set; }
 

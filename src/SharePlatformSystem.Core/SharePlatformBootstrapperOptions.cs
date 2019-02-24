@@ -6,12 +6,12 @@ namespace SharePlatformSystem
     public class SharePlatformBootstrapperOptions
     {
         /// <summary>
-        /// Used to disable all interceptors added by ABP.
+        /// Used to disable all interceptors added by SharePlatform.
         /// </summary>
         public bool DisableAllInterceptors { get; set; }
 
         /// <summary>
-        /// IIocManager that is used to bootstrap the ABP system. If set to null, uses global <see cref="Abp.Dependency.IocManager.Instance"/>
+        /// IIocManager that is used to bootstrap the SharePlatform system. If set to null, uses global <see cref="SharePlatform.Dependency.IocManager.Instance"/>
         /// </summary>
         public IIocManager IocManager { get; set; }
 

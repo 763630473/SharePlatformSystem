@@ -9,7 +9,7 @@ namespace SharePlatformSystem.BackgroundJobs
     /// <summary>
     /// Represents a background job info that is used to persist jobs.
     /// </summary>
-    [Table("AbpBackgroundJobs")]
+    [Table("BackgroundJobs")]
     public class BackgroundJobInfo : CreationAuditedEntity<string>
     {
         /// <summary>

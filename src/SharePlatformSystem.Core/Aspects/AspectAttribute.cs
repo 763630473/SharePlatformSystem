@@ -15,7 +15,7 @@ namespace SharePlatformSystem.Aspects
         }
     }
 
-    internal interface IAbpInterceptionContext
+    internal interface ISharePlatformInterceptionContext
     {
         object Target { get; }
 
@@ -28,35 +28,35 @@ namespace SharePlatformSystem.Aspects
         bool Handled { get; set; }
     }
 
-    internal interface IAbpBeforeExecutionInterceptionContext : IAbpInterceptionContext
+    internal interface ISharePlatformBeforeExecutionInterceptionContext : ISharePlatformInterceptionContext
     {
 
     }
 
 
-    internal interface IAbpAfterExecutionInterceptionContext : IAbpInterceptionContext
+    internal interface ISharePlatformAfterExecutionInterceptionContext : ISharePlatformInterceptionContext
     {
         Exception Exception { get; }
     }
 
-    internal interface IAbpInterceptor<TAspect>
+    internal interface ISharePlatformInterceptor<TAspect>
     {
         TAspect Aspect { get; set; }
 
-        void BeforeExecution(IAbpBeforeExecutionInterceptionContext context);
+        void BeforeExecution(ISharePlatformBeforeExecutionInterceptionContext context);
 
-        void AfterExecution(IAbpAfterExecutionInterceptionContext context);
+        void AfterExecution(ISharePlatformAfterExecutionInterceptionContext context);
     }
 
-    internal abstract class AbpInterceptorBase<TAspect> : IAbpInterceptor<TAspect>
+    internal abstract class SharePlatformInterceptorBase<TAspect> : ISharePlatformInterceptor<TAspect>
     {
         public TAspect Aspect { get; set; }
 
-        public virtual void BeforeExecution(IAbpBeforeExecutionInterceptionContext context)
+        public virtual void BeforeExecution(ISharePlatformBeforeExecutionInterceptionContext context)
         {
         }
 
-        public virtual void AfterExecution(IAbpAfterExecutionInterceptionContext context)
+        public virtual void AfterExecution(ISharePlatformAfterExecutionInterceptionContext context)
         {
         }
     }
@@ -73,14 +73,14 @@ namespace SharePlatformSystem.Aspects
             }
         }
 
-        internal class MyInterceptor : AbpInterceptorBase<MyAspectAttribute>
+        internal class MyInterceptor : SharePlatformInterceptorBase<MyAspectAttribute>
         {
-            public override void BeforeExecution(IAbpBeforeExecutionInterceptionContext context)
+            public override void BeforeExecution(ISharePlatformBeforeExecutionInterceptionContext context)
             {
                 Aspect.TestValue++;
             }
 
-            public override void AfterExecution(IAbpAfterExecutionInterceptionContext context)
+            public override void AfterExecution(ISharePlatformAfterExecutionInterceptionContext context)
             {
                 Aspect.TestValue++;
             }

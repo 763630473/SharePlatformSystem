@@ -3,7 +3,7 @@
 namespace SharePlatformSystem.Runtime.Security
 {
     /// <summary>
-    /// Used to get ABP-specific claim type names.
+    /// Used to get SharePlatform-specific claim type names.
     /// </summary>
     public static class SharePlatformClaimTypes
     {

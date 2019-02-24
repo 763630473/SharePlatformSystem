@@ -36,7 +36,7 @@ namespace SharePlatformSystem.Core.Modules
         public List<SharePlatformModuleInfo> Dependencies { get; }
 
         /// <summary>
-        /// Creates a new AbpModuleInfo object.
+        /// Creates a new SharePlatformModuleInfo object.
         /// </summary>
         public SharePlatformModuleInfo([NotNull] Type type, [NotNull] SharePlatformModule instance, bool isLoadedAsPlugIn)
         {

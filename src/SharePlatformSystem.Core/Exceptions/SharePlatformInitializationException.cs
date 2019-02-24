@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SharePlatformSystem.Core.Exceptions
 {
-  /// <summary>
-  /// This exception is thrown if a problem on ABP initialization progress.
-  /// </summary>
+    /// <summary>
+    /// This exception is thrown if a problem on SharePlatform initialization progress.
+    /// </summary>
     [Serializable]
     public class SharePlatformInitializationException : SharePlatformException
     {

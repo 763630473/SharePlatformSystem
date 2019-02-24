@@ -16,9 +16,9 @@ namespace SharePlatformSystem.Runtime.Caching.Configuration
         }
         private readonly List<ICacheConfigurator> _configurators;
 
-        public CachingConfiguration(ISharePlatformStartupConfiguration abpConfiguration)
+        public CachingConfiguration(ISharePlatformStartupConfiguration sharePlatformConfiguration)
         {
-            SharePlatformConfiguration = abpConfiguration;
+            SharePlatformConfiguration = sharePlatformConfiguration;
 
             _configurators = new List<ICacheConfigurator>();
         }

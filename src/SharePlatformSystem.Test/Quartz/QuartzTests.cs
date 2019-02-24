@@ -6,6 +6,7 @@ using Quartz;
 using SharePlatformSystem.Dependency;
 using SharePlatformSystem.Quartz;
 using SharePlatformSystem.Quartz.Configuration;
+using SharePlatformSystem.TestBase;
 using Shouldly;
 
 namespace SharePlatformSystem.AutoMapper.Tests

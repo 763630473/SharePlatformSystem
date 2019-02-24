@@ -5,7 +5,7 @@ namespace SharePlatformSystem.Runtime.Session
 {
     public abstract class SharePlatformSessionBase : ISharePlatformSession
     {
-        public const string SessionOverrideContextKey = "Abp.Runtime.Session.Override";
+        public const string SessionOverrideContextKey = "SharePlatform.Runtime.Session.Override";
 
 
         public abstract string UserId { get; }

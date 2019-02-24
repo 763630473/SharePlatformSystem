@@ -36,7 +36,7 @@ namespace SharePlatformSystem.Core.PlugIns
                 {
                     foreach (var type in assembly.GetTypes())
                     {
-                        if (SharePlatformModule.IsAbpModule(type))
+                        if (SharePlatformModule.IsSharePlatformModule(type))
                         {
                             modules.AddIfNotContains(type);
                         }

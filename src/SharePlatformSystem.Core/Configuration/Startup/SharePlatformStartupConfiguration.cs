@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// This class is used to configure ABP and modules on startup.
+    /// This class is used to configure SharePlatform and modules on startup.
     /// </summary>
     internal class SharePlatformStartupConfiguration : DictionaryBasedConfig, ISharePlatformStartupConfiguration
     {
@@ -99,5 +99,9 @@ namespace SharePlatformSystem.Core.Configuration
         /// Used to configure background job system.
         /// </summary>
         public IBackgroundJobConfiguration BackgroundJobs { get; private set; }
+        /// <summary>
+        /// Used to configure <see cref="IEventBus"/>.
+        /// </summary>
+        public IEventBusConfiguration EventBus { get; private set; }
     }
 }

@@ -24,12 +24,12 @@ namespace SharePlatformSystem.Dependency.Installers
             //    Component.For<IBackgroundJobConfiguration, BackgroundJobConfiguration>().ImplementedBy<BackgroundJobConfiguration>().LifestyleSingleton(),
             //    Component.For<INotificationConfiguration, NotificationConfiguration>().ImplementedBy<NotificationConfiguration>().LifestyleSingleton(),
             //    Component.For<IEmbeddedResourcesConfiguration, EmbeddedResourcesConfiguration>().ImplementedBy<EmbeddedResourcesConfiguration>().LifestyleSingleton(),
-            //    Component.For<IAbpStartupConfiguration, AbpStartupConfiguration>().ImplementedBy<AbpStartupConfiguration>().LifestyleSingleton(),
+            //    Component.For<ISharePlatformStartupConfiguration, SharePlatformStartupConfiguration>().ImplementedBy<SharePlatformStartupConfiguration>().LifestyleSingleton(),
             //    Component.For<IEntityHistoryConfiguration, EntityHistoryConfiguration>().ImplementedBy<EntityHistoryConfiguration>().LifestyleSingleton(),
             //    Component.For<ITypeFinder, TypeFinder>().ImplementedBy<TypeFinder>().LifestyleSingleton(),
-            //    Component.For<IAbpPlugInManager, AbpPlugInManager>().ImplementedBy<AbpPlugInManager>().LifestyleSingleton(),
-            //    Component.For<IAbpModuleManager, AbpModuleManager>().ImplementedBy<AbpModuleManager>().LifestyleSingleton(),
-            //    Component.For<IAssemblyFinder, AbpAssemblyFinder>().ImplementedBy<AbpAssemblyFinder>().LifestyleSingleton(),
+            //    Component.For<ISharePlatformPlugInManager, SharePlatformPlugInManager>().ImplementedBy<SharePlatformPlugInManager>().LifestyleSingleton(),
+            //    Component.For<ISharePlatformModuleManager, SharePlatformModuleManager>().ImplementedBy<SharePlatformModuleManager>().LifestyleSingleton(),
+            //    Component.For<IAssemblyFinder, SharePlatformAssemblyFinder>().ImplementedBy<SharePlatformAssemblyFinder>().LifestyleSingleton(),
             //    Component.For<ILocalizationManager, LocalizationManager>().ImplementedBy<LocalizationManager>().LifestyleSingleton()
             //    );
         }

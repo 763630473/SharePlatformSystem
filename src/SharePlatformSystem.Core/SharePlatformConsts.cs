@@ -1,7 +1,7 @@
 namespace SharePlatformSystem
 {
     /// <summary>
-    ///     Used to define some constants for ABP.
+    ///     Used to define some constants for SharePlatform.
     /// </summary>
     public static class SharePlatformConsts
     {
