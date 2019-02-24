@@ -47,7 +47,6 @@ namespace SharePlatformSystem.Core.Configuration
         /// <param name="defaultValue">Default value of the object if can not found given configuration</param>
         /// <returns>Value of the configuration or null if not found</returns>
         T Get<T>(string name, T defaultValue);
-
         /// <summary>
         /// Gets a configuration object with given name.
         /// </summary>

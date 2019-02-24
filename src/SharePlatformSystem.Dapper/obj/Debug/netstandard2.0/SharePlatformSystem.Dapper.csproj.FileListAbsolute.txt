@@ -1,0 +1,12 @@
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\bin\Debug\netstandard2.0\SharePlatformSystem.Dapper.deps.json
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\bin\Debug\netstandard2.0\SharePlatformSystem.Dapper.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\bin\Debug\netstandard2.0\SharePlatformSystem.Dapper.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\obj\Debug\netstandard2.0\SharePlatformSystem.Dapper.csprojAssemblyReference.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\obj\Debug\netstandard2.0\SharePlatformSystem.Dapper.csproj.CoreCompileInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\obj\Debug\netstandard2.0\SharePlatformSystem.Dapper.AssemblyInfoInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\obj\Debug\netstandard2.0\SharePlatformSystem.Dapper.AssemblyInfo.cs
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\obj\Debug\netstandard2.0\SharePlatformSystem.Dapper.csproj.CopyComplete
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\obj\Debug\netstandard2.0\SharePlatformSystem.Dapper.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Dapper\obj\Debug\netstandard2.0\SharePlatformSystem.Dapper.pdb

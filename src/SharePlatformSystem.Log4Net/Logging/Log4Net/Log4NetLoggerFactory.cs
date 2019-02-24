@@ -7,6 +7,7 @@ using log4net.Config;
 using log4net.Core;
 using log4net.Repository;
 using SharePlatformSystem.Core.Extensions;
+using SharePlatformSystem.Core.Reflection.Extensions;
 
 namespace SharePlatformSystem.Log4Net.Logging.Log4Net
 {

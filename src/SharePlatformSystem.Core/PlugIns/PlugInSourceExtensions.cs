@@ -1,7 +1,7 @@
-﻿using System;
+﻿using SharePlatformSystem.Core.Modules;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Abp.Modules;
 
 namespace SharePlatformSystem.Core.PlugIns
 {
@@ -11,7 +11,7 @@ namespace SharePlatformSystem.Core.PlugIns
         {
             return plugInSource
                 .GetModules()
-                .SelectMany(AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule)
+                .SelectMany(SharePlatformModule.FindDependedModuleTypesRecursivelyIncludingGivenModule)
                 .Distinct()
                 .ToList();
         }

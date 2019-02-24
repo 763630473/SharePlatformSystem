@@ -1,10 +1,10 @@
-﻿using System;
+﻿using SharePlatformSystem.Core.Exceptions;
+using SharePlatformSystem.Core.Modules;
+using SharePlatformSystem.Core.Reflection;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Abp.Collections.Extensions;
-using Abp.Modules;
-using Abp.Reflection;
 
 namespace SharePlatformSystem.Core.PlugIns
 {
@@ -39,7 +39,7 @@ namespace SharePlatformSystem.Core.PlugIns
                 {
                     foreach (var type in assembly.GetTypes())
                     {
-                        if (AbpModule.IsAbpModule(type))
+                        if (SharePlatformModule.IsAbpModule(type))
                         {
                             modules.AddIfNotContains(type);
                         }
@@ -47,7 +47,7 @@ namespace SharePlatformSystem.Core.PlugIns
                 }
                 catch (Exception ex)
                 {
-                    throw new AbpInitializationException("Could not get module types from assembly: " + assembly.FullName, ex);
+                    throw new SharePlatformInitializationException("Could not get module types from assembly: " + assembly.FullName, ex);
                 }
             }
 

@@ -7,7 +7,7 @@ using Shouldly;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using SharePlatformSystem.Log4Net.Logging.Log4Net;
 
 namespace SharePlatformSystem.Test.Log4Net
 {
@@ -17,7 +17,7 @@ namespace SharePlatformSystem.Test.Log4Net
         public void Test()
         {
             //Arrange
-            var logFilePath = Path.Combine(Directory.GetCurrentDirectory(), "AbpCastleLog4NetTests-Logs.txt");
+            var logFilePath = Path.Combine(Directory.GetCurrentDirectory(), "CastleLog4NetTests-Logs.txt");
             FileHelper.DeleteIfExists(logFilePath);
 
             //Act

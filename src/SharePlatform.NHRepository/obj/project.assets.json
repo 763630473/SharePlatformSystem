@@ -686,23 +686,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HR\\.nuget\\packages\\": {},
+    "C:\\Users\\deng\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SharePlatformSystem\\src\\SharePlatform.NHRepository\\SharePlatformSystem.NHRepository.csproj",
+      "projectUniqueName": "G:\\SharePlatformSystem\\src\\SharePlatform.NHRepository\\SharePlatformSystem.NHRepository.csproj",
       "projectName": "SharePlatformSystem.NHRepository",
-      "projectPath": "D:\\SharePlatformSystem\\src\\SharePlatform.NHRepository\\SharePlatformSystem.NHRepository.csproj",
-      "packagesPath": "C:\\Users\\HR\\.nuget\\packages\\",
-      "outputPath": "D:\\SharePlatformSystem\\src\\SharePlatform.NHRepository\\obj\\",
+      "projectPath": "G:\\SharePlatformSystem\\src\\SharePlatform.NHRepository\\SharePlatformSystem.NHRepository.csproj",
+      "packagesPath": "C:\\Users\\deng\\.nuget\\packages\\",
+      "outputPath": "G:\\SharePlatformSystem\\src\\SharePlatform.NHRepository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\HR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\deng\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -710,7 +710,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\nuget\\Packages": {},
+        "D:\\Program Files (x86)\\QQ聊天记录\\763630473\\FileRecv\\MobileFile\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

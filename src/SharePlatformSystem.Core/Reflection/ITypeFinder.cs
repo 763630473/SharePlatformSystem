@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SharePlatformSystem.Core
+namespace SharePlatformSystem.Core.Reflection
 {
     public interface ITypeFinder
     {

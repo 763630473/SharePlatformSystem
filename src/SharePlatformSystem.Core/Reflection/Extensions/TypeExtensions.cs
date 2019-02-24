@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace SharePlatformSystem.Core.Extensions
+namespace SharePlatformSystem.Core.Reflection.Extensions
 {
     public static class TypeExtensions
     {

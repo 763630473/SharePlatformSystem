@@ -1,4 +1,7 @@
-﻿using SharePlatformSystem.Dependency;
+﻿using SharePlatformSystem.BackgroundJobs;
+using SharePlatformSystem.Configuration.Startup;
+using SharePlatformSystem.Dependency;
+using SharePlatformSystem.Domain.Uow;
 using System;
 using System.Collections.Generic;
 
@@ -83,5 +86,18 @@ namespace SharePlatformSystem.Core.Configuration
         {
             return GetOrCreate(typeof(T).FullName, () => IocManager.Resolve<T>());
         }
+        /// <summary>
+        /// Used to configure unit of work defaults.
+        /// </summary>
+        public IUnitOfWorkDefaultOptions UnitOfWork { get; private set; }
+        /// <summary>
+        /// Used to configure modules.
+        /// Modules can write extension methods to <see cref="ModuleConfigurations"/> to add module specific configurations.
+        /// </summary>
+        public IModuleConfigurations Modules { get; private set; }
+        /// <summary>
+        /// Used to configure background job system.
+        /// </summary>
+        public IBackgroundJobConfiguration BackgroundJobs { get; private set; }
     }
 }

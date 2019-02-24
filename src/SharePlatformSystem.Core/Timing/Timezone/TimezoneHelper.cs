@@ -1,5 +1,7 @@
 ﻿using SharePlatformSystem.Core.Extensions;
 using SharePlatformSystem.Core.IO.Extensions;
+using SharePlatformSystem.Core.Reflection.Extensions;
+using SharePlatformSystem.Core.Xml.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;

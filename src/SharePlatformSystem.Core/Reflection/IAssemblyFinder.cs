@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
-namespace SharePlatformSystem.Core
+namespace SharePlatformSystem.Core.Reflection
 {
     /// <summary>
     /// This interface is used to get assemblies in the application.

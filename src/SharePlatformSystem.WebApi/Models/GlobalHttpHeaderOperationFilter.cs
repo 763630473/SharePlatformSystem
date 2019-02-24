@@ -16,7 +16,9 @@ namespace SharePlatformSystem.WebApi.Model
                 operation.Parameters = new List<IParameter>();
             }
 
+#pragma warning disable CS0618 // 类型或成员已过时
             var actionAttrs = context.ApiDescription.ActionAttributes();
+#pragma warning restore CS0618 // 类型或成员已过时
 
             var isAllowAnonymous = actionAttrs.Any(a => a.GetType() == typeof(AllowAnonymousAttribute));
 

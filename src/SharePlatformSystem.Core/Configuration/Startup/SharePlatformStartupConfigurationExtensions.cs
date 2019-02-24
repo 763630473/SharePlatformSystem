@@ -1,7 +1,7 @@
 ﻿using System;
 using SharePlatformSystem.Dependency;
 
-namespace SharePlatformSystem.Core.Configuration
+namespace SharePlatformSystem.Core.Configuration.Startup
 {
     /// <summary>
     /// Extension methods for <see cref="ISharePlatformStartupConfiguration"/>.

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace SharePlatformSystem.Core.Extensions
+namespace SharePlatformSystem.Core.Reflection.Extensions
 {
     /// <summary>
     /// Extensions to <see cref="MemberInfo"/>.

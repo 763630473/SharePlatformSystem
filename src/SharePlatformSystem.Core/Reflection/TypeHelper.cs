@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace SharePlatformSystem.Core
+namespace SharePlatformSystem.Core.Reflection
 {
     /// <summary>
     /// Some simple type-checking methods used internally.

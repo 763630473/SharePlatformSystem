@@ -5,9 +5,9 @@ namespace SharePlatformSystem.Core.Modules
 {
     public interface ISharePlatformModuleManager
     {
-        AbpModuleInfo StartupModule { get; }
+        SharePlatformModuleInfo StartupModule { get; }
 
-        IReadOnlyList<AbpModuleInfo> Modules { get; }
+        IReadOnlyList<SharePlatformModuleInfo> Modules { get; }
 
         void Initialize(Type startupModule);
 

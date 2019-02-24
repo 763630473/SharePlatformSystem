@@ -1,0 +1,2 @@
+INFO  2019-02-24 10:34:23,846 [orker] ePlatformSystem.Test.Log4Net.Log4NetTest - Should_Write_Logs_To_Text_File works!
+INFO  2019-02-24 10:34:37,043 [orker] ePlatformSystem.Test.Log4Net.Log4NetTest - Should_Write_Logs_To_Text_File works!

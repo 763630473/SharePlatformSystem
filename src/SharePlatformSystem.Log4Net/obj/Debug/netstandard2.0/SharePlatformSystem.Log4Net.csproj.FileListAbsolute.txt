@@ -4,3 +4,15 @@ D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\
 D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.csproj.CoreCompileInputs.cache
 D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.AssemblyInfoInputs.cache
 D:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.AssemblyInfo.cs
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\bin\Debug\netstandard2.0\SharePlatformSystem.Log4Net.deps.json
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\bin\Debug\netstandard2.0\SharePlatformSystem.Log4Net.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\bin\Debug\netstandard2.0\SharePlatformSystem.Log4Net.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.csprojAssemblyReference.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.csproj.CoreCompileInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.AssemblyInfoInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.AssemblyInfo.cs
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.csproj.CopyComplete
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Log4Net\obj\Debug\netstandard2.0\SharePlatformSystem.Log4Net.pdb

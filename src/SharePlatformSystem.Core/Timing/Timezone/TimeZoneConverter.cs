@@ -1,6 +1,6 @@
+using SharePlatformSystem.Core.Configuration;
+using SharePlatformSystem.Dependency;
 using System;
-using Abp.Configuration;
-using Abp.Dependency;
 
 namespace SharePlatformSystem.Core.Timing.Timezone
 {
@@ -21,7 +21,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
         }
 
         /// <inheritdoc/>
-        public DateTime? Convert(DateTime? date, int? tenantId, long userId)
+        public DateTime? Convert(DateTime? date, string userId)
         {
             if (!date.HasValue)
             {
@@ -33,7 +33,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
                 return date;
             }
 
-            var usersTimezone = _settingManager.GetSettingValueForUser(TimingSettingNames.TimeZone, tenantId, userId);
+            var usersTimezone = _settingManager.GetSettingValueForUser(TimingSettingNames.TimeZone ,userId);
             if(string.IsNullOrEmpty(usersTimezone))
             {
                 return date;
@@ -41,28 +41,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
             
             return TimezoneHelper.ConvertFromUtc(date.Value.ToUniversalTime(), usersTimezone);
         }
-
-        /// <inheritdoc/>
-        public DateTime? Convert(DateTime? date, int tenantId)
-        {
-            if (!date.HasValue)
-            {
-                return null;
-            }
-
-            if (!Clock.SupportsMultipleTimezone)
-            {
-                return date;
-            }
-
-            var tenantsTimezone = _settingManager.GetSettingValueForTenant(TimingSettingNames.TimeZone, tenantId);
-            if (string.IsNullOrEmpty(tenantsTimezone))
-            {
-                return date;
-            }
-
-            return TimezoneHelper.ConvertFromUtc(date.Value.ToUniversalTime(), tenantsTimezone);
-        }
+       
         
         /// <inheritdoc/>
         public DateTime? Convert(DateTime? date)

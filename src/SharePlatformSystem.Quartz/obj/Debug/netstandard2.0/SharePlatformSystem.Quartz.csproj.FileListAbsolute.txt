@@ -1,0 +1,12 @@
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\bin\Debug\netstandard2.0\SharePlatformSystem.Quartz.deps.json
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\bin\Debug\netstandard2.0\SharePlatformSystem.Quartz.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\bin\Debug\netstandard2.0\SharePlatformSystem.Quartz.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\obj\Debug\netstandard2.0\SharePlatformSystem.Quartz.csprojAssemblyReference.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\obj\Debug\netstandard2.0\SharePlatformSystem.Quartz.csproj.CoreCompileInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\obj\Debug\netstandard2.0\SharePlatformSystem.Quartz.AssemblyInfoInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\obj\Debug\netstandard2.0\SharePlatformSystem.Quartz.AssemblyInfo.cs
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\obj\Debug\netstandard2.0\SharePlatformSystem.Quartz.csproj.CopyComplete
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\obj\Debug\netstandard2.0\SharePlatformSystem.Quartz.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Quartz\obj\Debug\netstandard2.0\SharePlatformSystem.Quartz.pdb

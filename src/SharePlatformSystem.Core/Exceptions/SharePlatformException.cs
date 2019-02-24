@@ -12,7 +12,7 @@ namespace SharePlatformSystem.Core.Exceptions
     public class SharePlatformException : Exception
     {
         /// <summary>
-        /// Creates a new <see cref="AbpException"/> object.
+        /// Creates a new <see cref="SharePlatformException"/> object.
         /// </summary>
         public SharePlatformException()
         {
@@ -20,7 +20,7 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Creates a new <see cref="AbpException"/> object.
+        /// Creates a new <see cref="SharePlatformException"/> object.
         /// </summary>
         public SharePlatformException(SerializationInfo serializationInfo, StreamingContext context)
             : base(serializationInfo, context)
@@ -29,7 +29,7 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Creates a new <see cref="AbpException"/> object.
+        /// Creates a new <see cref="SharePlatformException"/> object.
         /// </summary>
         /// <param name="message">Exception message</param>
         public SharePlatformException(string message)
@@ -39,7 +39,7 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Creates a new <see cref="AbpException"/> object.
+        /// Creates a new <see cref="SharePlatformException"/> object.
         /// </summary>
         /// <param name="message">Exception message</param>
         /// <param name="innerException">Inner exception</param>

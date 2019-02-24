@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using Castle.Core.Logging;
 using SharePlatformSystem.Core.Configuration;

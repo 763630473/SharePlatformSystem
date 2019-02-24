@@ -1,0 +1,12 @@
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\bin\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.deps.json
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\bin\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\bin\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\obj\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.csprojAssemblyReference.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\obj\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.csproj.CoreCompileInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\obj\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.AssemblyInfoInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\obj\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.AssemblyInfo.cs
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\obj\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.csproj.CopyComplete
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\obj\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Web.SignalR\obj\Debug\netstandard2.0\SharePlatformSystem.Web.SignalR.pdb

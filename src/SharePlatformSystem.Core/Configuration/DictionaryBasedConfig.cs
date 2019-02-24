@@ -1,4 +1,4 @@
-﻿using SharePlatformSystem.Core.Configuration.Extensions;
+﻿using SharePlatformSystem.Core.Collections.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;

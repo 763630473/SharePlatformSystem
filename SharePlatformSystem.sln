@@ -21,17 +21,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.WebApi", "src\SharePlatformSystem.WebApi\SharePlatformSystem.WebApi.csproj", "{166D6C31-3FEF-4E35-9D69-449881A17097}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.NHRepository", "src\SharePlatform.NHRepository\SharePlatformSystem.NHRepository.csproj", "{53E54054-A520-478B-AD9C-56FE7D6C7A14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.NHRepository", "src\SharePlatform.NHRepository\SharePlatformSystem.NHRepository.csproj", "{53E54054-A520-478B-AD9C-56FE7D6C7A14}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "005-SharePlatformTest", "005-SharePlatformTest", "{1F220316-67C5-4D78-83E7-557F6C72D19A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "006-SharePlatformTest", "006-SharePlatformTest", "{1F220316-67C5-4D78-83E7-557F6C72D19A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.Test", "src\SharePlatformSystem.Test\SharePlatformSystem.Test.csproj", "{7F3D6098-665F-42C4-B502-8EBC878BA238}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Test", "src\SharePlatformSystem.Test\SharePlatformSystem.Test.csproj", "{7F3D6098-665F-42C4-B502-8EBC878BA238}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.Log4Net", "src\SharePlatformSystem.Log4Net\SharePlatformSystem.Log4Net.csproj", "{2AFC1B7B-E56A-4C46-88CF-CCB4E4EABFB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Log4Net", "src\SharePlatformSystem.Log4Net\SharePlatformSystem.Log4Net.csproj", "{2AFC1B7B-E56A-4C46-88CF-CCB4E4EABFB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.Core", "src\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj", "{9AC49D0A-F4B8-496B-B0BE-EFEB2D71EF2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Core", "src\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj", "{9AC49D0A-F4B8-496B-B0BE-EFEB2D71EF2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.NHibernate", "src\SharePlatformSystem.NHibernate\SharePlatformSystem.NHibernate.csproj", "{F77A5637-AD9C-4EF2-9F1D-D0AFAD8A34EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.NHibernate", "src\SharePlatformSystem.NHibernate\SharePlatformSystem.NHibernate.csproj", "{F77A5637-AD9C-4EF2-9F1D-D0AFAD8A34EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Dapper", "src\SharePlatformSystem.Dapper\SharePlatformSystem.Dapper.csproj", "{8991EFEB-3026-419D-9BB4-A28A210CC8A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "005-SharePlatformTaskSchedule", "005-SharePlatformTaskSchedule", "{F825B0F2-96AA-42AC-8CD1-25DB0F72E9CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "007-SharePlatformDoc", "007-SharePlatformDoc", "{5730FFB1-C28D-48E7-A72D-47F0CB1A12D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.HangFire", "src\SharePlatformSystem.HangFire\SharePlatformSystem.HangFire.csproj", "{2B9B13D5-A092-4D13-86C9-D3C2D9155023}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Quartz", "src\SharePlatformSystem.Quartz\SharePlatformSystem.Quartz.csproj", "{722DDFBD-9E1D-44AF-B960-406DC7626529}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Web.SignalR", "src\SharePlatformSystem.Web.SignalR\SharePlatformSystem.Web.SignalR.csproj", "{77334BB1-9737-479D-B2F4-FC188657877C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.AutoMapper", "src\SharePlatformSystem.AutoMapper\SharePlatformSystem.AutoMapper.csproj", "{1AB51A99-6B29-40B1-B421-FD998BF66117}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.TestBase", "src\SharePlatformSystem.TestBase\SharePlatformSystem.TestBase.csproj", "{C3A5A422-4ED7-4396-A0B0-D9633DEB6F1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +95,30 @@ Global
 		{F77A5637-AD9C-4EF2-9F1D-D0AFAD8A34EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F77A5637-AD9C-4EF2-9F1D-D0AFAD8A34EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F77A5637-AD9C-4EF2-9F1D-D0AFAD8A34EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8991EFEB-3026-419D-9BB4-A28A210CC8A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8991EFEB-3026-419D-9BB4-A28A210CC8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8991EFEB-3026-419D-9BB4-A28A210CC8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8991EFEB-3026-419D-9BB4-A28A210CC8A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9B13D5-A092-4D13-86C9-D3C2D9155023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9B13D5-A092-4D13-86C9-D3C2D9155023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9B13D5-A092-4D13-86C9-D3C2D9155023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9B13D5-A092-4D13-86C9-D3C2D9155023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{722DDFBD-9E1D-44AF-B960-406DC7626529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{722DDFBD-9E1D-44AF-B960-406DC7626529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{722DDFBD-9E1D-44AF-B960-406DC7626529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{722DDFBD-9E1D-44AF-B960-406DC7626529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77334BB1-9737-479D-B2F4-FC188657877C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77334BB1-9737-479D-B2F4-FC188657877C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77334BB1-9737-479D-B2F4-FC188657877C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77334BB1-9737-479D-B2F4-FC188657877C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB51A99-6B29-40B1-B421-FD998BF66117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB51A99-6B29-40B1-B421-FD998BF66117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB51A99-6B29-40B1-B421-FD998BF66117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB51A99-6B29-40B1-B421-FD998BF66117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A5A422-4ED7-4396-A0B0-D9633DEB6F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A5A422-4ED7-4396-A0B0-D9633DEB6F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A5A422-4ED7-4396-A0B0-D9633DEB6F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A5A422-4ED7-4396-A0B0-D9633DEB6F1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +134,12 @@ Global
 		{2AFC1B7B-E56A-4C46-88CF-CCB4E4EABFB0} = {CBB31DE9-685D-4C43-8F86-80CD12067D25}
 		{9AC49D0A-F4B8-496B-B0BE-EFEB2D71EF2A} = {CBB31DE9-685D-4C43-8F86-80CD12067D25}
 		{F77A5637-AD9C-4EF2-9F1D-D0AFAD8A34EA} = {CBB31DE9-685D-4C43-8F86-80CD12067D25}
+		{8991EFEB-3026-419D-9BB4-A28A210CC8A9} = {CBB31DE9-685D-4C43-8F86-80CD12067D25}
+		{2B9B13D5-A092-4D13-86C9-D3C2D9155023} = {F825B0F2-96AA-42AC-8CD1-25DB0F72E9CD}
+		{722DDFBD-9E1D-44AF-B960-406DC7626529} = {F825B0F2-96AA-42AC-8CD1-25DB0F72E9CD}
+		{77334BB1-9737-479D-B2F4-FC188657877C} = {CBB31DE9-685D-4C43-8F86-80CD12067D25}
+		{1AB51A99-6B29-40B1-B421-FD998BF66117} = {CBB31DE9-685D-4C43-8F86-80CD12067D25}
+		{C3A5A422-4ED7-4396-A0B0-D9633DEB6F1C} = {1F220316-67C5-4D78-83E7-557F6C72D19A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10A18593-7E83-4122-A805-AA8A73D5F3E1}

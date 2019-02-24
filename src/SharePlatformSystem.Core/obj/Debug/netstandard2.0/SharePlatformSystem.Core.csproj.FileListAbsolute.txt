@@ -4,3 +4,12 @@ D:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\Sha
 D:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.AssemblyInfoInputs.cache
 D:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.AssemblyInfo.cs
 D:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.csprojAssemblyReference.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\bin\Debug\netstandard2.0\SharePlatformSystem.Core.deps.json
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.csprojAssemblyReference.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.csproj.CoreCompileInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.AssemblyInfoInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.AssemblyInfo.cs
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.Core\obj\Debug\netstandard2.0\SharePlatformSystem.Core.pdb

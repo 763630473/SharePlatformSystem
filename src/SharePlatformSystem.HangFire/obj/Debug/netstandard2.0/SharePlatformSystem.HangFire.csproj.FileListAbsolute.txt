@@ -1,0 +1,12 @@
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\bin\Debug\netstandard2.0\SharePlatformSystem.HangFire.deps.json
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\bin\Debug\netstandard2.0\SharePlatformSystem.HangFire.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\bin\Debug\netstandard2.0\SharePlatformSystem.HangFire.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\obj\Debug\netstandard2.0\SharePlatformSystem.HangFire.csprojAssemblyReference.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\obj\Debug\netstandard2.0\SharePlatformSystem.HangFire.csproj.CoreCompileInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\obj\Debug\netstandard2.0\SharePlatformSystem.HangFire.AssemblyInfoInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\obj\Debug\netstandard2.0\SharePlatformSystem.HangFire.AssemblyInfo.cs
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\obj\Debug\netstandard2.0\SharePlatformSystem.HangFire.csproj.CopyComplete
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\obj\Debug\netstandard2.0\SharePlatformSystem.HangFire.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.HangFire\obj\Debug\netstandard2.0\SharePlatformSystem.HangFire.pdb

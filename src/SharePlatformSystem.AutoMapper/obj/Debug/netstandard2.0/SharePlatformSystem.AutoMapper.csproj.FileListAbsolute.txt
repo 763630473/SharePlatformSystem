@@ -1,0 +1,12 @@
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\bin\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.deps.json
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\bin\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\bin\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\obj\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.csprojAssemblyReference.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\obj\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.csproj.CoreCompileInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\obj\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.AssemblyInfoInputs.cache
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\obj\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.AssemblyInfo.cs
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\obj\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.csproj.CopyComplete
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\obj\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.dll
+G:\SharePlatformSystem\src\SharePlatformSystem.AutoMapper\obj\Debug\netstandard2.0\SharePlatformSystem.AutoMapper.pdb

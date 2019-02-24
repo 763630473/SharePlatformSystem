@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 
-namespace SharePlatformSystem.Core.Extensions
+namespace SharePlatformSystem.Core.Reflection.Extensions
 {
     public static class AssemblyExtensions
     {

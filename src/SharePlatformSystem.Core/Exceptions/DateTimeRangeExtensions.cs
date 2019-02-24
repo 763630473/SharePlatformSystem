@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Abp.Timing;
+using SharePlatformSystem.Core.Timing;
 
 namespace SharePlatformSystem.Core.Exceptions
 {

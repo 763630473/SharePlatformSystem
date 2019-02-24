@@ -23,7 +23,7 @@ namespace SharePlatformSystem.Core.Modules
         /// <summary>
         /// Instance of the module.
         /// </summary>
-        public AbpModule Instance { get; }
+        public SharePlatformModule Instance { get; }
 
         /// <summary>
         /// Is this module loaded as a plugin.
