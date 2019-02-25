@@ -1,4 +1,5 @@
 ﻿using SharePlatformSystem.Core.Configuration;
+using SharePlatformSystem.Core.Localization;
 using System.Collections.Generic;
 
 namespace SharePlatformSystem.Core.Timing

@@ -118,7 +118,7 @@ namespace SharePlatformSystem.Core
                 new DictionaryBasedLocalizationSource(
                     SharePlatformConsts.LocalizationSourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
-                        typeof(SharePlatformKernelModule).GetAssembly(), "SharePlatform.Localization.Sources.AbpXmlSource"
+                        typeof(SharePlatformKernelModule).GetAssembly(), "SharePlatform.Localization.Sources.XmlSource"
                     )));
         }
 

@@ -26,7 +26,7 @@ namespace SharePlatformSystem.Tests.Modules
             var assemblies = bootstrapper.IocManager.Resolve<SharePlatformAssemblyFinder>().GetAllAssemblies();
 
             //Assert
-            assemblies.Count.ShouldBe(3);
+            assemblies.Count.ShouldBe(2);
 
           
             assemblies.Any(a => a == typeof(SharePlatformKernelModule).GetAssembly()).ShouldBeTrue();

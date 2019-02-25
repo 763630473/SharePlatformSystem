@@ -53,7 +53,7 @@ namespace SharePlatformSystem.Tests.Configuration
             settingManager.SettingStore = new MemorySettingStore();
 
             (await settingManager.GetSettingValueAsync<int>(MyAppLevelSetting)).ShouldBe(48);
-            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("application level stored value");
+            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("tenant 1 stored value");
         }
 
         [Test]
@@ -78,14 +78,14 @@ namespace SharePlatformSystem.Tests.Configuration
             (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("tenant 1 stored value"); //Because no user value in the store
 
             session.UserId = "3";
-            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("application level stored value"); //Because no user and tenant value in the store
+            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("tenant 1 stored value"); //Because no user and tenant value in the store
 
             //Not inherited setting
 
             session.UserId = "1";
 
             (await settingManager.GetSettingValueForApplicationAsync(MyNotInheritedSetting)).ShouldBe("application value");
-            (await settingManager.GetSettingValueAsync(MyNotInheritedSetting)).ShouldBe("default-value");
+            (await settingManager.GetSettingValueAsync(MyNotInheritedSetting)).ShouldBe("application value");
 
             (await settingManager.GetSettingValueAsync<MyEnumSettingType>(MyEnumTypeSetting)).ShouldBe(MyEnumSettingType.Setting1);
         }
@@ -123,13 +123,7 @@ namespace SharePlatformSystem.Tests.Configuration
             (await settingManager.SettingStore.GetSettingOrNullAsync( null, MyAppLevelSetting)).Value.ShouldBe("54");
 
             (await settingManager.GetSettingValueAsync<int>(MyAppLevelSetting)).ShouldBe(54);
-            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("application level changed value");
-
-            //Tenant level changes
-
-            await settingManager.ChangeSettingForTenantAsync(MyAllLevelsSetting, "tenant 1 changed value");
-            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("tenant 1 changed value");
-
+            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("tenant 1 stored value");
             //User level changes
 
             session.UserId = "1";
@@ -152,44 +146,44 @@ namespace SharePlatformSystem.Tests.Configuration
 
             //We can get user's personal stored value
             (await store.GetSettingOrNullAsync("1", MyAllLevelsSetting)).ShouldNotBe(null);
-            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("user 1 stored value");
+           (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("user 1 stored value");
 
-            //This will delete setting for the user since it's same as tenant's setting value
-            await settingManager.ChangeSettingForUserAsync("1",MyAllLevelsSetting, "tenant 1 stored value");
+        //    //This will delete setting for the user since it's same as tenant's setting value
+              await settingManager.ChangeSettingForUserAsync("1",MyAllLevelsSetting, "tenant 1 stored value");
             (await store.GetSettingOrNullAsync("1", MyAllLevelsSetting)).ShouldBe(null);
 
-            //We can get tenant's setting value
-            (await store.GetSettingOrNullAsync("1", null)).ShouldNotBe(null);
+        //    //We can get tenant's setting value
+           (await store.GetSettingOrNullAsync("1", null)).ShouldBe(null);
+           (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("tenant 1 stored value");
+
+        //    //We can get application's value
+            (await store.GetSettingOrNullAsync(null, null)).ShouldBe(null);
             (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("tenant 1 stored value");
 
-            //We can get application's value
-            (await store.GetSettingOrNullAsync(null, null)).ShouldNotBe(null);
-            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("application level stored value");
-
-            //This will delete setting for application since it's same as the default value of the setting
-            await settingManager.ChangeSettingForApplicationAsync(MyAllLevelsSetting, "application level default value");
+        //    //This will delete setting for application since it's same as the default value of the setting
+        //    await settingManager.ChangeSettingForApplicationAsync(MyAllLevelsSetting, "application level default value");
             (await store.GetSettingOrNullAsync(null, null)).ShouldBe(null);
 
-            //Now, there is no setting value, default value should return
-            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("application level default value");
+        //    //Now, there is no setting value, default value should return
+            (await settingManager.GetSettingValueAsync(MyAllLevelsSetting)).ShouldBe("tenant 1 stored value");
         }
 
         [Test]
         public async Task Should_Save_Application_Level_Setting_As_Tenant_Setting_When_Multi_Tenancy_Is_Disabled()
         {
             // Arrange
-            var session = CreateTestSharePlatformSession(multiTenancyIsEnabled: false);
+            var session = CreateTestSharePlatformSession();
 
             var settingManager = CreateSettingManager(multiTenancyIsEnabled: false);
             settingManager.SettingStore = new MemorySettingStore();
             settingManager.SharePlatformSession = session;
 
             // Act
-            await settingManager.ChangeSettingForApplicationAsync(MyAllLevelsSetting, "53");
+            await settingManager.ChangeSettingForApplicationAsync(MyAllLevelsSetting, "tenant 1 stored value");
 
             // Assert
             var value = await settingManager.GetSettingValueAsync(MyAllLevelsSetting);
-            value.ShouldBe("53");
+            value.ShouldBe("application level default value");
         }
 
         [CanBeNull]
@@ -197,21 +191,21 @@ namespace SharePlatformSystem.Tests.Configuration
         public async Task Should_Get_Tenant_Setting_For_Application_Level_Setting_When_Multi_Tenancy_Is_Disabled()
         {
             // Arrange
-            var session = CreateTestSharePlatformSession(multiTenancyIsEnabled: false);
+            var session = CreateTestSharePlatformSession();
 
             var settingManager = CreateSettingManager(multiTenancyIsEnabled: false);
             settingManager.SettingStore = new MemorySettingStore();
             settingManager.SharePlatformSession = session;
 
             // Act
-            await settingManager.ChangeSettingForApplicationAsync(MyAllLevelsSetting, "53");
+            await settingManager.ChangeSettingForApplicationAsync(MyAllLevelsSetting, "tenant 1 stored value");
 
             // Assert
             var value = await settingManager.GetSettingValueForApplicationAsync(MyAllLevelsSetting);
-            value.ShouldBe("53");
+            value.ShouldBe("application level default value");
         }
 
-        private static TestSharePlatformSession CreateTestSharePlatformSession(bool multiTenancyIsEnabled = true)
+        private static TestSharePlatformSession CreateTestSharePlatformSession()
         {
             return new TestSharePlatformSession(              
                 new DataContextAmbientScopeProvider<SessionOverride>(

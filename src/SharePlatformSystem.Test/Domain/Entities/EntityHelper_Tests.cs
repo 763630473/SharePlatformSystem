@@ -10,8 +10,8 @@ namespace SharePlatformSystem.Tests.Domain.Entities
         [Test]
         public void GetPrimaryKeyType_Tests()
         {
-            EntityHelper.GetPrimaryKeyType<Manager>().ShouldBe(typeof(int));
-            EntityHelper.GetPrimaryKeyType(typeof(Manager)).ShouldBe(typeof(int));
+            EntityHelper.GetPrimaryKeyType<Manager>().ShouldBe(typeof(string));
+            EntityHelper.GetPrimaryKeyType(typeof(Manager)).ShouldBe(typeof(string));
             EntityHelper.GetPrimaryKeyType(typeof(TestEntityWithGuidPk)).ShouldBe(typeof(Guid));
         }
 

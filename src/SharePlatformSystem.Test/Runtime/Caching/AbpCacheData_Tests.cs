@@ -7,7 +7,7 @@ using SharePlatformSystem.Runtime.Caching;
 
 namespace SharePlatformSystem.Tests.Runtime.Caching
 {
-    public class AbpCacheData_Tests
+    public class SharePlatformCacheData_Tests
     {
         [Test]
         public void Serialize_List_Test()
@@ -34,7 +34,7 @@ namespace SharePlatformSystem.Tests.Runtime.Caching
             };
 
             var result = SharePlatformCacheData.Serialize(source);
-            result.Type.ShouldBe("Abp.Tests.Runtime.Caching.AbpCacheData_Tests+MyTestClass, Abp.Tests");
+            result.Type.ShouldBe("SharePlatformSystem.Tests.Runtime.Caching.SharePlatformCacheData_Tests+MyTestClass, SharePlatformSystem.Test");
             result.Payload.ShouldBe("{\"Field1\":42,\"Field2\":\"Stranger Things\"}");
         }
 
@@ -50,7 +50,7 @@ namespace SharePlatformSystem.Tests.Runtime.Caching
         [Test]
         public void Deserialize_Class_Test()
         {
-            var json = "{\"Payload\": \"{\\\"Field1\\\": 42,\\\"Field2\\\":\\\"Stranger Things\\\"}\",\"Type\":\"Abp.Tests.Runtime.Caching.AbpCacheData_Tests+MyTestClass, Abp.Tests\"}";
+            var json = "{\"Payload\": \"{\\\"Field1\\\": 42,\\\"Field2\\\":\\\"Stranger Things\\\"}\",\"Type\":\" SharePlatformSystem.Tests.Runtime.Caching.AbpCacheData_Tests+MyTestClass, Abp.Tests\"}";
 
             var cacheData = SharePlatformCacheData.Deserialize(json);
 

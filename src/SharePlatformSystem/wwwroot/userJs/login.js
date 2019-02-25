@@ -98,7 +98,7 @@ layui.config({
 
     //登录按钮事件
     form.on("submit(login)", function (data) {
-        $.getJSON("/Login/Login"
+        $.getJSON("/Login/Login?r="+Math.random()
             , data.field
             ,function(data) {
                 if (data.Code == 200) {
