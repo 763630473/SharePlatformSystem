@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Transactions;
 namespace SharePlatformSystem.Domain.Uow
 {
-    internal class UnitOfWorkDefaultOptions : IUnitOfWorkDefaultOptions
+    public class UnitOfWorkDefaultOptions : IUnitOfWorkDefaultOptions
     {
         public TransactionScopeOption Scope { get; set; }
 

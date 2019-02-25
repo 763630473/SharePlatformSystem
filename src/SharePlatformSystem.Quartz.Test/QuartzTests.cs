@@ -9,7 +9,7 @@ using SharePlatformSystem.Quartz.Configuration;
 using SharePlatformSystem.TestBase;
 using Shouldly;
 
-namespace SharePlatformSystem.AutoMapper.Tests
+namespace SharePlatformSystem.Quartz.Tests
 {
     public class QuartzTests : SharePlatformIntegratedTestBase<SharePlatformQuartzTestModule>
     {
@@ -56,7 +56,6 @@ namespace SharePlatformSystem.AutoMapper.Tests
         [Test]
         public async Task QuartzScheduler_Jobs_ShouldBe_Registered_And_Executed_With_SingletonDependency()
         {
-            // There should be only one test case in this project, or the unit test may fail in AppVeyor
             await ScheduleJobs();
 
             var helloDependency = LocalIocManager.Resolve<IHelloDependency>();
@@ -67,7 +66,6 @@ namespace SharePlatformSystem.AutoMapper.Tests
             (await _sharePlatformQuartzConfiguration.Scheduler.CheckExists(JobKey.Create("HelloJobKey"))).ShouldBe(true);
             (await _sharePlatformQuartzConfiguration.Scheduler.CheckExists(JobKey.Create("GoodByeJobKey"))).ShouldBe(true);
 
-            //Wait for execution!
             await Task.Delay(TimeSpan.FromSeconds(5));
 
             helloDependency.ExecutionCount.ShouldBeGreaterThan(0);

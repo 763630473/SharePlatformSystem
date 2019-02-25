@@ -14,8 +14,9 @@ namespace SharePlatformSystem.Quartz
         public override void PreInitialize()
         {
             IocManager.Register<ISharePlatformQuartzConfiguration, SharePlatformQuartzConfiguration>();
-
-            Configuration.Modules.SharePlatformQuartz().Scheduler.JobFactory = new SharePlatformQuartzJobFactory(IocManager);
+            var c = Configuration.Modules.SharePlatformQuartz();
+            var s = c.Scheduler;
+                s.JobFactory = new SharePlatformQuartzJobFactory(IocManager);
         }
 
         public override void Initialize()

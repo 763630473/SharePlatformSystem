@@ -7,18 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NSubstitute" Version="4.0.0" />
     <PackageReference Include="nunit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-    <PackageReference Include="Shouldly" Version="3.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SharePlatformSystem.AutoMapper\SharePlatformSystem.AutoMapper.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Infrastructure\SharePlatformSystem.Infrastructure.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Log4Net\SharePlatformSystem.Log4Net.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.NHibernate\SharePlatformSystem.NHibernate.csproj" />
-    <ProjectReference Include="..\SharePlatformSystem.Quartz\SharePlatformSystem.Quartz.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.TestBase\SharePlatformSystem.TestBase.csproj" />
   </ItemGroup>
 

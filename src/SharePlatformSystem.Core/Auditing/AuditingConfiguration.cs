@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SharePlatformSystem.Auditing
 {
-    internal class AuditingConfiguration : IAuditingConfiguration
+    public class AuditingConfiguration : IAuditingConfiguration
     {
         public bool IsEnabled { get; set; }
 

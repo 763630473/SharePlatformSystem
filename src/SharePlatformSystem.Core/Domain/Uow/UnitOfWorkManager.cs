@@ -7,7 +7,7 @@ namespace SharePlatformSystem.Domain.Uow
     /// <summary>
     /// Unit of work manager.
     /// </summary>
-    internal class UnitOfWorkManager : IUnitOfWorkManager, ITransientDependency
+    public class UnitOfWorkManager : IUnitOfWorkManager, ITransientDependency
     {
         private readonly IIocResolver _iocResolver;
         private readonly ICurrentUnitOfWorkProvider _currentUnitOfWorkProvider;

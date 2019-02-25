@@ -48,6 +48,19 @@ namespace SharePlatformSystem.Core.Configuration
         public string DefaultValue { get; set; }
 
         /// <summary>
+        /// Can clients see this setting and it's value.
+        /// It maybe dangerous for some settings to be visible to clients (such as email server password).
+        /// Default: false.
+        /// </summary>
+        [Obsolete("Use ClientVisibilityProvider instead.")]
+        public bool IsVisibleToClients { get; set; }
+
+        /// <summary>
+        /// Client visibility definition for the setting.
+        /// </summary>
+        public ISettingClientVisibilityProvider ClientVisibilityProvider { get; set; }
+
+        /// <summary>
         /// Can be used to store a custom object related to this setting.
         /// </summary>
         public object CustomData { get; set; }
@@ -74,7 +87,8 @@ namespace SharePlatformSystem.Core.Configuration
             SettingScopes scopes = SettingScopes.Application,
             bool isVisibleToClients = false,
             bool isInherited = true,
-            object customData = null)
+            object customData = null,
+            ISettingClientVisibilityProvider clientVisibilityProvider = null)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -87,12 +101,20 @@ namespace SharePlatformSystem.Core.Configuration
             Group = @group;
             Description = description;
             Scopes = scopes;
+            IsVisibleToClients = isVisibleToClients;
             IsInherited = isInherited;
             CustomData = customData;
 
-        
+            ClientVisibilityProvider = new HiddenSettingClientVisibilityProvider();
 
-      
+            if (isVisibleToClients)
+            {
+                ClientVisibilityProvider = new VisibleSettingClientVisibilityProvider();
+            }
+            else if (clientVisibilityProvider != null)
+            {
+                ClientVisibilityProvider = clientVisibilityProvider;
+            }
         }
     }
 }

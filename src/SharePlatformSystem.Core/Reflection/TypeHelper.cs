@@ -6,7 +6,7 @@ namespace SharePlatformSystem.Core.Reflection
     /// <summary>
     /// Some simple type-checking methods used internally.
     /// </summary>
-    internal static class TypeHelper
+    public static class TypeHelper
     {
         public static bool IsFunc(object obj)
         {

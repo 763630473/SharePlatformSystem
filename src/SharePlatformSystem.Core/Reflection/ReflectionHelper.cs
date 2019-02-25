@@ -165,7 +165,7 @@ namespace SharePlatformSystem.Core.Reflection
         /// <param name="objectType">Type of given object</param>
         /// <param name="propertyPath">Full path of property</param>
         /// <returns></returns>
-        internal static object GetPropertyByPath(object obj, Type objectType, string propertyPath)
+        public static object GetPropertyByPath(object obj, Type objectType, string propertyPath)
         {
             var property = obj;
             var currentType = objectType;
@@ -192,7 +192,7 @@ namespace SharePlatformSystem.Core.Reflection
         /// <param name="objectType">Type of given object</param>
         /// <param name="propertyPath">Full path of property</param>
         /// <returns></returns>
-        internal static object GetValueByPath(object obj, Type objectType, string propertyPath)
+        public static object GetValueByPath(object obj, Type objectType, string propertyPath)
         {
             var value = obj;
             var currentType = objectType;

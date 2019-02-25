@@ -1,7 +1,10 @@
-﻿using SharePlatformSystem.BackgroundJobs;
+﻿using SharePlatformSystem.Auditing;
+using SharePlatformSystem.BackgroundJobs;
 using SharePlatformSystem.Configuration.Startup;
 using SharePlatformSystem.Dependency;
 using SharePlatformSystem.Domain.Uow;
+using SharePlatformSystem.EntityHistory;
+using SharePlatformSystem.Runtime.Caching.Configuration;
 using System;
 using System.Collections.Generic;
 
@@ -56,24 +59,17 @@ namespace SharePlatformSystem.Core.Configuration
 
         public void Initialize()
         {
-            //Localization = IocManager.Resolve<ILocalizationConfiguration>();
-            //Modules = IocManager.Resolve<IModuleConfigurations>();
-            //Features = IocManager.Resolve<IFeatureConfiguration>();
-            //Navigation = IocManager.Resolve<INavigationConfiguration>();
-            //Authorization = IocManager.Resolve<IAuthorizationConfiguration>();
-            //Validation = IocManager.Resolve<IValidationConfiguration>();
-            //Settings = IocManager.Resolve<ISettingsConfiguration>();
-            //UnitOfWork = IocManager.Resolve<IUnitOfWorkDefaultOptions>();
-            //EventBus = IocManager.Resolve<IEventBusConfiguration>();
-            //MultiTenancy = IocManager.Resolve<IMultiTenancyConfig>();
-            //Auditing = IocManager.Resolve<IAuditingConfiguration>();
-            //Caching = IocManager.Resolve<ICachingConfiguration>();
-            //BackgroundJobs = IocManager.Resolve<IBackgroundJobConfiguration>();
-            //Notifications = IocManager.Resolve<INotificationConfiguration>();
-            //EmbeddedResources = IocManager.Resolve<IEmbeddedResourcesConfiguration>();
-            //EntityHistory = IocManager.Resolve<IEntityHistoryConfiguration>();
+            Localization = IocManager.Resolve<ILocalizationConfiguration>();
+            Modules = IocManager.Resolve<IModuleConfigurations>();
+            Settings = IocManager.Resolve<ISettingsConfiguration>();
+            UnitOfWork = IocManager.Resolve<IUnitOfWorkDefaultOptions>();
+            EventBus = IocManager.Resolve<IEventBusConfiguration>();
+            Auditing = IocManager.Resolve<IAuditingConfiguration>();
+            Caching = IocManager.Resolve<ICachingConfiguration>();
+            BackgroundJobs = IocManager.Resolve<IBackgroundJobConfiguration>();
+            EntityHistory = IocManager.Resolve<IEntityHistoryConfiguration>();
 
-            //CustomConfigProviders = new List<ICustomConfigProvider>();
+            CustomConfigProviders = new List<ICustomConfigProvider>();
             ServiceReplaceActions = new Dictionary<Type, Action>();
         }
 
@@ -103,5 +99,21 @@ namespace SharePlatformSystem.Core.Configuration
         /// Used to configure <see cref="IEventBus"/>.
         /// </summary>
         public IEventBusConfiguration EventBus { get; private set; }
+        /// <summary>
+        /// Used to configure settings.
+        /// </summary>
+        public ISettingsConfiguration Settings { get; private set; }
+        /// <summary>
+        /// Used to configure auditing.
+        /// </summary>
+        public IAuditingConfiguration Auditing { get; private set; }
+
+        public ICachingConfiguration Caching { get; private set; }
+        public IEntityHistoryConfiguration EntityHistory { get; private set; }
+
+        /// <summary>
+        /// Used to set localization configuration.
+        /// </summary>
+        public ILocalizationConfiguration Localization { get; private set; }
     }
 }

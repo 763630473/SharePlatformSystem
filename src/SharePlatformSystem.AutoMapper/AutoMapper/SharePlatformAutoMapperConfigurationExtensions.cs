@@ -12,7 +12,7 @@ namespace SharePlatformSystem.AutoMapper
         /// </summary>
         public static ISharePlatformAutoMapperConfiguration  SharePlatformAutoMapper(this IModuleConfigurations configurations)
         {
-            return configurations.SharePlatformConfiguration.Get< ISharePlatformAutoMapperConfiguration > ();
+            return configurations.SharePlatformConfiguration.Get<ISharePlatformAutoMapperConfiguration> ();
         }
     }
 }

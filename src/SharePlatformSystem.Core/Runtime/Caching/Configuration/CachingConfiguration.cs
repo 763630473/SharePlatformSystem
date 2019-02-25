@@ -6,7 +6,7 @@ using SharePlatformSystem.Core.Configuration;
 
 namespace SharePlatformSystem.Runtime.Caching.Configuration
 {
-    internal class CachingConfiguration : ICachingConfiguration
+    public class CachingConfiguration : ICachingConfiguration
     {
         public ISharePlatformStartupConfiguration SharePlatformConfiguration { get; private set; }
 

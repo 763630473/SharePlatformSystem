@@ -2,7 +2,7 @@
 using SharePlatformSystem.Quartz;
 using System.Reflection;
 
-namespace SharePlatformSystem.AutoMapper.Tests
+namespace SharePlatformSystem.Quartz.Tests
 {
     [DependsOn(typeof(SharePlatformQuartzModule))]
     public class SharePlatformQuartzTestModule : SharePlatformModule
