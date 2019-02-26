@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using SharePlatformSystem.Application.Services.Dto;
+using SharePlatformSystem.Applications.Services.Dto;
 
 namespace SharePlatformSystem.Linq.Extensions
 {

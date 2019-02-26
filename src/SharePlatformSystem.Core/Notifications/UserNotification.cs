@@ -1,4 +1,4 @@
-﻿using SharePlatformSystem.Application.Services.Dto;
+﻿using SharePlatformSystem.Applications.Services.Dto;
 using System;
 namespace SharePlatformSystem.Notifications
 {

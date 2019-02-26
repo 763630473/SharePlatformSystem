@@ -1,4 +1,4 @@
-using SharePlatformSystem.Application.Services;
+using SharePlatformSystem.Applications.Services;
 using SharePlatformSystem.Core.Domain.Repositories;
 using SharePlatformSystem.Core.Exceptions;
 using System;

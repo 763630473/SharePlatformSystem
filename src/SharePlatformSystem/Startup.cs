@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using SharePlatformSystem.Framework;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,20 +13,37 @@ using Microsoft.Extensions.DependencyInjection;
 using SharePlatformSystem.Auth.EfRepository;
 using SharePlatformSystem.Auth.App;
 using SharePlatformSystem.Mvc;
+using SharePlatformSystem.Framework.AspNetCore;
+using System.IO;
+using Castle.Facilities.Logging;
+using SharePlatformSystem.Log4Net.Logging.Log4Net;
+using SharePlatformSystem.Core.PlugIns;
+using SharePlatformSystem.Core.Reflection.Extensions;
 
 namespace SharePlatformSystem
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly IHostingEnvironment _hostingEnvironment;
+        public IConfigurationRoot Configuration { get; }
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            Configuration = configuration;
+            _hostingEnvironment = env;
+            var builder = new ConfigurationBuilder()
+              .SetBasePath(env.ContentRootPath)
+              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+              .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+              .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            var mvc = services.AddMvc();
+
+            mvc.PartManager.ApplicationParts.Add(new Microsoft.AspNetCore.Mvc.ApplicationParts.AssemblyPart(typeof(Framework.AspNetCore.Configuration.SharePlatformAspNetCoreConfiguration).GetAssembly()));
+            services.AddSingleton(Configuration);
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -60,6 +77,32 @@ namespace SharePlatformSystem
                 services.AddDbContext<SharePlatformDBContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("SharePlatformDBContext")));
             }
+            services.AddSharePlatform<Web.SharePlatformSystemWebMvcModule>(
+           options =>
+           {
+               //options.IocManager.Register<Framework.AspNetCore.Configuration.ISharePlatformAspNetCoreConfiguration, Framework.AspNetCore.Configuration.SharePlatformAspNetCoreConfiguration>();
+
+               //options.PlugInSources.Add(
+               //    new AssemblyFileListPlugInSource(
+               //        Path.Combine(_hostingEnvironment.ContentRootPath, @"bin\Debug\netcoreapp2.2\SharePlatformSystem.Demo.MVC.dll")
+               //    )
+               //);
+
+               //Configure Log4Net logging
+               options.IocManager.IocContainer.AddFacility<LoggingFacility>(
+                   f => f.UseSharePlatformLog4Net().WithConfig(_hostingEnvironment.ContentRootPath+"/log4net.config")
+               );
+
+               var propInjector = options.IocManager.IocContainer.Kernel.ComponentModelBuilder
+                   .Contributors
+                   .OfType<Castle.MicroKernel.ModelBuilder.Inspectors.PropertiesDependenciesModelInspector>()
+                   .Single();
+
+               options.IocManager.IocContainer.Kernel.ComponentModelBuilder.RemoveContributor(propInjector);
+               options.IocManager.IocContainer.Kernel.ComponentModelBuilder.AddContributor(new Dependency.SharePlatformPropertiesDependenciesModelInspector(new Castle.MicroKernel.SubSystems.Conversion.DefaultConversionManager()));
+           }
+            );
+       
             //使用AutoFac进行注入
             return new AutofacServiceProvider(AutofacExt.InitAutofac(services));
         }
@@ -67,6 +110,7 @@ namespace SharePlatformSystem
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSharePlatform(); //Initializes ABP framework.
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -78,7 +122,20 @@ namespace SharePlatformSystem
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseMvc(routes =>
+            {
+                routes.MapAreaRoute(
+                name: "DemoMVC",
+                areaName: "DemoMVC",
+                template: "DemoMVC/{controller=Blog}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "defaultWithArea",
+                    template: "{area}/{controller=Home}/{action=Index}/{id?}");
 
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
             app.UseMvcWithDefaultRoute();
 
         }

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using SharePlatformSystem.Application.Services;
+using SharePlatformSystem.Applications.Services;
 using SharePlatformSystem.Core;
 using SharePlatformSystem.Dependency;
 using SharePlatformSystem.TestBase;

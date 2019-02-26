@@ -1,6 +1,7 @@
 ﻿using SharePlatformSystem.Auditing;
 using SharePlatformSystem.BackgroundJobs;
 using SharePlatformSystem.Configuration.Startup;
+using SharePlatformSystem.Core.Resources.Embedded;
 using SharePlatformSystem.Dependency;
 using SharePlatformSystem.Domain.Uow;
 using SharePlatformSystem.EntityHistory;
@@ -115,5 +116,6 @@ namespace SharePlatformSystem.Core.Configuration
         /// Used to set localization configuration.
         /// </summary>
         public ILocalizationConfiguration Localization { get; private set; }
+        public IEmbeddedResourcesConfiguration EmbeddedResources { get; private set; }
     }
 }

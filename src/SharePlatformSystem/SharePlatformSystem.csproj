@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\DemoMVC\**" />
+    <Content Remove="Areas\DemoMVC\**" />
+    <EmbeddedResource Remove="Areas\DemoMVC\**" />
+    <None Remove="Areas\DemoMVC\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
@@ -46,11 +53,29 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
   </ItemGroup>
 
 
   <ItemGroup>
     <ProjectReference Include="..\SharePlatformSystem.Auth.App\SharePlatformSystem.Auth.App.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Demo.MVC\SharePlatformSystem.Demo.MVC.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Framework\SharePlatformSystem.Framework.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Log4Net\SharePlatformSystem.Log4Net.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="wwwroot\Plugins\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using NUnit.Framework;
-using SharePlatformSystem.Application.Services;
+using SharePlatformSystem.Applications.Services;
 using SharePlatformSystem.Core;
 using SharePlatformSystem.Core.Timing;
 using SharePlatformSystem.Dependency;

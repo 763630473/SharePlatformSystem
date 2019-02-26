@@ -7,7 +7,7 @@ using Castle.MicroKernel.Registration;
 using Shouldly;
 using NUnit.Framework;
 using SharePlatformSystem.Runtime.Session;
-using SharePlatformSystem.Application.Services;
+using SharePlatformSystem.Applications.Services;
 using NSubstitute;
 
 namespace SharePlatformSystem.Tests.Dependency

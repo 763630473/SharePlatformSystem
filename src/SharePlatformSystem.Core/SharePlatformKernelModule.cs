@@ -1,4 +1,4 @@
-﻿using SharePlatformSystem.Application.Services;
+﻿using SharePlatformSystem.Applications.Services;
 using SharePlatformSystem.Auditing;
 using SharePlatformSystem.BackgroundJobs;
 using SharePlatformSystem.Collections.Extensions;

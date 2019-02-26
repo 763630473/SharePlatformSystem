@@ -145,7 +145,7 @@ namespace SharePlatformSystem.Domain.Uow
             Timeout = TimeSpan.FromMilliseconds(timeout);
         }
 
-        internal UnitOfWorkOptions CreateOptions()
+        public UnitOfWorkOptions CreateOptions()
         {
             return new UnitOfWorkOptions
             {

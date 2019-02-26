@@ -1,7 +1,7 @@
 ﻿using System;
 using Shouldly;
 using NUnit.Framework;
-using SharePlatformSystem.Application.Services.Dto;
+using SharePlatformSystem.Applications.Services.Dto;
 using SharePlatformSystem.Json;
 
 namespace SharePlatformSystem.Tests.Json

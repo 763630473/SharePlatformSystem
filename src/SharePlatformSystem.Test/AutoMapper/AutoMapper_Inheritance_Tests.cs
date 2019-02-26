@@ -83,7 +83,7 @@ namespace SharePlatformSystem.AutoMapper.Tests
             public string Id { get; set; }
         }
 
-        private class MyDerivedEntityDto : Application.Services.Dto.EntityDto
+        private class MyDerivedEntityDto : Applications.Services.Dto.EntityDto
         {
             [AutoMapKey]
             public new string Id { get; set; }
@@ -98,7 +98,7 @@ namespace SharePlatformSystem.AutoMapper.Tests
             public int SecondId { get; set; }
         }
 
-        private class MyDerivedDualKeyEntityDto :Application.Services.Dto.EntityDto
+        private class MyDerivedDualKeyEntityDto :Applications.Services.Dto.EntityDto
         {
             [AutoMapKey]
             public new string Id { get; set; }

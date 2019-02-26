@@ -4,4 +4,27 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Blog\abp.png" />
+    <None Remove="Views\Blog\Index.cshtml" />
+    <None Remove="Views\Blog\Index.css" />
+    <None Remove="Views\Blog\Index.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Blog\abp.png" />
+    <EmbeddedResource Include="Views\Blog\Index.cshtml" />
+    <EmbeddedResource Include="Views\Blog\Index.css" />
+    <EmbeddedResource Include="Views\Blog\Index.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Framework\SharePlatformSystem.Framework.csproj" />
+  </ItemGroup>
+
 </Project>

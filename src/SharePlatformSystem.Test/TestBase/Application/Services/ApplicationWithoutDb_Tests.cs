@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using SharePlatformSystem.Application.Services;
+using SharePlatformSystem.Applications.Services;
 using SharePlatformSystem.Core;
 using SharePlatformSystem.Dependency;
 using SharePlatformSystem.TestBase;

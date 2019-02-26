@@ -1,11 +1,11 @@
 ﻿using System;
 using JetBrains.Annotations;
-using SharePlatformSystem.Application.Services;
+using SharePlatformSystem.Applications.Services;
 using SharePlatformSystem.Collections.Extensions;
 
 namespace SharePlatformSystem.Aspects
 {
-    internal static class SharePlatformCrossCuttingConcerns
+    public static class SharePlatformCrossCuttingConcerns
     {
         public const string Auditing = "SharePlatformAuditing";
         public const string UnitOfWork = "SharePlatformUnitOfWork";
