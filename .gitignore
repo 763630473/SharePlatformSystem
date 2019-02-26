@@ -31,3 +31,5 @@
 /src/SharePlatformSystem.TestBase/obj
 /src/SharePlatformSystem.Web.SignalR/bin
 /src/SharePlatformSystem.Web.SignalR/obj
+/src/SharePlatformSystem.Quartz.Test/bin
+/src/SharePlatformSystem.Quartz.Test/obj

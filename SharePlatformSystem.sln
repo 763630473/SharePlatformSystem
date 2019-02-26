@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.WebApi"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.NHRepository", "src\SharePlatform.NHRepository\SharePlatformSystem.NHRepository.csproj", "{53E54054-A520-478B-AD9C-56FE7D6C7A14}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "006-SharePlatformTest", "006-SharePlatformTest", "{1F220316-67C5-4D78-83E7-557F6C72D19A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "007-SharePlatformTest", "007-SharePlatformTest", "{1F220316-67C5-4D78-83E7-557F6C72D19A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Test", "src\SharePlatformSystem.Test\SharePlatformSystem.Test.csproj", "{7F3D6098-665F-42C4-B502-8EBC878BA238}"
 EndProject
@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Dapper"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "005-SharePlatformTaskSchedule", "005-SharePlatformTaskSchedule", "{F825B0F2-96AA-42AC-8CD1-25DB0F72E9CD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "007-SharePlatformDoc", "007-SharePlatformDoc", "{5730FFB1-C28D-48E7-A72D-47F0CB1A12D9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "006-SharePlatformDoc", "006-SharePlatformDoc", "{5730FFB1-C28D-48E7-A72D-47F0CB1A12D9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.HangFire", "src\SharePlatformSystem.HangFire\SharePlatformSystem.HangFire.csproj", "{2B9B13D5-A092-4D13-86C9-D3C2D9155023}"
 EndProject
@@ -49,7 +49,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.TestBas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Quartz.Test", "src\SharePlatformSystem.Quartz.Test\SharePlatformSystem.Quartz.Test.csproj", "{9CEFBBB4-8732-4B0B-AF84-571A464A62A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.Quartz", "src\SharePlatformSystem.Quartz\SharePlatformSystem.Quartz.csproj", "{EFAD786F-FD1B-4811-8A0B-1819968D9446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Quartz", "src\SharePlatformSystem.Quartz\SharePlatformSystem.Quartz.csproj", "{EFAD786F-FD1B-4811-8A0B-1819968D9446}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "008-SharePlatformPlugins", "008-SharePlatformPlugins", "{DB6B51FE-9A52-452A-9999-8B971CBF6FBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.Demo.MVC", "src\SharePlatformSystem.Demo.MVC\SharePlatformSystem.Demo.MVC.csproj", "{7ED18B8C-ABAC-42EE-B2A3-E376BDB6E6BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +129,10 @@ Global
 		{EFAD786F-FD1B-4811-8A0B-1819968D9446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFAD786F-FD1B-4811-8A0B-1819968D9446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFAD786F-FD1B-4811-8A0B-1819968D9446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ED18B8C-ABAC-42EE-B2A3-E376BDB6E6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED18B8C-ABAC-42EE-B2A3-E376BDB6E6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED18B8C-ABAC-42EE-B2A3-E376BDB6E6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED18B8C-ABAC-42EE-B2A3-E376BDB6E6BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +155,7 @@ Global
 		{C3A5A422-4ED7-4396-A0B0-D9633DEB6F1C} = {1F220316-67C5-4D78-83E7-557F6C72D19A}
 		{9CEFBBB4-8732-4B0B-AF84-571A464A62A2} = {1F220316-67C5-4D78-83E7-557F6C72D19A}
 		{EFAD786F-FD1B-4811-8A0B-1819968D9446} = {F825B0F2-96AA-42AC-8CD1-25DB0F72E9CD}
+		{7ED18B8C-ABAC-42EE-B2A3-E376BDB6E6BF} = {DB6B51FE-9A52-452A-9999-8B971CBF6FBE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10A18593-7E83-4122-A805-AA8A73D5F3E1}

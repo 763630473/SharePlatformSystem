@@ -5,12 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Configuration\Startup\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentNHibernate" Version="2.1.2" />
+    <PackageReference Include="MySql.Data" Version="8.0.15" />
     <PackageReference Include="NHibernate" Version="5.2.3" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.18.3" />
   </ItemGroup>
 
   <ItemGroup>
