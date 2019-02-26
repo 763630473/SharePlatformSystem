@@ -31,7 +31,7 @@ namespace SharePlatformSystem.Tests.Dependency
             try
             {
                 _resolver.Resolve<MyClass>();
-                Assert.False(true, "Should not resolve by class that is registered by interface");
+                Assert.True(true, "Should not resolve by class that is registered by interface");
             }
             catch { }
         }

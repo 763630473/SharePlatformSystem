@@ -37,7 +37,7 @@ namespace SharePlatformSystem.BackgroundJobs
 
         public Task InsertAsync(BackgroundJobInfo jobInfo)
         {
-            jobInfo.Id = Guid.NewGuid().ToString();//Interlocked.Increment(ref _lastId);
+            jobInfo.Id = jobInfo.Id??Guid.NewGuid().ToString();//Interlocked.Increment(ref _lastId);
             _jobs[jobInfo.Id] = jobInfo;
 
             return Task.FromResult(0);

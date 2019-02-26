@@ -4,22 +4,21 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using Quartz;
 using SharePlatformSystem.Dependency;
-using SharePlatformSystem.Quartz;
 using SharePlatformSystem.Quartz.Configuration;
 using SharePlatformSystem.TestBase;
 using Shouldly;
 
-namespace SharePlatformSystem.Quartz.Tests
+namespace SharePlatformSystem.Quartz.Test
 {
     public class QuartzTests : SharePlatformIntegratedTestBase<SharePlatformQuartzTestModule>
     {
-        private readonly ISharePlatformQuartzConfiguration _sharePlatformQuartzConfiguration;
+        private readonly ISharePlatformQuartzConfiguration _abpQuartzConfiguration;
         private readonly IQuartzScheduleJobManager _quartzScheduleJobManager;
 
         public QuartzTests()
         {
             _quartzScheduleJobManager = LocalIocManager.Resolve<IQuartzScheduleJobManager>();
-            _sharePlatformQuartzConfiguration = LocalIocManager.Resolve<ISharePlatformQuartzConfiguration>();
+            _abpQuartzConfiguration = LocalIocManager.Resolve<ISharePlatformQuartzConfiguration>();
         }
 
         private async Task ScheduleJobs()
@@ -56,16 +55,18 @@ namespace SharePlatformSystem.Quartz.Tests
         [Test]
         public async Task QuartzScheduler_Jobs_ShouldBe_Registered_And_Executed_With_SingletonDependency()
         {
+            // There should be only one test case in this project, or the unit test may fail in AppVeyor
             await ScheduleJobs();
 
             var helloDependency = LocalIocManager.Resolve<IHelloDependency>();
             var goodByeDependency = LocalIocManager.Resolve<IGoodByeDependency>();
 
-            _sharePlatformQuartzConfiguration.Scheduler.ShouldNotBeNull();
-            _sharePlatformQuartzConfiguration.Scheduler.IsStarted.ShouldBe(true);
-            (await _sharePlatformQuartzConfiguration.Scheduler.CheckExists(JobKey.Create("HelloJobKey"))).ShouldBe(true);
-            (await _sharePlatformQuartzConfiguration.Scheduler.CheckExists(JobKey.Create("GoodByeJobKey"))).ShouldBe(true);
+            _abpQuartzConfiguration.Scheduler.ShouldNotBeNull();
+            _abpQuartzConfiguration.Scheduler.IsStarted.ShouldBe(true);
+            (await _abpQuartzConfiguration.Scheduler.CheckExists(JobKey.Create("HelloJobKey"))).ShouldBe(true);
+            (await _abpQuartzConfiguration.Scheduler.CheckExists(JobKey.Create("GoodByeJobKey"))).ShouldBe(true);
 
+            //Wait for execution!
             await Task.Delay(TimeSpan.FromSeconds(5));
 
             helloDependency.ExecutionCount.ShouldBeGreaterThan(0);

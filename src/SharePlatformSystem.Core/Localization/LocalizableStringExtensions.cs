@@ -1,7 +1,7 @@
 using SharePlatformSystem.Core.Localization;
 using System.Globalization;
 
-namespace SharePlatformSystem.Core.Configuration
+namespace SharePlatformSystem.Core.Localization
 {
     public static class LocalizableStringExtensions
     {

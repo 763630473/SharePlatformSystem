@@ -2,7 +2,7 @@ using SharePlatformSystem.Core.Localization;
 using System;
 using System.Globalization;
 
-namespace SharePlatformSystem.Core.Configuration
+namespace SharePlatformSystem.Core.Localization
 {
     /// <summary>
     /// Represents a string that can be localized.

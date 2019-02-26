@@ -15,7 +15,7 @@ namespace SharePlatformSystem.Tests.Resources.Embedded
 
             configuration.Sources.Add(
                 new EmbeddedResourceSet(
-                    "/MyApp/MyResources/", GetType().GetAssembly(), "Abp.Tests.Resources.Embedded.MyResources"
+                    "/MyApp/MyResources/", GetType().GetAssembly(), "SharePlatformSystem.Test.Resources.Embedded.MyResources"
                 )
             );
 

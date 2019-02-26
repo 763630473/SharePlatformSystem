@@ -7,6 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Embedded\MyResources\js-dash\MyScriptFile.js" />
+    <None Remove="Resources\Embedded\MyResources\js\MyScriptFile-2.js" />
+    <None Remove="Resources\Embedded\MyResources\js\MyScriptFile1.js" />
+    <None Remove="Resources\Embedded\MyResources\js\MyScriptFile3.min.js" />
+    <None Remove="Resources\Embedded\MyResources\js\MyScriptFile_4.js" />
+    <None Remove="Resources\Embedded\MyResources\js_underscore\MyScriptFile.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js-dash\MyScriptFile.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js\MyScriptFile-2.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js\MyScriptFile1.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js\MyScriptFile3.min.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js\MyScriptFile_4.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js_underscore\MyScriptFile.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="NSubstitute" Version="4.0.0" />
     <PackageReference Include="nunit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
@@ -26,6 +44,11 @@
     <None Update="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="TestBase\" />
   </ItemGroup>
 
 </Project>

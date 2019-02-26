@@ -3,7 +3,7 @@ using System.Reflection;
 using Newtonsoft.Json;
 using SharePlatformSystem.Core.Localization;
 
-namespace SharePlatformSystem.Core.Configuration
+namespace SharePlatformSystem.Core.Localization
 {
     /// <summary>
     /// This class can be used to serialize <see cref="ILocalizableString"/> to <see cref="string"/> during serialization.

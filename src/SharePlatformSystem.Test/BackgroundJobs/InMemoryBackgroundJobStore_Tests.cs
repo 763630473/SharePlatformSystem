@@ -18,7 +18,8 @@ namespace SharePlatformSystem.Tests.BackgroundJobs
         public async Task Test_All()
         {
             var jobInfo = new BackgroundJobInfo
-            {
+            {             
+                Id="1",
                 JobType = "TestType",
                 JobArgs = "{}"
             };
