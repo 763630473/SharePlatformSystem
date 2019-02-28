@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharePlatform.NHRepository\SharePlatformSystem.NHRepository.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
+  </ItemGroup>
+
+</Project>

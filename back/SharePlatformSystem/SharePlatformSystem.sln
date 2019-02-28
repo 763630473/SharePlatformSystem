@@ -55,6 +55,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Framewo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Demo.MVC", "src\SharePlatformSystem.Demo.MVC\SharePlatformSystem.Demo.MVC.csproj", "{16628214-3BB8-4A58-8A47-00255DE8E6C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePlatformSystem.NetHouse.App", "src\SharePlatformSystem.NetHouse.App\SharePlatformSystem.NetHouse.App.csproj", "{294792B6-3C60-4924-A449-F3F63097B98C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,10 @@ Global
 		{16628214-3BB8-4A58-8A47-00255DE8E6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16628214-3BB8-4A58-8A47-00255DE8E6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16628214-3BB8-4A58-8A47-00255DE8E6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{294792B6-3C60-4924-A449-F3F63097B98C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{294792B6-3C60-4924-A449-F3F63097B98C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{294792B6-3C60-4924-A449-F3F63097B98C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{294792B6-3C60-4924-A449-F3F63097B98C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,6 +162,7 @@ Global
 		{EFAD786F-FD1B-4811-8A0B-1819968D9446} = {F825B0F2-96AA-42AC-8CD1-25DB0F72E9CD}
 		{A60640EF-8D66-47DD-85D7-50EDF6BBDE81} = {39C66928-0F4E-4A5A-A221-1B0D8F702651}
 		{16628214-3BB8-4A58-8A47-00255DE8E6C3} = {DB6B51FE-9A52-452A-9999-8B971CBF6FBE}
+		{294792B6-3C60-4924-A449-F3F63097B98C} = {53C8401B-F6CA-4487-ADE7-9FA3582CC51E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10A18593-7E83-4122-A805-AA8A73D5F3E1}

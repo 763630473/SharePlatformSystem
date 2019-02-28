@@ -10,3 +10,15 @@ G:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.
 G:\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
 G:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
 G:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.deps.json
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csprojAssemblyReference.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CoreCompileInputs.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.AssemblyInfoInputs.cache
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.AssemblyInfo.cs
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CopyComplete
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
+D:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb

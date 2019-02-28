@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.Globalization;
 using Microsoft.AspNetCore.Hosting;
 using SharePlatformSystem.Core;
 using SharePlatformSystem.Framework.AspNetCore.EmbeddedResources;
@@ -41,8 +40,18 @@ namespace SharePlatformSystem.Framework.AspNetCore
             {
                 app.UseSharePlatformSecurityHeaders();
             }
-        }    
-
+        }
+        public static void UseEmbeddedFiles(this IApplicationBuilder app)
+        {
+            app.UseStaticFiles(
+                new StaticFileOptions
+                {
+                    FileProvider = new EmbeddedResourceFileProvider(
+                        app.ApplicationServices.GetRequiredService<IIocResolver>()
+                    )
+                }
+            );
+        }
         private static void InitializeSharePlatform(IApplicationBuilder app)
         {
             var SharePlatformBootstrapper = app.ApplicationServices.GetRequiredService<SharePlatformBootstrapper>();

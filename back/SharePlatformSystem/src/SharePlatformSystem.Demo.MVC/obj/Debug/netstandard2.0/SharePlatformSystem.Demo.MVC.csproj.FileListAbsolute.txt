@@ -31,3 +31,17 @@ F:\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0
 F:\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.csproj.CopyComplete
 F:\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.dll
 F:\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.pdb
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\bin\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.deps.json
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\bin\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.dll
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\bin\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.pdb
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.csprojAssemblyReference.cache
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.csproj.CoreCompileInputs.cache
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.AssemblyInfoInputs.cache
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.AssemblyInfo.cs
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.csproj.CopyComplete
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.dll
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Demo.MVC\obj\Debug\netstandard2.0\SharePlatformSystem.Demo.MVC.pdb

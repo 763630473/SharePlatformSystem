@@ -58,11 +58,15 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\SharePlatform.NHRepository\SharePlatformSystem.NHRepository.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Auth.App\SharePlatformSystem.Auth.App.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Dapper\SharePlatformSystem.Dapper.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Demo.MVC\SharePlatformSystem.Demo.MVC.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Framework\SharePlatformSystem.Framework.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Log4Net\SharePlatformSystem.Log4Net.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.NetHouse.App\SharePlatformSystem.NetHouse.App.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.NHibernate\SharePlatformSystem.NHibernate.csproj" />
   </ItemGroup>
 
 

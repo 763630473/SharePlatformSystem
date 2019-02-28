@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.6.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
+  </ItemGroup>
+
+</Project>

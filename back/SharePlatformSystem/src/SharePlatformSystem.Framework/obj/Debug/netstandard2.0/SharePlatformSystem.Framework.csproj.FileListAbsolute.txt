@@ -22,3 +22,15 @@ F:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.
 F:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CopyComplete
 F:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
 F:\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.deps.json
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csprojAssemblyReference.cache
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CoreCompileInputs.cache
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.AssemblyInfoInputs.cache
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.AssemblyInfo.cs
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CopyComplete
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
+D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
