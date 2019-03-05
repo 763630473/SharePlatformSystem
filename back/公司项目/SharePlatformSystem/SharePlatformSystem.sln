@@ -7,9 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001-SharePlatformSystem.Web
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "002-SharePlatformSystemInfrastructure", "002-SharePlatformSystemInfrastructure", "{CBB31DE9-685D-4C43-8F86-80CD12067D25}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Infrastructure", "src\SharePlatformSystem.Infrastructure\SharePlatformSystem.Infrastructure.csproj", "{D6808C96-896C-4E2C-B708-38CA79E45EE0}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "003-SharePlatformSystemApp", "003-SharePlatformSystemApp", "{53C8401B-F6CA-4487-ADE7-9FA3582CC51E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Auth.App", "src\SharePlatformSystem.Auth.App\SharePlatformSystem.Auth.App.csproj", "{0FAA6C20-A174-44EF-9EAD-B86F07501BDA}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "004-SharePlatformRepository", "004-SharePlatformRepository", "{502FD44B-23F3-4383-9B65-BECD52CE73D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem.Auth.EfRepository", "src\SharePlatform.Auth.EfRepository\SharePlatformSystem.Auth.EfRepository.csproj", "{48132124-F703-42E2-B622-8057500D6700}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharePlatformSystem", "src\SharePlatformSystem\SharePlatformSystem.csproj", "{0DD4010B-B405-40E1-94D4-960EF040294D}"
 EndProject
@@ -53,6 +59,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6808C96-896C-4E2C-B708-38CA79E45EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6808C96-896C-4E2C-B708-38CA79E45EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6808C96-896C-4E2C-B708-38CA79E45EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6808C96-896C-4E2C-B708-38CA79E45EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FAA6C20-A174-44EF-9EAD-B86F07501BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FAA6C20-A174-44EF-9EAD-B86F07501BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FAA6C20-A174-44EF-9EAD-B86F07501BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FAA6C20-A174-44EF-9EAD-B86F07501BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48132124-F703-42E2-B622-8057500D6700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48132124-F703-42E2-B622-8057500D6700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48132124-F703-42E2-B622-8057500D6700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48132124-F703-42E2-B622-8057500D6700}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0DD4010B-B405-40E1-94D4-960EF040294D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0DD4010B-B405-40E1-94D4-960EF040294D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DD4010B-B405-40E1-94D4-960EF040294D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -118,6 +136,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{D6808C96-896C-4E2C-B708-38CA79E45EE0} = {CBB31DE9-685D-4C43-8F86-80CD12067D25}
+		{0FAA6C20-A174-44EF-9EAD-B86F07501BDA} = {53C8401B-F6CA-4487-ADE7-9FA3582CC51E}
+		{48132124-F703-42E2-B622-8057500D6700} = {502FD44B-23F3-4383-9B65-BECD52CE73D2}
 		{0DD4010B-B405-40E1-94D4-960EF040294D} = {39C66928-0F4E-4A5A-A221-1B0D8F702651}
 		{53E54054-A520-478B-AD9C-56FE7D6C7A14} = {502FD44B-23F3-4383-9B65-BECD52CE73D2}
 		{7F3D6098-665F-42C4-B502-8EBC878BA238} = {1F220316-67C5-4D78-83E7-557F6C72D19A}

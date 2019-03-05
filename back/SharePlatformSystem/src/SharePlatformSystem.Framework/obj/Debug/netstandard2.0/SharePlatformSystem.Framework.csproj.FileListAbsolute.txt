@@ -34,3 +34,15 @@ D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framewor
 D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CopyComplete
 D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
 D:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.deps.json
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csprojAssemblyReference.cache
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CoreCompileInputs.cache
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.AssemblyInfoInputs.cache
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.AssemblyInfo.cs
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CopyComplete
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb

@@ -14,6 +14,7 @@ using SharePlatformSystem.Framework.AspNetCore;
 using SharePlatformSystem.NetHouse.App;
 using SharePlatformSystem.NHibernate;
 using SharePlatformSystem.NHibernate.Configuration.Startup;
+using SharePlatformSystem.NHibernate.DBConnectionBuilder;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -29,14 +30,14 @@ namespace SharePlatformSystem.Web
         typeof(SharePlatformSystemAuthAppModule),
                 typeof(SharePlatformSystemNetHouseAppModule),
         typeof(SharePlatformAspNetCoreModule),
-          typeof(SharePlatformAspNetCoreModule),
+          typeof(SharePlatformAspNetCoreModule)
+        ,
          typeof(SharePlatformNHibernateModule),
         typeof(SharePlatformDapperModule)
         )]
     public class SharePlatformSystemWebMvcModule : SharePlatformModule
     {
         private readonly IHostingEnvironment _env;
-        private readonly IConfigurationRoot _appConfiguration;
         private readonly object _lockObject = new object();
         public SharePlatformSystemWebMvcModule(
     IHostingEnvironment env)
@@ -47,28 +48,37 @@ namespace SharePlatformSystem.Web
         public override void PreInitialize()
         {
             //IocManager.Register<IAuth, LocalAuth>();
-            var builder = new DbContextOptionsBuilder<SharePlatformDBContext>();
+            //var builder = new DbContextOptionsBuilder<SharePlatformDBContext>();
 
-            var connections = IocManager.Resolve<IDictionary<string, DbConnection>>();
-            lock (_lockObject)
+            var connections = IocManager.Resolve<IDictionary<string, IDictionary<SqlType, string>>>();
+            foreach (var con in connections)
             {
-                DapperExtensions.DapperExtensions.SqlDialect = new OracleDialect();
+                foreach (var c in con.Value)
+                {
+                    var connectionContext = new DbConnectionFactory(c.Key,c.Value,con.Key);
+                    connectionContext.DBConncetionContext.OpenConncetion();
+                }
+                
             }
-            foreach(var connectionDict in connections)
-            {
-                var assemblyPath = Path.Combine(AppContext.BaseDirectory, connectionDict.Key+ ".dll");
-                Configuration.Modules.SharePlatformNHibernate().FluentConfiguration
-                        .Database(OracleClientConfiguration.Oracle10.ConnectionString(connectionDict.Value.ConnectionString).Provider<DriverConnectionProvider>().Driver<OracleManagedDataClientDriver>())
-                       .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.LoadFile(assemblyPath)))
-                       .ExposeConfiguration(cfg => new SchemaExport(cfg).Execute(true, true, false, (DbConnection)connectionDict.Value, Console.Out));
+            //lock (_lockObject)
+            //{
+            //    DapperExtensions.DapperExtensions.SqlDialect = new OracleDialect();
+            //}
+            //foreach(var connectionDict in connections)
+            //{
+            //    var assemblyPath = Path.Combine(AppContext.BaseDirectory, connectionDict.Key+ ".dll");
+            //    Configuration.Modules.SharePlatformNHibernate().FluentConfiguration
+            //            .Database(OracleClientConfiguration.Oracle10.ConnectionString(connectionDict.Value.ConnectionString).Provider<DriverConnectionProvider>().Driver<OracleManagedDataClientDriver>())
+            //           .Mappings(m => m.FluentMappings.AddFromAssembly(Assembly.LoadFile(assemblyPath)))
+            //           .ExposeConfiguration(cfg => new SchemaExport(cfg).Execute(true, true, false, (DbConnection)connectionDict.Value, Console.Out));
 
-            }
+            //}
 
 
             //Configuration.ReplaceService<IConnectionStringResolver, BidConnectionStringResolver>();
             Configuration.UnitOfWork.IsolationLevel = System.Transactions.IsolationLevel.ReadCommitted;
-            
-            Configuration.BackgroundJobs.IsJobExecutionEnabled = true;            
+            Configuration.BackgroundJobs.IsJobExecutionEnabled = true;
+            Configuration.Auditing.IsEnabled = true;
         }
 
         public override void Initialize()

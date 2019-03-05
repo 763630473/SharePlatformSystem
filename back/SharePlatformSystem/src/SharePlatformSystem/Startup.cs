@@ -28,15 +28,15 @@ using SharePlatformSystem.Auth.App.SSO;
 using SharePlatformSystem.Auth.EfRepository.Interface;
 using System.Data.Common;
 using Oracle.ManagedDataAccess.Client;
+using SharePlatformSystem.NHibernate.DBConnectionBuilder;
 
 namespace SharePlatformSystem
 {
     public class Startup
     {
         private readonly IHostingEnvironment _hostingEnvironment;
-        private IDictionary<string, DbConnection> dbConnections=new Dictionary<string, DbConnection>();
-        public IConfigurationRoot Configuration { get; }
-        private OracleConnection _connection;
+        private IDictionary<string, IDictionary<SqlType, string>> dbConnectionStrs=new Dictionary<string, IDictionary<SqlType, string>>();
+        public IConfigurationRoot Configuration { get; }     
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             _hostingEnvironment = env;
@@ -99,13 +99,18 @@ namespace SharePlatformSystem
             return services.AddSharePlatform<SharePlatformSystemWebMvcModule>(
            options =>
            {
-               _connection = new OracleConnection(Configuration.GetConnectionString("TestOracleConnectionString"));
+               IDictionary<SqlType, string> dict = new Dictionary<SqlType, string>();
+               dict.Add(SqlType.MySql, Configuration.GetConnectionString("testSharePlatformDBContext"));
+               dbConnectionStrs.Add("SharePlatformSystem.NHRepository", dict);
+               //var dbContext = new DbConnectionFactory(SqlType.MySql, Configuration.GetConnectionString("testSharePlatformDBContext"), "SharePlatformSystem.NHRepository").DBConncetionContext;
+               //dbConnections.Add("SharePlatformSystem.NHRepository", dbContext);
+               //_connection = new OracleConnection(Configuration.GetConnectionString("TestOracleConnectionString"));
                //_connection = new MySqlConnection("Server=localhost;Database=test;User ID = root;Password=123456");
-               _connection.Open();
+               //_connection.Open();
 
-               dbConnections.Add("SharePlatformSystem.NHRepository", _connection);
+               // dbConnections.Add("SharePlatformSystem.NHRepository", _connection);
                options.IocManager.IocContainer.Register(
-                   Component.For<IDictionary<string, DbConnection>>().Instance(dbConnections).LifestyleSingleton()
+                   Component.For<IDictionary<string, IDictionary<SqlType, string>>> ().Instance(dbConnectionStrs).LifestyleSingleton()
                    );
                //Configure Log4Net logging
                options.IocManager.IocContainer.AddFacility<LoggingFacility>(
