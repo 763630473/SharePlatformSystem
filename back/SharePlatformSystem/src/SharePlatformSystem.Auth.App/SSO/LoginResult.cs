@@ -1,3 +1,4 @@
+using SharePlatformSystem.Auth.EfRepository.Domain;
 using SharePlatformSystem.Infrastructure;
 
 namespace SharePlatformSystem.Auth.App.SSO
@@ -6,5 +7,6 @@ namespace SharePlatformSystem.Auth.App.SSO
     {
         public string ReturnUrl;
         public string Token;
+        public User User;
     }
 }
