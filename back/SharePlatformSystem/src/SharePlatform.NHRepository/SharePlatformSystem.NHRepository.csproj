@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SharePlatformSystem.Dapper\SharePlatformSystem.Dapper.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Framework\SharePlatformSystem.Framework.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.NHibernate\SharePlatformSystem.NHibernate.csproj" />
   </ItemGroup>
 

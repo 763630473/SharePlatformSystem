@@ -46,7 +46,3 @@ G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framewor
 G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.csproj.CopyComplete
 G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
 G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\obj\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb
-G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Auth.EfRepository.dll
-G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Infrastructure.dll
-G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Auth.EfRepository.pdb
-G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Framework\bin\Debug\netstandard2.0\SharePlatformSystem.Infrastructure.pdb
