@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Embedded\MyResources\js-dash\MyScriptFile.js" />
+    <None Remove="Resources\Embedded\MyResources\js\MyScriptFile-2.js" />
+    <None Remove="Resources\Embedded\MyResources\js\MyScriptFile1.js" />
+    <None Remove="Resources\Embedded\MyResources\js\MyScriptFile3.min.js" />
+    <None Remove="Resources\Embedded\MyResources\js\MyScriptFile_4.js" />
+    <None Remove="Resources\Embedded\MyResources\js_underscore\MyScriptFile.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js-dash\MyScriptFile.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js\MyScriptFile-2.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js\MyScriptFile1.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js\MyScriptFile3.min.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js\MyScriptFile_4.js" />
+    <EmbeddedResource Include="Resources\Embedded\MyResources\js_underscore\MyScriptFile.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NSubstitute" Version="4.0.0" />
+    <PackageReference Include="nunit" Version="3.11.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharePlatformSystem.AutoMapper\SharePlatformSystem.AutoMapper.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Dapper\SharePlatformSystem.Dapper.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Log4Net\SharePlatformSystem.Log4Net.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.NHibernate\SharePlatformSystem.NHibernate.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.TestBase\SharePlatformSystem.TestBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="TestBase\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SharePlatformSystem.Infrastructure">
+      <HintPath>..\..\lib\SharePlatformSystem.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.OracleClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
