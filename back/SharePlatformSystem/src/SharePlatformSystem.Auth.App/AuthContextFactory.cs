@@ -1,6 +1,8 @@
 ﻿using SharePlatformSystem.Applications.Services;
 using SharePlatformSystem.Auth.EfRepository.Domain;
 using SharePlatformSystem.Auth.EfRepository.Interface;
+using SharePlatformSystem.Dependency;
+using SharePlatformSystem.Runtime.Session;
 
 namespace SharePlatformSystem.Auth.App
 {
@@ -34,7 +36,7 @@ namespace SharePlatformSystem.Auth.App
                 service = _normalAuthStrategy;
                 service.User = _unitWork.FindSingle<User>(u => u.Account == username);
             }
-
+           
          return new AuthStrategyContext(service);
         }
     }

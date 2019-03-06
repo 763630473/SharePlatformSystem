@@ -4,7 +4,9 @@ layui.config({
     var form = layui.form,
         layer = layui.layer,
         $ = layui.jquery;
-  
+    form.on('select(myselect)', function (data) {
+       console.log(data)
+    })
     var table = layui.table;
     var SharePlatformSystem = layui.SharePlatformSystem;
     layui.droptree("/UserSession/GetModules", "#ParentName", "#ParentId", false);
@@ -82,9 +84,12 @@ layui.config({
     }();
     $("#tree").height($("div.layui-table-view").height());
     //添加（编辑）模块对话框
-    var editDlg = function() {
+    var editDlg = function () {
         var vm = new Vue({
-            el: "#formEdit"
+            el: "#formEdit",
+            data: {
+
+            }
         });
         var update = false;  //是否为更新
         var show = function (data) {
@@ -119,12 +124,15 @@ layui.config({
                 });
         }
         return {
-            add: function() { //弹出添加
+            add: function () { //弹出添加
                 update = false;
                 show({
                     Id: "",
                     SortNo: 1,
-                    IconName:'&#xe678;'
+                    IconName:'&#xe665;',
+                    Name: "",
+                    Code: "3333",
+                    Url:''
                 });
             },
             update: function(data) { //弹出编辑框

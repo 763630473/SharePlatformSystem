@@ -35,6 +35,7 @@
     <ProjectReference Include="..\SharePlatformSystem.AutoMapper\SharePlatformSystem.AutoMapper.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Dapper\SharePlatformSystem.Dapper.csproj" />
+    <ProjectReference Include="..\SharePlatformSystem.Infrastructure\SharePlatformSystem.Infrastructure.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.Log4Net\SharePlatformSystem.Log4Net.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.NHibernate\SharePlatformSystem.NHibernate.csproj" />
     <ProjectReference Include="..\SharePlatformSystem.TestBase\SharePlatformSystem.TestBase.csproj" />
@@ -52,9 +53,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="SharePlatformSystem.Infrastructure">
-      <HintPath>..\..\lib\SharePlatformSystem.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data.OracleClient">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.OracleClient.dll</HintPath>
     </Reference>
