@@ -34,3 +34,5 @@ G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.NetHouse
 G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.NetHouse.App\obj\Debug\netstandard2.0\SharePlatformSystem.NetHouse.App.csproj.CopyComplete
 G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.NetHouse.App\obj\Debug\netstandard2.0\SharePlatformSystem.NetHouse.App.dll
 G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.NetHouse.App\obj\Debug\netstandard2.0\SharePlatformSystem.NetHouse.App.pdb
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.NetHouse.App\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.dll
+G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.NetHouse.App\bin\Debug\netstandard2.0\SharePlatformSystem.Framework.pdb

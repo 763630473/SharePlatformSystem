@@ -29,6 +29,7 @@ using SharePlatformSystem.Auth.EfRepository.Interface;
 using System.Data.Common;
 using Oracle.ManagedDataAccess.Client;
 using SharePlatformSystem.NHibernate.DBConnectionBuilder;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace SharePlatformSystem
 {
@@ -95,6 +96,8 @@ namespace SharePlatformSystem
             services.AddScoped(typeof(IUnitWork), typeof(UnitWork));
 
             services.AddScoped(typeof(IAuth), typeof(LocalAuth));
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => { options.LoginPath = new PathString("/Login/Index"); });
 
             return services.AddSharePlatform<SharePlatformSystemWebMvcModule>(
            options =>
@@ -144,7 +147,7 @@ namespace SharePlatformSystem
             {
                 app.UseExceptionHandler("/Error");
             }
-
+            app.UseAuthentication();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             //app.UseMvc(routes =>

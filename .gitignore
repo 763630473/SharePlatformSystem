@@ -33,3 +33,7 @@
 /src/SharePlatformSystem.Web.SignalR/obj
 /src/SharePlatformSystem.Quartz.Test/bin
 /src/SharePlatformSystem.Quartz.Test/obj
+/back/SharePlatformSystem/src/SharePlatformSystem.Framework/obj
+/back/SharePlatformSystem/src/SharePlatformSystem.Framework/bin
+/back/SharePlatformSystem/src/SharePlatformSystem.Demo.MVC/obj
+/back/SharePlatformSystem/src/SharePlatformSystem.Demo.MVC/bin
