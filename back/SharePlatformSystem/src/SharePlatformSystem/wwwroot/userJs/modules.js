@@ -4,19 +4,17 @@ layui.config({
     var form = layui.form,
         layer = layui.layer,
         $ = layui.jquery;
-    form.on('select(myselect)', function (data) {
-       console.log(data)
-    })
+
     var table = layui.table;
     var SharePlatformSystem = layui.SharePlatformSystem;
     layui.droptree("/UserSession/GetModules", "#ParentName", "#ParentId", false);
-   
+
     $("#menus").loadMenus("Module");
 
     //主列表加载，可反复调用进行刷新
-    var config= {};  //table的参数，如搜索key，点击tree的id
+    var config = {};  //table的参数，如搜索key，点击tree的id
     var mainList = function (options) {
-        if (options != undefined) {
+        if (options !== undefined) {
             $.extend(config, options);
         }
         table.reload('mainList', {
@@ -24,14 +22,14 @@ layui.config({
             where: config
             , response: {
                 statusCode: 200 //规定成功的状态码，默认：0
-            } 
+            }
         });
-    }
+    };
 
     //菜单列表
     var menucon = {};  //table的参数，如搜索key，点击tree的id
     var menuList = function (options) {
-        if (options != undefined) {
+        if (options !== undefined) {
             $.extend(menucon, options);
         }
         table.reload('menuList', {
@@ -39,9 +37,9 @@ layui.config({
             where: menucon
             , response: {
                 statusCode: 200 //规定成功的状态码，默认：0
-            } 
+            }
         });
-    }
+    };
 
     //左边树状机构列表
     var ztree = function () {
@@ -80,15 +78,30 @@ layui.config({
         load();
         return {
             reload: load
-        }
+        };
     }();
     $("#tree").height($("div.layui-table-view").height());
     //添加（编辑）模块对话框
     var editDlg = function () {
         var vm = new Vue({
             el: "#formEdit",
-            data: {
-
+            IconName: '&#xe614;',
+            methods: {
+                IconSelect: function () {
+                    var that = this;
+                    var index = layer.open({
+                        title: "选择图标(双击选择图标)",
+                        area: ["500px", "400px"],
+                        type: 1,
+                        content: $('#iconSelect'),
+                        success: function () {
+                            $("#iconSelect ul li").dblclick(function () {
+                                that.IconName = $(this).find(".doc-icon-code").text();
+                                layer.close(index);
+                            });
+                        }
+                    });
+                }
             }
         });
         var update = false;  //是否为更新
@@ -99,43 +112,43 @@ layui.config({
                 area: ["500px", "400px"],
                 type: 1,
                 content: $('#divEdit'),
-                success: function() {
+                success: function () {
                     vm.$set('$data', data);
                 },
                 end: mainList
             });
             var url = "/moduleManager/Add";
             if (update) {
-                url = "/moduleManager/Update"; 
+                url = "/moduleManager/Update";
             }
             //提交数据
             form.on('submit(formSubmit)',
-                function(data) {
+                function (data) {
                     $.post(url,
                         data.field,
-                        function(data) {
+                        function (data) {
                             layer.msg(data.Message);
-                            if ((!update) && data.Code == 200) {  //添加成功要刷新左边的树
+                            if ((!update) && data.Code === 200) {  //添加成功要刷新左边的树
                                 ztree.reload();
                             }
                         },
                         "json");
                     return false;
                 });
-        }
+        };
         return {
             add: function () { //弹出添加
                 update = false;
                 show({
                     Id: "",
                     SortNo: 1,
-                    IconName:'&#xe665;',
-                    Name: "",
-                    Code: "3333",
-                    Url:''
+                    IconName: '&#xe678;',
+                    Name: '',
+                    Code: '',
+                    Url: ''
                 });
             },
-            update: function(data) { //弹出编辑框
+            update: function (data) { //弹出编辑框
                 update = true;
                 show(data);
             }
@@ -144,8 +157,45 @@ layui.config({
 
     //添加菜单对话框
     var meditDlg = function () {
-       var vm = new Vue({
-            el: "#mfromEdit"
+        var vm = new Vue({
+            el: "#mfromEdit",
+            data: {
+                Icon: '&amp;#xe614;',
+                Class:''
+
+            },
+            methods: {
+                MenuIconSelect: function () {
+                    var that = this;
+                    var index = layer.open({
+                        title: "选择图标(双击选择图标)",
+                        area: ["500px", "400px"],
+                        type: 1,
+                        content: $('#iconSelect'),
+                        success: function () {
+                            $("#iconSelect ul li").dblclick(function () {
+                                that.Icon = $(this).find(".doc-icon-code").text();
+                                layer.close(index);
+                            });
+                        }
+                    });
+                },
+                StyleSelect: function () {
+                    var that = this;
+                    var index = layer.open({
+                        title: "选择样式(双击选择样式)",
+                        area: ["500px", "400px"],
+                        type: 1,
+                        content: $('#styleSelect'),
+                        success: function () {
+                            $("#styleSelect ul li").dblclick(function () {
+                                that.Class = $(this).find(".doc-icon-code").text();
+                                layer.close(index);
+                            });
+                        }
+                    });
+                }
+            }
         });
         var update = false;  //是否为更新
         var show = function (data) {
@@ -175,14 +225,16 @@ layui.config({
                         "json");
                     return false;
                 });
-        }
+        };
         return {
             add: function (moduleId) { //弹出添加
                 update = false;
                 show({
                     Id: "",
-                    ModuleId:moduleId,
-                    Sort: 1
+                    ModuleId: moduleId,
+                    Sort: 1,
+                    Name: "",
+                    IconName: null
                 });
             },
             update: function (data) { //弹出编辑框
@@ -191,14 +243,14 @@ layui.config({
             }
         };
     }();
-    
+
     //监听模块表格内部按钮
     table.on('tool(list)', function (obj) {
         var data = obj.data;
         if (obj.event === 'detail') {      //查看
             //layer.msg('ID：' + data.Id + ' 的查看操作');
-            menuList({moduleId:data.Id});
-        } 
+            menuList({ moduleId: data.Id });
+        }
     });
 
     //监听页面主按钮操作
@@ -226,26 +278,26 @@ layui.config({
         , btnAddMenu: function () {  //添加菜单
             var checkStatus = table.checkStatus('mainList')
                 , data = checkStatus.data;
-            if (data.length != 1) {
+            if (data.length !== 1) {
                 layer.msg("请选择一个要添加菜单的模块");
                 return;
             }
             meditDlg.add(data[0].Id);
         }
-         , btnEdit: function () {  //编辑
-             var checkStatus = table.checkStatus('mainList')
-               , data = checkStatus.data;
-             if (data.length != 1) {
-                 layer.msg("请选择编辑的行，且同时只能编辑一行");
-                 return;
-             }
-             editDlg.update(data[0]);
-         }
+        , btnEdit: function () {  //编辑
+            var checkStatus = table.checkStatus('mainList')
+                , data = checkStatus.data;
+            if (data.length !== 1) {
+                layer.msg("请选择编辑的行，且同时只能编辑一行");
+                return;
+            }
+            editDlg.update(data[0]);
+        }
 
         , btnEditMenu: function () {  //编辑菜单
             var checkStatus = table.checkStatus('menuList')
                 , data = checkStatus.data;
-            if (data.length != 1) {
+            if (data.length !== 1) {
                 layer.msg("请选择编辑的菜单");
                 return;
             }
@@ -255,7 +307,7 @@ layui.config({
         , search: function () {   //搜索
             mainList({ key: $('#key').val() });
         }
-        , btnRefresh: function() {
+        , btnRefresh: function () {
             mainList();
         }
     };
@@ -266,4 +318,4 @@ layui.config({
     });
 
     //监听页面主按钮操作 end
-})
+});

@@ -3541,7 +3541,7 @@
       ]
     },
     "Castle.Windsor.MsDependencyInjection/3.3.1": {
-      "sha512": "AK5ClaDRtP6YxSdCZTngnfMYstRkglxKrYrfWdq6H9QPQguB5Fdq300euqsNMd3CO4qn6tp2Ln4AdrQdmEkL0w==",
+      "sha512": "OfTOYKS4mF9XfR7tnKx8OFei/Arj30b6YchMUObTDKz+HniK0IIGY5jqRRkhd9EWvOAk6ByG/eMG+T/uYZhCMg==",
       "type": "package",
       "path": "castle.windsor.msdependencyinjection/3.3.1",
       "files": [
@@ -3788,7 +3788,7 @@
       ]
     },
     "Microsoft.AspNetCore.Hosting/2.2.0": {
-      "sha512": "7t4RbUGugpHtQmzAkc9fpDdYJg6t/jcB2VVnjensVYbZFnLDU8pNrG0hrekk1DQG7P2UzpSqKLzDsFF0/lkkbw==",
+      "sha512": "YJmyRNkRrfjhohF9vpgSN7e3f0CS4x2VJ6VYrRCQoP82A+Rlp1SsZpkrExAvetk/acXgk5c9OyHDh7lb8GqWRg==",
       "type": "package",
       "path": "microsoft.aspnetcore.hosting/2.2.0",
       "files": [
@@ -4470,7 +4470,7 @@
       ]
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/2.2.0": {
-      "sha512": "gIqt9PkKO01hZ0zmHnWrZ1E45MDreZTVoyDbL1kMWKtDgxxWTJpYtESTEcgpvR1uB1iex1zKGYzJpOMgmuP5TQ==",
+      "sha512": "ZjqIn6gtKmAXJa5pWh9n+foC1kDR148LhnnVgbxQcyRC+YR1aWEuiUh2Z3FvSXir/JlnAL+cwqA54dCZVo/LrQ==",
       "type": "package",
       "path": "microsoft.extensions.configuration.environmentvariables/2.2.0",
       "files": [
@@ -4483,7 +4483,7 @@
       ]
     },
     "Microsoft.Extensions.Configuration.FileExtensions/2.2.0": {
-      "sha512": "H1qCpWBC8Ed4tguTR/qYkbb3F6DI5Su3t8xyFo3/5MzAd8PwPpHzgX8X04KbBxKmk173Pb64x7xMHarczVFQUA==",
+      "sha512": "BnkmTopJ7m+p0/EBshdJmoWroUvMlu+oA+bDvzEWh3WA9rOYdnTZueQ7Ap1oSfUnHnPBnuWae/ED8hHlM/sQxA==",
       "type": "package",
       "path": "microsoft.extensions.configuration.fileextensions/2.2.0",
       "files": [
@@ -4568,7 +4568,7 @@
       ]
     },
     "Microsoft.Extensions.FileProviders.Physical/2.2.0": {
-      "sha512": "tbDHZnBJkjYd9NjlRZ9ondDiv1Te3KYCTW2RWpR1B0e1Z8+EnFRo7qNnHkkSCixLdlPZzhjlX24d/PixQ7w2dA==",
+      "sha512": "Qt6sUa56/XbLxYshrCzwJYhHO9TkVa9Adch1qVqr7PGuLCxRs3K7nGMv3I6msUvAJqiJE33Oexz6KrT4hcUHgA==",
       "type": "package",
       "path": "microsoft.extensions.fileproviders.physical/2.2.0",
       "files": [
@@ -7848,7 +7848,7 @@
       ]
     },
     "System.Reflection.Metadata/1.6.0": {
-      "sha512": "I4aWCii7N1bmn43vviRfJQYW6UAco1G/CcjJouvgGdb/sr2BRTSnddhaPMg2oxu9VHFn8T1z3dTLq0pna8zmtA==",
+      "sha512": "COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
       "type": "package",
       "path": "system.reflection.metadata/1.6.0",
       "files": [
