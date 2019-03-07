@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using SharePlatformSystem.Auth.App.Interface;
+using SharePlatformSystem.Auth.EfRepository.Domain;
 using SharePlatformSystem.Framework.AspNetCore.Mvc.Controllers;
 using SharePlatformSystem.Infrastructure;
 
@@ -22,7 +27,18 @@ namespace SharePlatformSystem.Controllers
         {
             return View();
         }
+     
+        //private async Task SignInAsync(User user, ClaimsIdentity identity = null, bool rememberMe = false)
+        //{
+        //    if (identity == null)
+        //        identity = await _userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
 
+        //    //添加身份信息，以便在AbpSession中使用
+        //    //identity.AddClaim(new Claim(ClaimTypes.Email, user.EmailAddress));
+
+        //    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+        //    AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = rememberMe }, identity);
+        //}
 
         public string Login(string username, string password)
         {
