@@ -12,7 +12,7 @@ using SharePlatformSystem.Runtime.Session;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// Base for all Unit Of Work classes.
+    /// 所有工作单元类的基础。
     /// </summary>
     public abstract class UnitOfWorkBase : IUnitOfWork
     {
@@ -21,19 +21,14 @@ namespace SharePlatformSystem.Domain.Uow
         [DoNotWire]
         public IUnitOfWork Outer { get; set; }
 
-        /// <inheritdoc/>
         public event EventHandler Completed;
 
-        /// <inheritdoc/>
         public event EventHandler<UnitOfWorkFailedEventArgs> Failed;
 
-        /// <inheritdoc/>
         public event EventHandler Disposed;
 
-        /// <inheritdoc/>
         public UnitOfWorkOptions Options { get; private set; }
 
-        /// <inheritdoc/>
         public IReadOnlyList<DataFilterConfiguration> Filters
         {
             get { return _filters.ToImmutableList(); }
@@ -43,49 +38,49 @@ namespace SharePlatformSystem.Domain.Uow
         public Dictionary<string, object> Items { get; set; }
 
         /// <summary>
-        /// Gets default UOW options.
+        /// 获取默认UOW选项。
         /// </summary>
         protected IUnitOfWorkDefaultOptions DefaultOptions { get; }
 
         /// <summary>
-        /// Gets the connection string resolver.
+        ///获取连接字符串解析程序。
         /// </summary>
         protected IConnectionStringResolver ConnectionStringResolver { get; }
 
         /// <summary>
-        /// Gets a value indicates that this unit of work is disposed or not.
+        /// 获取一个值，该值指示此工作单元是否已释放。
         /// </summary>
         public bool IsDisposed { get; private set; }
 
         /// <summary>
-        /// Reference to current SharePlatform session.
+        /// 对当前SharePlatform会话的引用。
         /// </summary>
         public ISharePlatformSession SharePlatformSystemSession { protected get; set; }
 
         protected IUnitOfWorkFilterExecuter FilterExecuter { get; }
 
         /// <summary>
-        /// Is <see cref="Begin"/> method called before?
+        /// 之前是否调用了“Begin”方法？
         /// </summary>
         private bool _isBeginCalledBefore;
 
         /// <summary>
-        /// Is <see cref="Complete"/> method called before?
+        /// 以前调用过“complete”方法吗？
         /// </summary>
         private bool _isCompleteCalledBefore;
 
         /// <summary>
-        /// Is this unit of work successfully completed.
+        /// 此工作单元是否已成功完成？
         /// </summary>
         private bool _succeed;
 
         /// <summary>
-        /// A reference to the exception if this unit of work failed.
+        /// 如果此工作单元失败，则引用异常。
         /// </summary>
         private Exception _exception;
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         protected UnitOfWorkBase(
             IConnectionStringResolver connectionStringResolver, 
@@ -103,7 +98,6 @@ namespace SharePlatformSystem.Domain.Uow
             Items = new Dictionary<string, object>();
         }
 
-        /// <inheritdoc/>
         public void Begin(UnitOfWorkOptions options)
         {
             Check.NotNull(options, nameof(options));
@@ -116,16 +110,13 @@ namespace SharePlatformSystem.Domain.Uow
             BeginUow();
         }
 
-        /// <inheritdoc/>
         public abstract void SaveChanges();
 
-        /// <inheritdoc/>
         public abstract Task SaveChangesAsync();
 
-        /// <inheritdoc/>
         public IDisposable DisableFilter(params string[] filterNames)
         {
-            //TODO: Check if filters exists?
+            //TODO: 检查过滤器是否存在？
 
             var disabledFilters = new List<string>();
 
@@ -147,7 +138,7 @@ namespace SharePlatformSystem.Domain.Uow
         /// <inheritdoc/>
         public IDisposable EnableFilter(params string[] filterNames)
         {
-            //TODO: Check if filters exists?
+            //TODO: 检查过滤器是否存在？
 
             var enabledFilters = new List<string>();
 
@@ -166,20 +157,18 @@ namespace SharePlatformSystem.Domain.Uow
             return new DisposeAction(() => DisableFilter(enabledFilters.ToArray()));
         }
 
-        /// <inheritdoc/>
         public bool IsFilterEnabled(string filterName)
         {
             return GetFilter(filterName).IsEnabled;
         }
 
-        /// <inheritdoc/>
         public IDisposable SetFilterParameter(string filterName, string parameterName, object value)
         {
             var filterIndex = GetFilterIndex(filterName);
 
             var newfilter = new DataFilterConfiguration(_filters[filterIndex]);
 
-            //Store old value
+            //存储旧值
             object oldValue = null;
             var hasOldValue = newfilter.FilterParameters.ContainsKey(parameterName);
             if (hasOldValue)
@@ -195,14 +184,13 @@ namespace SharePlatformSystem.Domain.Uow
 
             return new DisposeAction(() =>
             {
-                //Restore old value
+                //存储旧值
                 if (hasOldValue)
                 {
                     SetFilterParameter(filterName, parameterName, oldValue);
                 }
             });
         }
-        /// <inheritdoc/>
         public void Complete()
         {
             PreventMultipleComplete();
@@ -219,7 +207,6 @@ namespace SharePlatformSystem.Domain.Uow
             }
         }
 
-        /// <inheritdoc/>
         public async Task CompleteAsync()
         {
             PreventMultipleComplete();
@@ -236,7 +223,6 @@ namespace SharePlatformSystem.Domain.Uow
             }
         }
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             if (!_isBeginCalledBefore || IsDisposed)
@@ -256,7 +242,7 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Can be implemented by derived classes to start UOW.
+        ///可以由派生类实现以启动UOW。
         /// </summary>
         protected virtual void BeginUow()
         {
@@ -264,17 +250,17 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Should be implemented by derived classes to complete UOW.
+        /// 应该由派生类实现以完成UOW。
         /// </summary>
         protected abstract void CompleteUow();
 
         /// <summary>
-        /// Should be implemented by derived classes to complete UOW.
+        /// 应该由派生类实现以完成UOW。
         /// </summary>
         protected abstract Task CompleteUowAsync();
 
         /// <summary>
-        /// Should be implemented by derived classes to dispose UOW.
+        ///应该由派生类实现以释放UOW。
         /// </summary>
         protected abstract void DisposeUow();
 
@@ -299,7 +285,7 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Called to trigger <see cref="Completed"/> event.
+        /// 调用以触发“已完成”事件。
         /// </summary>
         protected virtual void OnCompleted()
         {
@@ -307,16 +293,16 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Called to trigger <see cref="Failed"/> event.
+        ///调用以触发“失败”事件。
         /// </summary>
-        /// <param name="exception">Exception that cause failure</param>
+        /// <param name="exception">导致失败的异常</param>
         protected virtual void OnFailed(Exception exception)
         {
             Failed.InvokeSafely(this, new UnitOfWorkFailedEventArgs(exception));
         }
 
         /// <summary>
-        /// Called to trigger <see cref="Disposed"/> event.
+        /// 调用以触发“已释放”事件。
         /// </summary>
         protected virtual void OnDisposed()
         {
@@ -327,7 +313,7 @@ namespace SharePlatformSystem.Domain.Uow
         {
             if (_isBeginCalledBefore)
             {
-                throw new SharePlatformException("This unit of work has started before. Can not call Start method more than once.");
+                throw new SharePlatformException("这项工作以前就开始了。不能多次调用Start方法。");
             }
 
             _isBeginCalledBefore = true;
@@ -337,7 +323,7 @@ namespace SharePlatformSystem.Domain.Uow
         {
             if (_isCompleteCalledBefore)
             {
-                throw new SharePlatformException("Complete is called before!");
+                throw new SharePlatformException("之前调用完成！");
             }
 
             _isCompleteCalledBefore = true;
@@ -382,7 +368,7 @@ namespace SharePlatformSystem.Domain.Uow
             var filter = _filters.FirstOrDefault(f => f.FilterName == filterName);
             if (filter == null)
             {
-                throw new SharePlatformException("Unknown filter name: " + filterName + ". Be sure this filter is registered before.");
+                throw new SharePlatformException("未知的筛选器名称：" + filterName + ". 确保此筛选器以前已注册。");
             }
 
             return filter;
@@ -393,7 +379,7 @@ namespace SharePlatformSystem.Domain.Uow
             var filterIndex = _filters.FindIndex(f => f.FilterName == filterName);
             if (filterIndex < 0)
             {
-                throw new SharePlatformException("Unknown filter name: " + filterName + ". Be sure this filter is registered before.");
+                throw new SharePlatformException("未知的筛选器名称：" + filterName + ".  确保此筛选器以前已注册。.");
             }
 
             return filterIndex;

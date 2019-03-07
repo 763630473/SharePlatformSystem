@@ -8,7 +8,7 @@ namespace SharePlatformSystem.Domain.Uow
     public class SharePlatformDbConcurrencyException : SharePlatformException
     {
         /// <summary>
-        /// Creates a new <see cref="SharePlatformDbConcurrencyException"/> object.
+        /// 创建一个新的对象。
         /// </summary>
         public SharePlatformDbConcurrencyException()
         {
@@ -16,7 +16,7 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="SharePlatformException"/> object.
+        //创建一个新的对象。
         /// </summary>
         public SharePlatformDbConcurrencyException(SerializationInfo serializationInfo, StreamingContext context)
             : base(serializationInfo, context)
@@ -25,9 +25,9 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="SharePlatformDbConcurrencyException"/> object.
+        /// 创建一个新的对象。
         /// </summary>
-        /// <param name="message">Exception message</param>
+        /// <param name="message">异常消息</param>
         public SharePlatformDbConcurrencyException(string message)
             : base(message)
         {
@@ -35,10 +35,10 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="SharePlatformDbConcurrencyException"/> object.
+        /// 创建一个新的对象。
         /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="innerException">Inner exception</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="innerException">内部异常</param>
         public SharePlatformDbConcurrencyException(string message, Exception innerException)
             : base(message, innerException)
         {

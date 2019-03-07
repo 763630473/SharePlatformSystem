@@ -1,13 +1,13 @@
 ﻿namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// Used to get/set current <see cref="IUnitOfWork"/>. 
+    /// 用于获取/设置当前“iunitofwork”。
     /// </summary>
     public interface ICurrentUnitOfWorkProvider
     {
         /// <summary>
-        /// Gets/sets current <see cref="IUnitOfWork"/>.
-        /// Setting to null returns back to outer unit of work where possible.
+        ///获取/设置当前“iunitofwork”。
+        ///如果可能，设置为空将返回到外部工作单元。
         /// </summary>
         IUnitOfWork Current { get; set; }
     }

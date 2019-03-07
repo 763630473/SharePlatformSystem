@@ -12,19 +12,16 @@ namespace SharePlatformSystem.Domain.Uow
     {
         public TransactionScopeOption Scope { get; set; }
 
-        /// <inheritdoc/>
         public bool IsTransactional { get; set; }
 
-        /// <inheritdoc/>
         public TimeSpan? Timeout { get; set; }
 
-        /// <inheritdoc/>
         public bool IsTransactionScopeAvailable { get; set; }
 
-        /// <inheritdoc/>
         public IsolationLevel? IsolationLevel { get; set; }
 
         public IReadOnlyList<DataFilterConfiguration> Filters => _filters;
+
         private readonly List<DataFilterConfiguration> _filters;
 
         public List<Func<Type, bool>> ConventionalUowSelectors { get; }
@@ -48,7 +45,7 @@ namespace SharePlatformSystem.Domain.Uow
         {
             if (_filters.Any(f => f.FilterName == filterName))
             {
-                throw new SharePlatformException("There is already a filter with name: " + filterName);
+                throw new SharePlatformException("已存在名为的筛选器：" + filterName);
             }
 
             _filters.Add(new DataFilterConfiguration(filterName, isEnabledByDefault));

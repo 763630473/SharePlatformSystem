@@ -3,26 +3,26 @@ using System;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// Defines a unit of work.
-    /// This interface is internally used by SharePlatform.
-    /// Use <see cref="IUnitOfWorkManager.Begin()"/> to start a new unit of work.
+    ///定义工作单位。
+    ///此接口由SharePlatform内部使用。
+    ///使用“iunitofWorkManager.begin（）”启动新的工作单元。
     /// </summary>
     public interface IUnitOfWork : IActiveUnitOfWork, IUnitOfWorkCompleteHandle
     {
         /// <summary>
-        /// Unique id of this UOW.
+        /// 此UOW的唯一ID。
         /// </summary>
         string Id { get; }
 
         /// <summary>
-        /// Reference to the outer UOW if exists.
+        /// 引用外部UOW（如果存在）。
         /// </summary>
         IUnitOfWork Outer { get; set; }
-        
+
         /// <summary>
-        /// Begins the unit of work with given options.
+        /// 使用给定的选项开始工作单元。
         /// </summary>
-        /// <param name="options">Unit of work options</param>
+        /// <param name="options">工作单位选项</param>
         void Begin(UnitOfWorkOptions options);
     }
 }

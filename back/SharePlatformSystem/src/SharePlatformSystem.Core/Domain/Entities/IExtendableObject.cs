@@ -3,15 +3,15 @@
 namespace SharePlatformSystem.Core.Domain.Entities
 {
     /// <summary>
-    /// Defines a JSON formatted string property to extend an object/entity.
+    /// 定义JSON格式的字符串属性以扩展对象/实体。
     /// </summary>
     public interface IExtendableObject
     {
         /// <summary>
-        /// A JSON formatted string to extend the containing object.
-        /// JSON data can contain properties with arbitrary values (like primitives or complex objects).
-        /// Extension methods are available (<see cref="ExtendableObjectExtensions"/>) to manipulate this data.
-        /// General format:
+        ///用于扩展包含对象的JSON格式字符串。
+        ///JSON数据可以包含具有任意值的属性（如基元或复杂对象）。
+        ///可以使用扩展方法“extendableObjectExtensions”）来操作此数据。
+        ///常规格式：
         /// <code>
         /// {
         ///   "Property1" : ...

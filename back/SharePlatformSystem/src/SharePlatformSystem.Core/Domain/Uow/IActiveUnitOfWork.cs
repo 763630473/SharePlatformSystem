@@ -5,95 +5,95 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// This interface is used to work with active unit of work.
-    /// This interface can not be injected.
-    /// Use <see cref="IUnitOfWorkManager"/> instead.
+    ///此接口用于使用活动工作单元。
+    ///无法注入此接口。
+    ///改为使用“iunitofworkmanager”。
     /// </summary>
     public interface IActiveUnitOfWork
     {
         /// <summary>
-        /// This event is raised when this UOW is successfully completed.
+        ///此UOW成功完成时引发此事件。
         /// </summary>
         event EventHandler Completed;
 
         /// <summary>
-        /// This event is raised when this UOW is failed.
+        ///此UOW失败时引发此事件。
         /// </summary>
         event EventHandler<UnitOfWorkFailedEventArgs> Failed;
 
         /// <summary>
-        /// This event is raised when this UOW is disposed.
+        /// 释放此UOW时引发此事件。
         /// </summary>
         event EventHandler Disposed;
 
         /// <summary>
-        /// Gets if this unit of work is transactional.
+        /// 获取此工作单元是否是事务性的。
         /// </summary>
         UnitOfWorkOptions Options { get; }
 
         /// <summary>
-        /// Gets data filter configurations for this unit of work.
+        ///获取此工作单元的数据筛选器配置。
         /// </summary>
         IReadOnlyList<DataFilterConfiguration> Filters { get; }
 
         /// <summary>
-        /// A dictionary to use for custom operations on unitOfWork
+        ///用于在UnitOfWork上进行自定义操作的字典
         /// </summary>
         Dictionary<string, object> Items { get; set; }
 
         /// <summary>
-        /// Is this UOW disposed?
+        /// 此UOW是否已处理？
         /// </summary>
         bool IsDisposed { get; }
 
         /// <summary>
-        /// Saves all changes until now in this unit of work.
-        /// This method may be called to apply changes whenever needed.
-        /// Note that if this unit of work is transactional, saved changes are also rolled back if transaction is rolled back.
-        /// No explicit call is needed to SaveChanges generally, 
-        /// since all changes saved at end of a unit of work automatically.
+        ///在此工作单元中保存到现在为止的所有更改。
+        ///可以调用此方法以在需要时应用更改。
+        ///请注意，如果此工作单元是事务性的，则如果事务回滚，则保存的更改也将回滚。
+        ///一般不需要显式调用来保存更改，
+        ///因为所有更改都是在工作单元结束时自动保存的。
         /// </summary>
         void SaveChanges();
 
         /// <summary>
-        /// Saves all changes until now in this unit of work.
-        /// This method may be called to apply changes whenever needed.
-        /// Note that if this unit of work is transactional, saved changes are also rolled back if transaction is rolled back.
-        /// No explicit call is needed to SaveChanges generally, 
-        /// since all changes saved at end of a unit of work automatically.
+        ///在此工作单元中保存到现在为止的所有更改。
+        ///可以调用此方法以在需要时应用更改。
+        ///请注意，如果此工作单元是事务性的，则如果事务回滚，则保存的更改也将回滚。
+        ///一般不需要显式调用来保存更改，
+        ///因为所有更改都是在工作单元结束时自动保存的。
         /// </summary>
         Task SaveChangesAsync();
 
         /// <summary>
-        /// Disables one or more data filters.
-        /// Does nothing for a filter if it's already disabled. 
-        /// Use this method in a using statement to re-enable filters if needed.
+        ///禁用一个或多个数据筛选器。
+        ///如果过滤器已被禁用，则不执行任何操作。
+        ///在using语句中使用此方法在需要时重新启用筛选器。
         /// </summary>
-        /// <param name="filterNames">One or more filter names. <see cref="SharePlatformDataFilters"/> for standard filters.</param>
-        /// <returns>A <see cref="IDisposable"/> handle to take back the disable effect.</returns>
+        /// <param name="filterNames">一个或多个筛选器名称。“用于标准筛选器的SharePlatformDataFilters。</param>
+        /// <returns>A <see cref="IDisposable"/>手柄恢复禁用效果。</returns>
         IDisposable DisableFilter(params string[] filterNames);
 
         /// <summary>
-        /// Enables one or more data filters.
-        /// Does nothing for a filter if it's already enabled.
-        /// Use this method in a using statement to re-disable filters if needed.
+        ///启用一个或多个数据筛选器。
+        ///对已启用的筛选器不执行任何操作。
+        ///如果需要，可以在using语句中使用此方法重新禁用筛选器。
         /// </summary>
-        /// <param name="filterNames">One or more filter names. <see cref="SharePlatformDataFilters"/> for standard filters.</param>
-        /// <returns>A <see cref="IDisposable"/> handle to take back the enable effect.</returns>
+        /// <param name="filterNames">一个或多个筛选器名称。“用于标准筛选器的SharePlatformDataFilters。</param>
+        /// <returns>一个“idisposable”句柄来恢复启用效果。</returns>
         IDisposable EnableFilter(params string[] filterNames);
 
         /// <summary>
-        /// Checks if a filter is enabled or not.
+        ///检查是否启用了筛选器。
         /// </summary>
-        /// <param name="filterName">Name of the filter. <see cref="SharePlatformDataFilters"/> for standard filters.</param>
+        /// <param name="filterName">筛选器的名称。“用于标准筛选器的SharePlatformDataFilters。</param>
         bool IsFilterEnabled(string filterName);
 
         /// <summary>
-        /// Sets (overrides) value of a filter parameter.
+        ///设置（覆盖）过滤器参数的值。
         /// </summary>
-        /// <param name="filterName">Name of the filter</param>
-        /// <param name="parameterName">Parameter's name</param>
-        /// <param name="value">Value of the parameter to be set</param>
+        /// <param name="filterName">筛选器的名称</param>
+        /// <param name="parameterName">参数的名称</param>
+        /// <param name="value">要设置的参数的值</param>
         IDisposable SetFilterParameter(string filterName, string parameterName, object value);
     }
 }

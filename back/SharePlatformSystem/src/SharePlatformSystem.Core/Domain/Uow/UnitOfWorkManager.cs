@@ -5,7 +5,7 @@ using System.Transactions;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// Unit of work manager.
+    ///工作单位经理。
     /// </summary>
     public class UnitOfWorkManager : IUnitOfWorkManager, ITransientDependency
     {
@@ -66,7 +66,7 @@ namespace SharePlatformSystem.Domain.Uow
                 _iocResolver.Release(uow);
             };
 
-            //Inherit filters from outer UOW
+            //从外部UOW继承筛选器
             if (outerUow != null)
             {
                 options.FillOuterUowFiltersForNonProvidedOptions(outerUow.Filters.ToList());

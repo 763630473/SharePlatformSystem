@@ -7,14 +7,14 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// This class is used to register interceptor for needed classes for Unit Of Work mechanism.
+    ///这个类用于为工作单元机制所需的类注册拦截器。
     /// </summary>
     internal static class UnitOfWorkRegistrar
     {
         /// <summary>
-        /// Initializes the registerer.
+        ///初始化寄存器。
         /// </summary>
-        /// <param name="iocManager">IOC manager</param>
+        /// <param name="iocManager">IOC 管理器</param>
         public static void Initialize(IIocManager iocManager)
         {
             iocManager.IocContainer.Kernel.ComponentRegistered += (key, handler) =>

@@ -4,49 +4,49 @@ using System.Transactions;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// This attribute is used to indicate that declaring method is atomic and should be considered as a unit of work.
-    /// A method that has this attribute is intercepted, a database connection is opened and a transaction is started before call the method.
-    /// At the end of method call, transaction is committed and all changes applied to the database if there is no exception,
-    /// otherwise it's rolled back. 
+    ///此属性用于指示声明方法是原子方法，应将其视为工作单元。
+    ///截获具有此属性的方法，打开数据库连接，并在调用该方法之前启动事务。
+    ///方法调用结束时，提交事务，如果没有异常，则将所有更改应用到数据库，
+    ///否则会回滚。
     /// </summary>
     /// <remarks>
-    /// This attribute has no effect if there is already a unit of work before calling this method, if so, it uses the same transaction.
+    ///如果在调用此方法之前已有一个工作单元，则此属性无效，如果存在，则它使用相同的事务。
     /// </remarks>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class | AttributeTargets.Interface)]
     public class UnitOfWorkAttribute : Attribute
     {
         /// <summary>
-        /// Scope option.
+        /// 范围选项。
         /// </summary>
         public TransactionScopeOption? Scope { get; set; }
 
         /// <summary>
-        /// Is this UOW transactional?
-        /// Uses default value if not supplied.
+        ///这是UOW事务性的吗？
+        ///如果未提供，则使用默认值。
         /// </summary>
         public bool? IsTransactional { get; set; }
 
         /// <summary>
-        /// Timeout of UOW As milliseconds.
-        /// Uses default value if not supplied.
+        ///UOW超时为毫秒。
+        ///如果未提供，则使用默认值。
         /// </summary>
         public TimeSpan? Timeout { get; set; }
 
         /// <summary>
-        /// If this UOW is transactional, this option indicated the isolation level of the transaction.
-        /// Uses default value if not supplied.
+        ///如果此UOW是事务性的，则此选项指示事务的隔离级别。
+        ///如果未提供，则使用默认值。
         /// </summary>
         public IsolationLevel? IsolationLevel { get; set; }
 
         /// <summary>
-        /// Used to prevent starting a unit of work for the method.
-        /// If there is already a started unit of work, this property is ignored.
-        /// Default: false.
+        ///用于防止启动方法的工作单元。
+        ///如果已经有启动的工作单元，则忽略此属性。
+        ///默认值：false。
         /// </summary>
         public bool IsDisabled { get; set; }
 
         /// <summary>
-        /// Creates a new UnitOfWorkAttribute object.
+        ///创建新的UnitOfWorkAttribute对象。
         /// </summary>
         public UnitOfWorkAttribute()
         {
@@ -54,10 +54,10 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="UnitOfWorkAttribute"/> object.
+        /// 创建新的“UnitOfWorkAttribute”对象。
         /// </summary>
         /// <param name="isTransactional">
-        /// Is this unit of work will be transactional?
+        /// 此工作单元是否是事务性的？
         /// </param>
         public UnitOfWorkAttribute(bool isTransactional)
         {
@@ -65,19 +65,19 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="UnitOfWorkAttribute"/> object.
+        ///创建新的“UnitOfWorkAttribute”对象。
         /// </summary>
-        /// <param name="timeout">As milliseconds</param>
+        /// <param name="timeout">毫秒</param>
         public UnitOfWorkAttribute(int timeout)
         {
             Timeout = TimeSpan.FromMilliseconds(timeout);
         }
 
         /// <summary>
-        /// Creates a new <see cref="UnitOfWorkAttribute"/> object.
+        ///创建新的“UnitOfWorkAttribute”对象。
         /// </summary>
-        /// <param name="isTransactional">Is this unit of work will be transactional?</param>
-        /// <param name="timeout">As milliseconds</param>
+        /// <param name="isTransactional">此工作单元是否是事务性的？</param>
+        /// <param name="timeout">毫秒</param>
         public UnitOfWorkAttribute(bool isTransactional, int timeout)
         {
             IsTransactional = isTransactional;
@@ -85,10 +85,10 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="UnitOfWorkAttribute"/> object.
-        /// <see cref="IsTransactional"/> is automatically set to true.
+        /// 创建新的“UnitOfWorkAttribute”对象。
+        /// <see cref="IsTransactional"/> 自动设置为真。
         /// </summary>
-        /// <param name="isolationLevel">Transaction isolation level</param>
+        /// <param name="isolationLevel">事务隔离级别</param>
         public UnitOfWorkAttribute(IsolationLevel isolationLevel)
         {
             IsTransactional = true;
@@ -96,11 +96,11 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="UnitOfWorkAttribute"/> object.
-        /// <see cref="IsTransactional"/> is automatically set to true.
+        /// 创建新的“UnitOfWorkAttribute”对象。
+        /// <see cref="IsTransactional"/> 自动设置为真。
         /// </summary>
-        /// <param name="isolationLevel">Transaction isolation level</param>
-        /// <param name="timeout">Transaction  timeout as milliseconds</param>
+        /// <param name="isolationLevel">事务隔离级别</param>
+        /// <param name="timeout">事务超时（毫秒）</param>
         public UnitOfWorkAttribute(IsolationLevel isolationLevel, int timeout)
         {
             IsTransactional = true;
@@ -109,10 +109,10 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="UnitOfWorkAttribute"/> object.
-        /// <see cref="IsTransactional"/> is automatically set to true.
+        ///创建新的“UnitOfWorkAttribute”对象。
+        /// <see cref="IsTransactional"/> 自动设置为真。
         /// </summary>
-        /// <param name="scope">Transaction scope</param>
+        /// <param name="scope">交易范围</param>
         public UnitOfWorkAttribute(TransactionScopeOption scope)
         {
             IsTransactional = true;
@@ -120,11 +120,11 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="UnitOfWorkAttribute"/> object.
+        /// 创建新的“UnitOfWorkAttribute”对象。
         /// </summary>
-        /// <param name="scope">Transaction scope</param>
+        /// <param name="scope">事务范围</param>
         /// <param name="isTransactional">
-        /// Is this unit of work will be transactional?
+        /// 此工作单元是否是事务性的？
         /// </param>
         public UnitOfWorkAttribute(TransactionScopeOption scope, bool isTransactional)
         {
@@ -133,11 +133,11 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Creates a new <see cref="UnitOfWorkAttribute"/> object.
-        /// <see cref="IsTransactional"/> is automatically set to true.
+        ///创建新的“UnitOfWorkAttribute”对象。
+        /// <see cref="IsTransactional"/>自动设置为真。
         /// </summary>
-        /// <param name="scope">Transaction scope</param>
-        /// <param name="timeout">Transaction  timeout as milliseconds</param>
+        /// <param name="scope">交易范围</param>
+        /// <param name="timeout">事务超时（毫秒）</param>
         public UnitOfWorkAttribute(TransactionScopeOption scope, int timeout)
         {
             IsTransactional = true;

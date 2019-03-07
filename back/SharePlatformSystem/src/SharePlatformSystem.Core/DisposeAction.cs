@@ -5,8 +5,8 @@ using JetBrains.Annotations;
 namespace SharePlatformSystem
 {
     /// <summary>
-    /// This class can be used to provide an action when
-    /// Dipose method is called.
+    ///此类可用于在
+    ///调用了dipose方法。
     /// </summary>
     public class DisposeAction : IDisposable
     {
@@ -15,9 +15,9 @@ namespace SharePlatformSystem
         private Action _action;
 
         /// <summary>
-        /// Creates a new <see cref="DisposeAction"/> object.
+        ///创建新的“DisposeAction”对象。
         /// </summary>
-        /// <param name="action">Action to be executed when this object is disposed.</param>
+        /// <param name="action">释放此对象时要执行的操作。</param>
         public DisposeAction([CanBeNull] Action action)
         {
             _action = action;
@@ -25,7 +25,7 @@ namespace SharePlatformSystem
 
         public void Dispose()
         {
-            // Interlocked prevents multiple execution of the _action.
+            //联锁防止多次执行动作。
             var action = Interlocked.Exchange(ref _action, null);
             action?.Invoke();
         }

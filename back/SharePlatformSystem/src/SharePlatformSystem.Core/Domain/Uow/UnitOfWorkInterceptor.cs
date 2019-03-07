@@ -7,7 +7,7 @@ using Castle.DynamicProxy;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// This interceptor is used to manage database connection and transactions.
+    ///此拦截器用于管理数据库连接和事务。
     /// </summary>
     internal class UnitOfWorkInterceptor : IInterceptor
     {
@@ -21,9 +21,9 @@ namespace SharePlatformSystem.Domain.Uow
         }
 
         /// <summary>
-        /// Intercepts a method.
+        /// 截取一个方法。
         /// </summary>
-        /// <param name="invocation">Method invocation arguments</param>
+        /// <param name="invocation">方法调用参数</param>
         public void Intercept(IInvocation invocation)
         {
             MethodInfo method;
@@ -39,12 +39,12 @@ namespace SharePlatformSystem.Domain.Uow
             var unitOfWorkAttr = _unitOfWorkOptions.GetUnitOfWorkAttributeOrNull(method);
             if (unitOfWorkAttr == null || unitOfWorkAttr.IsDisabled)
             {
-                //No need to a uow
+                //不需要UOW
                 invocation.Proceed();
                 return;
             }
 
-            //No current uow, run a new one
+            //没有当前UOW，运行新的UOW
             PerformUow(invocation, unitOfWorkAttr.CreateOptions());
         }
 

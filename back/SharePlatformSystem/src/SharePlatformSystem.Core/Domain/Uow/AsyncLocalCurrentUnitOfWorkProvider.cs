@@ -6,8 +6,8 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// CallContext implementation of <see cref="ICurrentUnitOfWorkProvider"/>. 
-    /// This is the default implementation.
+    /// “ICurrentUnitofWorkProvider”的CallContext实现。
+    ///这是默认实现。
     /// </summary>
     public class AsyncLocalCurrentUnitOfWorkProvider : ICurrentUnitOfWorkProvider, ITransientDependency
     {

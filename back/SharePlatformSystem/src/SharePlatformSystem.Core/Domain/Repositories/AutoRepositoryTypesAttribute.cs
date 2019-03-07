@@ -3,8 +3,8 @@ using System;
 namespace SharePlatformSystem.Core.Domain.Repositories
 {
     /// <summary>
-    /// Used to define auto-repository types for entities.
-    /// This can be used for DbContext types.
+    ///用于定义实体的自动存储库类型。
+    ///这可用于dbContext类型。
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
     public class AutoRepositoryTypesAttribute : Attribute
