@@ -7,17 +7,17 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// Default implementation of <see cref="IConnectionStringResolver"/>.
-    /// Get connection string from <see cref="ISharePlatformStartupConfiguration"/>,
-    /// or "Default" connection string in config file,
-    /// or single connection string in config file.
+    ///默认实现“IConnectionStringResolver”。
+    ///从“ishareplatformstartupconfiguration”获取连接字符串，
+    ///或配置文件中的“默认”连接字符串，
+    ///或配置文件中的单个连接字符串。
     /// </summary>
     public class DefaultConnectionStringResolver : IConnectionStringResolver, ITransientDependency
     {
         private readonly ISharePlatformStartupConfiguration _configuration;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DefaultConnectionStringResolver"/> class.
+        /// 初始化“DefaultConnectionStringResolver”类的新实例。
         /// </summary>
         public DefaultConnectionStringResolver(ISharePlatformStartupConfiguration configuration)
         {
@@ -44,7 +44,7 @@ namespace SharePlatformSystem.Domain.Uow
                 return ConfigurationManager.ConnectionStrings[0].ConnectionString;
             }
 
-            throw new SharePlatformException("Could not find a connection string definition for the application. Set ISharePlatformStartupConfiguration.DefaultNameOrConnectionString or add a 'Default' connection string to application .config file.");
+            throw new SharePlatformException("找不到应用程序的连接字符串定义。设置ishareplatformstartupconfiguration.defaultnameorconnectionstring或向application.config文件添加“default”连接字符串。");
         }
     }
 }

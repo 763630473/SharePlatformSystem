@@ -4,7 +4,7 @@ using System;
 namespace SharePlatformSystem
 {
     /// <summary>
-    /// Implements <see cref="IGuidGenerator"/> by using <see cref="Guid.NewGuid"/>.
+    /// 使用“guid.newguid”实现“iguidGenerator”。
     /// </summary>
     public class RegularGuidGenerator : IGuidGenerator, ITransientDependency
     {

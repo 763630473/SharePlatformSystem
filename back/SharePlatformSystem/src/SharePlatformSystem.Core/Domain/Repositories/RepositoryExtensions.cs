@@ -3,7 +3,6 @@ using SharePlatformSystem.Core.Domain.Entities;
 using SharePlatformSystem.Core.Reflection;
 using SharePlatformSystem.Dependency;
 using SharePlatformSystem.Domain.Uow;
-using SharePlatformSystem.Runtime.Session;
 using SharePlatformSystem.Threading;
 using System;
 using System.Collections.Generic;

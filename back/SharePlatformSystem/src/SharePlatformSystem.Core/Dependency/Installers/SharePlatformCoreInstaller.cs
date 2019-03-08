@@ -28,7 +28,7 @@ namespace SharePlatformSystem.Dependency.Installers
                 Component.For<ICachingConfiguration, CachingConfiguration>().ImplementedBy<CachingConfiguration>().LifestyleSingleton(),
                 Component.For<IAuditingConfiguration, AuditingConfiguration>().ImplementedBy<AuditingConfiguration>().LifestyleSingleton(),
                 Component.For<IBackgroundJobConfiguration, BackgroundJobConfiguration>().ImplementedBy<BackgroundJobConfiguration>().LifestyleSingleton(),
-                 Component.For<Core.Resources.Embedded.IEmbeddedResourcesConfiguration, Core.Resources.Embedded.EmbeddedResourcesConfiguration>().ImplementedBy<Core.Resources.Embedded.EmbeddedResourcesConfiguration>().LifestyleSingleton(),
+                Component.For<Core.Resources.Embedded.IEmbeddedResourcesConfiguration, Core.Resources.Embedded.EmbeddedResourcesConfiguration>().ImplementedBy<Core.Resources.Embedded.EmbeddedResourcesConfiguration>().LifestyleSingleton(),
                 Component.For<ISharePlatformStartupConfiguration, SharePlatformStartupConfiguration>().ImplementedBy<SharePlatformStartupConfiguration>().LifestyleSingleton(),
                 Component.For<IEntityHistoryConfiguration, EntityHistoryConfiguration>().ImplementedBy<EntityHistoryConfiguration>().LifestyleSingleton(),
                 Component.For<ITypeFinder, TypeFinder>().ImplementedBy<TypeFinder>().LifestyleSingleton(),

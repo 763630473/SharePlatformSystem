@@ -3,32 +3,32 @@
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// Unit of work manager.
-    /// Used to begin and control a unit of work.
+    ///工作单元管理器。
+    ///用于开始和控制一个工作单元。
     /// </summary>
     public interface IUnitOfWorkManager
     {
         /// <summary>
-        /// Gets currently active unit of work (or null if not exists).
+        ///获取当前活动的工作单元（如果不存在，则为空）。
         /// </summary>
         IActiveUnitOfWork Current { get; }
 
         /// <summary>
-        /// Begins a new unit of work.
+        ///开始新的工作单元。
         /// </summary>
-        /// <returns>A handle to be able to complete the unit of work</returns>
+        /// <returns>能够完成工作单元的手柄</returns>
         IUnitOfWorkCompleteHandle Begin();
 
         /// <summary>
-        /// Begins a new unit of work.
+        ///开始新的工作单元。
         /// </summary>
-        /// <returns>A handle to be able to complete the unit of work</returns>
+        /// <returns>能够完成工作单元的手柄</returns>
         IUnitOfWorkCompleteHandle Begin(TransactionScopeOption scope);
 
         /// <summary>
-        /// Begins a new unit of work.
+        ///开始新的工作单元。
         /// </summary>
-        /// <returns>A handle to be able to complete the unit of work</returns>
+        /// <returns>能够完成工作单元的手柄</returns>
         IUnitOfWorkCompleteHandle Begin(UnitOfWorkOptions options);
     }
 }

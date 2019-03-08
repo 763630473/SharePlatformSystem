@@ -1,14 +1,14 @@
 namespace SharePlatformSystem.Domain.Uow
 {
     /// <summary>
-    /// Used to get connection string when a database connection is needed.
+    /// 用于在需要数据库连接时获取连接字符串。
     /// </summary>
     public interface IConnectionStringResolver
     {
         /// <summary>
-        /// Gets a connection string name (in config file) or a valid connection string.
+        ///获取连接字符串名称（在配置文件中）或有效的连接字符串。
         /// </summary>
-        /// <param name="args">Arguments that can be used while resolving connection string.</param>
+        /// <param name="args">解析连接字符串时可以使用的参数。</param>
         string GetNameOrConnectionString(ConnectionStringResolveArgs args);
     }
 }

@@ -64,7 +64,7 @@ namespace SharePlatformSystem.Core.Domain.Entities
                 return true;
             }
 
-            //Transient objects are not considered as equal
+            //瞬变物体不被认为是相等的
             var other = (Entity<TPrimaryKey>)obj;
             if (IsTransient() && other.IsTransient())
             {

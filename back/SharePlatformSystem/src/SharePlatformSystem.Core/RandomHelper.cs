@@ -6,22 +6,22 @@ using System.Linq;
 namespace SharePlatformSystem
 {
     /// <summary>
-    /// A shortcut to use <see cref="Random"/> class.
-    /// Also provides some useful methods.
+    ///使用“Random”类的快捷方式。
+    ///还提供了一些有用的方法。
     /// </summary>
     public static class RandomHelper
     {
         private static readonly Random Rnd = new Random();
 
         /// <summary>
-        /// Returns a random number within a specified range.
+        /// 返回指定范围内的随机数。
         /// </summary>
-        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
-        /// <param name="maxValue">The exclusive upper bound of the random number returned. maxValue must be greater than or equal to minValue.</param>
+        /// <param name="minValue">返回的随机数的包含下限。</param>
+        /// <param name="maxValue">返回的随机数的独占上限。MaxValue必须大于或等于MinValue。</param>
         /// <returns>
-        /// A 32-bit signed integer greater than or equal to minValue and less than maxValue; 
-        /// that is, the range of return values includes minValue but not maxValue. 
-        /// If minValue equals maxValue, minValue is returned.
+        ///大于或等于minvalue小于maxvalue的32位有符号整数；
+        ///即返回值的范围包括minvalue，而不是maxvalue。
+        ///如果minvalue等于maxvalue，则返回minvalue。
         /// </returns>
         public static int GetRandom(int minValue, int maxValue)
         {
@@ -32,13 +32,13 @@ namespace SharePlatformSystem
         }
 
         /// <summary>
-        /// Returns a nonnegative random number less than the specified maximum.
+        /// 返回小于指定最大值的非负随机数。
         /// </summary>
-        /// <param name="maxValue">The exclusive upper bound of the random number to be generated. maxValue must be greater than or equal to zero.</param>
+        /// <param name="maxValue">要生成的随机数的独占上界。MaxValue必须大于或等于零。</param>
         /// <returns>
-        /// A 32-bit signed integer greater than or equal to zero, and less than maxValue; 
-        /// that is, the range of return values ordinarily includes zero but not maxValue. 
-        /// However, if maxValue equals zero, maxValue is returned.
+        ///大于或等于零且小于maxvalue的32位有符号整数；
+        ///也就是说，返回值的范围通常包括零，但不包括MaxValue。
+        ///但是，如果maxvalue等于零，则返回maxvalue.mum。
         /// </returns>
         public static int GetRandom(int maxValue)
         {
@@ -49,9 +49,9 @@ namespace SharePlatformSystem
         }
 
         /// <summary>
-        /// Returns a nonnegative random number.
+        /// 返回非负随机数。
         /// </summary>
-        /// <returns>A 32-bit signed integer greater than or equal to zero and less than <see cref="int.MaxValue"/>.</returns>
+        /// <returns>大于或等于零且小于“int.maxvalue”的32位有符号整数。</returns>
         public static int GetRandom()
         {
             lock (Rnd)
@@ -61,24 +61,24 @@ namespace SharePlatformSystem
         }
 
         /// <summary>
-        /// Gets random of given objects.
+        ///获取给定对象的随机值。
         /// </summary>
-        /// <typeparam name="T">Type of the objects</typeparam>
-        /// <param name="objs">List of object to select a random one</param>
+        /// <typeparam name="T">对象的类型</typeparam>
+        /// <param name="objs">要随机选择的对象列表</param>
         public static T GetRandomOf<T>(params T[] objs)
         {
             if (objs.IsNullOrEmpty())
             {
-                throw new ArgumentException("objs can not be null or empty!", "objs");
+                throw new ArgumentException("obj不能为空！", "objs");
             }
 
             return objs[GetRandom(0, objs.Length)];
         }
 
         /// <summary>
-        /// Generates a randomized list from given enumerable.
+        ///从给定的可枚举项生成随机列表。
         /// </summary>
-        /// <typeparam name="T">Type of items in the list</typeparam>
+        /// <typeparam name="T">列表中的项目类型</typeparam>
         /// <param name="items">items</param>
         public static List<T> GenerateRandomizedList<T>(IEnumerable<T> items)
         {

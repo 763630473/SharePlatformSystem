@@ -3,25 +3,25 @@ using System;
 namespace SharePlatformSystem
 {
     /// <summary>
-    /// Used to represent a named type selector.
+    /// 用于表示命名类型选择器。
     /// </summary>
     public class NamedTypeSelector
     {
         /// <summary>
-        /// Name of the selector.
+        /// 选择器的名称。
         /// </summary>
         public string Name { get; set; }
-        
+
         /// <summary>
-        /// Predicate.
+        /// 谓语。
         /// </summary>
         public Func<Type, bool> Predicate { get; set; }
 
         /// <summary>
-        /// Creates new <see cref="NamedTypeSelector"/> object.
+        /// 创建新的“NamedTypeSelector”对象。
         /// </summary>
-        /// <param name="name">Name</param>
-        /// <param name="predicate">Predicate</param>
+        /// <param name="name">名称</param>
+        /// <param name="predicate">谓语</param>
         public NamedTypeSelector(string name, Func<Type, bool> predicate)
         {
             Name = name;

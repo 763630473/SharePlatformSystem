@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Core.Domain.Repositories
 {
     /// <summary>
-    /// Base class to implement <see cref="IRepository{TEntity,TPrimaryKey}"/>.
-    /// It implements some methods in most simple way.
+    ///要实现“IRepository Entity，TPrimaryKey”的基类
+    ///它以最简单的方式实现了一些方法。
     /// </summary>
-    /// <typeparam name="TEntity">Type of the Entity for this repository</typeparam>
-    /// <typeparam name="TPrimaryKey">Primary key of the entity</typeparam>
+    /// <typeparam name="TEntity">此存储库的实体类型</typeparam>
+    /// <typeparam name="TPrimaryKey">实体的主键</typeparam>
     public abstract class SharePlatformRepositoryBase<TEntity, TPrimaryKey> : IRepository<TEntity, TPrimaryKey>, IUnitOfWorkManagerAccessor
         where TEntity : class, IEntity<TPrimaryKey>
     {

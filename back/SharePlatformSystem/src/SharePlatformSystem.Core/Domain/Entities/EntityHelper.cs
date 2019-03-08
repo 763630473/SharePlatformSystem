@@ -6,7 +6,7 @@ using System.Reflection;
 namespace SharePlatformSystem.Core.Domain.Entities
 {
     /// <summary>
-    /// Some helper methods for entities.
+    /// 实体的一些辅助方法。
     /// </summary>
     public static class EntityHelper
     {
@@ -21,7 +21,7 @@ namespace SharePlatformSystem.Core.Domain.Entities
         }
 
         /// <summary>
-        /// Gets primary key type of given entity type
+        /// 获取给定实体类型的主键类型
         /// </summary>
         public static Type GetPrimaryKeyType(Type entityType)
         {
@@ -33,14 +33,14 @@ namespace SharePlatformSystem.Core.Domain.Entities
                 }
             }
 
-            throw new SharePlatformException("Can not find primary key type of given entity type: " + entityType + ". Be sure that this entity type implements IEntity<TPrimaryKey> interface");
+            throw new SharePlatformException("找不到给定实体类型的主键类型: " + entityType + ".确保此实体类型实现IEntity<TPrimaryKey>Interface");
         }
 
         public static object GetEntityId(object entity)
         {
             if (!ReflectionHelper.IsAssignableToGenericType(entity.GetType(), typeof(IEntity<>)))
             {
-                throw new SharePlatformException(entity.GetType() + " is not an Entity !");
+                throw new SharePlatformException(entity.GetType() + "不是实体!");
             }
 
             return ReflectionHelper.GetValueByPath(entity, entity.GetType(), "Id");

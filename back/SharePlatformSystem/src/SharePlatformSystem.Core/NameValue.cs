@@ -3,13 +3,13 @@ using System;
 namespace SharePlatformSystem
 {
     /// <summary>
-    /// Can be used to store Name/Value (or Key/Value) pairs.
+    ///可用于存储名称/值（或键/值）对。
     /// </summary>
     [Serializable]
     public class NameValue : NameValue<string>
     {
         /// <summary>
-        /// Creates a new <see cref="NameValue"/>.
+        /// 创建新的“NameValue”
         /// </summary>
         public NameValue()
         {
@@ -17,7 +17,7 @@ namespace SharePlatformSystem
         }
 
         /// <summary>
-        /// Creates a new <see cref="NameValue"/>.
+        /// 创建新的“NameValue”
         /// </summary>
         public NameValue(string name, string value)
         {
@@ -27,7 +27,7 @@ namespace SharePlatformSystem
     }
 
     /// <summary>
-    /// Can be used to store Name/Value (or Key/Value) pairs.
+    ///可用于存储名称/值（或键/值）对。
     /// </summary>
     [Serializable]
     public class NameValue<T>
@@ -43,7 +43,7 @@ namespace SharePlatformSystem
         public T Value { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="NameValue"/>.
+        /// 创建新的“NameValue”
         /// </summary>
         public NameValue()
         {
@@ -51,7 +51,7 @@ namespace SharePlatformSystem
         }
 
         /// <summary>
-        /// Creates a new <see cref="NameValue"/>.
+        /// 创建新的“NameValue”
         /// </summary>
         public NameValue(string name, T value)
         {

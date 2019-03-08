@@ -3,7 +3,7 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Core.Domain.Services
 {
     /// <summary>
-    /// This interface must be implemented by all domain services to identify them by convention.
+    /// 此接口必须由所有域服务实现，以按约定标识它们。
     /// </summary>
     public interface IDomainService : ITransientDependency
     {
