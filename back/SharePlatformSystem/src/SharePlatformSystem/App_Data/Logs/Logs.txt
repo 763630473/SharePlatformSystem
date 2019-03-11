@@ -1,0 +1,23 @@
+DEBUG 2019-03-12 00:24:37,128 [1    ] .Core.Modules.SharePlatformModuleManager - Loading SharePlatform modules...
+DEBUG 2019-03-12 00:24:37,148 [1    ] .Core.Modules.SharePlatformModuleManager - Found 11 SharePlatform modules in total.
+DEBUG 2019-03-12 00:24:37,155 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.Web.SharePlatformSystemWebMvcModule, SharePlatformSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,159 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.Core.SharePlatformKernelModule, SharePlatformSystem.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,159 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.Web.SharePlatformSystemInfrastructureModule, SharePlatformSystem.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,159 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.Web.SharePlatformSystemAuthAppModule, SharePlatformSystem.Auth.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,160 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.Web.SharePlatformSystemAuthEfRepositoryModule, SharePlatformSystem.Auth.EfRepository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,160 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.NetHouse.App.SharePlatformSystemNetHouseAppModule, SharePlatformSystem.NetHouse.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,160 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.NHRepository.SharePlatformSystemNHRepositoryModule, SharePlatformSystem.NHRepository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,168 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.Framework.AspNetCore.SharePlatformAspNetCoreModule, SharePlatformSystem.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,169 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.NHibernate.SharePlatformNHibernateModule, SharePlatformSystem.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,169 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.Dapper.SharePlatformDapperModule, SharePlatformSystem.Dapper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,170 [1    ] .Core.Modules.SharePlatformModuleManager - Loaded module: SharePlatformSystem.Log4Net.Log4NetModule, SharePlatformSystem.Log4Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-03-12 00:24:37,172 [1    ] .Core.Modules.SharePlatformModuleManager - 11 modules loaded.
+DEBUG 2019-03-12 00:24:39,580 [1    ] em.Core.Localization.LocalizationManager - Initializing 1 localization sources.
+DEBUG 2019-03-12 00:24:39,626 [1    ] em.Core.Localization.LocalizationManager - Initialized localization source: SharePlatform
+DEBUG 2019-03-12 00:24:39,654 [1    ] stem.BackgroundJobs.BackgroundJobManager - Start background worker: SharePlatformSystem.BackgroundJobs.BackgroundJobManager
+INFO  2019-03-12 00:24:41,647 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  2019-03-12 00:24:41,853 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 208.2858ms 404 
+DEBUG 2019-03-12 00:24:46,466 [2    ] .Core.Modules.SharePlatformModuleManager - Shutting down has been started
+DEBUG 2019-03-12 00:24:46,470 [2    ] stem.BackgroundJobs.BackgroundJobManager - Stop background worker: SharePlatformSystem.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-03-12 00:24:46,471 [2    ] stem.BackgroundJobs.BackgroundJobManager - WaitToStop background worker: SharePlatformSystem.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-03-12 00:24:46,471 [2    ] .Core.Modules.SharePlatformModuleManager - Shutting down completed.

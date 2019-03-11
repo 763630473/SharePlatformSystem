@@ -29,7 +29,8 @@ namespace SharePlatformSystem.Log4Net.Logging.Log4Net
             );
 
             var log4NetConfig = new XmlDocument();
-            log4NetConfig.Load(File.OpenRead(configFileName));
+            var f = File.OpenRead(configFileName);
+                log4NetConfig.Load(f);
             XmlConfigurator.Configure(_loggerRepository, log4NetConfig["log4net"]);
         }
 

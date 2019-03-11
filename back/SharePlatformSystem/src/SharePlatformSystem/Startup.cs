@@ -64,7 +64,7 @@ namespace SharePlatformSystem
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+  
             services.AddMvc(option =>
             {
                 option.ModelBinderProviders.Insert(0, new JsonBinderProvider());
@@ -117,7 +117,8 @@ namespace SharePlatformSystem
                    );
                //Configure Log4Net logging
                options.IocManager.IocContainer.AddFacility<LoggingFacility>(
-                   f => f.UseSharePlatformLog4Net().WithConfig(_hostingEnvironment.ContentRootPath+"/log4net.config")
+                   //f => f.UseSharePlatformLog4Net().WithConfig(_hostingEnvironment.ContentRootPath+"/log4net.config")
+                   f => f.UseSharePlatformLog4Net().WithConfig("log4net.config")
                );
 
                var propInjector = options.IocManager.IocContainer.Kernel.ComponentModelBuilder
@@ -164,7 +165,11 @@ namespace SharePlatformSystem
             //        name: "default",
             //        template: "{controller=Home}/{action=Index}/{id?}");
             //});
-            app.UseMvcWithDefaultRoute();
+
+            app.UseMvc(routes =>
+            {
+                app.ApplicationServices.GetRequiredService<Framework.AspNetCore.Configuration.ISharePlatformAspNetCoreConfiguration>().RouteConfiguration.ConfigureAll(routes);
+            });
 
         }
     }

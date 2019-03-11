@@ -4,6 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>G:\SharePlatformSystem\back\SharePlatformSystem\src\SharePlatformSystem.Log4Net\SharePlatformSystem.Log4Net.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3">
@@ -14,6 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SharePlatformSystem.Core\SharePlatformSystem.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

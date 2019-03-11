@@ -11,6 +11,7 @@ using SharePlatformSystem.Core;
 using SharePlatformSystem.Core.Modules;
 using SharePlatformSystem.Dapper;
 using SharePlatformSystem.Framework.AspNetCore;
+using SharePlatformSystem.Log4Net;
 using SharePlatformSystem.NetHouse.App;
 using SharePlatformSystem.NHibernate;
 using SharePlatformSystem.NHibernate.Configuration.Startup;
@@ -28,12 +29,12 @@ namespace SharePlatformSystem.Web
         typeof(SharePlatformKernelModule),
         typeof(SharePlatformSystemInfrastructureModule),
         typeof(SharePlatformSystemAuthAppModule),
-                typeof(SharePlatformSystemNetHouseAppModule),
+        typeof(SharePlatformSystemNetHouseAppModule),
         typeof(SharePlatformAspNetCoreModule),
-          typeof(SharePlatformAspNetCoreModule)
-        ,
-         typeof(SharePlatformNHibernateModule),
-        typeof(SharePlatformDapperModule)
+        typeof(SharePlatformAspNetCoreModule),
+        typeof(SharePlatformNHibernateModule),
+        typeof(SharePlatformDapperModule),
+        typeof(Log4NetModule)
         )]
     public class SharePlatformSystemWebMvcModule : SharePlatformModule
     {

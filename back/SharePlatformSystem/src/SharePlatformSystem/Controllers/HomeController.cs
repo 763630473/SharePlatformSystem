@@ -13,7 +13,10 @@ namespace SharePlatformSystem.Controllers
         }
         public ActionResult Index()
         {
-            _persionManager.InsertPersion();
+            Logger.Error("1");
+            Logger.Debug("2");
+            Logger.Info("3");
+            //_persionManager.InsertPersion();
             return View();
         }
 
