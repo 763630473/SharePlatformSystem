@@ -10,7 +10,7 @@ namespace SharePlatformSystem.Core.Timing
         {
             return new[]
             {
-                new SettingDefinition(TimingSettingNames.TimeZone, "UTC", L("TimeZone"), scopes: SettingScopes.Application | SettingScopes.Tenant | SettingScopes.User)
+                new SettingDefinition(TimingSettingNames.TimeZone, "UTC", L("TimeZone"), scopes: SettingScopes.Application | SettingScopes.User)
             };
         }
 

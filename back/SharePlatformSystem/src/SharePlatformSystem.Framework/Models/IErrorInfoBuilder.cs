@@ -3,21 +3,21 @@
 namespace SharePlatformSystem.Framework.Models
 {
     /// <summary>
-    /// This interface is used to build <see cref="ErrorInfo"/> objects.
+    /// 此接口用于生成对象。
     /// </summary>
     public interface IErrorInfoBuilder
     {
         /// <summary>
-        /// Creates a new instance of <see cref="ErrorInfo"/> using the given <paramref name="exception"/> object.
+        /// 使用给定的<paramref name=“exception”/>对象创建<see cref=“errorinfo”/>的新实例。
         /// </summary>
-        /// <param name="exception">The exception object</param>
-        /// <returns>Created <see cref="ErrorInfo"/> object</returns>
+        /// <param name="exception">异常对象</param>
+        /// <returns>已创建<see cref=“errorinfo”/>对象</returns>
         ErrorInfo BuildForException(Exception exception);
 
         /// <summary>
-        /// Adds an <see cref="IExceptionToErrorInfoConverter"/> object.
+        /// 添加一个对象。
         /// </summary>
-        /// <param name="converter">Converter</param>
+        /// <param name="converter">转换器</param>
         void AddExceptionConverter(IExceptionToErrorInfoConverter converter);
     }
 }

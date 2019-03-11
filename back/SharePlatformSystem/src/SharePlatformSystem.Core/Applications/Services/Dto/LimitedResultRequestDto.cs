@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// Simply implements <see cref="ILimitedResultRequest"/>.
+    /// 只需实现“iMitedResultRequest”
     /// </summary>
     public class LimitedResultRequestDto : ILimitedResultRequest
     {

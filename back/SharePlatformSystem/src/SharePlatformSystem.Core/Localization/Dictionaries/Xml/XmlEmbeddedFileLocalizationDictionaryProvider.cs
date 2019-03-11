@@ -6,18 +6,18 @@ using System.Reflection;
 namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
 {
     /// <summary>
-    /// Provides localization dictionaries from XML files embedded into an <see cref="Assembly"/>.
+    /// 提供嵌入到“assembly”中的XML文件的本地化字典。
     /// </summary>
     public class XmlEmbeddedFileLocalizationDictionaryProvider : LocalizationDictionaryProviderBase
     {
         private readonly Assembly _assembly;
         private readonly string _rootNamespace;
-        
+
         /// <summary>
-        /// Creates a new <see cref="XmlEmbeddedFileLocalizationDictionaryProvider"/> object.
+        /// 创建新的“xmleEmbeddedFileLocalizationDictionaryProvider”对象。
         /// </summary>
-        /// <param name="assembly">Assembly that contains embedded xml files</param>
-        /// <param name="rootNamespace">Namespace of the embedded xml dictionary files</param>
+        /// <param name="assembly">包含嵌入XML文件的程序集</param>
+        /// <param name="rootNamespace">嵌入的XML字典文件的命名空间</param>
         public XmlEmbeddedFileLocalizationDictionaryProvider(Assembly assembly, string rootNamespace)
         {
             _assembly = assembly;
@@ -42,7 +42,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
                         var dictionary = CreateXmlLocalizationDictionary(xmlString);
                         if (Dictionaries.ContainsKey(dictionary.CultureInfo.Name))
                         {
-                            throw new SharePlatformInitializationException(sourceName + " source contains more than one dictionary for the culture: " + dictionary.CultureInfo.Name);
+                            throw new SharePlatformInitializationException(sourceName + " 源包含多个区域性字典: " + dictionary.CultureInfo.Name);
                         }
 
                         Dictionaries[dictionary.CultureInfo.Name] = dictionary;
@@ -51,7 +51,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
                         {
                             if (DefaultDictionary != null)
                             {
-                                throw new SharePlatformInitializationException("Only one default localization dictionary can be for source: " + sourceName);
+                                throw new SharePlatformInitializationException("源只能有一个默认本地化词典: " + sourceName);
                             }
 
                             DefaultDictionary = dictionary;

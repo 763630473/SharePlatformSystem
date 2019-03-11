@@ -3,7 +3,7 @@ using System;
 namespace SharePlatformSystem.Events.Bus.Factories.Internals
 {
     /// <summary>
-    /// Used to unregister a <see cref="IEventHandlerFactory"/> on <see cref="Dispose"/> method.
+    ///用于注销<see cref=“ieventhandlerFactory”/>on<see cref=“dispose”/>方法。
     /// </summary>
     internal class FactoryUnregistrar : IDisposable
     {

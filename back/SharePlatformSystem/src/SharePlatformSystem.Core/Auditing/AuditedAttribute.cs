@@ -3,8 +3,7 @@
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// This attribute is used to apply audit logging for a single method or
-    /// all methods of a class or interface.
+    /// 此属性用于为单个方法或类或接口的所有方法应用审核日志记录。
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class AuditedAttribute : Attribute

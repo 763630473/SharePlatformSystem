@@ -17,7 +17,7 @@ namespace SharePlatformSystem.RealTime
     }
 
     /// <summary>
-    /// Implements <see cref="IOnlineClientManager"/>.
+    /// 实现 <see cref="IOnlineClientManager"/>.
     /// </summary>
     public class OnlineClientManager : IOnlineClientManager, ISingletonDependency
     {
@@ -27,14 +27,14 @@ namespace SharePlatformSystem.RealTime
         public event EventHandler<OnlineUserEventArgs> UserDisconnected;
 
         /// <summary>
-        /// Online clients.
+        /// 在线客户端
         /// </summary>
         protected ConcurrentDictionary<string, IOnlineClient> Clients { get; }
 
         protected readonly object SyncObj = new object();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OnlineClientManager"/> class.
+        /// 初始化的新实例<see cref="OnlineClientManager"/> .
         /// </summary>
         public OnlineClientManager()
         {

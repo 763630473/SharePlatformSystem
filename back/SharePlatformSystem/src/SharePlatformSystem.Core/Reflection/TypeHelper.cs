@@ -4,7 +4,7 @@ using System.Reflection;
 namespace SharePlatformSystem.Core.Reflection
 {
     /// <summary>
-    /// Some simple type-checking methods used internally.
+    /// 一些内部使用的简单类型检查方法。
     /// </summary>
     public static class TypeHelper
     {

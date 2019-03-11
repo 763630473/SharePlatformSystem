@@ -3,7 +3,6 @@ using System.Reflection;
 
 namespace SharePlatformSystem.Aspects
 {
-    //THIS NAMESPACE IS WORK-IN-PROGRESS
 
     internal abstract class AspectAttribute : Attribute
     {

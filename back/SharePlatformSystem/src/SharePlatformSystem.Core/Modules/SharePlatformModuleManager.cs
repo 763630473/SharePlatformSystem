@@ -11,7 +11,7 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Core.Modules
 {
     /// <summary>
-    /// This class is used to manage modules.
+    /// 此类用于管理模块。
     /// </summary>
     public class SharePlatformModuleManager : ISharePlatformModuleManager
     {
@@ -103,7 +103,7 @@ namespace SharePlatformSystem.Core.Modules
                 var moduleObject = _iocManager.Resolve(moduleType) as SharePlatformModule;
                 if (moduleObject == null)
                 {
-                    throw new SharePlatformInitializationException("This type is not an SharePlatform module: " + moduleType.AssemblyQualifiedName);
+                    throw new SharePlatformInitializationException("此类型不是SharePlatform模块： " + moduleType.AssemblyQualifiedName);
                 }
 
                 moduleObject.IocManager = _iocManager;

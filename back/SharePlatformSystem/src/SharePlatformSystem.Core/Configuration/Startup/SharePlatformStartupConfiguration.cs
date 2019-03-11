@@ -12,18 +12,18 @@ using System.Collections.Generic;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// This class is used to configure SharePlatform and modules on startup.
+    /// 此类用于在启动时配置SharePlatform和模块。
     /// </summary>
     internal class SharePlatformStartupConfiguration : DictionaryBasedConfig, ISharePlatformStartupConfiguration
     {
         /// <summary>
-        /// Reference to the IocManager.
+        ///对IOCManager的引用。
         /// </summary>
         public IIocManager IocManager { get; }
 
         /// <summary>
-        /// Gets/sets default connection string used by ORM module.
-        /// It can be name of a connection string in application's config file or can be full connection string.
+        /// 获取/设置ORM模块使用的默认连接字符串。
+        ///可以是应用程序配置文件中连接字符串的名称，也可以是完整连接字符串。
         /// </summary>
         public string DefaultNameOrConnectionString { get; set; }
 
@@ -51,7 +51,7 @@ namespace SharePlatformSystem.Core.Configuration
         }
 
         /// <summary>
-        /// Private constructor for singleton pattern.
+        /// 单例模式的私有构造函数。
         /// </summary>
         public SharePlatformStartupConfiguration(IIocManager iocManager)
         {
@@ -84,28 +84,28 @@ namespace SharePlatformSystem.Core.Configuration
             return GetOrCreate(typeof(T).FullName, () => IocManager.Resolve<T>());
         }
         /// <summary>
-        /// Used to configure unit of work defaults.
+        /// 用于配置工作单位默认值。
         /// </summary>
         public IUnitOfWorkDefaultOptions UnitOfWork { get; private set; }
         /// <summary>
-        /// Used to configure modules.
-        /// Modules can write extension methods to <see cref="ModuleConfigurations"/> to add module specific configurations.
+        ///用于配置模块。
+        ///模块可以将扩展方法写入“module configurations”以添加模块特定的配置。
         /// </summary>
         public IModuleConfigurations Modules { get; private set; }
         /// <summary>
-        /// Used to configure background job system.
+        /// 用于配置后台作业系统。
         /// </summary>
         public IBackgroundJobConfiguration BackgroundJobs { get; private set; }
         /// <summary>
-        /// Used to configure <see cref="IEventBus"/>.
+        /// 用于配置“IEventBus”。
         /// </summary>
         public IEventBusConfiguration EventBus { get; private set; }
         /// <summary>
-        /// Used to configure settings.
+        ///用于配置设置。
         /// </summary>
         public ISettingsConfiguration Settings { get; private set; }
         /// <summary>
-        /// Used to configure auditing.
+        /// 用于配置审核。
         /// </summary>
         public IAuditingConfiguration Auditing { get; private set; }
 
@@ -113,7 +113,7 @@ namespace SharePlatformSystem.Core.Configuration
         public IEntityHistoryConfiguration EntityHistory { get; private set; }
 
         /// <summary>
-        /// Used to set localization configuration.
+        /// 用于设置本地化配置。
         /// </summary>
         public ILocalizationConfiguration Localization { get; private set; }
         public IEmbeddedResourcesConfiguration EmbeddedResources { get; private set; }

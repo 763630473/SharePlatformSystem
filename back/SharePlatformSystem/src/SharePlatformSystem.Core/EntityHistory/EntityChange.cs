@@ -11,13 +11,13 @@ namespace SharePlatformSystem.EntityHistory
     public class EntityChange : Entity<string>
     {
         /// <summary>
-        /// Maximum length of <see cref="EntityId"/> property.
+        /// 属性的最大长度。。
         /// Value: 48.
         /// </summary>
         public const int MaxEntityIdLength = 48;
 
         /// <summary>
-        /// Maximum length of <see cref="EntityTypeFullName"/> property.
+        /// 属性的最大长度。。
         /// Value: 192.
         /// </summary>
         public const int MaxEntityTypeFullNameLength = 192;
@@ -33,18 +33,18 @@ namespace SharePlatformSystem.EntityHistory
         public virtual EntityChangeType ChangeType { get; set; }
 
         /// <summary>
-        /// Gets/sets change set id, used to group entity changes.
+        /// 获取/设置用于对实体更改进行分组的更改集ID
         /// </summary>
         public virtual long EntityChangeSetId { get; set; }
 
         /// <summary>
-        /// Gets/sets primary key of the entity.
+        /// 获取/设置实体的主键。
         /// </summary>
         [StringLength(MaxEntityIdLength)]
         public virtual string EntityId { get; set; }
 
         /// <summary>
-        /// FullName of the entity type.
+        /// 实体类型的全名。
         /// </summary>
         [StringLength(MaxEntityTypeFullNameLength)]
         public virtual string EntityTypeFullName { get; set; }

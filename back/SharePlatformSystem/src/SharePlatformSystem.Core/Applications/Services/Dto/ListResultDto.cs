@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// Implements <see cref="IListResult{T}"/>.
+    /// 实现"IListResult{T}".
     /// </summary>
-    /// <typeparam name="T">Type of the items in the <see cref="Items"/> list</typeparam>
+    /// <typeparam name="T">类型的对象，在“Items”列表</typeparam>
     [Serializable]
     public class ListResultDto<T> : IListResult<T>
     {
         /// <summary>
-        /// List of items.
+        /// 列表对象
         /// </summary>
         public IReadOnlyList<T> Items
         {
@@ -21,7 +21,7 @@ namespace SharePlatformSystem.Applications.Services.Dto
         private IReadOnlyList<T> _items;
 
         /// <summary>
-        /// Creates a new <see cref="ListResultDto{T}"/> object.
+        ///创建一个新的"ListResultDto{T}"对象.
         /// </summary>
         public ListResultDto()
         {
@@ -29,7 +29,7 @@ namespace SharePlatformSystem.Applications.Services.Dto
         }
 
         /// <summary>
-        /// Creates a new <see cref="ListResultDto{T}"/> object.
+        /// 创建一个新的"ListResultDto{T}"对象.
         /// </summary>
         /// <param name="items">List of items</param>
         public ListResultDto(IReadOnlyList<T> items)

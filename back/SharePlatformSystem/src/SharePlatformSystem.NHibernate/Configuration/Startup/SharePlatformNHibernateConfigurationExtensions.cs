@@ -3,12 +3,12 @@
 namespace SharePlatformSystem.NHibernate.Configuration.Startup
 {
     /// <summary>
-    /// Defines extension methods to <see cref="IModuleConfigurations"/> to allow to configure ABP NHibernate module.
+    ///将扩展方法定义为允许配置SharePlatform nhibernate模块。
     /// </summary>
     public static class SharePlatformNHibernateConfigurationExtensions
     {
         /// <summary>
-        /// Used to configure ABP NHibernate module.
+        /// 用于配置SharePlatform NHibernate模块。
         /// </summary>
         public static ISharePlatformNHibernateModuleConfiguration SharePlatformNHibernate(this IModuleConfigurations configurations)
         {

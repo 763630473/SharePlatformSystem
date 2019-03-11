@@ -9,7 +9,7 @@ namespace SharePlatformSystem.Core.Localization
         {
             return new[]
             {
-                new SettingDefinition(LocalizationSettingNames.DefaultLanguage, null, L("DefaultLanguage"), scopes: SettingScopes.Application | SettingScopes.Tenant | SettingScopes.User, clientVisibilityProvider: new VisibleSettingClientVisibilityProvider())
+                new SettingDefinition(LocalizationSettingNames.DefaultLanguage, null, L("DefaultLanguage"), scopes: SettingScopes.Application |  SettingScopes.User, clientVisibilityProvider: new VisibleSettingClientVisibilityProvider())
             };
         }
 

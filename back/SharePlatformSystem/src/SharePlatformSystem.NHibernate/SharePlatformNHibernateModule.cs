@@ -16,13 +16,13 @@ using SharePlatformSystem.NHibernate.Uow;
 namespace SharePlatformSystem.NHibernate
 {
     /// <summary>
-    /// This module is used to implement "Data Access Layer" in NHibernate.
+    /// 该模块用于实现NHibernate中的“数据访问层”。
     /// </summary>
     [DependsOn(typeof(SharePlatformKernelModule))]
     public class SharePlatformNHibernateModule : SharePlatformModule
     {
         /// <summary>
-        /// NHibernate session factory object.
+        /// nHibernate会话工厂对象。
         /// </summary>
         private ISessionFactory _sessionFactory;
 
@@ -32,7 +32,6 @@ namespace SharePlatformSystem.NHibernate
             Configuration.ReplaceService<IUnitOfWorkFilterExecuter, NhUnitOfWorkFilterExecuter>(DependencyLifeStyle.Transient);
         }
 
-        /// <inheritdoc/>
         public override void Initialize()
         {
             IocManager.Register<SharePlatformNHibernateInterceptor>(DependencyLifeStyle.Transient);
@@ -46,7 +45,6 @@ namespace SharePlatformSystem.NHibernate
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
         }
 
-        /// <inheritdoc/>
         public override void Shutdown()
         {
             _sessionFactory.Dispose();

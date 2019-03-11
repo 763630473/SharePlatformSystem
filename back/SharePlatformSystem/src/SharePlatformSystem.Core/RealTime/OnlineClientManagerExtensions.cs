@@ -5,14 +5,14 @@ using SharePlatformSystem.Core;
 namespace SharePlatformSystem.RealTime
 {
     /// <summary>
-    /// Extension methods for <see cref="IOnlineClientManager"/>.
+    ///<see cref="IOnlineClientManager"/>的扩展方法.
     /// </summary>
     public static class OnlineClientManagerExtensions
     {
         /// <summary>
-        /// Determines whether the specified user is online or not.
+        /// 确定指定的用户是否联机。
         /// </summary>
-        /// <param name="onlineClientManager">The online client manager.</param>
+        /// <param name="onlineClientManager">在线客户管理。</param>
         /// <param name="user">User.</param>
         public static bool IsOnline(
             [NotNull] this IOnlineClientManager onlineClientManager,

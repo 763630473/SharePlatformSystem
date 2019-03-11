@@ -5,22 +5,20 @@ using System;
 namespace SharePlatformSystem.Core.Timing.Timezone
 {
     /// <summary>
-    /// Time zone converter class
+    /// 时区转换器类
     /// </summary>
     public class TimeZoneConverter : ITimeZoneConverter, ITransientDependency
     {
         private readonly ISettingManager _settingManager;
 
         /// <summary>
-        /// Constructor
+        /// 构造器
         /// </summary>
         /// <param name="settingManager"></param>
         public TimeZoneConverter(ISettingManager settingManager)
         {
             _settingManager = settingManager;
         }
-
-        /// <inheritdoc/>
         public DateTime? Convert(DateTime? date, string userId)
         {
             if (!date.HasValue)
@@ -43,7 +41,6 @@ namespace SharePlatformSystem.Core.Timing.Timezone
         }
        
         
-        /// <inheritdoc/>
         public DateTime? Convert(DateTime? date)
         {
             if (!date.HasValue)

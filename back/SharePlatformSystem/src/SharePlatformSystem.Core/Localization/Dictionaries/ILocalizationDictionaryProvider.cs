@@ -3,8 +3,8 @@
 namespace SharePlatformSystem.core.Localization.Dictionaries
 {
     /// <summary>
-    /// Used to get localization dictionaries (<see cref="ILocalizationDictionary"/>)
-    /// for a <see cref="IDictionaryBasedLocalizationSource"/>.
+    ///用于获取本地化字典（“ilocalizationDictionary）
+    ///有关“idictionaryBasedLocalizationSource”
     /// </summary>
     public interface ILocalizationDictionaryProvider
     {

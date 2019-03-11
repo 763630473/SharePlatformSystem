@@ -1,12 +1,12 @@
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// This interface is defined to standardize to set "Total Count of Items" to a DTO.
+    /// 此接口定义为标准化，将“项目总数”设置为DTO。
     /// </summary>
     public interface IHasTotalCount
     {
         /// <summary>
-        /// Total count of Items.
+        /// 项目总数。
         /// </summary>
         int TotalCount { get; set; }
     }

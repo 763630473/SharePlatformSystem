@@ -29,7 +29,7 @@ namespace SharePlatformSystem.Framework.Api.Modeling
         {
             if (Controllers.ContainsKey(controller.Name))
             {
-                throw new SharePlatformException($"There is already a controller with name: {controller.Name} in module: {Name}");
+                throw new SharePlatformException($"已经有一个名为的控制器: {controller.Name} 模块内: {Name}");
             }
 
             return Controllers[controller.Name] = controller;

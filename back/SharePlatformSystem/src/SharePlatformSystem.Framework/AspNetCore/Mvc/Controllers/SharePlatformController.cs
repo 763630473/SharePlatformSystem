@@ -16,45 +16,46 @@ using SharePlatformSystem.Runtime.Session;
 namespace SharePlatformSystem.Framework.AspNetCore.Mvc.Controllers
 {
     /// <summary>
-    /// Base class for all MVC Controllers in SharePlatform system.
+    /// SharePlatform系统中所有MVC控制器的基类。
     /// </summary>
     public abstract class SharePlatformController : Controller,ITransientDependency
     {
         /// <summary>
-        /// Gets current session information.
+        ///获取当前会话信息。
         /// </summary>
         public ISharePlatformSession SharePlatformSession { get; set; }
 
+
         /// <summary>
-        /// Gets the event bus.
+        /// 获取事件总线。
         /// </summary>
         public IEventBus EventBus { get; set; }
 
         /// <summary>
-        /// Reference to the setting manager.
+        ///对设置管理器的引用。
         /// </summary>
         public ISettingManager SettingManager { get; set; }
 
 
         /// <summary>
-        /// Reference to the object to object mapper.
+        /// 对象到对象映射器的引用。
         /// </summary>
         public IObjectMapper ObjectMapper { get; set; }
 
         /// <summary>
-        /// Reference to the localization manager.
+        /// 引用本地化管理器。
         /// </summary>
         public ILocalizationManager LocalizationManager { protected get; set; }
 
         /// <summary>
-        /// Gets/sets name of the localization source that is used in this application service.
-        /// It must be set in order to use <see cref="L(string)"/> and <see cref="L(string,CultureInfo)"/> methods.
+        ///获取/设置此应用程序服务中使用的本地化源的名称。
+        ///必须设置它才能使用<see cref=“l（string）”/>和<see cref=“l（string，cultureinfo）”/>方法。
         /// </summary>
         protected string LocalizationSourceName { get; set; }
 
         /// <summary>
-        /// Gets localization source.
-        /// It's valid if <see cref="LocalizationSourceName"/> is set.
+        ///获取本地化源。
+        ///如果设置了<see cref=“localizationsourcename”/>，则此选项有效。
         /// </summary>
         protected ILocalizationSource LocalizationSource
         {
@@ -62,7 +63,7 @@ namespace SharePlatformSystem.Framework.AspNetCore.Mvc.Controllers
             {
                 if (LocalizationSourceName == null)
                 {
-                    throw new SharePlatformException("Must set LocalizationSourceName before, in order to get LocalizationSource");
+                    throw new SharePlatformException("必须在之前设置本地化源名称，才能获取本地化源");
                 }
 
                 if (_localizationSource == null || _localizationSource.Name != LocalizationSourceName)
@@ -77,12 +78,12 @@ namespace SharePlatformSystem.Framework.AspNetCore.Mvc.Controllers
         private ILocalizationSource _localizationSource;
 
         /// <summary>
-        /// Reference to the logger to write logs.
+        /// 引用记录器以写入日志。
         /// </summary>
         public ILogger Logger { get; set; }
 
         /// <summary>
-        /// Reference to <see cref="IUnitOfWorkManager"/>.
+        /// 参考<see cref=“iunitofWorkManager”/>。
         /// </summary>
         public IUnitOfWorkManager UnitOfWorkManager
         {
@@ -90,7 +91,7 @@ namespace SharePlatformSystem.Framework.AspNetCore.Mvc.Controllers
             {
                 if (_unitOfWorkManager == null)
                 {
-                    throw new SharePlatformException("Must set UnitOfWorkManager before use it.");
+                    throw new SharePlatformException("必须设置UnitOfWorkManager才能使用它。");
                 }
 
                 return _unitOfWorkManager;
@@ -105,7 +106,7 @@ namespace SharePlatformSystem.Framework.AspNetCore.Mvc.Controllers
         private IUnitOfWorkManager _unitOfWorkManager;
 
         /// <summary>
-        /// Gets current unit of work.
+        /// 获取当前工作单位。
         /// </summary>
         protected IActiveUnitOfWork CurrentUnitOfWork { get { return UnitOfWorkManager.Current; } }
 
@@ -122,44 +123,44 @@ namespace SharePlatformSystem.Framework.AspNetCore.Mvc.Controllers
         }
 
         /// <summary>
-        /// Gets localized string for given key name and current language.
+        /// 获取给定项名称和当前语言的本地化字符串。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键的名称</param>
+        /// <returns>本地化字符串</returns>
         protected virtual string L(string name)
         {
             return LocalizationSource.GetString(name);
         }
 
         /// <summary>
-        /// Gets localized string for given key name and current language with formatting strings.
+        ///获取具有格式字符串的给定项名称和当前语言的本地化字符串。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <param name="args">Format arguments</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键的名称</param>
+        /// <param name="args">设置参数格式</param>
+        /// <returns>本地化字符串</returns>
         protected string L(string name, params object[] args)
         {
             return LocalizationSource.GetString(name, args);
         }
 
         /// <summary>
-        /// Gets localized string for given key name and specified culture information.
+        /// 获取给定项名称和指定区域性信息的本地化字符串。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <param name="culture">culture information</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键的名称</param>
+        /// <param name="culture">culture 信息</param>
+        /// <returns>本地化字符串</returns>
         protected virtual string L(string name, CultureInfo culture)
         {
             return LocalizationSource.GetString(name, culture);
         }
 
         /// <summary>
-        /// Gets localized string for given key name and current language with formatting strings.
+        /// 获取具有格式字符串的给定项名称和当前语言的本地化字符串。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <param name="culture">culture information</param>
-        /// <param name="args">Format arguments</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键的名称</param>
+        /// <param name="culture">culture 信息</param>
+        /// <param name="args">设置参数格式</param>
+        /// <returns>本地化字符串</returns>
         protected string L(string name, CultureInfo culture, params object[] args)
         {
             return LocalizationSource.GetString(name, culture, args);

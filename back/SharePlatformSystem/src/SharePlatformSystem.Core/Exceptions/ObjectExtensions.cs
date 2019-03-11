@@ -6,16 +6,16 @@ using System.ComponentModel;
 namespace SharePlatformSystem.Core.Exceptions
 {
     /// <summary>
-    /// Extension methods for all objects.
+    /// 所有对象的扩展方法。
     /// </summary>
     public static class ObjectExtensions
     {
         /// <summary>
-        /// Used to simplify and beautify casting an object to a type. 
+        /// 用于简化和美化将对象强制转换为类型。
         /// </summary>
-        /// <typeparam name="T">Type to be casted</typeparam>
-        /// <param name="obj">Object to cast</param>
-        /// <returns>Casted object</returns>
+        /// <typeparam name="T">要铸造的类型</typeparam>
+        /// <param name="obj">要强制转换的对象</param>
+        /// <returns>转换对象</returns>
         public static T As<T>(this object obj)
             where T : class
         {
@@ -23,11 +23,11 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Converts given object to a value or enum type using <see cref="Convert.ChangeType(object,TypeCode)"/> or <see cref="Enum.Parse(Type,string)"/> method.
+        /// 使用<see cref=“convert.changetype（object，typecode）”/>或<see cref=“enum.parse（type，string）”/>方法将给定对象转换为值或枚举类型。
         /// </summary>
-        /// <param name="obj">Object to be converted</param>
-        /// <typeparam name="T">Type of the target object</typeparam>
-        /// <returns>Converted object</returns>
+        /// <param name="obj">要强制转换的对象</param>
+        /// <typeparam name="T">要铸造的类型</typeparam>
+        /// <returns>转换对象</returns>
         public static T To<T>(this object obj)
             where T : struct
         {
@@ -44,7 +44,7 @@ namespace SharePlatformSystem.Core.Exceptions
                 }
                 else
                 {
-                    throw new ArgumentException($"Enum type undefined '{obj}'.");
+                    throw new ArgumentException($"枚举类型未定义'{obj}'.");
                 }
             }
 
@@ -52,11 +52,11 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Check if an item is in a list.
+        /// 检查项目是否在列表中。
         /// </summary>
-        /// <param name="item">Item to check</param>
-        /// <param name="list">List of items</param>
-        /// <typeparam name="T">Type of the items</typeparam>
+        /// <param name="item">检查项目</param>
+        /// <param name="list">项目清单</param>
+        /// <typeparam name="T">项目的类型</typeparam>
         public static bool IsIn<T>(this T item, params T[] list)
         {
             return list.Contains(item);

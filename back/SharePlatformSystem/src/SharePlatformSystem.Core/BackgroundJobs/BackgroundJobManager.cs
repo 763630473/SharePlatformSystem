@@ -14,15 +14,15 @@ using SharePlatformSystem.Threading.Timers;
 namespace SharePlatformSystem.BackgroundJobs
 {
     /// <summary>
-    /// Default implementation of <see cref="IBackgroundJobManager"/>.
+    /// “IBackgroundJobManager”的默认实现。
     /// </summary>
     public class BackgroundJobManager : PeriodicBackgroundWorkerBase, IBackgroundJobManager, ISingletonDependency
     {
         public IEventBus EventBus { get; set; }
-        
+
         /// <summary>
-        /// Interval between polling jobs from <see cref="IBackgroundJobStore"/>.
-        /// Default value: 5000 (5 seconds).
+        /// 从“ibackgroundjobstore”轮询作业之间的间隔。
+        /// 默认值: 5000 (5 秒).
         /// </summary>
         public static int JobPollPeriod { get; set; }
 
@@ -35,7 +35,7 @@ namespace SharePlatformSystem.BackgroundJobs
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BackgroundJobManager"/> class.
+        /// 初始化“BackgroundJobManager”类的新实例。
         /// </summary>
         public BackgroundJobManager(
             IIocResolver iocResolver,
@@ -133,9 +133,7 @@ namespace SharePlatformSystem.BackgroundJobs
                             this,
                             new SharePlatformHandledExceptionData(
                                 new BackgroundJobException(
-                                    "A background job execution is failed. See inner exception for details. See BackgroundJob property to get information on the background job.", 
-                                    ex
-                                    )
+                                    "后台作业执行失败。有关详细信息，请参阅内部异常。请参阅BackgroundJob属性以获取有关后台作业的信息。", ex)
                                 {
                                     BackgroundJob = jobInfo,
                                     JobObject = job.Object

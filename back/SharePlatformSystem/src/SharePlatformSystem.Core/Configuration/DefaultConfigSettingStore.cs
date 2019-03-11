@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// Implements default behavior for ISettingStore.
-    /// Only <see cref="GetSettingOrNullAsync"/> method is implemented and it gets setting's value
-    /// from application's configuration file if exists, or returns null if not.
+    /// 实现ISettingStore的默认行为。
+    ///只实现了“getsettingornullasync”方法，并获取设置的值
+    ///如果应用程序的配置文件存在，则返回空值。
     /// </summary>
     public class DefaultConfigSettingStore : ISettingStore
     {
         /// <summary>
-        /// Gets singleton instance.
+        /// 获取singleton实例。
         /// </summary>
         public static DefaultConfigSettingStore Instance { get; } = new DefaultConfigSettingStore();
         private DefaultConfigSettingStore()
@@ -33,28 +33,24 @@ namespace SharePlatformSystem.Core.Configuration
             return Task.FromResult(new SettingInfo(userId, name, value));
 
         }
-        /// <inheritdoc/>
         public Task DeleteAsync(SettingInfo setting)
         {
             LogHelper.Logger.Warn("ISettingStore is not implemented, using DefaultConfigSettingStore which does not support DeleteAsync.");
             return SharePlatformTaskCache.CompletedTask;
         }
 
-        /// <inheritdoc/>
         public Task CreateAsync(SettingInfo setting)
         {
             LogHelper.Logger.Warn("ISettingStore is not implemented, using DefaultConfigSettingStore which does not support CreateAsync.");
             return SharePlatformTaskCache.CompletedTask;
         }
 
-        /// <inheritdoc/>
         public Task UpdateAsync(SettingInfo setting)
         {
             LogHelper.Logger.Warn("ISettingStore is not implemented, using DefaultConfigSettingStore which does not support UpdateAsync.");
             return SharePlatformTaskCache.CompletedTask;
         }
 
-        /// <inheritdoc/>
         public Task<List<SettingInfo>> GetAllListAsync(string userId)
         {
             LogHelper.Logger.Warn("ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.");

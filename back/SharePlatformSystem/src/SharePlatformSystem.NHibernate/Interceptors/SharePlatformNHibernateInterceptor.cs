@@ -53,7 +53,7 @@ namespace SharePlatformSystem.NHibernate.Interceptors
 
         public override bool OnSave(object entity, object id, object[] state, string[] propertyNames, IType[] types)
         {
-            //Set Id for Guids
+            //为guid设置ID
             if (entity is IEntity<Guid>)
             {
                 var guidEntity = entity as IEntity<Guid>;
@@ -62,8 +62,15 @@ namespace SharePlatformSystem.NHibernate.Interceptors
                     guidEntity.Id = _guidGenerator.Value.Create();
                 }
             }
-
-            //Set CreationTime for new entity
+            if (entity is IEntity<string>)
+            {
+                var guidEntity = entity as IEntity<string>;
+                if (guidEntity.IsTransient())
+                {
+                    guidEntity.Id = _guidGenerator.Value.Create().ToString();
+                }
+            }
+            //为新实体设置CreationTime
             if (entity is IHasCreationTime)
             {
                 for (var i = 0; i < propertyNames.Length; i++)
@@ -75,7 +82,7 @@ namespace SharePlatformSystem.NHibernate.Interceptors
                 }
             }
 
-            //Set CreatorUserId for new entity
+            //为新实体设置CreatorUserID
             if (entity is ICreationAudited<string> &&!string.IsNullOrWhiteSpace( _sharePlatformSession.Value.UserId))
             {
                 for (var i = 0; i < propertyNames.Length; i++)
@@ -99,7 +106,7 @@ namespace SharePlatformSystem.NHibernate.Interceptors
         {
             var updated = false;
 
-            //Set modification audits
+            //修改审计
             if (entity is IHasModificationTime)
             {
                 for (var i = 0; i < propertyNames.Length; i++)
@@ -126,7 +133,7 @@ namespace SharePlatformSystem.NHibernate.Interceptors
 
             if (entity is ISoftDelete && entity.As<ISoftDelete>().IsDeleted)
             {
-                //Is deleted before? Normally, a deleted entity should not be updated later but I preferred to check it.
+                //以前删除过吗？通常，一个被删除的实体不应该稍后更新，但我更喜欢检查它。
                 var previousIsDeleted = false;
                 for (var i = 0; i < propertyNames.Length; i++)
                 {
@@ -139,7 +146,7 @@ namespace SharePlatformSystem.NHibernate.Interceptors
 
                 if (!previousIsDeleted)
                 {
-                    //set DeletionTime
+                    //设置删除时间
                     if (entity is IHasDeletionTime)
                     {
                         for (var i = 0; i < propertyNames.Length; i++)
@@ -152,7 +159,7 @@ namespace SharePlatformSystem.NHibernate.Interceptors
                         }
                     }
 
-                    //set DeleterUserId
+                    //设置删除用户ID
                     if (entity is IDeletionAudited<string> && !_sharePlatformSession.Value.UserId.IsNullOrWhiteSpace())
                     {
                         for (var i = 0; i < propertyNames.Length; i++)

@@ -11,24 +11,24 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.NHibernate.Repositories
 {
     /// <summary>
-    /// Base class for all repositories those uses NHibernate.
+    ///所有使用nhibernate的存储库的基类。
     /// </summary>
-    /// <typeparam name="TEntity">Entity type</typeparam>
-    /// <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
+    /// <typeparam name="TEntity">实体类型</typeparam>
+    /// <typeparam name="TPrimaryKey">实体的主键类型</typeparam>
     public class NhRepositoryBase<TEntity, TPrimaryKey> : SharePlatformRepositoryBase<TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>
     {
         /// <summary>
-        /// Gets the NHibernate session object to perform database operations.
+        /// 获取执行数据库操作的nHibernate会话对象。
         /// </summary>
         public virtual ISession Session { get { return _sessionProvider.Session; } }
 
         private readonly ISessionProvider _sessionProvider;
 
         /// <summary>
-        /// Creates a new <see cref="NhRepositoryBase{TEntity,TPrimaryKey}"/> object.
+        ///创建一个新的对象。
         /// </summary>
-        /// <param name="sessionProvider">A session provider to obtain session for database operations</param>
+        /// <param name="sessionProvider">用于获取数据库操作会话的会话提供程序</param>
         public NhRepositoryBase(ISessionProvider sessionProvider)
         {
             _sessionProvider = sessionProvider;
@@ -50,7 +50,7 @@ namespace SharePlatformSystem.NHibernate.Repositories
 
             foreach (var propertySelector in propertySelectors)
             {
-                //TODO: Test if NHibernate supports multiple fetch.
+                //TODO: 测试NHibernate是否支持多次提取。
                 query = query.Fetch(propertySelector);
             }
 

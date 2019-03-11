@@ -24,11 +24,11 @@ namespace SharePlatformSystem.Framework.AspNetCore
     public static class SharePlatformServiceCollectionExtensions
     {
         /// <summary>
-        /// Integrates SharePlatform to AspNet Core.
+        /// 将SharePlatform集成到ASPNET核心。
         /// </summary>
-        /// <typeparam name="TStartupModule">Startup module of the application which depends on other used modules. Should be derived from <see cref="SharePlatformModule"/>.</typeparam>
+        /// <typeparam name="TStartupModule">应用程序的启动模块，依赖于其他使用的模块。应源自<see cref=“shareplatformmodule”/>。</typeparam>
         /// <param name="services">Services.</param>
-        /// <param name="optionsAction">An action to get/modify options</param>
+        /// <param name="optionsAction">获取/修改选项的操作</param>
         public static IServiceProvider AddSharePlatform<TStartupModule>(this IServiceCollection services, [CanBeNull] Action<SharePlatformBootstrapperOptions> optionsAction = null)
             where TStartupModule : SharePlatformModule
         {
@@ -43,15 +43,15 @@ namespace SharePlatformSystem.Framework.AspNetCore
         {
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
-            
-            //Use DI to create controllers
+
+            //使用DI创建控制器
             services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
-            //Use DI to create view components
+            //使用DI创建视图组件
             services.Replace(ServiceDescriptor.Singleton<IViewComponentActivator, ServiceBasedViewComponentActivator>());
-       
 
-            //Configure JSON serializer
+
+            //配置JSON序列化程序
             services.Configure<MvcJsonOptions>(jsonOptions =>
             {
                 jsonOptions.SerializerSettings.ContractResolver = new SharePlatformMvcContractResolver(iocResolver)
@@ -60,7 +60,7 @@ namespace SharePlatformSystem.Framework.AspNetCore
                 };
             });
 
-            //Configure MVC
+            //配置MVC
             services.Configure<MvcOptions>(mvcOptions =>
             {
                 mvcOptions.AddSharePlatform(services);

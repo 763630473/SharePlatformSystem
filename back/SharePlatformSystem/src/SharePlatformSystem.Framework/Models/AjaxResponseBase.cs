@@ -3,28 +3,28 @@
     public abstract class AjaxResponseBase
     {
         /// <summary>
-        /// This property can be used to redirect user to a specified URL.
+        /// 此属性可用于将用户重定向到指定的URL。
         /// </summary>
         public string TargetUrl { get; set; }
 
         /// <summary>
-        /// Indicates success status of the result.
-        /// Set <see cref="Error"/> if this value is false.
+        ///指示结果的成功状态。
+        ///如果该值为假，则设置<see cref=“error”/>。
         /// </summary>
         public bool Success { get; set; }
 
         /// <summary>
-        /// Error details (Must and only set if <see cref="Success"/> is false).
+        /// 错误详细信息（必须且仅当<see cref=“success”/>为false时设置）。
         /// </summary>
         public ErrorInfo Error { get; set; }
 
         /// <summary>
-        /// This property can be used to indicate that the current user has no privilege to perform this request.
+        ///此属性可用于指示当前用户没有执行此请求的权限。
         /// </summary>
         public bool UnAuthorizedRequest { get; set; }
 
         /// <summary>
-        /// A special signature for AJAX responses. It's used in the client to detect if this is a response wrapped by SharePlatform.
+        ///Ajax响应的特殊签名。它在客户机中用于检测这是否是由SharePlatform包装的响应。
         /// </summary>
         public bool __SharePlatform { get; } = true;
     }

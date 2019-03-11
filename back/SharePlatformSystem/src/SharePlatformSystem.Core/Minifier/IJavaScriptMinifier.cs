@@ -1,7 +1,7 @@
 ﻿namespace SharePlatformSystem.Core.Minifier
 {
     /// <summary>
-    /// Interface to minify JavaScript code.
+    /// 用于缩小JavaScript代码的接口。
     /// </summary>
     public interface IJavaScriptMinifier
     {

@@ -1,9 +1,9 @@
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// This interface is defined to standardize to return a page of items to clients.
+    /// 此接口被定义为标准化，以便向客户机返回一页项目。
     /// </summary>
-    /// <typeparam name="T">Type of the items in the <see cref="IListResult{T}.Items"/> list</typeparam>
+    /// <typeparam name="T">列表中项目的类型</typeparam>
     public interface IPagedResult<T> : IListResult<T>, IHasTotalCount
     {
 

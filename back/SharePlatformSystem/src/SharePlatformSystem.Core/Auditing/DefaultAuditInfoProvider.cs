@@ -4,7 +4,7 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// Default implementation of <see cref="IAuditInfoProvider" />.
+    /// “iauditinfoProvider”的默认实现。
     /// </summary>
     public class DefaultAuditInfoProvider : IAuditInfoProvider, ITransientDependency
     {

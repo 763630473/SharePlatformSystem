@@ -4,16 +4,16 @@ using System.IO;
 namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
 {
     /// <summary>
-    /// Provides localization dictionaries from XML files in a directory.
+    ///提供来自目录中XML文件的本地化字典。
     /// </summary>
     public class XmlFileLocalizationDictionaryProvider : LocalizationDictionaryProviderBase
     {
         private readonly string _directoryPath;
 
         /// <summary>
-        /// Creates a new <see cref="XmlFileLocalizationDictionaryProvider"/>.
+        /// 创建新的“xmlfilelocalizationDictionaryProvider”。
         /// </summary>
-        /// <param name="directoryPath">Path of the dictionary that contains all related XML files</param>
+        /// <param name="directoryPath">包含所有相关XML文件的字典的路径</param>
         public XmlFileLocalizationDictionaryProvider(string directoryPath)
         {
             _directoryPath = directoryPath;
@@ -28,7 +28,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
                 var dictionary = CreateXmlLocalizationDictionary(fileName);
                 if (Dictionaries.ContainsKey(dictionary.CultureInfo.Name))
                 {
-                    throw new SharePlatformInitializationException(sourceName + " source contains more than one dictionary for the culture: " + dictionary.CultureInfo.Name);
+                    throw new SharePlatformInitializationException(sourceName + " 源包含多个区域性字典: " + dictionary.CultureInfo.Name);
                 }
 
                 Dictionaries[dictionary.CultureInfo.Name] = dictionary;
@@ -37,7 +37,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
                 {
                     if (DefaultDictionary != null)
                     {
-                        throw new SharePlatformInitializationException("Only one default localization dictionary can be for source: " + sourceName);                        
+                        throw new SharePlatformInitializationException("源只能有一个默认本地化词典: " + sourceName);                        
                     }
 
                     DefaultDictionary = dictionary;

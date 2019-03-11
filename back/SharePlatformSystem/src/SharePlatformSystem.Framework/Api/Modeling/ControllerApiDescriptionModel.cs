@@ -29,7 +29,7 @@ namespace SharePlatformSystem.Framework.Api.Modeling
             if (Actions.ContainsKey(action.Name))
             {
                 throw new SharePlatformException(
-                    $"Can not add more than one action with same name to the same controller. Controller: {Name}, Action: {action.Name}."
+                    $"不能向同一控制器添加多个同名操作。Controller: {Name}, Action: {action.Name}."
                     );
             }
 

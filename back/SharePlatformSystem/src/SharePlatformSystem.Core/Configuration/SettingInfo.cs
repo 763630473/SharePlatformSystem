@@ -3,29 +3,29 @@
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// Represents a setting information.
+    /// 表示设置信息。
     /// </summary>
     [Serializable]
     public class SettingInfo
     {
         /// <summary>
-        /// UserId for this setting.
-        /// UserId is null if this setting is not user level.
+        ///此设置的用户ID。
+        ///如果此设置不是用户级别，则userid为空。
         /// </summary>
         public string UserId { get; set; }
 
         /// <summary>
-        /// Unique name of the setting.
+        ///设置的唯一名称。
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Value of the setting.
+        ///设置的值。
         /// </summary>
         public string Value { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="SettingInfo"/> object.
+        /// 创建新的“settinginfo”对象。
         /// </summary>
         public SettingInfo()
         {
@@ -33,12 +33,11 @@ namespace SharePlatformSystem.Core.Configuration
         }
 
         /// <summary>
-        /// Creates a new <see cref="SettingInfo"/> object.
-        /// </summary>
-        /// <param name="tenantId">TenantId for this setting. TenantId is null if this setting is not Tenant level.</param>
-        /// <param name="userId">UserId for this setting. UserId is null if this setting is not user level.</param>
-        /// <param name="name">Unique name of the setting</param>
-        /// <param name="value">Value of the setting</param>
+        /// 创建新的“settinginfo”对象。
+        /// </summary>    
+        /// <param name="userId">此设置的用户ID。如果此设置不是用户级别，则userid为空。</param>
+        /// <param name="name">设置的唯一名称</param>
+        /// <param name="value">设置值</param>
         public SettingInfo(string userId, string name, string value)
         {
             UserId = userId;

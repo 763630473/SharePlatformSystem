@@ -11,19 +11,19 @@ using SharePlatformSystem.Runtime.Session;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// This class implements <see cref="ISettingManager"/> to manage setting values in the database.
+    /// 此类实现“IsettingManager”来管理数据库中的设置值。
     /// </summary>
     public class SettingManager : ISettingManager, ISingletonDependency
     {
         public const string ApplicationSettingsCacheKey = "ApplicationSettings";
 
         /// <summary>
-        /// Reference to the current Session.
+        /// 对当前会话的引用。
         /// </summary>
         public ISharePlatformSession SharePlatformSession { get; set; }
 
         /// <summary>
-        /// Reference to the setting store.
+        /// 对设置存储的引用。
         /// </summary>
         public ISettingStore SettingStore { get; set; }
 
@@ -45,7 +45,6 @@ namespace SharePlatformSystem.Core.Configuration
 
         #region Public methods
 
-        /// <inheritdoc/>
         public Task<string> GetSettingValueAsync(string name)
         {
             return GetSettingValueInternalAsync(name, SharePlatformSession.UserId);
@@ -83,30 +82,29 @@ namespace SharePlatformSystem.Core.Configuration
 
         public async Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesAsync()
         {
-            return await GetAllSettingValuesAsync(SettingScopes.Application | SettingScopes.Tenant | SettingScopes.User);
+            return await GetAllSettingValuesAsync(SettingScopes.Application | SettingScopes.User);
         }
 
-        /// <inheritdoc/>
         public async Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesAsync(SettingScopes scopes)
         {
             var settingDefinitions = new Dictionary<string, SettingDefinition>();
             var settingValues = new Dictionary<string, ISettingValue>();
 
-            //Fill all setting with default values.
+            //用默认值填充所有设置。
             foreach (var setting in _settingDefinitionManager.GetAllSettingDefinitions())
             {
                 settingDefinitions[setting.Name] = setting;
                 settingValues[setting.Name] = new SettingValueObject(setting.Name, setting.DefaultValue);
             }
 
-            //Overwrite application settings
+            //覆盖应用程序设置
             if (scopes.HasFlag(SettingScopes.Application))
             {
                 foreach (var settingValue in await GetAllSettingValuesForApplicationAsync())
                 {
                     var setting = settingDefinitions.GetOrDefault(settingValue.Name);
 
-                    //TODO: Conditions get complicated, try to simplify it
+                    //TODO: 条件变得复杂，试着简化它
                     if (setting == null || !setting.Scopes.HasFlag(SettingScopes.Application))
                     {
                         continue;
@@ -122,7 +120,7 @@ namespace SharePlatformSystem.Core.Configuration
                 }
             }
 
-            //Overwrite user settings
+            //覆盖用户设置
             if (scopes.HasFlag(SettingScopes.User) &&!string.IsNullOrWhiteSpace( SharePlatformSession.UserId))
             {
                 foreach (var settingValue in await GetAllSettingValuesForUserAsync(SharePlatformSession.ToUserIdentifier()))
@@ -138,7 +136,6 @@ namespace SharePlatformSystem.Core.Configuration
             return settingValues.Values.ToImmutableList();
         }
 
-        /// <inheritdoc/>
         public async Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesForApplicationAsync()
         {
             return (await GetApplicationSettingsAsync()).Values
@@ -146,7 +143,6 @@ namespace SharePlatformSystem.Core.Configuration
                 .ToImmutableList();
         }
 
-        /// <inheritdoc/>
         public Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesForUserAsync(string userId)
         {
             return GetAllSettingValuesForUserAsync(new UserIdentifier(userId));
@@ -159,7 +155,6 @@ namespace SharePlatformSystem.Core.Configuration
                 .ToImmutableList();
         }
 
-        /// <inheritdoc/>
         [UnitOfWork]
         public virtual async Task ChangeSettingForApplicationAsync(string name, string value)
         {
@@ -167,14 +162,12 @@ namespace SharePlatformSystem.Core.Configuration
             await _applicationSettingCache.RemoveAsync(ApplicationSettingsCacheKey);
         }
 
-        /// <inheritdoc/>
         [UnitOfWork]
         public virtual async Task ChangeSettingForTenantAsync(string name, string value)
         {
             await InsertOrUpdateOrDeleteSettingValueAsync(name, value, null);
         }
 
-        /// <inheritdoc/>
         [UnitOfWork]
         public virtual Task ChangeSettingForUserAsync(string userId, string name, string value)
         {
@@ -195,7 +188,7 @@ namespace SharePlatformSystem.Core.Configuration
         {
             var settingDefinition = _settingDefinitionManager.GetSettingDefinition(name);
 
-            //Get for user if defined
+            //为用户获取（如果已定义）
             if (settingDefinition.Scopes.HasFlag(SettingScopes.User) && !string.IsNullOrWhiteSpace(userId))
             {
                 var settingValue = await GetSettingValueForUserOrNullAsync(new UserIdentifier(userId), name);
@@ -215,7 +208,7 @@ namespace SharePlatformSystem.Core.Configuration
                 }
             }
 
-            //Get for application if defined
+            //获取应用程序（如果定义）
             if (settingDefinition.Scopes.HasFlag(SettingScopes.Application))
             {
                 var settingValue = await GetSettingValueForApplicationOrNullAsync(name);
@@ -230,7 +223,7 @@ namespace SharePlatformSystem.Core.Configuration
                 }
             }
 
-            //Not defined, get default value
+            //未定义，获取默认值
             return settingDefinition.DefaultValue;
         }
 
@@ -239,7 +232,7 @@ namespace SharePlatformSystem.Core.Configuration
             var settingDefinition = _settingDefinitionManager.GetSettingDefinition(name);
             var settingValue = await SettingStore.GetSettingOrNullAsync(userId, name);
 
-            //Determine defaultValue
+            //确定默认值
             var defaultValue = settingDefinition.DefaultValue;
 
             if (settingDefinition.IsInherited)
@@ -251,7 +244,7 @@ namespace SharePlatformSystem.Core.Configuration
                 }             
             }
 
-            //No need to store on database if the value is the default value
+            //如果该值是默认值，则不需要存储在数据库上
             if (value == defaultValue)
             {
                 if (settingValue != null)
@@ -262,7 +255,7 @@ namespace SharePlatformSystem.Core.Configuration
                 return null;
             }
 
-            //If it's not default value and not stored on database, then insert it
+            //如果它不是默认值且未存储在数据库中，则插入它
             if (settingValue == null)
             {
                 settingValue = new SettingInfo
@@ -276,13 +269,13 @@ namespace SharePlatformSystem.Core.Configuration
                 return settingValue;
             }
 
-            //It's same value in database, no need to update
+            //它在数据库中的值相同，不需要更新
             if (settingValue.Value == value)
             {
                 return settingValue;
             }
 
-            //Update the setting on database.
+            //更新数据库上的设置。
             settingValue.Value = value;
             await SettingStore.UpdateAsync(settingValue);
 

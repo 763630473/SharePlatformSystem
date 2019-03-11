@@ -3,28 +3,28 @@
 namespace SharePlatformSystem.Framework.Models
 {
     /// <summary>
-    /// Used to store information about an error.
+    ///用于存储有关错误的信息。
     /// </summary>
     [Serializable]
     public class ErrorInfo
     {
         /// <summary>
-        /// Error code.
+        /// 错误代码。
         /// </summary>
         public int Code { get; set; }
 
         /// <summary>
-        /// Error message.
+        /// 错误信息。
         /// </summary>
         public string Message { get; set; }
 
         /// <summary>
-        /// Error details.
+        /// 错误详细信息。
         /// </summary>
         public string Details { get; set; }
 
         /// <summary>
-        /// Creates a new instance of <see cref="ErrorInfo"/>.
+        /// 创建<see cref=“errorinfo”/>的新实例。
         /// </summary>
         public ErrorInfo()
         {
@@ -32,28 +32,28 @@ namespace SharePlatformSystem.Framework.Models
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="ErrorInfo"/>.
+        /// 创建<see cref=“errorinfo”/>的新实例。
         /// </summary>
-        /// <param name="message">Error message</param>
+        /// <param name="message">错误消息</param>
         public ErrorInfo(string message)
         {
             Message = message;
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="ErrorInfo"/>.
+        ///创建<see cref=“errorinfo”/>的新实例。
         /// </summary>
-        /// <param name="code">Error code</param>
+        /// <param name="code">错误代码</param>
         public ErrorInfo(int code)
         {
             Code = code;
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="ErrorInfo"/>.
+        /// 创建<see cref=“errorinfo”/>的新实例。
         /// </summary>
-        /// <param name="code">Error code</param>
-        /// <param name="message">Error message</param>
+        /// <param name="code">错误代码</param>
+        /// <param name="message">错误消息</param>
         public ErrorInfo(int code, string message)
             : this(message)
         {
@@ -61,10 +61,10 @@ namespace SharePlatformSystem.Framework.Models
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="ErrorInfo"/>.
+        /// 创建<see cref=“errorinfo”/>的新实例。
         /// </summary>
-        /// <param name="message">Error message</param>
-        /// <param name="details">Error details</param>
+        /// <param name="message">错误消息</param>
+        /// <param name="details">错误详情</param>
         public ErrorInfo(string message, string details)
             : this(message)
         {
@@ -72,11 +72,11 @@ namespace SharePlatformSystem.Framework.Models
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="ErrorInfo"/>.
+        /// 创建<see cref=“errorinfo”/>的新实例。
         /// </summary>
-        /// <param name="code">Error code</param>
-        /// <param name="message">Error message</param>
-        /// <param name="details">Error details</param>
+        /// <param name="code">错误代码</param>
+        /// <param name="message">错误消息</param>
+        /// <param name="details">错误详情</param>
         public ErrorInfo(int code, string message, string details)
             : this(message, details)
         {

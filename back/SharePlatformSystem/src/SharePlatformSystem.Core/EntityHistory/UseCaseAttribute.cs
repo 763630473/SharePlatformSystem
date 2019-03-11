@@ -3,8 +3,8 @@
 namespace SharePlatformSystem.EntityHistory
 {
     /// <summary>
-    /// This attribute is used to set the description for a single method or
-    /// all methods of a class or interface.
+    /// 此属性用于为单个方法或
+    ///类或接口的所有方法。
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class UseCaseAttribute : Attribute

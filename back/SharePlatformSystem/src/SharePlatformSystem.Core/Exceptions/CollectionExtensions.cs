@@ -4,12 +4,12 @@ using System.Collections.Generic;
 namespace SharePlatformSystem.Core.Exceptions
 {
     /// <summary>
-    /// Extension methods for Collections.
+    /// 集合的扩展方法。
     /// </summary>
     public static class CollectionExtensions
     {
         /// <summary>
-        /// Checks whatever given collection object is null or has no item.
+        /// 检查给定的集合对象是否为空或没有项。
         /// </summary>
         public static bool IsNullOrEmpty<T>(this ICollection<T> source)
         {
@@ -17,12 +17,12 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Adds an item to the collection if it's not already in the collection.
+        /// 如果集合中没有项，则将其添加到集合中。
         /// </summary>
         /// <param name="source">Collection</param>
-        /// <param name="item">Item to check and add</param>
-        /// <typeparam name="T">Type of the items in the collection</typeparam>
-        /// <returns>Returns True if added, returns False if not.</returns>
+        /// <param name="item">要检查和添加的项</param>
+        /// <typeparam name="T">集合中项目的类型</typeparam>
+        /// <returns>如果添加则返回true，否则返回false。</returns>
         public static bool AddIfNotContains<T>(this ICollection<T> source, T item)
         {
             if (source == null)

@@ -3,7 +3,7 @@ using System;
 namespace SharePlatformSystem.Notifications
 {
     /// <summary>
-    /// Represents a notification sent to a user.
+    /// 表示发送给用户的通知。
     /// </summary>
     [Serializable]
     public class UserNotification : EntityDto<Guid>, IUserIdentifier
@@ -13,7 +13,7 @@ namespace SharePlatformSystem.Notifications
         /// </summary>
         public string UserId { get; set; }
         /// <summary>
-        /// Current state of the user notification.
+        /// 用户通知的当前状态。
         /// </summary>
         public UserNotificationState State { get; set; }   
     }

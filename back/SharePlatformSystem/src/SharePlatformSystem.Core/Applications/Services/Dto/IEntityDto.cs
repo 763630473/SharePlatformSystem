@@ -1,21 +1,21 @@
 ﻿namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// A shortcut of <see cref="IEntityDto{TPrimaryKey}"/> for most used primary key type (<see cref="int"/>).
+    /// 最常用的主键类型string的快捷方式.
     /// </summary>
-    public interface IEntityDto : IEntityDto<int>
+    public interface IEntityDto : IEntityDto<string>
     {
 
     }
 
     /// <summary>
-    /// Defines common properties for entity based DTOs.
+    /// 为基于实体的DTO定义通用属性。
     /// </summary>
     /// <typeparam name="TPrimaryKey"></typeparam>
     public interface IEntityDto<TPrimaryKey>
     {
         /// <summary>
-        /// Id of the entity.
+        /// 实体的主键ID
         /// </summary>
         TPrimaryKey Id { get; set; }
     }

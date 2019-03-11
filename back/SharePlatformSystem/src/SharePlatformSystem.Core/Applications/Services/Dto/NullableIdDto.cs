@@ -3,10 +3,10 @@ using System;
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// This DTO can be directly used (or inherited)
-    /// to pass an nullable Id value to an application service method.
+    /// 此DTO可以直接使用（或继承）
+    /// 将可为空的ID值传递给应用程序服务方法。
     /// </summary>
-    /// <typeparam name="TId">Type of the Id</typeparam>
+    /// <typeparam name="TId">主键的类型</typeparam>
     [Serializable]
     public class NullableIdDto<TId>
         where TId : struct
@@ -25,7 +25,7 @@ namespace SharePlatformSystem.Applications.Services.Dto
     }
 
     /// <summary>
-    /// A shortcut of <see cref="NullableIdDto{TId}"/> for <see cref="int"/>.
+    /// "NullableIdDto{TId}"/> 的int的快捷实现方式。
     /// </summary>
     [Serializable]
     public class NullableIdDto : NullableIdDto<int>

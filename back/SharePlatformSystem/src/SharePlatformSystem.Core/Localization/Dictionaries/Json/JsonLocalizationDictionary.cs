@@ -9,24 +9,24 @@ using SharePlatformSystem.Core.Exceptions;
 namespace SharePlatformSystem.core.Localization.Dictionaries.Json
 {
     /// <summary>
-    ///     This class is used to build a localization dictionary from json.
+    /// 此类用于从JSON构建本地化字典。
     /// </summary>
     /// <remarks>
-    ///     Use static Build methods to create instance of this class.
+    /// 使用静态生成方法创建此类的实例。
     /// </remarks>
     public class JsonLocalizationDictionary : LocalizationDictionary
     {
         /// <summary>
-        ///     Private constructor.
+        /// 私有构造函数。
         /// </summary>
-        /// <param name="cultureInfo">Culture of the dictionary</param>
+        /// <param name="cultureInfo">字典文化</param>
         private JsonLocalizationDictionary(CultureInfo cultureInfo)
             : base(cultureInfo)
         {
         }
 
         /// <summary>
-        ///     Builds an <see cref="JsonLocalizationDictionary" /> from given file.
+        ///从给定文件生成“jsonLocalizationDictionary”。
         /// </summary>
         /// <param name="filePath">Path of the file</param>
         public static JsonLocalizationDictionary BuildFromFile(string filePath)
@@ -37,7 +37,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Json
             }
             catch (Exception ex)
             {
-                throw new SharePlatformException("Invalid localization file format! " + filePath, ex);
+                throw new SharePlatformException("本地化文件格式无效！" + filePath, ex);
             }
         }
 
@@ -59,13 +59,13 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Json
             }
             catch (JsonException ex)
             {
-                throw new SharePlatformException("Can not parse json string. " + ex.Message);
+                throw new SharePlatformException("无法分析JSON字符串。 " + ex.Message);
             }
 
             var cultureCode = jsonFile.Culture;
             if (string.IsNullOrEmpty(cultureCode))
             {
-                throw new SharePlatformException("Culture is empty in language json file.");
+                throw new SharePlatformException("语言JSON文件中的区域性为空。");
             }
 
             var dictionary = new JsonLocalizationDictionary(CultureInfo.GetCultureInfo(cultureCode));
@@ -74,7 +74,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Json
             {
                 if (string.IsNullOrEmpty(item.Key))
                 {
-                    throw new SharePlatformException("The key is empty in given json string.");
+                    throw new SharePlatformException("给定JSON字符串中的键为空。");
                 }
 
                 if (dictionary.Contains(item.Key))
@@ -88,7 +88,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Json
             if (dublicateNames.Count > 0)
             {
                 throw new SharePlatformException(
-                    "A dictionary can not contain same key twice. There are some duplicated names: " +
+                    "字典不能包含同一个键两次。有一些重复的名称： " +
                     dublicateNames.JoinAsString(", "));
             }
 

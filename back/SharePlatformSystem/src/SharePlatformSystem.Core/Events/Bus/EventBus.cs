@@ -19,30 +19,30 @@ using SharePlatformSystem.Threading.Extensions;
 namespace SharePlatformSystem.Events.Bus
 {
     /// <summary>
-    /// Implements EventBus as Singleton pattern.
+    /// 将EventBus实现为单例模式。
     /// </summary>
     public class EventBus : IEventBus
     {
         /// <summary>
-        /// Gets the default <see cref="EventBus"/> instance.
+        /// 获取默认的<see cref=“eventbus”/>实例。
         /// </summary>
         public static EventBus Default { get; } = new EventBus();
 
         /// <summary>
-        /// Reference to the Logger.
+        /// 对记录器的引用。
         /// </summary>
         public ILogger Logger { get; set; }
 
         /// <summary>
-        /// All registered handler factories.
-        /// Key: Type of the event
-        /// Value: List of handler factories
+        ///所有注册的处理程序工厂。
+        ///键：事件类型
+        ///值：处理程序工厂列表
         /// </summary>
         private readonly ConcurrentDictionary<Type, List<IEventHandlerFactory>> _handlerFactories;
 
         /// <summary>
-        /// Creates a new <see cref="EventBus"/> instance.
-        /// Instead of creating a new instace, you can use <see cref="Default"/> to use Global <see cref="EventBus"/>.
+        ///创建一个新的<see cref=“eventbus”/>实例。
+        ///您可以使用<see cref=“default”/>来使用global<see cref=“eventbus”/>，而不是创建新的实例。
         /// </summary>
         public EventBus()
         {
@@ -50,31 +50,26 @@ namespace SharePlatformSystem.Events.Bus
             Logger = NullLogger.Instance;
         }
 
-        /// <inheritdoc/>
         public IDisposable Register<TEventData>(Action<TEventData> action) where TEventData : IEventData
         {
             return Register(typeof(TEventData), new ActionEventHandler<TEventData>(action));
         }
 
-        /// <inheritdoc/>
         public IDisposable AsyncRegister<TEventData>(Func<TEventData, Task> action) where TEventData : IEventData
         {
             return Register(typeof(TEventData), new AsyncActionEventHandler<TEventData>(action));
         }
 
-        /// <inheritdoc/>
         public IDisposable Register<TEventData>(IEventHandler<TEventData> handler) where TEventData : IEventData
         {
             return Register(typeof(TEventData), handler);
         }
 
-        /// <inheritdoc/>
         public IDisposable AsyncRegister<TEventData>(IAsyncEventHandler<TEventData> handler) where TEventData : IEventData
         {
             return Register(typeof(TEventData), handler);
         }
 
-        /// <inheritdoc/>
         public IDisposable Register<TEventData, THandler>()
             where TEventData : IEventData
             where THandler : IEventHandler, new()
@@ -82,19 +77,16 @@ namespace SharePlatformSystem.Events.Bus
             return Register(typeof(TEventData), new TransientEventHandlerFactory<THandler>());
         }
 
-        /// <inheritdoc/>
         public IDisposable Register(Type eventType, IEventHandler handler)
         {
             return Register(eventType, new SingleInstanceHandlerFactory(handler));
         }
 
-        /// <inheritdoc/>
         public IDisposable Register<TEventData>(IEventHandlerFactory factory) where TEventData : IEventData
         {
             return Register(typeof(TEventData), factory);
         }
 
-        /// <inheritdoc/>
         public IDisposable Register(Type eventType, IEventHandlerFactory factory)
         {
             GetOrCreateHandlerFactories(eventType)
@@ -103,7 +95,6 @@ namespace SharePlatformSystem.Events.Bus
             return new FactoryUnregistrar(this, eventType, factory);
         }
 
-        /// <inheritdoc/>
         public void Unregister<TEventData>(Action<TEventData> action) where TEventData : IEventData
         {
             Check.NotNull(action, nameof(action));
@@ -131,7 +122,6 @@ namespace SharePlatformSystem.Events.Bus
                 });
         }
 
-        /// <inheritdoc/>
         public void AsyncUnregister<TEventData>(Func<TEventData, Task> action) where TEventData : IEventData
         {
             Check.NotNull(action, nameof(action));
@@ -159,19 +149,16 @@ namespace SharePlatformSystem.Events.Bus
                 });
         }
 
-        /// <inheritdoc/>
         public void Unregister<TEventData>(IEventHandler<TEventData> handler) where TEventData : IEventData
         {
             Unregister(typeof(TEventData), handler);
         }
 
-        /// <inheritdoc/>
         public void AsyncUnregister<TEventData>(IAsyncEventHandler<TEventData> handler) where TEventData : IEventData
         {
             Unregister(typeof(TEventData), handler);
         }
 
-        /// <inheritdoc/>
         public void Unregister(Type eventType, IEventHandler handler)
         {
             GetOrCreateHandlerFactories(eventType)
@@ -185,49 +172,41 @@ namespace SharePlatformSystem.Events.Bus
                 });
         }
 
-        /// <inheritdoc/>
         public void Unregister<TEventData>(IEventHandlerFactory factory) where TEventData : IEventData
         {
             Unregister(typeof(TEventData), factory);
         }
 
-        /// <inheritdoc/>
         public void Unregister(Type eventType, IEventHandlerFactory factory)
         {
             GetOrCreateHandlerFactories(eventType).Locking(factories => factories.Remove(factory));
         }
 
-        /// <inheritdoc/>
         public void UnregisterAll<TEventData>() where TEventData : IEventData
         {
             UnregisterAll(typeof(TEventData));
         }
 
-        /// <inheritdoc/>
         public void UnregisterAll(Type eventType)
         {
             GetOrCreateHandlerFactories(eventType).Locking(factories => factories.Clear());
         }
 
-        /// <inheritdoc/>
         public void Trigger<TEventData>(TEventData eventData) where TEventData : IEventData
         {
             Trigger((object)null, eventData);
         }
 
-        /// <inheritdoc/>
         public void Trigger<TEventData>(object eventSource, TEventData eventData) where TEventData : IEventData
         {
             Trigger(typeof(TEventData), eventSource, eventData);
         }
 
-        /// <inheritdoc/>
         public void Trigger(Type eventType, IEventData eventData)
         {
             Trigger(eventType, null, eventData);
         }
 
-        /// <inheritdoc/>
         public void Trigger(Type eventType, object eventSource, IEventData eventData)
         {
             var exceptions = new List<Exception>();
@@ -256,7 +235,7 @@ namespace SharePlatformSystem.Events.Bus
                 }
             }
 
-            //Implements generic argument inheritance. See IEventDataWithInheritableGenericArgument
+            //实现泛型参数继承。请参见IEventDataWithInheritableGenericArgument
             if (eventType.GetTypeInfo().IsGenericType &&
                 eventType.GetGenericArguments().Length == 1 &&
                 typeof(IEventDataWithInheritableGenericArgument).IsAssignableFrom(eventType))
@@ -280,29 +259,25 @@ namespace SharePlatformSystem.Events.Bus
                     exceptions[0].ReThrow();
                 }
 
-                throw new AggregateException("More than one error has occurred while triggering the event: " + eventType, exceptions);
+                throw new AggregateException("触发事件时发生多个错误: " + eventType, exceptions);
             }
         }
 
-        /// <inheritdoc/>
         public Task TriggerAsync<TEventData>(TEventData eventData) where TEventData : IEventData
         {
             return TriggerAsync((object)null, eventData);
         }
 
-        /// <inheritdoc/>
         public Task TriggerAsync<TEventData>(object eventSource, TEventData eventData) where TEventData : IEventData
         {
             return TriggerAsync(typeof(TEventData), eventSource, eventData);
         }
 
-        /// <inheritdoc/>
         public Task TriggerAsync(Type eventType, IEventData eventData)
         {
             return TriggerAsync(eventType, null, eventData);
         }
 
-        /// <inheritdoc/>
         public async Task TriggerAsync(Type eventType, object eventSource, IEventData eventData)
         {
             var exceptions = new List<Exception>();
@@ -357,7 +332,7 @@ namespace SharePlatformSystem.Events.Bus
                     exceptions[0].ReThrow();
                 }
 
-                throw new AggregateException("More than one error has occurred while triggering the event: " + eventType, exceptions);
+                throw new AggregateException("触发事件时发生多个错误: " + eventType, exceptions);
             }
         }
 
@@ -368,7 +343,7 @@ namespace SharePlatformSystem.Events.Bus
             {
                 if (eventHandler == null)
                 {
-                    throw new ArgumentNullException($"Registered event handler for event type {eventType.Name} is null!");
+                    throw new ArgumentNullException($"Registered event handler for event type {eventType.Name} 为空!");
                 }
 
                 var handlerType = typeof(IEventHandler<>).MakeGenericType(eventType);
@@ -402,7 +377,7 @@ namespace SharePlatformSystem.Events.Bus
             {
                 if (asyncEventHandler == null)
                 {
-                    throw new ArgumentNullException($"Registered async event handler for event type {eventType.Name} is null!");
+                    throw new ArgumentNullException($"Registered event handler for event type {eventType.Name} 为空!");
                 }
 
                 var asyncHandlerType = typeof(IAsyncEventHandler<>).MakeGenericType(eventType);
@@ -456,13 +431,13 @@ namespace SharePlatformSystem.Events.Bus
 
         private static bool ShouldTriggerEventForHandler(Type eventType, Type handlerType)
         {
-            //Should trigger same type
+            //应触发同一类型
             if (handlerType == eventType)
             {
                 return true;
             }
 
-            //Should trigger for inherited types
+            //应为继承类型触发
             if (handlerType.IsAssignableFrom(eventType))
             {
                 return true;
@@ -489,8 +464,6 @@ namespace SharePlatformSystem.Events.Bus
             }
         }
 
-        // Reference from
-        // https://blogs.msdn.microsoft.com/benwilli/2017/02/09/an-alternative-to-configureawaitfalse-everywhere/
         private struct SynchronizationContextRemover : INotifyCompletion
         {
             public bool IsCompleted

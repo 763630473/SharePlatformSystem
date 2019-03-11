@@ -9,18 +9,18 @@ using SharePlatformSystem.Domain.Uow;
 namespace SharePlatformSystem.NHibernate.Uow
 {
     /// <summary>
-    /// Implements Unit of work for NHibernate.
+    /// 执行NHibernate的工作单元。
     /// </summary>
     public class NhUnitOfWork : UnitOfWorkBase, ITransientDependency
     {
         /// <summary>
-        /// Gets NHibernate session object to perform queries.
+        ///获取执行查询的nhibernate会话对象。
         /// </summary>
         public ISession Session { get; private set; }
 
         /// <summary>
-        /// <see cref="NhUnitOfWork"/> uses this DbConnection if it's set.
-        /// This is usually set in tests.
+        /// <see cref="NhUnitOfWork"/>如果设置了此数据库连接，则使用它。
+        ///这通常在测试中设置。
         /// </summary>
         public DbConnection DbConnection { get; set; }
 
@@ -28,7 +28,7 @@ namespace SharePlatformSystem.NHibernate.Uow
         private ITransaction _transaction;
 
         /// <summary>
-        /// Creates a new instance of <see cref="NhUnitOfWork"/>.
+        ///创建<see cref=“nhUnitOfWork”/>的新实例。
         /// </summary>
         public NhUnitOfWork(
             ISessionFactory sessionFactory,
@@ -84,7 +84,7 @@ namespace SharePlatformSystem.NHibernate.Uow
         }
 
         /// <summary>
-        /// Commits transaction and closes database connection.
+        ///提交事务并关闭数据库连接。
         /// </summary>
         protected override void CompleteUow()
         {
@@ -102,7 +102,7 @@ namespace SharePlatformSystem.NHibernate.Uow
         }
 
         /// <summary>
-        /// Rollbacks transaction and closes database connection.
+        ///回滚事务并关闭数据库连接。
         /// </summary>
         protected override void DisposeUow()
         {

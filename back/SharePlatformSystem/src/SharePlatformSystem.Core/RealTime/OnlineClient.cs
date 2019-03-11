@@ -6,18 +6,18 @@ using SharePlatformSystem.Json;
 namespace SharePlatformSystem.RealTime
 {
     /// <summary>
-    /// Implements <see cref="IOnlineClient"/>.
+    /// 实现 <see cref="IOnlineClient"/>.
     /// </summary>
     [Serializable]
     public class OnlineClient : IOnlineClient
     {
         /// <summary>
-        /// Unique connection Id for this client.
+        /// 此客户端的唯一连接ID。
         /// </summary>
         public string ConnectionId { get; set; }
 
         /// <summary>
-        /// IP address of this client.
+        /// 此客户端的IP地址。
         /// </summary>
         public string IpAddress { get; set; }
 
@@ -27,12 +27,12 @@ namespace SharePlatformSystem.RealTime
         public string UserId { get; set; }
 
         /// <summary>
-        /// Connection establishment time for this client.
+        /// 此客户端的连接建立时间。
         /// </summary>
         public DateTime ConnectTime { get; set; }
 
         /// <summary>
-        /// Shortcut to set/get <see cref="Properties"/>.
+        /// 设置/获取的快捷方式 <see cref="Properties"/>.
         /// </summary>
         public object this[string key]
         {
@@ -41,7 +41,7 @@ namespace SharePlatformSystem.RealTime
         }
 
         /// <summary>
-        /// Can be used to add custom properties for this client.
+        /// 可用于添加此客户端的自定义属性。
         /// </summary>
         public Dictionary<string, object> Properties
         {
@@ -59,7 +59,7 @@ namespace SharePlatformSystem.RealTime
         private Dictionary<string, object> _properties;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OnlineClient"/> class.
+        ///初始化类的新实例<see cref="OnlineClient"/>.
         /// </summary>
         public OnlineClient()
         {
@@ -67,12 +67,11 @@ namespace SharePlatformSystem.RealTime
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OnlineClient"/> class.
+        ///初始化类的新实例<see cref="OnlineClient"/> .
         /// </summary>
-        /// <param name="connectionId">The connection identifier.</param>
-        /// <param name="ipAddress">The ip address.</param>
-        /// <param name="tenantId">The tenant identifier.</param>
-        /// <param name="userId">The user identifier.</param>
+        /// <param name="connectionId">连接标识符。</param>
+        /// <param name="ipAddress">IP地址。</param>
+        /// <param name="userId">用户标识符。</param>
         public OnlineClient(string connectionId, string ipAddress, string userId)
             : this()
         {

@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Timing\Timezone\Mapping\WindowsZones.xml" />
+    <Compile Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\netstandard2.0\SharePlatformSystem.Core.deps.json" />
+    <Content Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +44,25 @@
   <ItemGroup>
     <Folder Include="Configuration\Extensions\" />
     <Folder Include="Localization\Dictionaries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netstandard2.0\SharePlatformSystem.Auth.EfRepository.dll" />
+    <None Include="bin\Debug\netstandard2.0\SharePlatformSystem.Core.dll" />
+    <None Include="bin\Debug\netstandard2.0\SharePlatformSystem.Core.pdb" />
+    <None Include="bin\Debug\netstandard2.0\SharePlatformSystem.Infrastructure.dll" />
+    <None Include="bin\Debug\SharePlatformSystem.Core.1.0.0.nupkg" />
+    <None Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.assets.cache" />
+    <None Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.csproj.CopyComplete" />
+    <None Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.dll" />
+    <None Include="obj\Debug\netstandard2.0\SharePlatformSystem.Core.pdb" />
+    <None Include="obj\Debug\SharePlatformSystem.Core.1.0.0.nuspec" />
+    <None Include="obj\SharePlatformSystem.Core.csproj.nuget.cache" />
+    <None Include="obj\SharePlatformSystem.Core.csproj.nuget.g.props" />
+    <None Include="obj\SharePlatformSystem.Core.csproj.nuget.g.targets" />
   </ItemGroup>
 
 </Project>

@@ -8,22 +8,22 @@ using System.Linq;
 namespace SharePlatformSystem.Core.Text
 {
     /// <summary>
-    /// This class is used to extract dynamic values from a formatted string.
-    /// It works as reverse of <see cref="string.Format(string,object)"/>
-    /// </summary>
-    /// <example>
-    /// Say that str is "My name is Neo." and format is "My name is {name}.".
-    /// Then Extract method gets "Neo" as "name".  
+    ///此类用于从格式化字符串中提取动态值。
+    ///与<see cref=“string.format（string，object）/>
+    ///</summary>
+    ///<example>
+    ///说str是“我的名字是neo”，格式是“我的名字是名字.”。
+    ///那么extract方法得到“neo”作为“name”。
     /// </example>
     public class FormattedStringValueExtracter
     {
         /// <summary>
-        /// Extracts dynamic values from a formatted string.
+        /// 从格式化字符串中提取动态值。
         /// </summary>
-        /// <param name="str">String including dynamic values</param>
-        /// <param name="format">Format of the string</param>
-        /// <param name="ignoreCase">True, to search case-insensitive.</param>
-        /// <param name="splitformatCharacter">format is splitted using this character when provided.</param>
+        /// <param name="str">包含动态值的字符串</param>
+        /// <param name="format">字符串的格式</param>
+        /// <param name="ignoreCase">是的，搜索不区分大小写。</param>
+        /// <param name="splitformatCharacter">提供时使用此字符拆分格式。</param>
         public ExtractionResult Extract(string str, string format, bool ignoreCase = false, char? splitformatCharacter = null)
         {
             var stringComparison = ignoreCase
@@ -63,7 +63,7 @@ namespace SharePlatformSystem.Core.Text
                         var matchIndex = str.IndexOf(currentToken.Text, stringComparison);
                         if (matchIndex >= 0)
                         {
-                            Debug.Assert(previousToken != null, "previousToken can not be null since i > 0 here");
+                            Debug.Assert(previousToken != null, "previoustoken不能为空，因为我在此处大于0");
 
                             result.Matches.Add(new NameValue(previousToken.Text, str.Substring(0, matchIndex)));
                             result.IsMatch = true;
@@ -102,14 +102,14 @@ namespace SharePlatformSystem.Core.Text
         }
 
         /// <summary>
-        /// Checks if given <see cref="str"/> fits to given <see cref="format"/>.
-        /// Also gets extracted values.
+        ///检查给定值是否符合给定值<see cref=“str”/>。
+        ///还获取提取的值。
         /// </summary>
-        /// <param name="str">String including dynamic values</param>
-        /// <param name="format">Format of the string</param>
-        /// <param name="values">Array of extracted values if matched</param>
-        /// <param name="ignoreCase">True, to search case-insensitive</param>
-        /// <returns>True, if matched.</returns>
+        /// <param name="str">包含动态值的字符串</param>
+        /// <param name="format">字符串的格式</param>
+        /// <param name="values">匹配的提取值数组</param>
+        /// <param name="ignoreCase">是，搜索不区分大小写</param>
+        /// <returns>如果匹配，则为真。</returns>
         public static bool IsMatch(string str, string format, out string[] values, bool ignoreCase = false)
         {
             var result = new FormattedStringValueExtracter().Extract(str, format, ignoreCase);
@@ -124,17 +124,17 @@ namespace SharePlatformSystem.Core.Text
         }
 
         /// <summary>
-        /// Used as return value of <see cref="Extract"/> method.
+        /// 用作<see cref=“extract”/>方法的返回值。
         /// </summary>
         public class ExtractionResult
         {
             /// <summary>
-            /// Is fully matched.
+            /// 完全匹配。
             /// </summary>
             public bool IsMatch { get; set; }
 
             /// <summary>
-            /// List of matched dynamic values.
+            /// 匹配的动态值列表。
             /// </summary>
             public List<NameValue> Matches { get; private set; }
 

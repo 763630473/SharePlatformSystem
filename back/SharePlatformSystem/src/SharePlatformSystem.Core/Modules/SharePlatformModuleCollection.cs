@@ -6,7 +6,7 @@ using System.Linq;
 namespace SharePlatformSystem.Core.Modules
 {
     /// <summary>
-    /// Used to store SharePlatformModuleInfo objects as a dictionary.
+    //用于将SharePlatformModuleInfo对象存储为字典。
     /// </summary>
     internal class SharePlatformModuleCollection : List<SharePlatformModuleInfo>
     {
@@ -18,10 +18,10 @@ namespace SharePlatformSystem.Core.Modules
         }
 
         /// <summary>
-        /// Gets a reference to a module instance.
+        /// 获取对模块实例的引用。
         /// </summary>
-        /// <typeparam name="TModule">Module type</typeparam>
-        /// <returns>Reference to the module instance</returns>
+        /// <typeparam name="TModule">模块类型</typeparam>
+        /// <returns>引用模块实例</returns>
         public TModule GetModule<TModule>() where TModule : SharePlatformModule
         {
             var module = this.FirstOrDefault(m => m.Type == typeof(TModule));
@@ -34,10 +34,10 @@ namespace SharePlatformSystem.Core.Modules
         }
 
         /// <summary>
-        /// Sorts modules according to dependencies.
-        /// If module A depends on module B, A comes after B in the returned List.
+        /// 根据依赖项对模块排序。
+        ///如果模块A依赖于模块B，则返回列表中A在B之后。
         /// </summary>
-        /// <returns>Sorted list</returns>
+        /// <returns>排序表</returns>
         public List<SharePlatformModuleInfo> GetSortedModuleListByDependency()
         {
             var sortedModules = this.SortByDependencies(x => x.Dependencies);
@@ -51,7 +51,7 @@ namespace SharePlatformSystem.Core.Modules
             var kernelModuleIndex = modules.FindIndex(m => m.Type == typeof(SharePlatformKernelModule));
             if (kernelModuleIndex <= 0)
             {
-                //It's already the first!
+                //已经是第一次了！
                 return;
             }
 
@@ -65,7 +65,7 @@ namespace SharePlatformSystem.Core.Modules
             var startupModuleIndex = modules.FindIndex(m => m.Type == startupModuleType);
             if (startupModuleIndex >= modules.Count - 1)
             {
-                //It's already the last!
+                //已经是最后一个了！
                 return;
             }
 

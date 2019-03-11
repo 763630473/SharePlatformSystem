@@ -9,7 +9,7 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Framework.AspNetCore.EntityHistory
 {
     /// <summary>
-    /// Implements <see cref="IEntityChangeSetReasonProvider"/> to get reason from HTTP request.
+    /// implements<see cref=“IEntityChangeSetReasonProvider”/>以从HTTP请求获取原因。
     /// </summary>
     public class HttpRequestEntityChangeSetReasonProvider : EntityChangeSetReasonProviderBase, ISingletonDependency
     {
@@ -29,7 +29,6 @@ namespace SharePlatformSystem.Framework.AspNetCore.EntityHistory
                 }
                 catch (NullReferenceException)
                 {
-                    // Workaround: https://github.com/aspnet/Home/issues/2718
                     return null;
                 }
             }

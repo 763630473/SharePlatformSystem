@@ -4,80 +4,80 @@ using SharePlatformSystem.Core.Localization;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// Defines a setting.
-    /// A setting is used to configure and change behavior of the application.
+    ///定义一个设置。
+    ///设置用于配置和更改应用程序的行为。
     /// </summary>
     public class SettingDefinition
     {
         /// <summary>
-        /// Unique name of the setting.
+        /// 设置的唯一名称。
         /// </summary>
         public string Name { get; private set; }
 
         /// <summary>
-        /// Display name of the setting.
-        /// This can be used to show setting to the user.
+        /// 设置的显示名称。
+        ///可用于向用户显示设置。
         /// </summary>
         public ILocalizableString DisplayName { get; set; }
 
         /// <summary>
-        /// A brief description for this setting.
+        /// 此设置的简要说明。
         /// </summary>
         public ILocalizableString Description { get; set; }
 
         /// <summary>
-        /// Scopes of this setting.
-        /// Default value: <see cref="SettingScopes.Application"/>.
+        ///此设置的范围。
+        ///默认值：“settingscopes.application”。
         /// </summary>
         public SettingScopes Scopes { get; set; }
 
         /// <summary>
-        /// Is this setting inherited from parent scopes.
-        /// Default: True.
+        ///此设置是从父作用域继承的吗？
+        ///默认值：真。
         /// </summary>
         public bool IsInherited { get; set; }
 
         /// <summary>
-        /// Gets/sets group for this setting.
+        ///获取/设置此设置的组。
         /// </summary>
         public SettingDefinitionGroup Group { get; set; }
 
         /// <summary>
-        /// Default value of the setting.
+        /// 设置的默认值。
         /// </summary>
         public string DefaultValue { get; set; }
 
         /// <summary>
-        /// Can clients see this setting and it's value.
-        /// It maybe dangerous for some settings to be visible to clients (such as email server password).
-        /// Default: false.
+        /// 客户能看到这个设置和它的值吗？
+        ///某些设置对客户端可见（如电子邮件服务器密码）可能很危险。
+        ///默认值：false。
         /// </summary>
         [Obsolete("Use ClientVisibilityProvider instead.")]
         public bool IsVisibleToClients { get; set; }
 
         /// <summary>
-        /// Client visibility definition for the setting.
+        ///设置的客户端可见性定义。
         /// </summary>
         public ISettingClientVisibilityProvider ClientVisibilityProvider { get; set; }
 
         /// <summary>
-        /// Can be used to store a custom object related to this setting.
+        ///可用于存储与此设置相关的自定义对象。
         /// </summary>
         public object CustomData { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="SettingDefinition"/> object.
+        /// 创建一个新的“settingdefinition”对象。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
-        /// <param name="defaultValue">Default value of the setting</param>
-        /// <param name="displayName">Display name of the permission</param>
-        /// <param name="group">Group of this setting</param>
-        /// <param name="description">A brief description for this setting</param>
-        /// <param name="scopes">Scopes of this setting. Default value: <see cref="SettingScopes.Application"/>.</param>
-        /// <param name="isVisibleToClients">Can clients see this setting and it's value. Default: false</param>
-        /// <param name="isInherited">Is this setting inherited from parent scopes. Default: True.</param>
-        /// <param name="customData">Can be used to store a custom object related to this setting</param>
-        /// <param name="clientVisibilityProvider">Client visibility definition for the setting. Default: invisible</param>
+        /// <param name="name">设置的唯一名称</param>
+        /// <param name="defaultValue">设置的默认值</param>
+        /// <param name="displayName">权限的显示名称</param>
+        /// <param name="group">此设置的组</param>
+        /// <param name="description">此设置的简要说明</param>
+        /// <param name="scopes">此设置的范围。默认值：“settingscopes.application”。</param>
+        /// <param name="isVisibleToClients">客户能看到这个设置和它的值吗？默认值：假</param>
+        /// <param name="isInherited">此设置是从父作用域继承的吗？默认：True。</param>
+        /// <param name="customData">可用于存储与此设置相关的自定义对象</param>
+        /// <param name="clientVisibilityProvider">设置的客户端可见性定义。默认：不可见</param>
         public SettingDefinition(
             string name,
             string defaultValue,

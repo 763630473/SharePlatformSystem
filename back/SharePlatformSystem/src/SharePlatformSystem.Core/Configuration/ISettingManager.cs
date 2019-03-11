@@ -5,112 +5,110 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// This is the main interface that must be implemented to be able to load/change values of settings.
+    /// 这是必须实现的主界面，以便能够加载/更改设置值。
     /// </summary>
     public interface ISettingManager
     {
         /// <summary>
-        /// Gets current value of a setting.
-        /// It gets the setting value, overwritten by application, current tenant and current user if exists.
+        ///获取设置的当前值。
+        ///获取设置值，如果存在则被应用程序、当前租户和当前用户覆盖。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
-        /// <returns>Current value of the setting</returns>
+        /// <param name="name">设置的唯一名称</param>
+        /// <returns>设置的当前值</returns>
         Task<string> GetSettingValueAsync(string name);
 
         /// <summary>
-        /// Gets current value of a setting for the application level.
+        /// 获取应用程序级别设置的当前值。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
-        /// <returns>Current value of the setting for the application</returns>
+        /// <param name="name">设置的唯一名称</param>
+        /// <returns>应用程序设置的当前值</returns>
         Task<string> GetSettingValueForApplicationAsync(string name);
 
         /// <summary>
-        /// Gets current value of a setting for the application level.
-        /// If fallbackToDefault is false, it just gets value from application and returns null if application has not defined a value for the setting.
+        /// 获取应用程序级别设置的当前值。
+        ///如果fallbacktodefault为false，则只从应用程序获取值，如果应用程序没有为设置定义值，则返回空值。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
+        /// <param name="name">设置的唯一名称</param>
         /// <param name="fallbackToDefault"></param>
-        /// <returns>Current value of the setting for the application</returns>
+        /// <returns>应用程序设置的当前值</returns>
         Task<string> GetSettingValueForApplicationAsync(string name, bool fallbackToDefault);
 
         /// <summary>
-        /// Gets current value of a setting for a user level.
-        /// It gets the setting value, overwritten by given tenant and user.
+        ///获取用户级别设置的当前值。
+        ///获取设置值，由给定租户和用户覆盖。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
-        /// <param name="tenantId">Tenant id</param>
+        /// <param name="name">设置的唯一名称</param>
         /// <param name="userId">User id</param>
-        /// <returns>Current value of the setting for the user</returns>
+        /// <returns>用户设置的当前值</returns>
         Task<string> GetSettingValueForUserAsync(string name, string userId);
 
         /// <summary>
-        /// Gets current value of a setting for a user level.
-        /// It gets the setting value, overwritten by given tenant and user if fallbackToDefault is true.
-        /// If fallbackToDefault is false, it just gets value from user and returns null if user has not defined a value for the setting.
+        ///获取用户级别设置的当前值。
+        ///获取设置值，如果fallbacktodefault为true，则由给定的租户和用户覆盖。
+        ///如果fallbacktodefault为false，则只从用户获取值，如果用户没有为设置定义值，则返回空值。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
-        /// <param name="tenantId">Tenant id</param>
-        /// <param name="userId">User id</param>
+        /// <param name="name">设置的唯一名称</param>
+        /// <param name="userId">用户ID</param>
         /// <param name="fallbackToDefault"></param>
-        /// <returns>Current value of the setting for the user</returns>
+        /// <returns>用户设置的当前值</returns>
         Task<string> GetSettingValueForUserAsync(string name, string userId, bool fallbackToDefault);
 
         /// <summary>
-        /// Gets current value of a setting for a user level.
-        /// It gets the setting value, overwritten by given tenant and user.
+        ///获取用户级别设置的当前值。
+        ///获取设置值，由给定租户和用户覆盖。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
+        /// <param name="name">设置的唯一名称</param>
         /// <param name="user">User</param>
-        /// <returns>Current value of the setting for the user</returns>
+        /// <returns>用户设置的当前值</returns>
         Task<string> GetSettingValueForUserAsync(string name, UserIdentifier user);
 
         /// <summary>
-        /// Gets current values of all settings.
-        /// It gets all setting values, overwritten by application, current tenant (if exists) and the current user (if exists).
+        ///获取所有设置的当前值。
+        ///获取所有设置值，由应用程序、当前租户（如果存在）和当前用户（如果存在）覆盖。
         /// </summary>
-        /// <returns>List of setting values</returns>
+        /// <returns>设定值列表</returns>
         Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesAsync();
 
         /// <summary>
-        /// Gets current values of all settings.
-        /// It gets default values of all settings then overwrites by given scopes.
+        ///获取所有设置的当前值。
+        ///获取所有设置的默认值，然后按给定范围覆盖。
         /// </summary>
-        /// <param name="scopes">One or more scope to overwrite</param>
-        /// <returns>List of setting values</returns>
+        /// <param name="scopes">要覆盖的一个或多个范围</param>
+        /// <returns>设定值列表</returns>
         Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesAsync(SettingScopes scopes);
 
         /// <summary>
-        /// Gets a list of all setting values specified for the application.
-        /// It returns only settings those are explicitly set for the application.
-        /// If a setting's default value is used, it's not included the result list.
-        /// If you want to get current values of all settings, use <see cref="GetAllSettingValuesAsync()"/> method.
+        ///获取为应用程序指定的所有设置值的列表。
+        ///只返回为应用程序显式设置的设置。
+        ///如果使用设置的默认值，则不包括结果列表。
+        ///如果要获取所有设置的当前值，请使用“getAllSettingValuesAsync（）”方法。
         /// </summary>
         /// <returns>List of setting values</returns>
         Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesForApplicationAsync();
 
         /// <summary>
-        /// Gets a list of all setting values specified for a user.
-        /// It returns only settings those are explicitly set for the user.
-        /// If a setting's value is not set for the user (for example if user uses the default value), it's not included the result list.
-        /// If you want to get current values of all settings, use <see cref="GetAllSettingValuesAsync()"/> method.
+        ///获取为用户指定的所有设置值的列表。
+        ///只返回为用户显式设置的设置。   
+        ///如果没有为用户设置设置的值（例如，如果用户使用默认值），则不包括结果列表。
+        ///如果要获取所有设置的当前值，请使用“getAllSettingValuesAsync（）”方法。
         /// </summary>
-        /// <param name="user">User to get settings</param>
-        /// <returns>All settings of the user</returns>
+        /// <param name="user">用户获取设置</param>
+        /// <returns>用户的所有设置</returns>
         Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesForUserAsync(UserIdentifier user);
 
         /// <summary>
-        /// Changes setting for the application level.
+        /// 更改应用程序级别的设置。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
-        /// <param name="value">Value of the setting</param>
+        /// <param name="name">设置的唯一名称</param>
+        /// <param name="value">设置值</param>
         Task ChangeSettingForApplicationAsync(string name, string value);
 
         /// <summary>
-        /// Changes setting for a user.
+        /// 更改用户的设置。
         /// </summary>
         /// <param name="user">UserId</param>
-        /// <param name="name">Unique name of the setting</param>
-        /// <param name="value">Value of the setting</param>
+        /// <param name="name">设置的唯一名称</param>
+        /// <param name="value">设置值</param>
         Task ChangeSettingForUserAsync(UserIdentifier user, string name, string value);
     }
 }

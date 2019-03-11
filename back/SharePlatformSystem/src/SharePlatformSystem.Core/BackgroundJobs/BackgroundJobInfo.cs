@@ -7,82 +7,82 @@ using SharePlatformSystem.Core.Timing;
 namespace SharePlatformSystem.BackgroundJobs
 {
     /// <summary>
-    /// Represents a background job info that is used to persist jobs.
+    /// 表示用于持久化作业的后台作业信息。
     /// </summary>
     [Table("BackgroundJobs")]
     public class BackgroundJobInfo : CreationAuditedEntity<string>
     {
         /// <summary>
-        /// Maximum length of <see cref="JobType"/>.
+        /// "JobType"的最大长度.
         /// Value: 512.
         /// </summary>
         public const int MaxJobTypeLength = 512;
 
         /// <summary>
-        /// Maximum length of <see cref="JobArgs"/>.
+        ///"JobArgs"的最大长度.
         /// Value: 1 MB (1,048,576 bytes).
         /// </summary>
         public const int MaxJobArgsLength = 1024 * 1024;
 
         /// <summary>
-        /// Default duration (as seconds) for the first wait on a failure.
-        /// Default value: 60 (1 minutes).
+        /// 失败时第一次等待的默认持续时间（秒）。
+        /// 默认值: 60 (1 分钟).
         /// </summary>
         public static int DefaultFirstWaitDuration { get; set; }
 
         /// <summary>
-        /// Default timeout value (as seconds) for a job before it's abandoned (<see cref="IsAbandoned"/>).
-        /// Default value: 172,800 (2 days).
+        /// 作业放弃“isabandoned”之前的默认超时值（秒）。
+        /// 默认值: 172,800 (2 天).
         /// </summary>
         public static int DefaultTimeout { get; set; }
 
         /// <summary>
-        /// Default wait factor for execution failures.
-        /// This amount is multiplated by last wait time to calculate next wait time.
-        /// Default value: 2.0.
+        ///执行失败的默认等待因子。
+        /// 此金额乘以最后等待时间，以计算下一等待时间。
+        /// 默认值: 2.0.
         /// </summary>
         public static double DefaultWaitFactor { get; set; }
 
         /// <summary>
-        /// Type of the job.
-        /// It's AssemblyQualifiedName of job type.
+        /// 作业的类型。
+        /// 它是作业类型的assemblyQualifiedName。
         /// </summary>
         [Required]
         [StringLength(MaxJobTypeLength)]
         public virtual string JobType { get; set; }
 
         /// <summary>
-        /// Job arguments as JSON string.
+        /// 作为JSON字符串的作业参数。
         /// </summary>
         [Required]
         [StringLength(MaxJobArgsLength)]
         public virtual string JobArgs { get; set; }
 
         /// <summary>
-        /// Try count of this job.
-        /// A job is re-tried if it fails.
+        ///尝试此作业的计数。
+        ///如果作业失败，将重新尝试。
         /// </summary>
         public virtual short TryCount { get; set; }
 
         /// <summary>
-        /// Next try time of this job.
+        /// 此作业的下一次尝试时间。
         /// </summary>
         //[Index("IX_IsAbandoned_NextTryTime", 2)]
         public virtual DateTime NextTryTime { get; set; }
 
         /// <summary>
-        /// Last try time of this job.
+        ///此作业的上次尝试时间。
         /// </summary>
         public virtual DateTime? LastTryTime { get; set; }
 
         /// <summary>
-        /// This is true if this job is continously failed and will not be executed again.
+        ///如果此作业连续失败且不会再次执行，则为真。
         /// </summary>
         //[Index("IX_IsAbandoned_NextTryTime", 1)]
         public virtual bool IsAbandoned { get; set; }
 
         /// <summary>
-        /// Priority of this job.
+        ///此工作的优先级。
         /// </summary>
         public virtual BackgroundJobPriority Priority { get; set; }
 
@@ -94,7 +94,7 @@ namespace SharePlatformSystem.BackgroundJobs
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BackgroundJobInfo"/> class.
+        /// 初始化“BackgroundJobInfo”类的新实例。
         /// </summary>
         public BackgroundJobInfo()
         {
@@ -103,8 +103,8 @@ namespace SharePlatformSystem.BackgroundJobs
         }
 
         /// <summary>
-        /// Calculates next try time if a job fails.
-        /// Returns null if it will not wait anymore and job should be abandoned.
+        /// 如果作业失败，则计算下一次尝试时间。
+        /// 如果它不再等待并且应该放弃作业，则返回空值。
         /// </summary>
         /// <returns></returns>
         public virtual DateTime? CalculateNextTryTime()

@@ -8,7 +8,7 @@ using System.Text;
 namespace SharePlatformSystem.Runtime.Caching
 {
     /// <summary>
-    /// A class to hold the Type information and Serialized payload for data stored in the cache.
+    /// 一个类，用于保存缓存中存储的数据的类型信息和序列化负载。
     /// </summary>
     public class SharePlatformCacheData
     {

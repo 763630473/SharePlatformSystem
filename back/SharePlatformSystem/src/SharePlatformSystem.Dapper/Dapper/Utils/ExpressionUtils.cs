@@ -6,12 +6,12 @@ namespace SharePlatformSystem.Dapper.Utils
     internal class ExpressionUtils
     {
         /// <summary>
-        ///     Makes the predicate.
+        ///制造谓词
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="name">The name.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="typeOfValue">The type of value.</param>
+        /// <param name="name">名称</param>
+        /// <param name="value">值.</param>
+        /// <param name="typeOfValue">值的类型。</param>
         /// <returns></returns>
         public static Expression<Func<T, bool>> MakePredicate<T>(
             string name,

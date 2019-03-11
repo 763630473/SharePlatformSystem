@@ -6,7 +6,7 @@ namespace SharePlatformSystem.Core.Transactions.Extensions
     public static class IsolationLevelExtensions
     {
         /// <summary>
-        /// Converts <see cref="System.Transactions.IsolationLevel"/> to <see cref="IsolationLevel"/>.
+        ///将<see cref=“system.transactions.isolationlevel”/>转换为<see cref=“isolationlevel”/>。
         /// </summary>
         public static IsolationLevel ToSystemDataIsolationLevel(this System.Transactions.IsolationLevel isolationLevel)
         {
@@ -27,7 +27,7 @@ namespace SharePlatformSystem.Core.Transactions.Extensions
                 case System.Transactions.IsolationLevel.Unspecified:
                     return IsolationLevel.Unspecified;
                 default:
-                    throw new SharePlatformException("Unknown isolation level: " + isolationLevel);
+                    throw new SharePlatformException("未知的隔离级别：" + isolationLevel);
             }
         }
     }

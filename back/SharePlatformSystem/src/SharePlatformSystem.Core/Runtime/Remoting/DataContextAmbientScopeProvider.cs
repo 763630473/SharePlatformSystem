@@ -42,7 +42,7 @@ namespace SharePlatformSystem.Runtime.Remoting
 
             if (!ScopeDictionary.TryAdd(item.Id, item))
             {
-                throw new SharePlatformException("Can not add item! ScopeDictionary.TryAdd returns false!");
+                throw new SharePlatformException("无法添加项目！scopedictionary.tryadd返回false！");
             }
 
             _dataContext.SetData(contextKey, item.Id);

@@ -5,25 +5,25 @@ using JetBrains.Annotations;
 namespace SharePlatformSystem.Runtime.Caching
 {
     /// <summary>
-    /// An upper level container for <see cref="ICache"/> objects. 
-    /// A cache manager should work as Singleton and track and manage <see cref="ICache"/> objects.
+    ///对象的上层容器。
+    ///缓存管理器应作为singleton工作，并跟踪和管理对象。
     /// </summary>
     public interface ICacheManager : IDisposable
     {
         /// <summary>
-        /// Gets all caches.
+        /// 获取所有缓存。
         /// </summary>
-        /// <returns>List of caches</returns>
+        /// <returns>缓存列表</returns>
         IReadOnlyList<ICache> GetAllCaches();
 
         /// <summary>
-        /// Gets a <see cref="ICache"/> instance.
-        /// It may create the cache if it does not already exists.
+        ///获取<see cref=“icache”/>实例。
+        ///如果缓存不存在，可能会创建缓存。
         /// </summary>
         /// <param name="name">
-        /// Unique and case sensitive name of the cache.
+        /// 缓存的唯一和区分大小写的名称。
         /// </param>
-        /// <returns>The cache reference</returns>
+        /// <returns>缓存引用</returns>
         [NotNull] ICache GetCache([NotNull] string name);
     }
 }

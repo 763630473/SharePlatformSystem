@@ -4,24 +4,24 @@ using System.Collections.Generic;
 namespace SharePlatformSystem.Core.Resources.Embedded
 {
     /// <summary>
-    /// Provides infrastructure to use any type of resources (files) embedded into assemblies.
+    /// 提供基础结构以使用嵌入到程序集中的任何类型的资源（文件）。
     /// </summary>
     public interface IEmbeddedResourceManager
     {
         /// <summary>
-        /// Used to get an embedded resource file.
-        /// Can return null if resource is not found!
+        ///用于获取嵌入的资源文件。
+        ///如果找不到资源，可以返回空值！
         /// </summary>
-        /// <param name="fullResourcePath">Full path of the resource</param>
+        /// <param name="fullResourcePath">资源的完整路径</param>
         /// <returns>The resource</returns>
         [CanBeNull]
         EmbeddedResourceItem GetResource([NotNull] string fullResourcePath);
 
         /// <summary>
-        /// Used to get the list of embedded resource file.
+        /// 用于获取嵌入资源文件的列表。
         /// </summary>
-        /// <param name="fullResourcePath">Full path of the resource</param>
-        /// <returns>The list of resource</returns>
+        /// <param name="fullResourcePath">资源的完整路径</param>
+        /// <returns>资源列表</returns>
         IEnumerable<EmbeddedResourceItem> GetResources(string fullResourcePath);
     }
 }

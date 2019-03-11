@@ -1,21 +1,15 @@
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// This interface is defined to standardize to request a sorted result.
+    /// 此接口定义为标准化以请求排序结果。
     /// </summary>
     public interface ISortedResultRequest
     {
         /// <summary>
-        /// Sorting information.
-        /// Should include sorting field and optionally a direction (ASC or DESC)
-        /// Can contain more than one field separated by comma (,).
-        /// </summary>
-        /// <example>
-        /// Examples:
-        /// "Name"
-        /// "Name DESC"
-        /// "Name ASC, Age DESC"
-        /// </example>
+        ///信息。
+        ///应该包括3场A和optionally方向（升序或降序）
+        ///含有超过一个逗号分隔的市场（，）。
+        //// <summary>
         string Sorting { get; set; }
     }
 }

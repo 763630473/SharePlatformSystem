@@ -5,7 +5,7 @@ namespace SharePlatformSystem.HangFire
     public static class SharePlatformHangfireConfigurationExtensions
     {
         /// <summary>
-        /// Configures to use Hangfire for background job management.
+        /// 配置为使用hangfire进行后台作业管理。
         /// </summary>
         public static void UseHangfire(this IBackgroundJobConfiguration backgroundJobConfiguration)
         {

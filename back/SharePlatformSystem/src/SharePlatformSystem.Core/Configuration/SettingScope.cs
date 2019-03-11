@@ -3,30 +3,24 @@
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// Defines scope of a setting.
+    /// 定义设置的范围。
     /// </summary>
     [Flags]
     public enum SettingScopes
     {
         /// <summary>
-        /// Represents a setting that can be configured/changed for the application level.
+        /// 表示可为应用程序级别配置/更改的设置。
         /// </summary>
         Application = 1,
 
         /// <summary>
-        /// Represents a setting that can be configured/changed for each Tenant.
-        /// This is reserved
-        /// </summary>
-        Tenant = 2,
-
-        /// <summary>
-        /// Represents a setting that can be configured/changed for each User.
+        /// 表示可以为每个用户配置/更改的设置。
         /// </summary>
         User = 4,
 
         /// <summary>
-        /// Represents a setting that can be configured/changed for all levels
+        ///表示可以为所有级别配置/更改的设置
         /// </summary>
-        All = Application | Tenant | User
+        All = Application  | User
     }
 }

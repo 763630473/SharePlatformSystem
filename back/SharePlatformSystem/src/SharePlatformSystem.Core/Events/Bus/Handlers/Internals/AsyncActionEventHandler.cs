@@ -5,7 +5,7 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Events.Bus.Handlers.Internals
 {
     /// <summary>
-    /// This event handler is an adapter to be able to use an action as <see cref="IAsyncEventHandler{TEventData}"/> implementation.
+    /// 此事件处理程序是一个适配器，能够使用操作作为实现。
     /// </summary>
     /// <typeparam name="TEventData">Event type</typeparam>
     internal class AsyncActionEventHandler<TEventData> :
@@ -13,21 +13,21 @@ namespace SharePlatformSystem.Events.Bus.Handlers.Internals
         ITransientDependency
     {
         /// <summary>
-        /// Function to handle the event.
+        /// 函数来处理事件。
         /// </summary>
         public Func<TEventData, Task> Action { get; private set; }
 
         /// <summary>
-        /// Creates a new instance of <see cref="AsyncActionEventHandler{TEventData}"/>.
+        /// 创建<see cref=“asyncActionEventHandler teventData”/>的新实例。
         /// </summary>
-        /// <param name="handler">Action to handle the event</param>
+        /// <param name="handler">处理事件的操作</param>
         public AsyncActionEventHandler(Func<TEventData, Task> handler)
         {
             Action = handler;
         }
 
         /// <summary>
-        /// Handles the event.
+        /// 处理事件。
         /// </summary>
         /// <param name="eventData"></param>
         public async Task HandleEventAsync(TEventData eventData)

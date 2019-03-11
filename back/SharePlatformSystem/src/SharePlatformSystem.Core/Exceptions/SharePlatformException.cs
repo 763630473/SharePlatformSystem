@@ -6,13 +6,13 @@ using System.Text;
 namespace SharePlatformSystem.Core.Exceptions
 {
     /// <summary>
-    /// Base exception type for those are thrown by SharePlatform system for SharePlatform specific exceptions.
+    /// SharePlatform系统针对特定于SharePlatform的异常引发这些异常的基本异常类型。
     /// </summary>
     [Serializable]
     public class SharePlatformException : Exception
     {
         /// <summary>
-        /// Creates a new <see cref="SharePlatformException"/> object.
+        /// 创建一个新的对象。
         /// </summary>
         public SharePlatformException()
         {
@@ -20,7 +20,7 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Creates a new <see cref="SharePlatformException"/> object.
+        /// 创建一个新的对象。
         /// </summary>
         public SharePlatformException(SerializationInfo serializationInfo, StreamingContext context)
             : base(serializationInfo, context)
@@ -29,9 +29,9 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Creates a new <see cref="SharePlatformException"/> object.
+        /// 创建一个新的对象。
         /// </summary>
-        /// <param name="message">Exception message</param>
+        /// <param name="message">异常消息</param>
         public SharePlatformException(string message)
             : base(message)
         {
@@ -39,10 +39,10 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Creates a new <see cref="SharePlatformException"/> object.
+        /// 创建一个新的对象。
         /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="innerException">Inner exception</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="innerException">内部异常</param>
         public SharePlatformException(string message, Exception innerException)
             : base(message, innerException)
         {

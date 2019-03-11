@@ -7,29 +7,29 @@ using System.Runtime.Serialization;
 namespace SharePlatformSystem.Framework
 {
     /// <summary>
-    /// This exception type is directly shown to the user.
+    /// 此异常类型直接显示给用户。
     /// </summary>
     [Serializable]
     public class UserFriendlyException : SharePlatformException, IHasLogSeverity, IHasErrorCode
     {
         /// <summary>
-        /// Additional information about the exception.
+        /// 有关异常的其他信息。
         /// </summary>
         public string Details { get; private set; }
 
         /// <summary>
-        /// An arbitrary error code.
+        /// 任意错误代码。
         /// </summary>
         public int Code { get; set; }
 
         /// <summary>
-        /// Severity of the exception.
-        /// Default: Warn.
+        ///异常的严重性。
+        /// 默认值: Warn.
         /// </summary>
         public LogSeverity Severity { get; set; }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
         public UserFriendlyException()
         {
@@ -37,7 +37,7 @@ namespace SharePlatformSystem.Framework
         }
 
         /// <summary>
-        /// Constructor for serializing.
+        /// 用于序列化的构造函数。
         /// </summary>
         public UserFriendlyException(SerializationInfo serializationInfo, StreamingContext context)
             : base(serializationInfo, context)
@@ -46,9 +46,9 @@ namespace SharePlatformSystem.Framework
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
-        /// <param name="message">Exception message</param>
+        /// <param name="message">异常消息</param>
         public UserFriendlyException(string message)
             : base(message)
         {
@@ -56,10 +56,10 @@ namespace SharePlatformSystem.Framework
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="severity">Exception severity</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="severity">异常严重性</param>
         public UserFriendlyException(string message, LogSeverity severity)
             : base(message)
         {
@@ -67,10 +67,10 @@ namespace SharePlatformSystem.Framework
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
-        /// <param name="code">Error code</param>
-        /// <param name="message">Exception message</param>
+        /// <param name="code">错误代码</param>
+        /// <param name="message">异常消息</param>
         public UserFriendlyException(int code, string message)
             : this(message)
         {
@@ -78,10 +78,10 @@ namespace SharePlatformSystem.Framework
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="details">Additional information about the exception</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="details">有关异常的其他信息</param>
         public UserFriendlyException(string message, string details)
             : this(message)
         {
@@ -89,11 +89,11 @@ namespace SharePlatformSystem.Framework
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
         /// <param name="code">Error code</param>
-        /// <param name="message">Exception message</param>
-        /// <param name="details">Additional information about the exception</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="details">有关异常的其他信息</param>
         public UserFriendlyException(int code, string message, string details)
             : this(message, details)
         {
@@ -101,10 +101,10 @@ namespace SharePlatformSystem.Framework
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="innerException">Inner exception</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="innerException">内部异常</param>
         public UserFriendlyException(string message, Exception innerException)
             : base(message, innerException)
         {
@@ -112,11 +112,11 @@ namespace SharePlatformSystem.Framework
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="details">Additional information about the exception</param>
-        /// <param name="innerException">Inner exception</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="details">有关异常的其他信息</param>
+        /// <param name="innerException">内部异常</param>
         public UserFriendlyException(string message, string details, Exception innerException)
             : this(message, innerException)
         {

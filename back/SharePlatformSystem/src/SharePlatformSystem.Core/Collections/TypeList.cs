@@ -6,34 +6,34 @@ using System.Reflection;
 namespace SharePlatformSystem.Collections
 {
     /// <summary>
-    /// A shortcut for <see cref="TypeList{TBaseType}"/> to use object as base type.
+    ///"TypeList{TBaseType}"的快捷方式，用于将对象用作基类型。
     /// </summary>
     public class TypeList : TypeList<object>, ITypeList
     {
     }
 
     /// <summary>
-    /// Extends <see cref="List{Type}"/> to add restriction a specific base type.
+    /// 扩展"List{Type}"以添加对特定基类型的限制。
     /// </summary>
-    /// <typeparam name="TBaseType">Base Type of <see cref="Type"/>s in this list</typeparam>
+    /// <typeparam name="TBaseType">此列表中“Type”的基类型</typeparam>
     public class TypeList<TBaseType> : ITypeList<TBaseType>
     {
         /// <summary>
-        /// Gets the count.
+        /// 获取计数。
         /// </summary>
-        /// <value>The count.</value>
+        /// <value>计数器</value>
         public int Count { get { return _typeList.Count; } }
 
         /// <summary>
-        /// Gets a value indicating whether this instance is read only.
+        /// 获取一个值，该值指示此实例是否为只读。
         /// </summary>
-        /// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+        /// <value>如果此实例是只读的，则为“真”；否则为“假”。</value>
         public bool IsReadOnly { get { return false; } }
 
         /// <summary>
-        /// Gets or sets the <see cref="Type"/> at the specified index.
+        /// 获取或设置指定索引处的“Type”。
         /// </summary>
-        /// <param name="index">Index.</param>
+        /// <param name="index">索引.</param>
         public Type this[int index]
         {
             get { return _typeList[index]; }
@@ -47,81 +47,69 @@ namespace SharePlatformSystem.Collections
         private readonly List<Type> _typeList;
 
         /// <summary>
-        /// Creates a new <see cref="TypeList{T}"/> object.
+        /// 创建一个新的"TypeList{T}"对象。
         /// </summary>
         public TypeList()
         {
             _typeList = new List<Type>();
         }
 
-        /// <inheritdoc/>
         public void Add<T>() where T : TBaseType
         {
             _typeList.Add(typeof(T));
         }
 
-        /// <inheritdoc/>
         public void Add(Type item)
         {
             CheckType(item);
             _typeList.Add(item);
         }
 
-        /// <inheritdoc/>
         public void Insert(int index, Type item)
         {
             _typeList.Insert(index, item);
         }
 
-        /// <inheritdoc/>
         public int IndexOf(Type item)
         {
             return _typeList.IndexOf(item);
         }
 
-        /// <inheritdoc/>
         public bool Contains<T>() where T : TBaseType
         {
             return Contains(typeof(T));
         }
 
-        /// <inheritdoc/>
         public bool Contains(Type item)
         {
             return _typeList.Contains(item);
         }
 
-        /// <inheritdoc/>
         public void Remove<T>() where T : TBaseType
         {
             _typeList.Remove(typeof(T));
         }
 
-        /// <inheritdoc/>
         public bool Remove(Type item)
         {
             return _typeList.Remove(item);
         }
 
-        /// <inheritdoc/>
         public void RemoveAt(int index)
         {
             _typeList.RemoveAt(index);
         }
 
-        /// <inheritdoc/>
         public void Clear()
         {
             _typeList.Clear();
         }
 
-        /// <inheritdoc/>
         public void CopyTo(Type[] array, int arrayIndex)
         {
             _typeList.CopyTo(array, arrayIndex);
         }
 
-        /// <inheritdoc/>
         public IEnumerator<Type> GetEnumerator()
         {
             return _typeList.GetEnumerator();
@@ -136,7 +124,7 @@ namespace SharePlatformSystem.Collections
         {
             if (!typeof(TBaseType).GetTypeInfo().IsAssignableFrom(item))
             {
-                throw new ArgumentException("Given item is not type of " + typeof(TBaseType).AssemblyQualifiedName, "item");
+                throw new ArgumentException("给定的项不是类型" + typeof(TBaseType).AssemblyQualifiedName, "项目");
             }
         }
     }

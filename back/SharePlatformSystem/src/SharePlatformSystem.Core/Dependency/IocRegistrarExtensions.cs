@@ -3,19 +3,19 @@ using System;
 namespace SharePlatformSystem.Dependency
 {
     /// <summary>
-    /// Extension methods for <see cref="IIocRegistrar"/> interface.
+    /// “IIocRegistrar”接口的扩展方法。
     /// </summary>
     public static class IocRegistrarExtensions
     {
         #region RegisterIfNot
 
         /// <summary>
-        /// Registers a type as self registration if it's not registered before.
+        /// 如果类型以前未注册，则将其注册为自注册。
         /// </summary>
-        /// <typeparam name="T">Type of the class</typeparam>
-        /// <param name="iocRegistrar">Registrar</param>
-        /// <param name="lifeStyle">Lifestyle of the objects of this type</param>
-        /// <returns>True, if registered for given implementation.</returns>
+        /// <typeparam name="T">类的类型</typeparam>
+        /// <param name="iocRegistrar">注册器</param>
+        /// <param name="lifeStyle">对象生命周期的类型</param>
+        /// <returns>如果为给定的实现注册，则为true。</returns>
         public static bool RegisterIfNot<T>(this IIocRegistrar iocRegistrar, DependencyLifeStyle lifeStyle = DependencyLifeStyle.Singleton)
             where T : class
         {
@@ -29,12 +29,11 @@ namespace SharePlatformSystem.Dependency
         }
 
         /// <summary>
-        /// Registers a type as self registration if it's not registered before.
+        /// 如果类型以前未注册，则将其注册为自注册。
         /// </summary>
-        /// <param name="iocRegistrar">Registrar</param>
-        /// <param name="type">Type of the class</param>
-        /// <param name="lifeStyle">Lifestyle of the objects of this type</param>
-        /// <returns>True, if registered for given implementation.</returns>
+        /// <param name="iocRegistrar">注册器</param>
+        /// <param name="lifeStyle">对象生命周期的类型</param>
+        /// <returns>如果为给定的实现注册，则为true。</returns>
         public static bool RegisterIfNot(this IIocRegistrar iocRegistrar, Type type, DependencyLifeStyle lifeStyle = DependencyLifeStyle.Singleton)
         {
             if (iocRegistrar.IsRegistered(type))
@@ -49,11 +48,11 @@ namespace SharePlatformSystem.Dependency
         /// <summary>
         /// Registers a type with it's implementation if it's not registered before.
         /// </summary>
-        /// <typeparam name="TType">Registering type</typeparam>
-        /// <typeparam name="TImpl">The type that implements <see cref="TType"/></typeparam>
-        /// <param name="iocRegistrar">Registrar</param>
-        /// <param name="lifeStyle">Lifestyle of the objects of this type</param>
-        /// <returns>True, if registered for given implementation.</returns>
+        /// <typeparam name="TType">注册的类型</typeparam>
+        /// <typeparam name="TImpl">实现的类型"TType"</typeparam>
+        /// <param name="iocRegistrar">注册器</param>
+        /// <param name="lifeStyle">对象生命周期的类型</param>
+        /// <returns>如果为给定的实现注册，则为true。</returns>
         public static bool RegisterIfNot<TType, TImpl>(this IIocRegistrar iocRegistrar, DependencyLifeStyle lifeStyle = DependencyLifeStyle.Singleton)
             where TType : class
             where TImpl : class, TType
@@ -69,13 +68,11 @@ namespace SharePlatformSystem.Dependency
 
 
         /// <summary>
-        /// Registers a type with it's implementation if it's not registered before.
+        /// 如果以前没有注册过类型，则在其实现中注册该类型。
         /// </summary>
-        /// <param name="iocRegistrar">Registrar</param>
-        /// <param name="type">Type of the class</param>
-        /// <param name="impl">The type that implements <paramref name="type"/></param>
-        /// <param name="lifeStyle">Lifestyle of the objects of this type</param>
-        /// <returns>True, if registered for given implementation.</returns>
+        /// <param name="iocRegistrar">注册器</param>
+        /// <param name="lifeStyle">对象生命周期的类型</param>
+        /// <returns>如果为给定的实现注册，则为true。</returns>
         public static bool RegisterIfNot(this IIocRegistrar iocRegistrar, Type type, Type impl, DependencyLifeStyle lifeStyle = DependencyLifeStyle.Singleton)
         {
             if (iocRegistrar.IsRegistered(type))

@@ -22,7 +22,7 @@ namespace SharePlatformSystem.Framework.AspNetCore
 
         private static bool IsRelativeLocalUrl(string url)
         {
-            //This code is copied from System.Web.WebPages.RequestExtensions class.
+            //此代码是从System.Web.WebPages.RequestExtensions类复制的。
 
             if (url.IsNullOrEmpty())  
                 return false;

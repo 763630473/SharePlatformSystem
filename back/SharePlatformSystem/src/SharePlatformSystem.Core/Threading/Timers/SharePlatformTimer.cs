@@ -5,40 +5,40 @@ using System.Threading;
 namespace SharePlatformSystem.Threading.Timers
 {
     /// <summary>
-    /// A roboust timer implementation that ensures no overlapping occurs. It waits exactly specified <see cref="Period"/> between ticks.
+    /// 一种Roboust定时器实现，确保不会发生重叠。它在节拍之间精确地等待指定的时间。
     /// </summary>
-    //TODO: Extract interface or make all members virtual to make testing easier.
+    //TODO: 提取接口或使所有成员成为虚拟的，以便于测试。
     public class SharePlatformTimer : RunnableBase, ITransientDependency
     {
         /// <summary>
-        /// This event is raised periodically according to Period of Timer.
+        /// 此事件根据计时器的周期定期引发。
         /// </summary>
         public event EventHandler Elapsed;
 
         /// <summary>
-        /// Task period of timer (as milliseconds).
+        /// 计时器的任务周期（毫秒）。
         /// </summary>
         public int Period { get; set; }
 
         /// <summary>
-        /// Indicates whether timer raises Elapsed event on Start method of Timer for once.
+        /// 指示计时器是否在计时器的Start方法上引发一次Elapsed事件。
         /// Default: False.
         /// </summary>
         public bool RunOnStart { get; set; }
 
         /// <summary>
-        /// This timer is used to perfom the task at spesified intervals.
+        /// 此计时器用于以指定的间隔执行任务。
         /// </summary>
         private readonly Timer _taskTimer;
 
         /// <summary>
-        /// Indicates that whether timer is running or stopped.
+        /// 指示计时器是运行还是停止。
         /// </summary>
         private volatile bool _running;
 
         /// <summary>
-        /// Indicates that whether performing the task or _taskTimer is in sleep mode.
-        /// This field is used to wait executing tasks when stopping Timer.
+        ///指示执行任务还是执行任务计时器处于睡眠模式。
+        ///此字段用于在停止计时器时等待执行任务。
         /// </summary>
         private volatile bool _performingTasks;
 
@@ -51,10 +51,10 @@ namespace SharePlatformSystem.Threading.Timers
         }
 
         /// <summary>
-        /// Creates a new Timer.
+        ///创建新计时器。
         /// </summary>
-        /// <param name="period">Task period of timer (as milliseconds)</param>
-        /// <param name="runOnStart">Indicates whether timer raises Elapsed event on Start method of Timer for once</param>
+        /// <param name="period">计时器的任务周期（毫秒）</param>
+        /// <param name="runOnStart">指示计时器是否在计时器的Start方法上引发一次经过的事件</param>
         public SharePlatformTimer(int period, bool runOnStart = false)
             : this()
         {
@@ -63,13 +63,13 @@ namespace SharePlatformSystem.Threading.Timers
         }
 
         /// <summary>
-        /// Starts the timer.
+        ///启动计时器。
         /// </summary>
         public override void Start()
         {
             if (Period <= 0)
             {
-                throw new SharePlatformException("Period should be set before starting the timer!");
+                throw new SharePlatformException("应在启动计时器之前设置周期！");
             }
 
             base.Start();
@@ -79,7 +79,7 @@ namespace SharePlatformSystem.Threading.Timers
         }
 
         /// <summary>
-        /// Stops the timer.
+        ///停止计时器。
         /// </summary>
         public override void Stop()
         {
@@ -93,7 +93,7 @@ namespace SharePlatformSystem.Threading.Timers
         }
 
         /// <summary>
-        /// Waits the service to stop.
+        /// 等待服务停止。
         /// </summary>
         public override void WaitToStop()
         {
@@ -109,9 +109,9 @@ namespace SharePlatformSystem.Threading.Timers
         }
 
         /// <summary>
-        /// This method is called by _taskTimer.
+        /// 此方法由任务计时器调用。
         /// </summary>
-        /// <param name="state">Not used argument</param>
+        /// <param name="state">未使用的参数</param>
         private void TimerCallBack(object state)
         {
             lock (_taskTimer)

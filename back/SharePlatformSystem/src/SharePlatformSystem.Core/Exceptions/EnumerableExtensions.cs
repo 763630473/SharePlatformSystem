@@ -10,37 +10,37 @@ namespace SharePlatformSystem.Core.Exceptions
     public static class EnumerableExtensions
     {
         /// <summary>
-        /// Concatenates the members of a constructed <see cref="IEnumerable{T}"/> collection of type System.String, using the specified separator between each member.
-        /// This is a shortcut for string.Join(...)
+        ///使用每个成员之间的指定分隔符连接已构造的System.String类型集合的成员。
+        ///这是string.join（…）的快捷方式。
         /// </summary>
-        /// <param name="source">A collection that contains the strings to concatenate.</param>
-        /// <param name="separator">The string to use as a separator. separator is included in the returned string only if values has more than one element.</param>
-        /// <returns>A string that consists of the members of values delimited by the separator string. If values has no members, the method returns System.String.Empty.</returns>
+        /// <param name="source">包含要连接的字符串的集合。</param>
+        /// <param name="separator">用作分隔符的字符串。只有当值有多个元素时，分隔符才会包含在返回的字符串中。</param>
+        /// <returns>由分隔符字符串分隔的值成员组成的字符串。如果值没有成员，则该方法返回System.String.Empty。</returns>
         public static string JoinAsString(this IEnumerable<string> source, string separator)
         {
             return string.Join(separator, source);
         }
 
         /// <summary>
-        /// Concatenates the members of a collection, using the specified separator between each member.
-        /// This is a shortcut for string.Join(...)
+        ///使用每个成员之间的指定分隔符连接集合的成员。
+        ///这是string.join（…）的快捷方式。
         /// </summary>
-        /// <param name="source">A collection that contains the objects to concatenate.</param>
-        /// <param name="separator">The string to use as a separator. separator is included in the returned string only if values has more than one element.</param>
-        /// <typeparam name="T">The type of the members of values.</typeparam>
-        /// <returns>A string that consists of the members of values delimited by the separator string. If values has no members, the method returns System.String.Empty.</returns>
+        /// <param name="source">包含要连接的对象的集合。</param>
+        /// <param name="separator">用作分隔符的字符串。只有当值有多个元素时，分隔符才会包含在返回的字符串中。</param>
+        /// <typeparam name="T">值成员的类型。</typeparam>
+        /// <returns>由分隔符字符串分隔的值成员组成的字符串。如果值没有成员，则该方法返回System.String.Empty。</returns>
         public static string JoinAsString<T>(this IEnumerable<T> source, string separator)
         {
             return string.Join(separator, source);
         }
 
         /// <summary>
-        /// Filters a <see cref="IEnumerable{T}"/> by given predicate if given condition is true.
+        /// 如果给定条件为真，则按给定谓词筛选a。
         /// </summary>
-        /// <param name="source">Enumerable to apply filtering</param>
-        /// <param name="condition">A boolean value</param>
-        /// <param name="predicate">Predicate to filter the enumerable</param>
-        /// <returns>Filtered or not filtered enumerable based on <paramref name="condition"/></returns>
+        /// <param name="source">可枚举以应用筛选</param>
+        /// <param name="condition">布尔值</param>
+        /// <param name="predicate">筛选可枚举的谓词</param>
+        /// <returns>筛选或未筛选基于可枚举<paramref name="condition"/></returns>
         public static IEnumerable<T> WhereIf<T>(this IEnumerable<T> source, bool condition, Func<T, bool> predicate)
         {
             return condition
@@ -49,12 +49,12 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Filters a <see cref="IEnumerable{T}"/> by given predicate if given condition is true.
+        /// 如果给定条件为真，则按给定谓词筛选a。
         /// </summary>
-        /// <param name="source">Enumerable to apply filtering</param>
-        /// <param name="condition">A boolean value</param>
-        /// <param name="predicate">Predicate to filter the enumerable</param>
-        /// <returns>Filtered or not filtered enumerable based on <paramref name="condition"/></returns>
+        /// <param name="source">可枚举以应用筛选</param>
+        /// <param name="condition">布尔值</param>
+        /// <param name="predicate">筛选可枚举的谓词</param>
+        /// <returns>筛选或未筛选基于<paramref name=“condition”/>可枚举</returns>
         public static IEnumerable<T> WhereIf<T>(this IEnumerable<T> source, bool condition, Func<T, int, bool> predicate)
         {
             return condition

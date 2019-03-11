@@ -7,12 +7,12 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Core.Localization.Sources
 {
     /// <summary>
-    /// Null object pattern for <see cref="ILocalizationSource"/>.
+    /// “ilocalizationsource”的对象模式为空。
     /// </summary>
     public class NullLocalizationSource : ILocalizationSource
     {
         /// <summary>
-        /// Singleton instance.
+        ///单例实例。
         /// </summary>
         public static NullLocalizationSource Instance { get; } = new NullLocalizationSource();
 

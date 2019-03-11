@@ -3,13 +3,13 @@
 namespace SharePlatformSystem.Configuration.Startup
 {
     /// <summary>
-    /// Used to provide a way to configure modules.
-    /// Create entension methods to this class to be used over <see cref="ISharePlatformStartupConfiguration.Modules"/> object.
+    /// 用于提供配置模块的方法。
+    ///创建要在“ishareplatformstartupconfiguration.modules”对象上使用的此类的Entension方法。
     /// </summary>
     public interface IModuleConfigurations
     {
         /// <summary>
-        /// Gets the SharePlatform configuration object.
+        ///获取SharePlatform配置对象。
         /// </summary>
         ISharePlatformStartupConfiguration SharePlatformConfiguration { get; }
     }

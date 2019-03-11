@@ -4,26 +4,26 @@ using SharePlatformSystem.Events.Bus.Handlers;
 namespace SharePlatformSystem.Events.Bus.Factories
 {
     /// <summary>
-    /// Defines an interface for factories those are responsible to create/get and release of event handlers.
+    /// 为负责创建/获取和发布事件处理程序的工厂定义接口。
     /// </summary>
     public interface IEventHandlerFactory
     {
         /// <summary>
-        /// Gets an event handler.
+        ///获取事件处理程序。
         /// </summary>
-        /// <returns>The event handler</returns>
+        /// <returns>事件处理程序</returns>
         IEventHandler GetHandler();
 
         /// <summary>
-        /// Gets type of the handler (without creating an instance).
+        /// 获取处理程序的类型（不创建实例）。
         /// </summary>
         /// <returns></returns>
         Type GetHandlerType();
 
         /// <summary>
-        /// Releases an event handler.
+        /// 释放事件处理程序。
         /// </summary>
-        /// <param name="handler">Handle to be released</param>
+        /// <param name="handler">释放把手</param>
         void ReleaseHandler(IEventHandler handler);
     }
 }

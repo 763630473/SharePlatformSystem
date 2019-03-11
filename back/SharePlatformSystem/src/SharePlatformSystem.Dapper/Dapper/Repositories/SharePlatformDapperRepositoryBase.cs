@@ -7,11 +7,11 @@ using SharePlatformSystem.Core.Domain.Entities;
 namespace SharePlatformSystem.Dapper.Repositories
 {
     /// <summary>
-    ///     Base class to implement <see cref="IDapperRepository{TEntity,TPrimaryKey}" />.
-    ///     It implements some methods in most simple way.
+    ///要实现的基类<see cref=“idapperrepository”tentity，tprimarykey”/>。
+    ///它以最简单的方式实现了一些方法。
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <typeparam name="TPrimaryKey">The type of the primary key.</typeparam>
+    /// <typeparam name="TEntity">实体的类型</typeparam>
+    /// <typeparam name="TPrimaryKey">类型的主要关键。</typeparam>
     /// <seealso cref="IDapperRepository{TEntity,TPrimaryKey}" />
     public abstract class SharePlatformDapperRepositoryBase<TEntity, TPrimaryKey> : IDapperRepository<TEntity, TPrimaryKey> where TEntity : class, IEntity<TPrimaryKey>
     {

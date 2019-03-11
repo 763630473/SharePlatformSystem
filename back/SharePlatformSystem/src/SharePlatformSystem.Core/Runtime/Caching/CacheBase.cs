@@ -8,8 +8,8 @@ using Nito.AsyncEx;
 namespace SharePlatformSystem.Runtime.Caching
 {
     /// <summary>
-    /// Base class for caches.
-    /// It's used to simplify implementing <see cref="ICache"/>.
+    /// 缓存的基类。
+    /// 它用于简化实现<see cref="icache"/>。
     /// </summary>
     public abstract class CacheBase : ICache
     {
@@ -26,7 +26,7 @@ namespace SharePlatformSystem.Runtime.Caching
         private readonly AsyncLock _asyncLock = new AsyncLock();
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         /// <param name="name"></param>
         protected CacheBase(string name)

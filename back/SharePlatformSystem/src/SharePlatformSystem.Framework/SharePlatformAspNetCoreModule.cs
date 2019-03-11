@@ -30,11 +30,13 @@ namespace SharePlatformSystem.Framework.AspNetCore
 
             IocManager.Register<IApiProxyScriptingConfiguration, ApiProxyScriptingConfiguration>();
             IocManager.Register<IWebEmbeddedResourcesConfiguration, WebEmbeddedResourcesConfiguration>();
-
+            
             Configuration.ReplaceService<IPrincipalAccessor, AspNetCorePrincipalAccessor>(DependencyLifeStyle.Transient);
             Configuration.ReplaceService<IClientInfoProvider, HttpContextClientInfoProvider>(DependencyLifeStyle.Transient);
 
             Configuration.Modules.SharePlatformAspNetCore().FormBodyBindingIgnoredTypes.Add(typeof(IFormFile));
+
+          
         }
 
         public override void Initialize()

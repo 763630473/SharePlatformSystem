@@ -5,7 +5,7 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Threading.BackgroundWorkers
 {
     /// <summary>
-    /// Implements <see cref="IBackgroundWorkerManager"/>.
+    /// 实现 <see cref="IBackgroundWorkerManager"/>.
     /// </summary>
     public class BackgroundWorkerManager : RunnableBase, IBackgroundWorkerManager, ISingletonDependency, IDisposable
     {
@@ -13,7 +13,7 @@ namespace SharePlatformSystem.Threading.BackgroundWorkers
         private readonly List<IBackgroundWorker> _backgroundJobs;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BackgroundWorkerManager"/> class.
+        /// 初始化类的新实例。
         /// </summary>
         public BackgroundWorkerManager(IIocResolver iocResolver)
         {

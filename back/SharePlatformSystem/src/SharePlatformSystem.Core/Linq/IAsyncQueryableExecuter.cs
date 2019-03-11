@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Linq
 {
     /// <summary>
-    /// This interface is intended to be used by SharePlatform.
+    /// 此接口供SharePlatform使用。
     /// </summary>
     public interface IAsyncQueryableExecuter
     {

@@ -14,7 +14,7 @@ namespace SharePlatformSystem.Core.PlugIns
         {
             PlugInSources = new PlugInSourceList();
 
-            //TODO: Try to use AssemblyLoadContext.Default..?
+            //TODO: 尝试使用assemblyloadcontext.default..？
             RegisterToAssemblyResolve(PlugInSources);
         }
 

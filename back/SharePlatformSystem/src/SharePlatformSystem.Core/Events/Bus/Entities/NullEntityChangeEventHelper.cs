@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Events.Bus.Entities
 {
     /// <summary>
-    /// Null-object implementation of <see cref="IEntityChangeEventHelper"/>.
+    /// 空对象实现<see cref=“IEntityChangeEventHelper”/>。
     /// </summary>
     public class NullEntityChangeEventHelper : IEntityChangeEventHelper
     {
         /// <summary>
-        /// Gets single instance of <see cref="NullEntityChangeEventHelper"/> class.
+        ///获取类的单个实例。
         /// </summary>
         public static NullEntityChangeEventHelper Instance { get; } = new NullEntityChangeEventHelper();
 

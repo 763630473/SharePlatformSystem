@@ -5,12 +5,12 @@ using SharePlatformSystem.Configuration.Startup;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// Defines extension methods to <see cref="IModuleConfigurations"/> to allow to configure ABP EntityFramework Core module.
+    /// 将扩展方法定义为“IModuleConfigurations”，以允许配置ABP EntityFramework核心模块。
     /// </summary>
     public static class SharePlatformEfCoreConfigurationExtensions
     {
         /// <summary>
-        /// Used to configure ABP EntityFramework Core module.
+        /// 用于配置 entityframework核心模块。
         /// </summary>
         public static ISharePlatformEfCoreConfiguration SharePlatformEfCore(this IModuleConfigurations configurations)
         {

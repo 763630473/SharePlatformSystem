@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Runtime.Caching
 {
     /// <summary>
-    /// Implements <see cref="ITypedCache{TKey,TValue}"/> to wrap a <see cref="ICache"/>.
+    /// 实现 <see cref="ITypedCache{TKey,TValue}"/> 以为了包装 <see cref="ICache"/>.
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
@@ -31,9 +31,9 @@ namespace SharePlatformSystem.Runtime.Caching
         public ICache InternalCache { get; private set; }
 
         /// <summary>
-        /// Creates a new <see cref="TypedCacheWrapper{TKey,TValue}"/> object.
+        ///创建一个新的对象。
         /// </summary>
-        /// <param name="internalCache">The actual internal cache</param>
+        /// <param name="internalCache">实际的内部缓存</param>
         public TypedCacheWrapper(ICache internalCache)
         {
             InternalCache = internalCache;

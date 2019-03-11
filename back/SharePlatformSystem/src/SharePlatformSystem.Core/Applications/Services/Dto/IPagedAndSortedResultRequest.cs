@@ -1,7 +1,7 @@
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// This interface is defined to standardize to request a paged and sorted result.
+    /// 此接口定义为标准化以请求分页和排序的结果。
     /// </summary>
     public interface IPagedAndSortedResultRequest : IPagedResultRequest, ISortedResultRequest
     {

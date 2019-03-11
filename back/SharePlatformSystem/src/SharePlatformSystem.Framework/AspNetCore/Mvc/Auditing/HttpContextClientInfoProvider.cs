@@ -20,7 +20,7 @@ namespace SharePlatformSystem.Framework.AspNetCore.Mvc.Auditing
         private readonly HttpContext _httpContext;
 
         /// <summary>
-        /// Creates a new <see cref="HttpContextClientInfoProvider"/>.
+        /// 新建<see cref=“httpContextClientInfoProvider”/>。
         /// </summary>
         public HttpContextClientInfoProvider(IHttpContextAccessor httpContextAccessor)
         {

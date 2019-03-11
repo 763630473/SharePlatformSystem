@@ -6,12 +6,12 @@ using System.Reflection;
 namespace SharePlatformSystem.Core.Reflection
 {
     /// <summary>
-    /// Defines helper methods for reflection.
+    /// 定义反射的辅助方法。
     /// </summary>
     public static class ReflectionHelper
     {
         /// <summary>
-        /// Checks whether <paramref name="givenType"/> implements/inherits <paramref name="genericType"/>.
+        ///检查是否实现/继承
         /// </summary>
         /// <param name="givenType">Type to check</param>
         /// <param name="genericType">Generic type</param>
@@ -41,9 +41,9 @@ namespace SharePlatformSystem.Core.Reflection
         }
 
         /// <summary>
-        /// Gets a list of attributes defined for a class member and it's declaring type including inherited attributes.
+        ///获取为类成员定义的属性列表，该属性声明的类型包括继承的属性。
         /// </summary>
-        /// <param name="inherit">Inherit attribute from base classes</param>
+        /// <param name="inherit">从基类继承属性</param>
         /// <param name="memberInfo">MemberInfo</param>
         public static List<object> GetAttributesOfMemberAndDeclaringType(MemberInfo memberInfo, bool inherit = true)
         {
@@ -60,11 +60,11 @@ namespace SharePlatformSystem.Core.Reflection
         }
 
         /// <summary>
-        /// Gets a list of attributes defined for a class member and type including inherited attributes.
+        ///获取为类成员和类型（包括继承的属性）定义的属性列表。
         /// </summary>
         /// <param name="memberInfo">MemberInfo</param>
         /// <param name="type">Type</param>
-        /// <param name="inherit">Inherit attribute from base classes</param>
+        /// <param name="inherit">从基类继承属性</param>
         public static List<object> GetAttributesOfMemberAndType(MemberInfo memberInfo, Type type, bool inherit = true)
         {
             var attributeList = new List<object>();
@@ -74,11 +74,11 @@ namespace SharePlatformSystem.Core.Reflection
         }
 
         /// <summary>
-        /// Gets a list of attributes defined for a class member and it's declaring type including inherited attributes.
+        ///获取为类成员定义的属性列表，该属性声明的类型包括继承的属性。
         /// </summary>
-        /// <typeparam name="TAttribute">Type of the attribute</typeparam>
+        /// <typeparam name="TAttribute">属性的类型</typeparam>
         /// <param name="memberInfo">MemberInfo</param>
-        /// <param name="inherit">Inherit attribute from base classes</param>
+        /// <param name="inherit">从基类继承属性</param>
         public static List<TAttribute> GetAttributesOfMemberAndDeclaringType<TAttribute>(MemberInfo memberInfo, bool inherit = true)
             where TAttribute : Attribute
         {
@@ -98,12 +98,12 @@ namespace SharePlatformSystem.Core.Reflection
         }
 
         /// <summary>
-        /// Gets a list of attributes defined for a class member and type including inherited attributes.
+        /// 获取为类成员和类型（包括继承的属性）定义的属性列表。
         /// </summary>
-        /// <typeparam name="TAttribute">Type of the attribute</typeparam>
+        /// <typeparam name="TAttribute">属性的类型</typeparam>
         /// <param name="memberInfo">MemberInfo</param>
         /// <param name="type">Type</param>
-        /// <param name="inherit">Inherit attribute from base classes</param>
+        /// <param name="inherit">从基类继承属性</param>
         public static List<TAttribute> GetAttributesOfMemberAndType<TAttribute>(MemberInfo memberInfo, Type type, bool inherit = true)
             where TAttribute : Attribute
         {
@@ -123,13 +123,13 @@ namespace SharePlatformSystem.Core.Reflection
         }
 
         /// <summary>
-        /// Tries to gets an of attribute defined for a class member and it's declaring type including inherited attributes.
-        /// Returns default value if it's not declared at all.
+        /// 尝试获取为类成员定义的of属性，它声明的类型包括继承的属性。
+        ///如果没有声明，则返回默认值。
         /// </summary>
-        /// <typeparam name="TAttribute">Type of the attribute</typeparam>
+        /// <typeparam name="TAttribute">属性的类型</typeparam>
         /// <param name="memberInfo">MemberInfo</param>
-        /// <param name="defaultValue">Default value (null as default)</param>
-        /// <param name="inherit">Inherit attribute from base classes</param>
+        /// <param name="defaultValue">默认值（默认为空）</param>
+        /// <param name="inherit">从基类继承属性</param>
         public static TAttribute GetSingleAttributeOfMemberOrDeclaringTypeOrDefault<TAttribute>(MemberInfo memberInfo, TAttribute defaultValue = default(TAttribute), bool inherit = true)
             where TAttribute : class
         {
@@ -139,13 +139,13 @@ namespace SharePlatformSystem.Core.Reflection
         }
 
         /// <summary>
-        /// Tries to gets an of attribute defined for a class member and it's declaring type including inherited attributes.
-        /// Returns default value if it's not declared at all.
+        /// 尝试获取为类成员定义的of属性，它声明的类型包括继承的属性。
+        ///如果没有声明，则返回默认值。
         /// </summary>
-        /// <typeparam name="TAttribute">Type of the attribute</typeparam>
+        /// <typeparam name="TAttribute">属性的类型</typeparam>
         /// <param name="memberInfo">MemberInfo</param>
-        /// <param name="defaultValue">Default value (null as default)</param>
-        /// <param name="inherit">Inherit attribute from base classes</param>
+        /// <param name="defaultValue">默认值（默认为空）</param>
+        /// <param name="inherit">从基类继承属性</param>
         public static TAttribute GetSingleAttributeOrDefault<TAttribute>(MemberInfo memberInfo, TAttribute defaultValue = default(TAttribute), bool inherit = true)
             where TAttribute : Attribute
         {
@@ -159,11 +159,11 @@ namespace SharePlatformSystem.Core.Reflection
         }
 
         /// <summary>
-        /// Gets a property by it's full path from given object
+        ///根据给定对象的完整路径获取属性
         /// </summary>
-        /// <param name="obj">Object to get value from</param>
-        /// <param name="objectType">Type of given object</param>
-        /// <param name="propertyPath">Full path of property</param>
+        /// <param name="obj">从中获取值的对象</param>
+        /// <param name="objectType">给定对象的类型</param>
+        /// <param name="propertyPath">财产的完整路径</param>
         /// <returns></returns>
         public static object GetPropertyByPath(object obj, Type objectType, string propertyPath)
         {
@@ -186,11 +186,11 @@ namespace SharePlatformSystem.Core.Reflection
         }
 
         /// <summary>
-        /// Gets value of a property by it's full path from given object
+        ///根据给定对象的完整路径获取属性值
         /// </summary>
-        /// <param name="obj">Object to get value from</param>
-        /// <param name="objectType">Type of given object</param>
-        /// <param name="propertyPath">Full path of property</param>
+        /// <param name="obj">从中获取值的对象</param>
+        /// <param name="objectType">给定对象的类型</param>
+        /// <param name="propertyPath">财产的完整路径/param>
         /// <returns></returns>
         public static object GetValueByPath(object obj, Type objectType, string propertyPath)
         {
@@ -212,9 +212,9 @@ namespace SharePlatformSystem.Core.Reflection
 
             return value;
         }
-        
+
         /// <summary>
-        /// Sets value of a property by it's full path on given object
+        /// 按给定对象的完整路径设置属性值
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="objectType"></param>

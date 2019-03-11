@@ -4,13 +4,13 @@ using Castle.MicroKernel.Registration;
 namespace SharePlatformSystem.Dependency
 {
     /// <summary>
-    /// This class is used to register basic dependency implementations such as <see cref="ITransientDependency"/> and <see cref="ISingletonDependency"/>.
+    /// 此类用于注册基本依赖项实现，如“itransientDependency”和“isingletonDependency”。
     /// </summary>
     public class BasicConventionalRegistrar : IConventionalDependencyRegistrar
     {
         public void RegisterAssembly(IConventionalRegistrationContext context)
         {
-            //Transient
+            //瞬态
             context.IocManager.IocContainer.Register(
                 Classes.FromAssembly(context.Assembly)
                     .IncludeNonPublicTypes()
@@ -21,7 +21,7 @@ namespace SharePlatformSystem.Dependency
                     .LifestyleTransient()
                 );
 
-            //Singleton
+            //单例
             context.IocManager.IocContainer.Register(
                 Classes.FromAssembly(context.Assembly)
                     .IncludeNonPublicTypes()
@@ -32,7 +32,7 @@ namespace SharePlatformSystem.Dependency
                     .LifestyleSingleton()
                 );
 
-            //Windsor Interceptors
+            //Windsor 拦截器
             context.IocManager.IocContainer.Register(
                 Classes.FromAssembly(context.Assembly)
                     .IncludeNonPublicTypes()

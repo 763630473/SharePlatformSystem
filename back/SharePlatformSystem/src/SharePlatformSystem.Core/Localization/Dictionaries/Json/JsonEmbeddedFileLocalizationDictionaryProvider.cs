@@ -7,7 +7,7 @@ using SharePlatformSystem.Core.Exceptions;
 namespace SharePlatformSystem.core.Localization.Dictionaries.Json
 {
     /// <summary>
-    /// Provides localization dictionaries from JSON files embedded into an <see cref="Assembly"/>.
+    /// 提供嵌入到“程序集”中的JSON文件的本地化字典。
     /// </summary>
     public class JsonEmbeddedFileLocalizationDictionaryProvider : LocalizationDictionaryProviderBase
     {
@@ -15,18 +15,18 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Json
         private readonly string _rootNamespace;
 
         /// <summary>
-        /// Creates a new <see cref="JsonEmbeddedFileLocalizationDictionaryProvider"/> object.
+        /// 创建新的“jsonEmbeddedFileLocalizationDictionaryProvider”对象。
         /// </summary>
-        /// <param name="assembly">Assembly that contains embedded json files</param>
+        /// <param name="assembly">包含嵌入JSON文件的程序集</param>
         /// <param name="rootNamespace">
         /// <para>
-        /// Namespace of the embedded json dictionary files
+        /// 嵌入的JSON字典文件的命名空间
         /// </para>
         /// <para>
-        /// Notice : Json folder name is different from Xml folder name.
+        /// 注意：JSON文件夹名与XML文件夹名不同。
         /// </para>
         /// <para>
-        /// You must name it like this : Json**** and Xml****; Do not name : ****Json and ****Xml
+        /// 必须这样命名：json***和xml****；不要这样命名：****json和****xml
         /// </para>
         /// </param>
         public JsonEmbeddedFileLocalizationDictionaryProvider(Assembly assembly, string rootNamespace)
@@ -53,7 +53,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Json
                         var dictionary = CreateJsonLocalizationDictionary(jsonString);
                         if (Dictionaries.ContainsKey(dictionary.CultureInfo.Name))
                         {
-                            throw new SharePlatformInitializationException(sourceName + " source contains more than one dictionary for the culture: " + dictionary.CultureInfo.Name);
+                            throw new SharePlatformInitializationException(sourceName + " 源包含多个区域性字典: " + dictionary.CultureInfo.Name);
                         }
 
                         Dictionaries[dictionary.CultureInfo.Name] = dictionary;
@@ -62,7 +62,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Json
                         {
                             if (DefaultDictionary != null)
                             {
-                                throw new SharePlatformInitializationException("Only one default localization dictionary can be for source: " + sourceName);
+                                throw new SharePlatformInitializationException("源只能有一个默认本地化词典: " + sourceName);
                             }
 
                             DefaultDictionary = dictionary;

@@ -3,22 +3,22 @@
 namespace SharePlatformSystem.Framework.Models
 {
     /// <summary>
-    /// This class is used to create standard responses for AJAX requests.
+    /// 此类用于为Ajax请求创建标准响应。
     /// </summary>
     [Serializable]
     public class AjaxResponse<TResult>: AjaxResponseBase
     {
         /// <summary>
-        /// The actual result object of AJAX request.
-        /// It is set if <see cref="AjaxResponseBase.Success"/> is true.
+        ///Ajax请求的实际结果对象。
+        ///如果<see cref=“ajaxResponseBase.success”/>为真，则设置此参数。
         /// </summary>
         public TResult Result { get; set; }
 
         /// <summary>
-        /// Creates an <see cref="AjaxResponse"/> object with <see cref="Result"/> specified.
-        /// <see cref="AjaxResponseBase.Success"/> is set as true.
+        ///创建一个指定了<see cref=“ajaxResponse”/>的对象。
+        /// <see cref="AjaxResponseBase.Success"/> 设置为真.
         /// </summary>
-        /// <param name="result">The actual result object of AJAX request</param>
+        /// <param name="result">Ajax请求的实际结果对象</param>
         public AjaxResponse(TResult result)
         {
             Result = result;
@@ -26,8 +26,8 @@ namespace SharePlatformSystem.Framework.Models
         }
 
         /// <summary>
-        /// Creates an <see cref="AjaxResponse"/> object.
-        /// <see cref="AjaxResponseBase.Success"/> is set as true.
+        ///创建一个<see cref=“ajaxResponse”/>对象。
+        /// <see cref="AjaxResponseBase.Success"/>设置为真.
         /// </summary>
         public AjaxResponse()
         {
@@ -35,20 +35,17 @@ namespace SharePlatformSystem.Framework.Models
         }
 
         /// <summary>
-        /// Creates an <see cref="AjaxResponse"/> object with <see cref="AjaxResponseBase.Success"/> specified.
+        ///创建一个指定了<see cref=“ajaxResponse”/>的对象。
         /// </summary>
-        /// <param name="success">Indicates success status of the result</param>
+        /// <param name="success">指示结果的成功状态</param>
         public AjaxResponse(bool success)
         {
             Success = success;
         }
 
         /// <summary>
-        /// Creates an <see cref="AjaxResponse"/> object with <see cref="AjaxResponseBase.Error"/> specified.
-        /// <see cref="AjaxResponseBase.Success"/> is set as false.
+        ///创建一个指定了<see cref=“ajaxResponse”/>的对象。
         /// </summary>
-        /// <param name="error">Error details</param>
-        /// <param name="unAuthorizedRequest">Used to indicate that the current user has no privilege to perform this request</param>
         public AjaxResponse(ErrorInfo error, bool unAuthorizedRequest = false)
         {
             Error = error;

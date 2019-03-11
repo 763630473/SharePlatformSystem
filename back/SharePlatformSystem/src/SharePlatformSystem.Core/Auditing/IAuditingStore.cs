@@ -3,16 +3,15 @@
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// This interface should be implemented by vendors to
-    /// make auditing working.
-    /// Default implementation is <see cref="SimpleLogAuditingStore"/>.
+    /// 这个接口应该由供应商实现，以使审计工作正常进行。
+    /// 默认实现为“SimpleLogAuditingStore”。
     /// </summary>
     public interface IAuditingStore
     {
         /// <summary>
-        /// Should save audits to a persistent store.
+        /// 应将审核保存到持久存储。
         /// </summary>
-        /// <param name="auditInfo">Audit informations</param>
+        /// <param name="auditInfo">审计信息</param>
         Task SaveAsync(AuditInfo auditInfo);
     }
 }

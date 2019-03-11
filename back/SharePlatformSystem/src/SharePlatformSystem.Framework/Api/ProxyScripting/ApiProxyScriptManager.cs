@@ -51,7 +51,7 @@ namespace SharePlatformSystem.Framework.Api.ProxyScripting
             var generatorType = _configuration.Generators.GetOrDefault(options.GeneratorType);
             if (generatorType == null)
             {
-                throw new SharePlatformException($"Could not find a proxy script generator with given name: {options.GeneratorType}");
+                throw new SharePlatformException($"找不到具有给定名称的代理脚本生成器: {options.GeneratorType}");
             }
 
             using (var generator = _iocResolver.ResolveAsDisposable<IProxyScriptGenerator>(generatorType))

@@ -45,7 +45,7 @@ namespace SharePlatformSystem.Framework.AspNetCore.Localization
                 return null;
             }
 
-            //Try to set user's language setting from cookie if available.
+            //如果可用，尝试从cookie设置用户的语言设置。
             await settingManager.ChangeSettingForUserAsync(
                 SharePlatformSession.ToUserIdentifier(),
                 LocalizationSettingNames.DefaultLanguage,

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 namespace SharePlatformSystem.Dapper.Expressions
 {
     /// <summary>
-    ///     Reference
+    ///引用
     /// </summary>
     internal class Evaluator
     {

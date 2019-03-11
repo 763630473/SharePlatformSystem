@@ -4,16 +4,16 @@ using System;
 namespace SharePlatformSystem.Threading.BackgroundWorkers
 {
     /// <summary>
-    /// Extends <see cref="BackgroundWorkerBase"/> to add a periodic running Timer. 
+    ///扩展<see cref=“backgroundWorkerBase”/>以添加定期运行的计时器。
     /// </summary>
     public abstract class PeriodicBackgroundWorkerBase : BackgroundWorkerBase
     {
         protected readonly SharePlatformTimer Timer;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PeriodicBackgroundWorkerBase"/> class.
+        /// 初始化类的新实例。
         /// </summary>
-        /// <param name="timer">A timer.</param>
+        /// <param name="timer">计时器。</param>
         protected PeriodicBackgroundWorkerBase(SharePlatformTimer timer)
         {
             Timer = timer;
@@ -39,7 +39,7 @@ namespace SharePlatformSystem.Threading.BackgroundWorkers
         }
 
         /// <summary>
-        /// Handles the Elapsed event of the Timer.
+        /// 处理计时器的已用事件。
         /// </summary>
         private void Timer_Elapsed(object sender, System.EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace SharePlatformSystem.Threading.BackgroundWorkers
         }
 
         /// <summary>
-        /// Periodic works should be done by implementing this method.
+        /// 应通过实施该方法来完成定期工作。
         /// </summary>
         protected abstract void DoWork();
     }

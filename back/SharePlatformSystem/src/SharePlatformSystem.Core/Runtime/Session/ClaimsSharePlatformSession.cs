@@ -9,7 +9,7 @@ using SharePlatformSystem.Runtime.Security;
 namespace SharePlatformSystem.Runtime.Session
 {
     /// <summary>
-    /// Implements <see cref="ISharePlatformSession"/> to get session properties from current claims.
+    /// 实现<see cref=“ishareplatformsession”/>从当前声明获取会话属性。
     /// </summary>
     public class ClaimsSharePlatformSession : SharePlatformSessionBase, ISingletonDependency
     {

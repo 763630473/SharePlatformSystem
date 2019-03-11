@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace SharePlatformSystem.Core.PlugIns
 {
-    //TODO: This class is similar to FolderPlugInSource. Create an abstract base class for them.
+    //TODO: 此类类似于folderPluginSource。为它们创建一个抽象基类。
     public class AssemblyFileListPlugInSource : IPlugInSource
     {
         public string[] FilePaths { get; }
@@ -54,7 +54,7 @@ namespace SharePlatformSystem.Core.PlugIns
         private List<Assembly> LoadAssemblies()
         {
             return FilePaths.Select(
-                Assembly.LoadFile //TODO: Use AssemblyLoadContext.Default.LoadFromAssemblyPath instead?
+                Assembly.LoadFile //TODO: 是否改用assemblyloadcontext.default.loadfromassemblypath？
             ).ToList();
         }
     }

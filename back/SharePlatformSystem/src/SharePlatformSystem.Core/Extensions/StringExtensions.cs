@@ -8,12 +8,12 @@ using System.Text.RegularExpressions;
 namespace SharePlatformSystem.Core.Extensions
 {
     /// <summary>
-    /// Extension methods for String class.
+    /// 字符串类的扩展方法。
     /// </summary>
     public static class StringExtensions
     {
         /// <summary>
-        /// Adds a char to end of given string if it does not ends with the char.
+        ///如果不以字符结尾，则在给定字符串的结尾添加一个字符。
         /// </summary>
         public static string EnsureEndsWith(this string str, char c)
         {
@@ -21,7 +21,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Adds a char to end of given string if it does not ends with the char.
+        /// 如果不以字符结尾，则在给定字符串的结尾添加一个字符。
         /// </summary>
         public static string EnsureEndsWith(this string str, char c, StringComparison comparisonType)
         {
@@ -39,7 +39,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Adds a char to end of given string if it does not ends with the char.
+        /// 如果不以字符结尾，则在给定字符串的结尾添加一个字符。
         /// </summary>
         public static string EnsureEndsWith(this string str, char c, bool ignoreCase, CultureInfo culture)
         {
@@ -57,7 +57,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Adds a char to beginning of given string if it does not starts with the char.
+        /// 如果给定字符串的开头不是以字符开头，则向其添加字符。
         /// </summary>
         public static string EnsureStartsWith(this string str, char c)
         {
@@ -65,7 +65,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Adds a char to beginning of given string if it does not starts with the char.
+        ///如果给定字符串的开头不是以字符开头，则向其添加字符。
         /// </summary>
         public static string EnsureStartsWith(this string str, char c, StringComparison comparisonType)
         {
@@ -83,7 +83,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Adds a char to beginning of given string if it does not starts with the char.
+        /// 如果给定字符串的开头不是以字符开头，则向其添加字符。
         /// </summary>
         public static string EnsureStartsWith(this string str, char c, bool ignoreCase, CultureInfo culture)
         {
@@ -101,7 +101,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Indicates whether this string is null or an System.String.Empty string.
+        /// 指示此字符串是空字符串还是System.String.Empty字符串。
         /// </summary>
         public static bool IsNullOrEmpty(this string str)
         {
@@ -109,7 +109,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// indicates whether this string is null, empty, or consists only of white-space characters.
+        /// 指示此字符串是空字符串还是仅由空格字符组成。
         /// </summary>
         public static bool IsNullOrWhiteSpace(this string str)
         {
@@ -117,10 +117,10 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a substring of a string from beginning of the string.
+        /// 从字符串的开头获取字符串的子字符串。
         /// </summary>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        /// <exception cref="ArgumentNullException">如果<paramref name=“str”/>为空则引发</exception>
+        /// <exception cref="ArgumentException">如果字符串的长度大于</exception>
         public static string Left(this string str, int len)
         {
             if (str == null)
@@ -130,14 +130,14 @@ namespace SharePlatformSystem.Core.Extensions
 
             if (str.Length < len)
             {
-                throw new ArgumentException("len argument can not be bigger than given string's length!");
+                throw new ArgumentException("len参数不能大于给定字符串的长度！");
             }
 
             return str.Substring(0, len);
         }
 
         /// <summary>
-        /// Converts line endings in the string to <see cref="Environment.NewLine"/>.
+        /// 将字符串中的行尾转换为<see cref=“environment.newline”/>。
         /// </summary>
         public static string NormalizeLineEndings(this string str)
         {
@@ -145,11 +145,11 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Gets index of nth occurence of a char in a string.
+        /// 获取字符串中第n个字符出现的索引。
         /// </summary>
-        /// <param name="str">source string to be searched</param>
-        /// <param name="c">Char to search in <see cref="str"/></param>
-        /// <param name="n">Count of the occurence</param>
+        /// <param name="str">要搜索的源字符串</param>
+        /// <param name="c">要搜索的字符<see cref=“str”/></param>
+        /// <param name="n">发生的计数</param>
         public static int NthIndexOf(this string str, char c, int n)
         {
             if (str == null)
@@ -175,12 +175,12 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Removes first occurrence of the given postfixes from end of the given string.
-        /// Ordering is important. If one of the postFixes is matched, others will not be tested.
+        ///从给定字符串的末尾删除第一次出现的给定后缀。
+        ///排序很重要。如果其中一个修复匹配，则不会测试其他修复。
         /// </summary>
-        /// <param name="str">The string.</param>
-        /// <param name="postFixes">one or more postfix.</param>
-        /// <returns>Modified string or the same string if it has not any of given postfixes</returns>
+        /// <param name="str">字符串。</param>
+        /// <param name="postFixes">一个或多个后缀.</param>
+        /// <returns>修改后的字符串或相同的字符串（如果没有任何给定的后缀）</returns>
         public static string RemovePostFix(this string str, params string[] postFixes)
         {
             if (str == null)
@@ -210,12 +210,12 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Removes first occurrence of the given prefixes from beginning of the given string.
-        /// Ordering is important. If one of the preFixes is matched, others will not be tested.
+        ///从给定字符串的开头删除第一个给定前缀。
+        ///排序很重要。如果其中一个前缀匹配，则不会测试其他前缀。
         /// </summary>
         /// <param name="str">The string.</param>
-        /// <param name="preFixes">one or more prefix.</param>
-        /// <returns>Modified string or the same string if it has not any of given prefixes</returns>
+        /// <param name="preFixes">个或多个前缀。</param>
+        /// <returns>修改后的字符串或相同的字符串（如果它没有任何给定前缀）</returns>
         public static string RemovePreFix(this string str, params string[] preFixes)
         {
             if (str == null)
@@ -245,10 +245,10 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a substring of a string from end of the string.
+        ///从字符串结尾获取字符串的子字符串。
         /// </summary>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
-        /// <exception cref="ArgumentException">Thrown if <paramref name="len"/> is bigger that string's length</exception>
+        /// <exception cref="ArgumentNullException">str为空抛异常</exception>
+        /// <exception cref="ArgumentException">如果len的长度大于字符串的长度，则抛出</exception>
         public static string Right(this string str, int len)
         {
             if (str == null)
@@ -258,14 +258,14 @@ namespace SharePlatformSystem.Core.Extensions
 
             if (str.Length < len)
             {
-                throw new ArgumentException("len argument can not be bigger than given string's length!");
+                throw new ArgumentException("len参数不能大于给定字符串的长度！");
             }
 
             return str.Substring(str.Length - len, len);
         }
 
         /// <summary>
-        /// Uses string.Split method to split given string by given separator.
+        ///使用string.split方法按给定分隔符拆分给定的字符串。
         /// </summary>
         public static string[] Split(this string str, string separator)
         {
@@ -273,7 +273,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Uses string.Split method to split given string by given separator.
+        /// 使用string.split方法按给定分隔符拆分给定的字符串。
         /// </summary>
         public static string[] Split(this string str, string separator, StringSplitOptions options)
         {
@@ -281,7 +281,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Uses string.Split method to split given string by <see cref="Environment.NewLine"/>.
+        ///使用String.Split方法将给定字符串拆分为<see cref="Environment.NewLine"/>.
         /// </summary>
         public static string[] SplitToLines(this string str)
         {
@@ -289,7 +289,7 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Uses string.Split method to split given string by <see cref="Environment.NewLine"/>.
+        ///使用String.Split方法将给定字符串拆分为 <see cref="Environment.NewLine"/>.
         /// </summary>
         public static string[] SplitToLines(this string str, StringSplitOptions options)
         {
@@ -297,11 +297,11 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Converts PascalCase string to camelCase string.
+        /// 将pascalcase字符串转换为camelcase字符串。
         /// </summary>
-        /// <param name="str">String to convert</param>
-        /// <param name="invariantCulture">Invariant culture</param>
-        /// <returns>camelCase of the string</returns>
+        /// <param name="str">要转换的字符串</param>
+        /// <param name="invariantCulture">不变量 culture</param>
+        /// <returns>驼峰字符串</returns>
         public static string ToCamelCase(this string str, bool invariantCulture = true)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -318,11 +318,11 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Converts PascalCase string to camelCase string in specified culture.
+        ///将指定区域性中的pascalcase字符串转换为camelcase字符串。
         /// </summary>
-        /// <param name="str">String to convert</param>
-        /// <param name="culture">An object that supplies culture-specific casing rules</param>
-        /// <returns>camelCase of the string</returns>
+        /// <param name="str">要转换的字符串</param>
+        /// <param name="culture">提供特定于区域性的大小写规则的对象</param>
+        /// <returns>驼峰字符串</returns>
         public static string ToCamelCase(this string str, CultureInfo culture)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -339,11 +339,11 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Converts given PascalCase/camelCase string to sentence (by splitting words by space).
-        /// Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+        ///将给定的pascalcase/camelcase字符串转换为句子（通过按空格拆分单词）。
+        ///示例：“thisIssampleSentence”转换为“This is a sample sentence”。
         /// </summary>
-        /// <param name="str">String to convert.</param>
-        /// <param name="invariantCulture">Invariant culture</param>
+        /// <param name="str">要转换的字符串</param>
+        /// <param name="invariantCulture">不变量culture</param>
         public static string ToSentenceCase(this string str, bool invariantCulture = false)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -359,11 +359,11 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Converts given PascalCase/camelCase string to sentence (by splitting words by space).
-        /// Example: "ThisIsSampleSentence" is converted to "This is a sample sentence".
+        ///将给定的pascalcase/camelcase字符串转换为句子（通过按空格拆分单词）。
+        ///示例：“thisIssampleSentence”转换为“This is a sample sentence”。
         /// </summary>
-        /// <param name="str">String to convert.</param>
-        /// <param name="culture">An object that supplies culture-specific casing rules.</param>
+        /// <param name="str">要转换的字符串</param>
+        /// <param name="culture">提供特定于区域性的大小写规则的对象。</param>
         public static string ToSentenceCase(this string str, CultureInfo culture)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -375,11 +375,11 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Converts string to enum value.
+        ///将字符串转换为枚举值。
         /// </summary>
-        /// <typeparam name="T">Type of enum</typeparam>
-        /// <param name="value">String value to convert</param>
-        /// <returns>Returns enum object</returns>
+        /// <typeparam name="T">枚举的类型</typeparam>
+        /// <param name="value">要转换的字符串</param>
+        /// <returns>返回枚举对象</returns>
         public static T ToEnum<T>(this string value)
             where T : struct
         {
@@ -392,12 +392,12 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Converts string to enum value.
+        /// 将字符串转换为枚举值。
         /// </summary>
-        /// <typeparam name="T">Type of enum</typeparam>
-        /// <param name="value">String value to convert</param>
-        /// <param name="ignoreCase">Ignore case</param>
-        /// <returns>Returns enum object</returns>
+        /// <typeparam name="T">枚举的类型</typeparam>
+        /// <param name="value">要转换的字符串</param>
+        /// <param name="ignoreCase">忽略案例</param>
+        /// <returns>返回枚举对象</returns>
         public static T ToEnum<T>(this string value, bool ignoreCase)
             where T : struct
         {
@@ -427,11 +427,11 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Converts camelCase string to PascalCase string.
+        /// 将camelcase字符串转换为pascalcase字符串。
         /// </summary>
-        /// <param name="str">String to convert</param>
-        /// <param name="invariantCulture">Invariant culture</param>
-        /// <returns>PascalCase of the string</returns>
+        /// <param name="str">要转换的字符串</param>
+        /// <param name="invariantCulture">不变 culture</param>
+        /// <returns>字符串的Pascalcase</returns>
         public static string ToPascalCase(this string str, bool invariantCulture = true)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -448,11 +448,11 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Converts camelCase string to PascalCase string in specified culture.
+        /// 将指定区域性中的camelcase字符串转换为pascalcase字符串。
         /// </summary>
-        /// <param name="str">String to convert</param>
-        /// <param name="culture">An object that supplies culture-specific casing rules</param>
-        /// <returns>PascalCase of the string</returns>
+        /// <param name="str">要转换的字符串</param>
+        /// <param name="culture">提供特定于区域性的大小写规则的对象</param>
+        /// <returns>字符串的Pascalcase</returns>
         public static string ToPascalCase(this string str, CultureInfo culture)
         {
             if (string.IsNullOrWhiteSpace(str))
@@ -469,9 +469,9 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a substring of a string from beginning of the string if it exceeds maximum length.
+        /// 如果字符串超过最大长度，则从该字符串的开头获取该字符串的子字符串。
         /// </summary>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        /// <exception cref="ArgumentNullException">如果str为空，则抛出</exception>
         public static string Truncate(this string str, int maxLength)
         {
             if (str == null)
@@ -488,22 +488,22 @@ namespace SharePlatformSystem.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a substring of a string from beginning of the string if it exceeds maximum length.
-        /// It adds a "..." postfix to end of the string if it's truncated.
-        /// Returning string can not be longer than maxLength.
+        ///如果字符串超过最大长度，则从该字符串的开头获取该字符串的子字符串。
+        ///如果字符串被截断，它会在字符串末尾添加“…”后缀。
+        ///返回的字符串不能长于maxlength。
         /// </summary>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        /// <exception cref="ArgumentNullException">如果str为空，则抛出</exception>
         public static string TruncateWithPostfix(this string str, int maxLength)
         {
             return TruncateWithPostfix(str, maxLength, "...");
         }
 
         /// <summary>
-        /// Gets a substring of a string from beginning of the string if it exceeds maximum length.
-        /// It adds given <paramref name="postfix"/> to end of the string if it's truncated.
-        /// Returning string can not be longer than maxLength.
+        ///如果字符串超过最大长度，则从该字符串的开头获取该字符串的子字符串。
+        ///如果截断，它会将给定的<paramref name=“postfix”/>添加到字符串的末尾。
+        ///返回的字符串不能长于maxlength。
         /// </summary>
-        /// <exception cref="ArgumentNullException">Thrown if <paramref name="str"/> is null</exception>
+        /// <exception cref="ArgumentNullException">如果str为空，则抛出</exception>
         public static string TruncateWithPostfix(this string str, int maxLength, string postfix)
         {
             if (str == null)

@@ -1,12 +1,12 @@
 namespace SharePlatformSystem.Logging
 {
     /// <summary>
-    /// Interface to define a <see cref="Severity"/> property (see <see cref="LogSeverity"/>).
+    /// 定义<see cref="Severity"/> 属性的接口 请参见 (see <see cref="LogSeverity"/>).
     /// </summary>
     public interface IHasLogSeverity
     {
         /// <summary>
-        /// Log severity.
+        /// 日志严重性。
         /// </summary>
         LogSeverity Severity { get; set; }
     }

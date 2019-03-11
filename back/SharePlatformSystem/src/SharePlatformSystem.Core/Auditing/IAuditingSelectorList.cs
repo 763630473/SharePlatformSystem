@@ -3,12 +3,12 @@
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// List of selector functions to select classes/interfaces to be audited.
+    /// 选择要审核的类/接口的选择器函数列表。
     /// </summary>
     public interface IAuditingSelectorList : IList<NamedTypeSelector>
     {
         /// <summary>
-        /// Removes a selector by name.
+        /// 按名称删除选择器。
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>

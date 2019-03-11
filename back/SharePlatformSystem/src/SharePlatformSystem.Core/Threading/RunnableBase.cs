@@ -1,12 +1,12 @@
 namespace SharePlatformSystem.Threading
 {
     /// <summary>
-    /// Base implementation of <see cref="IRunnable"/>.
+    /// <see cref=“irunnable”/>的基本实现。
     /// </summary>
     public abstract class RunnableBase : IRunnable
     {
         /// <summary>
-        /// A boolean value to control the running.
+        /// 用于控制运行的布尔值。
         /// </summary>
         public bool IsRunning { get { return _isRunning; } }
 

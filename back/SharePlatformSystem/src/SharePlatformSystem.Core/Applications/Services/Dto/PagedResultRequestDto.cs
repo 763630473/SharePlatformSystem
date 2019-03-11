@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// Simply implements <see cref="IPagedResultRequest"/>.
+    /// 只需实现“ipagedResultRequest”。
     /// </summary>
     [Serializable]
     public class PagedResultRequestDto : LimitedResultRequestDto, IPagedResultRequest

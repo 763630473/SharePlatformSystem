@@ -4,14 +4,14 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// Inherit this class to define settings for a module/application.
+    ///继承此类以定义模块/应用程序的设置。
     /// </summary>
     public abstract class SettingProvider : ITransientDependency
     {
         /// <summary>
-        /// Gets all setting definitions provided by this provider.
+        /// 获取此提供程序提供的所有设置定义。
         /// </summary>
-        /// <returns>List of settings</returns>
+        /// <returns>设置列表</returns>
         public abstract IEnumerable<SettingDefinition> GetSettingDefinitions(SettingDefinitionProviderContext context);
     }
 }

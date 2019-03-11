@@ -3,14 +3,14 @@
 namespace SharePlatformSystem.Events.Bus.Exceptions
 {
     /// <summary>
-    /// This type of events are used to notify for exceptions handled by SharePlatform infrastructure.
+    /// 此类事件用于通知由SharePlatform基础结构处理的异常。
     /// </summary>
     public class SharePlatformHandledExceptionData : ExceptionData
     {
         /// <summary>
-        /// Constructor.
+        ///构造函数。
         /// </summary>
-        /// <param name="exception">Exception object</param>
+        /// <param name="exception">异常对象</param>
         public SharePlatformHandledExceptionData(Exception exception)
             : base(exception)
         {

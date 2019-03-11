@@ -3,10 +3,10 @@
 namespace SharePlatformSystem.Dependency
 {
     /// <summary>
-    ///     This interface is used to wrap a scope for batch resolvings in a single <c>using</c> statement.
-    ///     It inherits <see cref="IDisposable" /> and <see cref="IIocResolver" />, so resolved objects can be easily and batch
-    ///     manner released by IocResolver.
-    ///     In <see cref="IDisposable.Dispose" /> method, <see cref="IIocResolver.Release" /> is called to dispose the object.
+    ///此接口用于将批处理解决的作用域包装在一个<c>using->c>语句中。
+    ///继承了“idisposable”和“iiocresolver”，解析后的对象很容易批量
+    ///iocdolver释放的方式。
+    ///在“IDisposable.Dispose”方法中，调用“IIocResolver.Release”来释放对象。
     /// </summary>
     public interface IScopedIocResolver : IIocResolver, IDisposable { }
 }

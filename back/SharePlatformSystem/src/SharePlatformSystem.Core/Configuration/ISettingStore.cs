@@ -4,43 +4,41 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// This interface is used to get/set settings from/to a data source (database).
+    /// 此接口用于从/到数据源（数据库）获取/设置设置设置。
     /// </summary>
     public interface ISettingStore
     {
         /// <summary>
-        /// Gets a setting or null.
+        ///获取设置或空值。
         /// </summary>
-        /// <param name="tenantId">TenantId or null</param>
         /// <param name="userId">UserId or null</param>
-        /// <param name="name">Name of the setting</param>
-        /// <returns>Setting object</returns>
+        /// <param name="name">设置的名称</param>
+        /// <returns>设置对象</returns>
         Task<SettingInfo> GetSettingOrNullAsync(string userId, string name);
 
         /// <summary>
-        /// Deletes a setting.
+        /// 删除设置。
         /// </summary>
-        /// <param name="setting">Setting to be deleted</param>
+        /// <param name="setting">要删除的设置</param>
         Task DeleteAsync(SettingInfo setting);
 
         /// <summary>
-        /// Adds a setting.
+        ///添加设置。
         /// </summary>
-        /// <param name="setting">Setting to add</param>
+        /// <param name="setting">设置添加</param>
         Task CreateAsync(SettingInfo setting);
 
         /// <summary>
-        /// Update a setting.
+        /// 更新设置。
         /// </summary>
-        /// <param name="setting">Setting to add</param>
+        /// <param name="setting">设置添加</param>
         Task UpdateAsync(SettingInfo setting);
 
         /// <summary>
-        /// Gets a list of setting.
+        /// 获取设置列表。
         /// </summary>
-        /// <param name="tenantId">TenantId or null</param>
         /// <param name="userId">UserId or null</param>
-        /// <returns>List of settings</returns>
+        /// <returns>设置列表</returns>
         Task<List<SettingInfo>> GetAllListAsync(string userId);
     }
 }

@@ -10,12 +10,12 @@ namespace SharePlatformSystem.Applications.Services
     public class RemoteServiceAttribute : Attribute
     {
         /// <summary>
-        /// Default: true.
+        /// д╛хо: true.
         /// </summary>
         public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Default: true.
+        /// д╛хо: true.
         /// </summary>
         public bool IsMetadataEnabled { get; set; }
 

@@ -53,7 +53,7 @@ namespace SharePlatformSystem.AutoMapper
 
                 if (Configuration.Modules.SharePlatformAutoMapper().UseStaticMapper)
                 {
-                    //We should prevent duplicate mapping in an application, since Mapper is static.
+                    //我们应该防止应用程序中的重复映射，因为映射器是静态的。
                     if (!_createdMappingsBefore)
                     {
                         Mapper.Initialize(configurer);

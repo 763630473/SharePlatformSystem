@@ -3,8 +3,7 @@
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// Used to disable auditing for a single method or
-    /// all methods of a class or interface.
+    /// 用于对单个方法或类或接口的所有方法禁用审核。
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class DisableAuditingAttribute : Attribute

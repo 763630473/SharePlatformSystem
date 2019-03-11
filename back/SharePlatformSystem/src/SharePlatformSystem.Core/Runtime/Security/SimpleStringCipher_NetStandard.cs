@@ -3,28 +3,26 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-//This code is got from http://stackoverflow.com/questions/10168240/encrypting-decrypting-a-string-in-c-sharp
-
 namespace SharePlatformSystem.Runtime.Security
 {
     /// <summary>
-    /// Can be used to simply encrypt/decrypt texts.
+    ///可用于简单加密/解密文本。
     /// </summary>
     public class SimpleStringCipher
     {
         public static SimpleStringCipher Instance { get; }
 
         /// <summary>
-        /// This constant string is used as a "salt" value for the PasswordDeriveBytes function calls.
-        /// This size of the IV (in bytes) must = (keysize / 8).  Default keysize is 256, so the IV must be
-        /// 32 bytes long.  Using a 16 character string here gives us 32 bytes when converted to a byte array.
+        ///此常量字符串用作passwordDeriveBytes函数调用的“salt”值。
+        ///IV的大小（以字节为单位）必须=（keysize/8）。默认的keysize为256，因此iv必须
+        ///32字节长。在这里使用16个字符的字符串可以在转换为字节数组时提供32个字节。
         /// </summary>
         public byte[] InitVectorBytes;
 
         /// <summary>
-        /// Default password to encrypt/decrypt texts.
-        /// It's recommented to set to another value for security.
-        /// Default value: "gsKnGZ041HLL4IM8"
+        ///加密/解密文本的默认密码。
+        ///建议为安全设置另一个值。
+        ///默认值：“gskngz041hl4im8”
         /// </summary>
         public static string DefaultPassPhrase { get; set; }
 
@@ -39,7 +37,7 @@ namespace SharePlatformSystem.Runtime.Security
         public static byte[] DefaultSalt { get; set; }
 
         /// <summary>
-        /// This constant is used to determine the keysize of the encryption algorithm.
+        ///此常量用于确定加密算法的密钥大小。
         /// </summary>
         public const int Keysize = 256;
 

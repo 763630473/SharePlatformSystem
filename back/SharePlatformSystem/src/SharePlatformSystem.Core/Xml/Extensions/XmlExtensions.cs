@@ -5,21 +5,21 @@ using System.Xml;
 namespace SharePlatformSystem.Core.Xml.Extensions
 {
     /// <summary>
-    /// Extension methods for <see cref="XmlNode"/> class.
+    /// 类的扩展方法。 <see cref="XmlNode"/> .
     /// </summary>
     public static class XmlNodeExtensions
     {
         /// <summary>
-        /// Gets an attribute's value from an Xml node.
+        /// 从XML节点获取属性的值。
         /// </summary>
-        /// <param name="node">The Xml node</param>
-        /// <param name="attributeName">Attribute name</param>
-        /// <returns>Value of the attribute</returns>
+        /// <param name="node">XML节点</param>
+        /// <param name="attributeName">属性名</param>
+        /// <returns>属性的值</returns>
         public static string GetAttributeValueOrNull(this XmlNode node, string attributeName)
         {
             if (node.Attributes == null || node.Attributes.Count <= 0)
             {
-                throw new SharePlatformException(node.Name + " node has not " + attributeName + " attribute");
+                throw new SharePlatformException(node.Name + " 节点没有 " + attributeName + " 属性");
             }
 
             return node.Attributes

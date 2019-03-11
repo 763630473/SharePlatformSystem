@@ -1,7 +1,7 @@
 namespace SharePlatformSystem.Runtime.Caching
 {
     /// <summary>
-    /// Extension methods for <see cref="ICacheManager"/>.
+    ///<see cref="ICacheManager"/>的扩展方法。
     /// </summary>
     public static class CacheManagerExtensions
     {

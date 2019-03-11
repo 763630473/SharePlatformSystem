@@ -6,14 +6,14 @@ using Nito.AsyncEx;
 namespace SharePlatformSystem.Threading
 {
     /// <summary>
-    /// Provides some helper methods to work with async methods.
+    /// 提供一些帮助器方法来使用异步方法。
     /// </summary>
     public static class AsyncHelper
     {
         /// <summary>
-        /// Checks if given method is an async method.
+        /// 检查给定的方法是否为异步方法。
         /// </summary>
-        /// <param name="method">A method to check</param>
+        /// <param name="method">一种检查方法</param>
         public static bool IsAsync(this MethodInfo method)
         {
             return (
@@ -23,9 +23,9 @@ namespace SharePlatformSystem.Threading
         }
 
         /// <summary>
-        /// Checks if given method is an async method.
+        /// 检查给定的方法是否为异步方法。
         /// </summary>
-        /// <param name="method">A method to check</param>
+        /// <param name="method">一种检查方法</param>
         [Obsolete("Use MethodInfo.IsAsync() extension method!")]
         public static bool IsAsyncMethod(MethodInfo method)
         {
@@ -33,20 +33,20 @@ namespace SharePlatformSystem.Threading
         }
 
         /// <summary>
-        /// Runs a async method synchronously.
+        /// 同步运行异步方法。
         /// </summary>
-        /// <param name="func">A function that returns a result</param>
-        /// <typeparam name="TResult">Result type</typeparam>
-        /// <returns>Result of the async operation</returns>
+        /// <param name="func">返回结果的函数</param>
+        /// <typeparam name="TResult">结果类型</typeparam>
+        /// <returns>异步操作的结果</returns>
         public static TResult RunSync<TResult>(Func<Task<TResult>> func)
         {
             return AsyncContext.Run(func);
         }
 
         /// <summary>
-        /// Runs a async method synchronously.
+        ///同步运行异步方法。
         /// </summary>
-        /// <param name="action">An async action</param>
+        /// <param name="action">异步动作</param>
         public static void RunSync(Func<Task> action)
         {
             AsyncContext.Run(action);

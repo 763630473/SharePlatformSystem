@@ -10,17 +10,17 @@ using SharePlatformSystem.Domain.Uow;
 namespace SharePlatformSystem.BackgroundJobs
 {
     /// <summary>
-    /// Base class that can be used to implement <see cref="IBackgroundJob{TArgs}"/>.
+    /// 可用于实现的基类。
     /// </summary>
     public abstract class BackgroundJob<TArgs> : IBackgroundJob<TArgs>
     {
         /// <summary>
-        /// Reference to the setting manager.
+        /// 对设置管理器的引用。
         /// </summary>
         public ISettingManager SettingManager { protected get; set; }
 
         /// <summary>
-        /// Reference to <see cref="IUnitOfWorkManager"/>.
+        ///"IUnitOfWorkManager"的引用.
         /// </summary>
         public IUnitOfWorkManager UnitOfWorkManager
         {
@@ -38,24 +38,24 @@ namespace SharePlatformSystem.BackgroundJobs
         private IUnitOfWorkManager _unitOfWorkManager;
 
         /// <summary>
-        /// Gets current unit of work.
+        /// 获取当前工作单位。
         /// </summary>
         protected IActiveUnitOfWork CurrentUnitOfWork { get { return UnitOfWorkManager.Current; } }
 
         /// <summary>
-        /// Reference to the localization manager.
+        /// 引用本地化管理器。
         /// </summary>
         public ILocalizationManager LocalizationManager { protected get; set; }
 
         /// <summary>
-        /// Gets/sets name of the localization source that is used in this application service.
-        /// It must be set in order to use <see cref="L(string)"/> and <see cref="L(string,CultureInfo)"/> methods.
+        /// 获取/设置此应用程序服务中使用的本地化源的名称。
+        ///必须设置它才能使用“l（string）”和“l（string，cultureinfo）”方法。
         /// </summary>
         protected string LocalizationSourceName { get; set; }
 
         /// <summary>
-        /// Gets localization source.
-        /// It's valid if <see cref="LocalizationSourceName"/> is set.
+        /// 获取本地化源。
+        /// 如果设置了“localizationsourcename”，则此选项有效。
         /// </summary>
         protected ILocalizationSource LocalizationSource
         {
@@ -77,12 +77,12 @@ namespace SharePlatformSystem.BackgroundJobs
         private ILocalizationSource _localizationSource;
 
         /// <summary>
-        /// Reference to the logger to write logs.
+        ///引用记录器以写入日志。
         /// </summary>
         public ILogger Logger { protected get; set; }
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         protected BackgroundJob()
         {
@@ -93,44 +93,44 @@ namespace SharePlatformSystem.BackgroundJobs
         public abstract void Execute(TArgs args);
 
         /// <summary>
-        /// Gets localized string for given key name and current language.
+        ///获取给定项名称和当前语言的本地化字符串。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键值</param>
+        /// <returns>本地化字符串</returns>
         protected virtual string L(string name)
         {
             return LocalizationSource.GetString(name);
         }
 
         /// <summary>
-        /// Gets localized string for given key name and current language with formatting strings.
+        /// 获取具有格式字符串的给定项名称和当前语言的本地化字符串。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <param name="args">Format arguments</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键值</param>
+        /// <param name="args">设置参数格式</param>
+        /// <returns>本地化字符串</returns>
         protected string L(string name, params object[] args)
         {
             return LocalizationSource.GetString(name, args);
         }
 
         /// <summary>
-        /// Gets localized string for given key name and specified culture information.
+        /// 获取给定项名称和指定区域性信息的本地化字符串。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <param name="culture">culture information</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键值</param>
+        /// <param name="culture">文化信息</param>
+        /// <returns>本地化字符串</returns>
         protected virtual string L(string name, CultureInfo culture)
         {
             return LocalizationSource.GetString(name, culture);
         }
 
         /// <summary>
-        /// Gets localized string for given key name and current language with formatting strings.
+        /// 获取具有格式字符串的给定项名称和当前语言的本地化字符串。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <param name="culture">culture information</param>
-        /// <param name="args">Format arguments</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键值</param>
+        /// <param name="culture">文化信息</param>
+        /// <param name="args">设置参数格式</param>
+        /// <returns>本地化字符串</returns>
         protected string L(string name, CultureInfo culture, params object[] args)
         {
             return LocalizationSource.GetString(name, culture, args);

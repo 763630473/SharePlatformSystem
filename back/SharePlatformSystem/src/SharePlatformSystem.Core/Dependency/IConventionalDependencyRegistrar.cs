@@ -1,18 +1,18 @@
 ﻿namespace SharePlatformSystem.Dependency
 {
     /// <summary>
-    /// This interface is used to register dependencies by conventions. 
+    /// 此接口用于按约定注册依赖项。
     /// </summary>
     /// <remarks>
-    /// Implement this interface and register to <see cref="IocManager.AddConventionalRegistrar"/> method to be able
-    /// to register classes by your own conventions.
+    ///实现此接口并注册到“iocmanager.addConventionalRegistrar”方法
+    ///根据自己的约定注册类。
     /// </remarks>
     public interface IConventionalDependencyRegistrar
     {
         /// <summary>
-        /// Registers types of given assembly by convention.
+        /// 按约定注册给定程序集的类型。
         /// </summary>
-        /// <param name="context">Registration context</param>
+        /// <param name="context">注册上下文</param>
         void RegisterAssembly(IConventionalRegistrationContext context);
     }
 }

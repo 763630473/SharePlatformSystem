@@ -5,14 +5,14 @@ using Castle.Core.Logging;
 namespace SharePlatformSystem.Runtime.Caching.Memory
 {
     /// <summary>
-    /// Implements <see cref="ICacheManager"/> to work with MemoryCache.
+    /// 实现<see cref="ICacheManager"/>以使用memorycache。 
     /// </summary>
     public class SharePlatformMemoryCacheManager : CacheManagerBase
     {
         public ILogger Logger { get; set; }
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         public SharePlatformMemoryCacheManager(IIocManager iocManager, ICachingConfiguration configuration)
             : base(iocManager, configuration)

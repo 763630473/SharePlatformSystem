@@ -3,13 +3,13 @@ using System;
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// A shortcut of <see cref="EntityDto{TPrimaryKey}"/> for most used primary key type (<see cref="int"/>).
+    /// 主键类型是string的快捷实现方式
     /// </summary>
     [Serializable]
-    public class EntityDto : EntityDto<int>, IEntityDto
+    public class EntityDto : EntityDto<string>, IEntityDto
     {
         /// <summary>
-        /// Creates a new <see cref="EntityDto"/> object.
+        /// 创建一个新的对象
         /// </summary>
         public EntityDto()
         {
@@ -17,29 +17,29 @@ namespace SharePlatformSystem.Applications.Services.Dto
         }
 
         /// <summary>
-        /// Creates a new <see cref="EntityDto"/> object.
+        /// 创建一个新的带主键的新对象
         /// </summary>
         /// <param name="id">Id of the entity</param>
-        public EntityDto(int id)
+        public EntityDto(string id)
             : base(id)
         {
         }
     }
 
     /// <summary>
-    /// Implements common properties for entity based DTOs.
+    /// 实现基于实体的DTO的公共属性。
     /// </summary>
-    /// <typeparam name="TPrimaryKey">Type of the primary key</typeparam>
+    /// <typeparam name="TPrimaryKey">主键的类型</typeparam>
     [Serializable]
     public class EntityDto<TPrimaryKey> : IEntityDto<TPrimaryKey>
     {
         /// <summary>
-        /// Id of the entity.
+        /// 实体的主键ID
         /// </summary>
         public TPrimaryKey Id { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="EntityDto{TPrimaryKey}"/> object.
+        /// 创建一个新的空实体对象
         /// </summary>
         public EntityDto()
         {
@@ -47,9 +47,9 @@ namespace SharePlatformSystem.Applications.Services.Dto
         }
 
         /// <summary>
-        /// Creates a new <see cref="EntityDto{TPrimaryKey}"/> object.
+        /// 创建一个新的带主键的实体对象.
         /// </summary>
-        /// <param name="id">Id of the entity</param>
+        /// <param name="id">实体的主键ID</param>
         public EntityDto(TPrimaryKey id)
         {
             Id = id;

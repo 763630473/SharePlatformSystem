@@ -6,12 +6,12 @@ namespace SharePlatformSystem.Framework.Api.ProxyScripting.Configuration
     public interface IApiProxyScriptingConfiguration
     {
         /// <summary>
-        /// Used to add/replace proxy script generators. 
+        /// 用于添加/替换代理脚本生成器。
         /// </summary>
         IDictionary<string, Type> Generators { get; }
 
         /// <summary>
-        /// Default: true.
+        /// 默认值：真。
         /// </summary>
         bool RemoveAsyncPostfixOnProxyGeneration { get; set; }
     }

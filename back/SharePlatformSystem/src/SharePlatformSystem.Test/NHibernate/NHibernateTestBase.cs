@@ -16,7 +16,7 @@ namespace SharePlatformSystem.Test.NHibernate
 
         protected override void PreInitialize()
         {
-            var _connection = new OracleConnection("User ID=MXWXPT;Password=MXWXPT;Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.182)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = MXWXPT)));persist security info=true;");
+             _connection = new OracleConnection("User ID=MXWXPT;Password=MXWXPT;Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.182)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = MXWXPT)));persist security info=true;");
             //_connection = new MySqlConnection("Server=localhost; Database =test; User ID=root;Password=123456");
             _connection.Open();
             LocalIocManager.IocContainer.Register(

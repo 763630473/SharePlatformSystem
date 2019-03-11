@@ -3,22 +3,22 @@
 namespace SharePlatformSystem.Core.Timing
 {
     /// <summary>
-    /// Defines interface for a DateTime range.
+    /// 定义日期时间范围的接口。
     /// </summary>
     public interface IDateTimeRange
     {
         /// <summary>
-        /// Start time of the datetime range.
+        ///日期时间范围的开始时间。
         /// </summary>
         DateTime StartTime { get; set; }
 
         /// <summary>
-        /// End time of the datetime range.
+        /// 日期时间范围的结束时间。
         /// </summary>
         DateTime EndTime { get; set; }
 
         /// <summary>
-        /// The time difference between the start and end times.
+        /// 开始时间和结束时间之间的时差。
         /// </summary>
         TimeSpan TimeSpan { get; set; }
     }

@@ -3,103 +3,103 @@ using System;
 namespace SharePlatformSystem.Dependency
 {
     /// <summary>
-    /// Define interface for classes those are used to resolve dependencies.
+    /// 为那些用于解析依赖项的类定义接口。
     /// </summary>
     public interface IIocResolver
     {
         /// <summary>
-        /// Gets an object from IOC container.
-        /// Returning object must be Released (see <see cref="Release"/>) after usage.
+        /// 从IOC容器获取对象。
+        ///返回的对象必须在使用后释放（参见“release”）。
         /// </summary> 
-        /// <typeparam name="T">Type of the object to get</typeparam>
-        /// <returns>The object instance</returns>
+        /// <typeparam name="T">要获取的对象的类型</typeparam>
+        /// <returns>对象实例</returns>
         T Resolve<T>();
 
         /// <summary>
-        /// Gets an object from IOC container.
-        /// Returning object must be Released (see <see cref="Release"/>) after usage.
+        /// 从IOC容器获取对象。
+        ///返回的对象在使用后必须释放（“release”）。
         /// </summary> 
-        /// <typeparam name="T">Type of the object to cast</typeparam>
-        /// <param name="type">Type of the object to resolve</param>
-        /// <returns>The object instance</returns>
+        /// <typeparam name="T">要强制转换的对象的类型</typeparam>
+        /// <param name="type">要解析的对象的类型</param>
+        /// <returns>对象实例</returns>
         T Resolve<T>(Type type);
 
         /// <summary>
-        /// Gets an object from IOC container.
-        /// Returning object must be Released (see <see cref="Release"/>) after usage.
+        ///从IOC容器获取对象。
+        ///返回的对象在使用后必须释放（“release”）。
         /// </summary> 
-        /// <typeparam name="T">Type of the object to get</typeparam>
-        /// <param name="argumentsAsAnonymousType">Constructor arguments</param>
-        /// <returns>The object instance</returns>
+        /// <typeparam name="T">要获取的对象的类型</typeparam>
+        /// <param name="argumentsAsAnonymousType">构造函数参数</param>
+        /// <returns>对象实例</returns>
         T Resolve<T>(object argumentsAsAnonymousType);
 
         /// <summary>
-        /// Gets an object from IOC container.
-        /// Returning object must be Released (see <see cref="Release"/>) after usage.
+        ///从IOC容器获取对象。
+        ///返回的对象在使用后必须释放（“release”）。
         /// </summary> 
-        /// <param name="type">Type of the object to get</param>
-        /// <returns>The object instance</returns>
+        /// <param name="type">要获取的对象的类型</param>
+        /// <returns>对象实例</returns>
         object Resolve(Type type);
 
         /// <summary>
-        /// Gets an object from IOC container.
-        /// Returning object must be Released (see <see cref="Release"/>) after usage.
+        ///从IOC容器获取对象。
+        ///返回的对象在使用后必须释放（“release”）。
         /// </summary> 
-        /// <param name="type">Type of the object to get</param>
+        /// <param name="type">要获取的对象的类型</param>
         /// <param name="argumentsAsAnonymousType">Constructor arguments</param>
-        /// <returns>The object instance</returns>
+        /// <returns>对象实例</returns>
         object Resolve(Type type, object argumentsAsAnonymousType);
 
         /// <summary>
-        /// Gets all implementations for given type.
-        /// Returning objects must be Released (see <see cref="Release"/>) after usage.
+        /// 获取给定类型的所有实现。
+        ///返回的对象在使用后必须释放（参见“release”）。
         /// </summary> 
-        /// <typeparam name="T">Type of the objects to resolve</typeparam>
-        /// <returns>Object instances</returns>
+        /// <typeparam name="T">要解析的对象的类型</typeparam>
+        /// <returns>对象实例</returns>
         T[] ResolveAll<T>();
 
         /// <summary>
-        /// Gets all implementations for given type.
-        /// Returning objects must be Released (see <see cref="Release"/>) after usage.
+        /// 获取给定类型的所有实现。
+        ///返回的对象在使用后必须释放（参见“release”）。
         /// </summary> 
-        /// <typeparam name="T">Type of the objects to resolve</typeparam>
-        /// <param name="argumentsAsAnonymousType">Constructor arguments</param>
-        /// <returns>Object instances</returns>
+        /// <typeparam name="T">要解析的对象的类型</typeparam>
+        /// <param name="argumentsAsAnonymousType">构造函数参数</param>
+        /// <returns>对象实例</returns>
         T[] ResolveAll<T>(object argumentsAsAnonymousType);
 
         /// <summary>
-        /// Gets all implementations for given type.
-        /// Returning objects must be Released (see <see cref="Release"/>) after usage.
+        ///获取给定类型的所有实现。
+        ///返回的对象在使用后必须释放（“release”）。
         /// </summary> 
-        /// <param name="type">Type of the objects to resolve</param>
-        /// <returns>Object instances</returns>
+        /// <param name="type">要解析的对象的类型</param>
+        /// <returns>对象实例</returns>
         object[] ResolveAll(Type type);
 
         /// <summary>
-        /// Gets all implementations for given type.
-        /// Returning objects must be Released (see <see cref="Release"/>) after usage.
+        ///获取给定类型的所有实现。   
+        ///返回的对象在使用后必须释放（“release”）。
         /// </summary> 
-        /// <param name="type">Type of the objects to resolve</param>
-        /// <param name="argumentsAsAnonymousType">Constructor arguments</param>
-        /// <returns>Object instances</returns>
+        /// <param name="type">要解析的对象的类型</param>
+        /// <param name="argumentsAsAnonymousType">构造函数参数</param>
+        /// <returns>对象实例</returns>
         object[] ResolveAll(Type type, object argumentsAsAnonymousType);
 
         /// <summary>
-        /// Releases a pre-resolved object. See Resolve methods.
+        ///释放预先解析的对象。请参见解决方法。
         /// </summary>
-        /// <param name="obj">Object to be released</param>
+        /// <param name="obj">要释放的对象</param>
         void Release(object obj);
 
         /// <summary>
-        /// Checks whether given type is registered before.
+        /// 检查给定类型之前是否已注册。
         /// </summary>
-        /// <param name="type">Type to check</param>
+        /// <param name="type">类型检查</param>
         bool IsRegistered(Type type);
 
         /// <summary>
-        /// Checks whether given type is registered before.
+        /// 检查给定类型之前是否已注册。
         /// </summary>
-        /// <typeparam name="T">Type to check</typeparam>
+        /// <typeparam name="T">类型检查</typeparam>
         bool IsRegistered<T>();
     }
 }

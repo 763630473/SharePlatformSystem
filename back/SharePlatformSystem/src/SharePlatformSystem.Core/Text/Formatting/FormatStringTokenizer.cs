@@ -21,7 +21,7 @@ namespace SharePlatformSystem.Core.Text.Formatting
                     case '{':
                         if (inDynamicValue)
                         {
-                            throw new FormatException("Incorrect syntax at char " + i + "! format string can not contain nested dynamic value expression!");
+                            throw new FormatException("字符处的语法不正确" + i + "! 格式字符串不能包含嵌套的动态值表达式！");
                         }
 
                         inDynamicValue = true;
@@ -36,14 +36,14 @@ namespace SharePlatformSystem.Core.Text.Formatting
                     case '}':
                         if (!inDynamicValue)
                         {
-                            throw new FormatException("Incorrect syntax at char " + i + "! These is no opening brackets for the closing bracket }.");
+                            throw new FormatException("字符处的语法不正确" + i + "! 这不是右括号的左括号}.");
                         }
 
                         inDynamicValue = false;
 
                         if (currentText.Length <= 0)
                         {
-                            throw new FormatException("Incorrect syntax at char " + i + "! Brackets does not containt any chars.");
+                            throw new FormatException("字符处的语法不正确" + i + "! 方括号不包含任何字符。");
                         }
 
                         var dynamicValue = currentText.ToString();
@@ -64,7 +64,7 @@ namespace SharePlatformSystem.Core.Text.Formatting
 
             if (inDynamicValue)
             {
-                throw new FormatException("There is no closing } char for an opened { char.");
+                throw new FormatException("打开的字符{没有结束字符}。");
             }
 
             if (currentText.Length > 0)

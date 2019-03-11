@@ -4,29 +4,29 @@ using System.Collections.Generic;
 namespace SharePlatformSystem.EntityHistory
 {
     /// <summary>
-    /// Used to configure entity history.
+    /// 用于配置实体历史记录。
     /// </summary>
     public interface IEntityHistoryConfiguration
     {
         /// <summary>
-        /// Used to enable/disable entity history system.
-        /// Default: true. Set false to completely disable it.
+        ///用于启用/禁用实体历史记录系统。
+        ///默认值：真。设置为false以完全禁用它。
         /// </summary>
         bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Set true to enable saving entity history if current user is not logged in.
-        /// Default: false.
+        ///如果当前用户未登录，则设置为true以启用保存实体历史记录。
+        ///默认值：false。
         /// </summary>
         bool IsEnabledForAnonymousUsers { get; set; }
 
         /// <summary>
-        /// List of selectors to select classes/interfaces which should be tracked as default.
+        /// 用于选择应作为默认跟踪的类/接口的选择器列表。
         /// </summary>
         IEntityHistorySelectorList Selectors { get; }
 
         /// <summary>
-        /// Ignored types for serialization on entity history tracking.
+        /// 忽略用于实体历史记录跟踪的序列化类型。
         /// </summary>
         List<Type> IgnoredTypes { get; }
     }

@@ -7,7 +7,7 @@ using Newtonsoft.Json.Serialization;
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// Decides which properties of auditing class to be serialized
+    /// 决定要序列化审核类的哪些属性
     /// </summary>
     public class AuditingContractResolver : CamelCasePropertyNamesContractResolver
     {

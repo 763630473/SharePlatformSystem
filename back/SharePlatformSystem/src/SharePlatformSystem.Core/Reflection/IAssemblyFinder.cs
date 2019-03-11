@@ -4,15 +4,15 @@ using System.Reflection;
 namespace SharePlatformSystem.Core.Reflection
 {
     /// <summary>
-    /// This interface is used to get assemblies in the application.
-    /// It may not return all assemblies, but those are related with modules.
+    /// 此接口用于获取应用程序中的程序集。
+    ///它可能不会返回所有程序集，但这些程序集与模块相关。
     /// </summary>
     public interface IAssemblyFinder
     {
         /// <summary>
-        /// Gets all assemblies.
+        /// 获取所有程序集。
         /// </summary>
-        /// <returns>List of assemblies</returns>
+        /// <returns>程序集列表</returns>
         List<Assembly> GetAllAssemblies();
     }
 }

@@ -21,7 +21,6 @@ namespace SharePlatformSystem.Core.Resources.Embedded
             );
         }
 
-        /// <inheritdoc/>
         public EmbeddedResourceItem GetResource(string fullPath)
         {
             var encodedPath = EmbeddedResourcePathHelper.EncodeAsResourcesPath(fullPath);
@@ -35,10 +34,6 @@ namespace SharePlatformSystem.Core.Resources.Embedded
             {
                 encodedPath = encodedPath + ".";
             }
-
-            // We will assume that any file starting with this path, is in that directory.
-            // NOTE: This may include false positives, but helps in the majority of cases until 
-            // https://github.com/aspnet/FileSystem/issues/184 is solved.
 
             return _resources.Value.Where(k => k.Key.StartsWith(encodedPath)).Select(d => d.Value);
         }

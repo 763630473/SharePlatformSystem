@@ -14,7 +14,7 @@ namespace SharePlatformSystem.Core.Resources.Embedded
         {
             var builder = new StringBuilder(subPath.Length);
 
-            // does the subpath contain directory portion - if so we need to encode it.
+            // 子路径是否包含目录部分-如果是，我们需要对其进行编码。
             var indexOfLastSeperator = subPath.LastIndexOf('/');
             if (indexOfLastSeperator != -1)
             {
@@ -25,7 +25,7 @@ namespace SharePlatformSystem.Core.Resources.Embedded
 
                     if (currentChar == '/')
                     {
-                        if (i != 0) // omit a starting slash (/), encode any others as a dot
+                        if (i != 0) // 省略起始斜线（/），将其他任何斜线编码为点。
                         {
                             builder.Append('.');
                         }
@@ -42,14 +42,14 @@ namespace SharePlatformSystem.Core.Resources.Embedded
                 }
             }
 
-            // now append (and encode as necessary) filename portion
+            // 现在附加（并根据需要进行编码）文件名部分
             if (subPath.Length > indexOfLastSeperator + 1)
             {
-                // has filename to encode
+                // 有要编码的文件名
                 for (int c = indexOfLastSeperator + 1; c < subPath.Length; c++)
                 {
                     var currentChar = subPath[c];
-                    // no encoding to do on filename - so just append
+                    // 不需要对文件名进行编码-所以只需追加
                     builder.Append(currentChar);
                 }
             }

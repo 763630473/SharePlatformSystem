@@ -6,13 +6,13 @@ using System.Text;
 namespace SharePlatformSystem.Core.Exceptions
 {
     /// <summary>
-    /// This exception is thrown if a problem on SharePlatform initialization progress.
+    /// 如果SharePlatform初始化过程中出现问题，则会引发此异常。
     /// </summary>
     [Serializable]
     public class SharePlatformInitializationException : SharePlatformException
     {
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         public SharePlatformInitializationException()
         {
@@ -20,7 +20,7 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Constructor for serializing.
+        /// 用于序列化的构造函数。
         /// </summary>
         public SharePlatformInitializationException(SerializationInfo serializationInfo, StreamingContext context)
             : base(serializationInfo, context)
@@ -29,9 +29,9 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
-        /// <param name="message">Exception message</param>
+        /// <param name="message">异常消息</param>
         public SharePlatformInitializationException(string message)
             : base(message)
         {
@@ -39,10 +39,10 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="innerException">Inner exception</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="innerException">内部异常</param>
         public SharePlatformInitializationException(string message, Exception innerException)
             : base(message, innerException)
         {

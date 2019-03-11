@@ -3,24 +3,24 @@
 namespace SharePlatformSystem.Core.Timing
 {
     /// <summary>
-    /// A basic implementation of <see cref="IDateTimeRange"/> to store a date range.
+    /// 存储日期范围的基本实现。
     /// </summary>
     [Serializable]
     public class DateTimeRange : IDateTimeRange
     {
         /// <summary>
-        /// Start time of the datetime range.
+        /// 日期时间范围的开始时间。
         /// </summary>
         public DateTime StartTime { get; set; }
 
         /// <summary>
-        /// End time of the datetime range.
+        /// 日期时间范围的结束时间。
         /// </summary>
         public DateTime EndTime { get; set; }
 
         /// <summary>
-        /// Gets the time span of the datetime range.  
-        /// When set, EndTime is recalculated
+        ///获取日期时间范围的时间跨度。
+        ///设置时，重新计算结束时间
         /// </summary>
         public TimeSpan TimeSpan
         {
@@ -31,7 +31,7 @@ namespace SharePlatformSystem.Core.Timing
         private static DateTime Now => Clock.Now;
 
         /// <summary>
-        /// Creates a new <see cref="DateTimeRange"/> object.
+        ///创建一个新的对象。
         /// </summary>
         public DateTimeRange()
         {
@@ -39,10 +39,10 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Creates a new <see cref="DateTimeRange"/> object from the given <paramref name="startTime"/> and <paramref name="endTime"/>.
+        ///从给定的<paramref name=“starttime”/>和<paramref name=“endtime”/>创建新的<see cref=“datetimerange”/>对象。
         /// </summary>
-        /// <param name="startTime">Start time of the datetime range</param>
-        /// <param name="endTime">End time of the datetime range</param>
+        /// <param name="startTime">日期时间范围的开始时间</param>
+        /// <param name="endTime">日期时间范围的结束时间</param>
         public DateTimeRange(DateTime startTime, DateTime endTime)
         {
             StartTime = startTime;
@@ -50,10 +50,10 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Creates a new <see cref="DateTimeRange"/> object from the given <paramref name="startTime"/> and <paramref name="timeSpan"/>.
+        /// 从给定的<paramref name=“starttime”/>和<paramref name=“TimeSpan”/>创建新的<see cref=“datetimerange”/>对象。
         /// </summary>
-        /// <param name="startTime">Start time of the datetime range</param>
-        /// <param name="timeSpan">The span of time to calculate the EndTime</param>
+        /// <param name="startTime">日期时间范围的开始时间</param>
+        /// <param name="timeSpan">计算结束时间的时间跨度</param>
         public DateTimeRange(DateTime startTime, TimeSpan timeSpan)
         {
             StartTime = startTime;
@@ -61,9 +61,9 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Creates a new <see cref="DateTimeRange"/> object from given the <paramref name="dateTimeRange"/> object.
+        ///从给定的对象创建一个新的对象。
         /// </summary>
-        /// <param name="dateTimeRange">IDateTimeRange object</param>
+        /// <param name="dateTimeRange">IDateTimeRange对象</param>
         public DateTimeRange(IDateTimeRange dateTimeRange)
         {
             StartTime = dateTimeRange.StartTime;
@@ -71,7 +71,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing yesterday.
+        ///获取表示昨天的日期范围。
         /// </summary>
         public static DateTimeRange Yesterday
         {
@@ -83,7 +83,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing today.
+        /// 获取表示今天的日期范围。
         /// </summary>
         public static DateTimeRange Today
         {
@@ -95,7 +95,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing tomorrow.
+        /// 获取表示明天的日期范围。
         /// </summary>
         public static DateTimeRange Tomorrow
         {
@@ -107,7 +107,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing the last month.
+        /// 获取表示上个月的日期范围。
         /// </summary>
         public static DateTimeRange LastMonth
         {
@@ -121,7 +121,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing this month.
+        /// 获取表示此月的日期范围。
         /// </summary>
         public static DateTimeRange ThisMonth
         {
@@ -135,7 +135,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing the next month.
+        ///获取表示下个月的日期范围。
         /// </summary>
         public static DateTimeRange NextMonth
         {
@@ -150,7 +150,7 @@ namespace SharePlatformSystem.Core.Timing
 
 
         /// <summary>
-        /// Gets a date range representing the last year.
+        /// 获取表示去年的日期范围。
         /// </summary>
         public static DateTimeRange LastYear
         {
@@ -162,7 +162,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing this year.
+        ///获取表示今年的日期范围。
         /// </summary>
         public static DateTimeRange ThisYear
         {
@@ -174,7 +174,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing the next year.
+        /// 获取表示下一年的日期范围。
         /// </summary>
         public static DateTimeRange NextYear
         {
@@ -187,7 +187,7 @@ namespace SharePlatformSystem.Core.Timing
 
 
         /// <summary>
-        /// Gets a date range representing the last 30 days (30x24 hours) including today.
+        /// 获取表示过去30天（30x24小时）包括今天的日期范围。
         /// </summary>
         public static DateTimeRange Last30Days
         {
@@ -199,7 +199,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing the last 30 days excluding today.
+        /// 获取表示过去30天（不包括今天）的日期范围。
         /// </summary>
         public static DateTimeRange Last30DaysExceptToday
         {
@@ -211,7 +211,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing the last 7 days (7x24 hours) including today.
+        /// 获取表示过去7天（7x24小时）包括今天的日期范围。
         /// </summary>
         public static DateTimeRange Last7Days
         {
@@ -223,7 +223,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a date range representing the last 7 days excluding today.
+        /// 获取表示过去7天（不包括今天）的日期范围。
         /// </summary>
         public static DateTimeRange Last7DaysExceptToday
         {
@@ -235,9 +235,9 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String"/> that represents the current <see cref="DateTimeRange"/>.
+        /// 返回表示当前值的<see cref=“system.string”/>。
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents the current <see cref="DateTimeRange"/>.</returns>
+        /// <returns>a<see cref=“system.string”/>表示当前<see cref="DateTimeRange"/>.</returns>
         public override string ToString()
         {
             return string.Format("[{0} - {1}]", StartTime, EndTime);

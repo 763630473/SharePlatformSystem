@@ -9,7 +9,7 @@ namespace SharePlatformSystem.Framework.AspNetCore.Mvc.Results
     {
         public static bool IsObjectResult(Type returnType)
         {
-            //Get the actual return type (unwrap Task)
+            //获取实际返回类型（展开任务）
             if (returnType == typeof(Task))
             {
                 returnType = typeof(void);

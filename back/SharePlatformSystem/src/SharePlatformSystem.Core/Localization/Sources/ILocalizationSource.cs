@@ -7,74 +7,74 @@ using System.Globalization;
 namespace SharePlatformSystem.Core.Localization.Sources
 {
     /// <summary>
-    /// A Localization Source is used to obtain localized strings.
+    ///本地化源用于获取本地化字符串。
     /// </summary>
     public interface ILocalizationSource
     {
         /// <summary>
-        /// Unique Name of the source.
+        /// 源的唯一名称。
         /// </summary>
         string Name { get; }
 
         /// <summary>
-        /// This method is called by SharePlatform before first usage.
+        /// 此方法在第一次使用之前由SharePlatform调用。
         /// </summary>
         void Initialize(ILocalizationConfiguration configuration, IIocResolver iocResolver);
 
         /// <summary>
-        /// Gets localized string for given name in current language.
-        /// Fallbacks to default language if not found in current culture.
+        ///获取当前语言中给定名称的本地化字符串。
+        ///如果在当前区域性中找不到，则返回默认语言。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键名</param>
+        /// <returns>本地化字符串</returns>
         string GetString(string name);
 
         /// <summary>
-        /// Gets localized string for given name and specified culture.
-        /// Fallbacks to default language if not found in given culture.
+        ///获取给定名称和指定区域性的本地化字符串。
+        ///如果在给定的区域性中找不到，则返回默认语言。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <param name="culture">culture information</param>
-        /// <returns>Localized string</returns>
+        /// <param name="name">键名</param>
+        /// <param name="culture">文化信息</param>
+        /// <returns>本地化字符串</returns>
         string GetString(string name, CultureInfo culture);
 
         /// <summary>
-        /// Gets localized string for given name in current language.
-        /// Returns null if not found.
+        ///获取当前语言中给定名称的本地化字符串。
+        ///如果找不到，则返回空值。
         /// </summary>
-        /// <param name="name">Key name</param>
+        /// <param name="name">键名</param>
         /// <param name="tryDefaults">
-        /// True: Fallbacks to default language if not found in current culture.
+        /// 如果在当前区域性中找不到，则返回默认语言。
         /// </param>
-        /// <returns>Localized string</returns>
+        /// <returns>本地化字符串</returns>
         string GetStringOrNull(string name, bool tryDefaults = true);
 
         /// <summary>
-        /// Gets localized string for given name and specified culture.
-        /// Returns null if not found.
+        /// 获取给定名称和指定区域性的本地化字符串。
+        ///如果找不到，则返回空值。
         /// </summary>
-        /// <param name="name">Key name</param>
-        /// <param name="culture">culture information</param>
+        /// <param name="name">键名</param>
+        /// <param name="culture">文化信息</param>
         /// <param name="tryDefaults">
-        /// True: Fallbacks to default language if not found in current culture.
+        ///true:如果在当前区域性中找不到，则回退到默认语言。
         /// </param>
-        /// <returns>Localized string</returns>
+        /// <returns>本地化字符串</returns>
         string GetStringOrNull(string name, CultureInfo culture, bool tryDefaults = true);
 
         /// <summary>
-        /// Gets all strings in current language.
+        /// 获取当前语言中的所有字符串。
         /// </summary>
         /// <param name="includeDefaults">
-        /// True: Fallbacks to default language texts if not found in current culture.
+        ///true:如果在当前区域性中找不到，则回退到默认语言文本。
         /// </param>
         IReadOnlyList<LocalizedString> GetAllStrings(bool includeDefaults = true);
 
         /// <summary>
-        /// Gets all strings in specified culture.
+        ///获取指定区域性中的所有字符串。
         /// </summary>
-        /// <param name="culture">culture information</param>
+        /// <param name="culture">文化信息</param>
         /// <param name="includeDefaults">
-        /// True: Fallbacks to default language texts if not found in current culture.
+        ///true:如果在当前区域性中找不到，则回退到默认语言文本。
         /// </param>
         IReadOnlyList<LocalizedString> GetAllStrings(CultureInfo culture, bool includeDefaults = true);
     }

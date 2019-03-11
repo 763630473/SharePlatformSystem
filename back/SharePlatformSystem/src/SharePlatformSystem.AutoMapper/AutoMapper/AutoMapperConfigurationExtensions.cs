@@ -18,7 +18,7 @@ namespace SharePlatformSystem.AutoMapper
         public static void CreateAutoAttributeMaps(this IMapperConfigurationExpression configuration, Type type, Type[] targetTypes, MemberList memberList)
         {
 
-            //Get all the properties in the source that have the AutoMapKeyAttribute
+            //获取源中具有automapkeyattribute的所有属性
             var sourceKeysPropertyInfo = type.GetProperties()
                                              .Where(w => w.GetCustomAttribute<AutoMapKeyAttribute>() != null)
                                              .Select(s => s).ToList();
@@ -33,33 +33,33 @@ namespace SharePlatformSystem.AutoMapper
 
                 BinaryExpression equalityComparer = null;
 
-                //In a lambda expression represent the source exemple : (source) => ...
+                //在lambda表达式中表示源示例：（source）=>…
                 ParameterExpression sourceParameterExpression = Expression.Parameter(type, "source");
-                //In a lambda expression represent the target exemple : (target) => ...
+                //在lambda表达式中表示目标示例：（target）=>…
                 ParameterExpression targetParameterExpression = Expression.Parameter(targetType, "target");
 
 
-                //We could use multiple AutoMapKey to compare the determine equality
+                //我们可以使用多个automapkey来比较
                 foreach (PropertyInfo propertyInfo in sourceKeysPropertyInfo)
                 {
-                    //In a lambda expression represent a specfic property of a parameter exemple : (source) => source.Id
+                    //在lambda表达式中表示参数的特定属性示例：（source）=>source.id
                     MemberExpression sourcePropertyExpression = Expression.Property(sourceParameterExpression, propertyInfo);
 
-                    //Find the target a property with the same name to compare with
-                    //Exemple if we have in source the attribut AutoMapKey on the Property Id we want to get Id in the target to compare agaisnt
+                    //为目标查找与之比较的同名属性
+                    //例如，如果我们在源代码中有属性id上的attribut automapkey，那么我们希望在目标中获取要比较的id，而不是
                     var targetPropertyInfo = targetType.GetProperty(sourcePropertyExpression.Member.Name);
 
-                    //It happen if the property with AutoMapKeyAttribute does not exist in target
+                    //如果目标中不存在automapkeyattribute为的属性，则会发生这种情况
                     if (targetPropertyInfo is null)
                     {
                         continue;
                     }
 
-                    //In a lambda expression represent a specfic property of a parameter exemple : (target) => target.Id
+                    //在lambda表达式中，表示参数的特定属性示例：（target）=>target.id
                     MemberExpression targetPropertyExpression = Expression.Property(targetParameterExpression, targetPropertyInfo);
 
-                    //Compare the property defined by AutoMapKey in the source agaisnt the same property in the target
-                    //Exemple (source, target) => source.Id == target.Id
+                    //比较源中automapkey定义的属性与目标中的属性不同
+                    //示例（source，target）=>source.id==target.id
                     BinaryExpression equal = Expression.Equal(sourcePropertyExpression, targetPropertyExpression);
 
                     if (equalityComparer is null)
@@ -68,33 +68,33 @@ namespace SharePlatformSystem.AutoMapper
                     }
                     else
                     {
-                        //If we compare multiple key we want to make an and condition between
+                        //如果我们比较多个键，我们要在
                         //Exemple : (source, target) => source.Email == target.Email && source.UserName == target.UserName
                         equalityComparer = Expression.And(equalityComparer, equal);
                     }
                 }
 
-                //If there is not match for AutoMapKey in the target
-                //In this case we add the default mapping
+                //如果目标中没有匹配的automapkey
+                //在这种情况下，我们添加默认映射
                 if (equalityComparer is null)
                 {
                     configuration.CreateMap(type, targetType, memberList);
                     continue;
                 }
 
-                //We need to make a generic type of Func<SourceType, TargetType, bool> to invoke later Expression.Lambda
+                //我们需要使func<sourcetype，targettype，bool>的泛型类型来调用后面的expression.lambda
                 var funcGenericType = typeof(Func<,,>).MakeGenericType(type, targetType, typeof(bool));
 
-                //Make a method info of Expression.Lambda<Func<SourceType, TargetType, bool>> to call later
+                //生成表达式的方法信息。lambda<func<sourceType，targetType，bool>>稍后调用
                 var lambdaMethodInfo = typeof(Expression).GetMethod("Lambda", 2, 1).MakeGenericMethod(funcGenericType);
 
-                //Make the call to Expression.Lambda
+                //调用expression.lambda
                 var expressionLambdaResult = lambdaMethodInfo.Invoke(null, new object[] { equalityComparer, new ParameterExpression[] { sourceParameterExpression, targetParameterExpression } });
 
-                //Get the method info of IMapperConfigurationExpression.CreateMap<Source, Target>
+                //获取imapperConfigurationExpression.createMap<source，target>
                 var createMapMethodInfo = configuration.GetType().GetMethod("CreateMap", 1, 2).MakeGenericMethod(type, targetType);
 
-                //Make the call to configuration.CreateMap<Source, Target>().
+                //调用configuration.createmap<source，target>（）。
                 var createMapResult = createMapMethodInfo.Invoke(configuration, new object[] { memberList });
 
                 var autoMapperCollectionAssembly = Assembly.Load("AutoMapper.Collection");
@@ -107,7 +107,7 @@ namespace SharePlatformSystem.AutoMapper
                                          .FirstOrDefault()
                                          .MakeGenericMethod(type, targetType);
 
-                //Make the call to EqualityComparison
+                //调用EqualityComparison
                 //Exemple configuration.CreateMap<Source, Target>().EqualityComparison((source, target) => source.Id == target.Id)
                 equalityComparisonGenericMethodInfo.Invoke(createMapResult, new object[] { createMapResult, expressionLambdaResult });
             }

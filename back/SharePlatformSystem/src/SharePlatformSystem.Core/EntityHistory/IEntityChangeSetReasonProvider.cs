@@ -3,17 +3,17 @@
 namespace SharePlatformSystem.EntityHistory
 {
     /// <summary>
-    /// Defines some session information that can be useful for applications.
+    /// 定义一些对应用程序有用的会话信息。
     /// </summary>
     public interface IEntityChangeSetReasonProvider
     {
         /// <summary>
-        /// Gets current Reason or null.
+        /// 获取当前原因或空值。
         /// </summary>
         string Reason { get; }
 
         /// <summary>
-        /// Used to change <see cref="Reason"/> for a limited scope.
+        ///用于更改<see cref=“reason”/>了解有限范围。
         /// </summary>
         /// <param name="reason"></param>
         /// <returns></returns>

@@ -47,7 +47,7 @@ namespace SharePlatformSystem.Core.PlugIns
                 }
                 catch (Exception ex)
                 {
-                    throw new SharePlatformInitializationException("Could not get module types from assembly: " + assembly.FullName, ex);
+                    throw new SharePlatformInitializationException("无法从程序集获取模块类型：" + assembly.FullName, ex);
                 }
             }
 

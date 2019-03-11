@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Events.Bus.Entities
 {
     /// <summary>
-    /// Used to trigger entity change events.
+    /// 用于触发实体更改事件。
     /// </summary>
     public interface IEntityChangeEventHelper
     {

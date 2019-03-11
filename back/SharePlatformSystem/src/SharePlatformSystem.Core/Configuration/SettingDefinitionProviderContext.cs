@@ -1,7 +1,7 @@
 ﻿namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// The context that is used in setting providers.
+    /// 设置提供程序时使用的上下文。
     /// </summary>
     public class SettingDefinitionProviderContext
     {

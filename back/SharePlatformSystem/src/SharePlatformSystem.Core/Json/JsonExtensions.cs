@@ -7,7 +7,7 @@ namespace SharePlatformSystem.Json
     public static class JsonExtensions
     {
         /// <summary>
-        /// Converts given object to JSON string.
+        ///将给定对象转换为JSON字符串。
         /// </summary>
         /// <returns></returns>
         public static string ToJsonString(this object obj, bool camelCase = false, bool indented = false)
@@ -32,7 +32,7 @@ namespace SharePlatformSystem.Json
         }
 
         /// <summary>
-        /// Converts given object to JSON string using custom <see cref="JsonSerializerSettings"/>.
+        /// 使用自定义将给定对象转换为JSON字符串 <see cref="JsonSerializerSettings"/>.
         /// </summary>
         /// <returns></returns>
         public static string ToJsonString(this object obj, JsonSerializerSettings settings)
@@ -43,7 +43,7 @@ namespace SharePlatformSystem.Json
         }
 
         /// <summary>
-        /// Returns deserialized string using default <see cref="JsonSerializerSettings"/>
+        /// 使用默认值返回反序列化字符串 <see cref="JsonSerializerSettings"/>
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
@@ -54,7 +54,7 @@ namespace SharePlatformSystem.Json
         }
 
         /// <summary>
-        /// Returns deserialized string using custom <see cref="JsonSerializerSettings"/>
+        /// 使用自定义返回反序列化字符串 <see cref="JsonSerializerSettings"/>
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
@@ -68,7 +68,7 @@ namespace SharePlatformSystem.Json
         }
 
         /// <summary>
-        /// Returns deserialized string using explicit <see cref="Type"/> and custom <see cref="JsonSerializerSettings"/>
+        /// 使用显式返回反序列化字符串 <see cref="Type"/> and custom <see cref="JsonSerializerSettings"/>
         /// </summary>
         /// <param name="value"></param>
         /// <param name="type"></param>

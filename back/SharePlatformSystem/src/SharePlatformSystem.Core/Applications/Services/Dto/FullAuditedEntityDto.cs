@@ -4,7 +4,7 @@ using SharePlatformSystem.Core.Auditing.Entities;
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// A shortcut of <see cref="FullAuditedEntityDto{TPrimaryKey}"/> for most used primary key type (<see cref="int"/>).
+    /// 最常用的主键类型string的快捷方式.
     /// </summary>
     [Serializable]
     public abstract class FullAuditedEntityDto : FullAuditedEntityDto<string>
@@ -13,24 +13,24 @@ namespace SharePlatformSystem.Applications.Services.Dto
     }
 
     /// <summary>
-    /// This class can be inherited for simple Dto objects those are used for entities implement <see cref="IFullAudited{TUser}"/> interface.
+    /// 对于用于实体实现的简单DTO对象，可以继承此类“ifullAudited tuser接口。
     /// </summary>
-    /// <typeparam name="TPrimaryKey">Type of primary key</typeparam>
+    /// <typeparam name="TPrimaryKey">主键的类型</typeparam>
     [Serializable]
     public abstract class FullAuditedEntityDto<TPrimaryKey> : AuditedEntityDto<TPrimaryKey>, IFullAudited<TPrimaryKey>
     {
         /// <summary>
-        /// Is this entity deleted?
+        /// 此实体是否已删除？
         /// </summary>
         public bool IsDeleted { get; set; }
 
         /// <summary>
-        /// Deleter user's Id, if this entity is deleted,
+        /// 删除用户ID，如果删除此实体，
         /// </summary>
         public TPrimaryKey DeleterUserId { get; set; }
 
         /// <summary>
-        /// Deletion time, if this entity is deleted,
+        ///删除时间，如果删除此实体，
         /// </summary>
         public DateTime? DeletionTime { get; set; }
     }

@@ -5,33 +5,33 @@ using SharePlatformSystem.Core.Timing;
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    ///  A shortcut of <see cref="CreationAuditedEntityDto"/> for most used primary key type (<see cref="int"/>).
+    /// string的快捷方式
     /// </summary>
     [Serializable]
-    public abstract class CreationAuditedEntityDto : CreationAuditedEntityDto<int>
+    public abstract class CreationAuditedEntityDto : CreationAuditedEntityDto<string>
     {
         
     }
 
     /// <summary>
-    /// This class can be inherited for simple Dto objects those are used for entities implement <see cref="ICreationAudited"/> interface.
+    /// 这个类可以为简单的DTO对象继承，这些对象用于实现“ICreationAudited”接口的实体。
     /// </summary>
-    /// <typeparam name="TPrimaryKey">Type of primary key</typeparam>
+    /// <typeparam name="TPrimaryKey">实体的主键类型</typeparam>
     [Serializable]
     public abstract class CreationAuditedEntityDto<TPrimaryKey> : EntityDto<TPrimaryKey>, ICreationAudited<TPrimaryKey>
     {
         /// <summary>
-        /// Creation date of this entity.
+        ///创建实体的时间
         /// </summary>
         public DateTime CreationTime { get; set; }
 
         /// <summary>
-        /// Creator user's id for this entity.
+        /// 实体的创建用户
         /// </summary>
         public TPrimaryKey CreatorUserId { get; set; }
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         protected CreationAuditedEntityDto()
         {

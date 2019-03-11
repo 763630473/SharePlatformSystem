@@ -5,7 +5,7 @@ using SharePlatformSystem.Core.Exceptions;
 namespace SharePlatformSystem.Logging
 {
     /// <summary>
-    /// Extensions for <see cref="ILogger"/>.
+    ///扩展 <see cref="ILogger"/>.
     /// </summary>
     public static class LoggerExtensions
     {
@@ -53,7 +53,7 @@ namespace SharePlatformSystem.Logging
                     logger.Debug(message, exception);
                     break;
                 default:
-                    throw new SharePlatformException("Unknown LogSeverity value: " + severity);
+                    throw new SharePlatformException("未知的LogSeverity值: " + severity);
             }
         }
 
@@ -77,7 +77,7 @@ namespace SharePlatformSystem.Logging
                     logger.Debug(messageFactory);
                     break;
                 default:
-                    throw new SharePlatformException("Unknown LogSeverity value: " + severity);
+                    throw new SharePlatformException("未知的LogSeverity值: " + severity);
             }
         }
     }

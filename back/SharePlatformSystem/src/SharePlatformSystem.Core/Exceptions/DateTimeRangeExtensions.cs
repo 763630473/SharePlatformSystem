@@ -6,12 +6,12 @@ using SharePlatformSystem.Core.Timing;
 namespace SharePlatformSystem.Core.Exceptions
 {
     /// <summary>
-    /// Extension methods for <see cref="IDateTimeRange"/>.
+    /// <see cref=“idateTimeRange”/>的扩展方法。
     /// </summary>
     public static class DateTimeRangeExtensions
     {
         /// <summary>
-        /// Sets date range to given target.
+        ///将日期范围设置为给定目标。
         /// </summary>
         /// <param name="source"></param>
         /// <param name="target"></param>
@@ -22,7 +22,7 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Sets date range from given source.
+        /// 从给定源设置日期范围。
         /// </summary>
         public static void SetFrom(this IDateTimeRange target, IDateTimeRange source)
         {
@@ -31,9 +31,9 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Returns all the days of a datetime range.
+        /// 返回日期时间范围的所有日期。
         /// </summary>
-        /// <param name="dateRange">The date range.</param>
+        /// <param name="dateRange">日期范围。</param>
         /// <returns></returns>
         public static IEnumerable<DateTime> DaysInRange(this IDateTimeRange dateRange)
         {
@@ -45,10 +45,10 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Returns all the days in a range.
+        /// 返回范围内的所有日期。
         /// </summary>
-        /// <param name="start">The start.</param>
-        /// <param name="end">The end.</param>
+        /// <param name="start">开始。</param>
+        /// <param name="end">结束。</param>
         /// <returns></returns>
         public static IEnumerable<DateTime> DaysInRange(DateTime start, DateTime end)
         {

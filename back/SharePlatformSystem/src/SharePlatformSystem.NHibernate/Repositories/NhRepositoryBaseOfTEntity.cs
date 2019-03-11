@@ -4,15 +4,15 @@ using SharePlatformSystem.Core.Domain.Repositories;
 namespace SharePlatformSystem.NHibernate.Repositories
 {
     /// <summary>
-    /// A shortcut of <see cref="NhRepositoryBase{TEntity,TPrimaryKey}"/> for most used primary key type (<see cref="int"/>).
+    /// 最常用的主键类型（<see cref=“string”/>）的快捷方式。
     /// </summary>
-    /// <typeparam name="TEntity">Entity type</typeparam>
+    /// <typeparam name="TEntity">实体类型</typeparam>
     public class NhRepositoryBase<TEntity> : NhRepositoryBase<TEntity, string>, IRepository<TEntity> where TEntity : class, IEntity<string>
     {
         /// <summary>
-        /// Creates a new <see cref="NhRepositoryBase{TEntity,TPrimaryKey}"/> object.
+        /// 创建一个新的对象。
         /// </summary>
-        /// <param name="sessionProvider">A session provider to obtain session for database operations</param>
+        /// <param name="sessionProvider">用于获取数据库操作会话的会话提供程序</param>
         public NhRepositoryBase(ISessionProvider sessionProvider)
             : base(sessionProvider)
         {

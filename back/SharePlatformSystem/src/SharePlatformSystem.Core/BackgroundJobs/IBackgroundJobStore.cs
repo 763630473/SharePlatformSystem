@@ -4,42 +4,42 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.BackgroundJobs
 {
     /// <summary>
-    /// Defines interface to store/get background jobs.
+    /// 定义用于存储/获取后台作业的接口。
     /// </summary>
     public interface IBackgroundJobStore
     {
         /// <summary>
-        /// Gets a BackgroundJobInfo based on the given jobId.
+        /// 基于给定的JobID获取BackgroundJobInfo。
         /// </summary>
-        /// <param name="jobId">The Job Unique Identifier.</param>
-        /// <returns>The BackgroundJobInfo object.</returns>
+        /// <param name="jobId">作业唯一标识符。</param>
+        /// <returns>BackgroundJobInfo对象</returns>
         Task<BackgroundJobInfo> GetAsync(string jobId);
 
         /// <summary>
-        /// Inserts a background job.
+        ///插入后台作业。
         /// </summary>
-        /// <param name="jobInfo">Job information.</param>
+        /// <param name="jobInfo">工作信息。</param>
         Task InsertAsync(BackgroundJobInfo jobInfo);
 
         /// <summary>
-        /// Gets waiting jobs. It should get jobs based on these:
-        /// Conditions: !IsAbandoned And NextTryTime &lt;= Clock.Now.
-        /// Order by: Priority DESC, TryCount ASC, NextTryTime ASC.
-        /// Maximum result: <paramref name="maxResultCount"/>.
+        ///获取等待的作业。它应该根据以下条件获得工作：
+        ///条件：！isabandoned和nexttrytime&lt；=clock.now。
+        ///排序依据：priority desc，trycount asc，nexttrytime asc。
+        ///最大结果：“maxResultCount”。
         /// </summary>
-        /// <param name="maxResultCount">Maximum result count.</param>
+        /// <param name="maxResultCount">最大结果计数。</param>
         Task<List<BackgroundJobInfo>> GetWaitingJobsAsync(int maxResultCount);
 
         /// <summary>
-        /// Deletes a job.
+        /// 删除作业。
         /// </summary>
         /// <param name="jobInfo">Job information.</param>
         Task DeleteAsync(BackgroundJobInfo jobInfo);
 
         /// <summary>
-        /// Updates a job.
+        /// 更新作业。
         /// </summary>
-        /// <param name="jobInfo">Job information.</param>
+        /// <param name="jobInfo">工作信息。</param>
         Task UpdateAsync(BackgroundJobInfo jobInfo);
     }
 }

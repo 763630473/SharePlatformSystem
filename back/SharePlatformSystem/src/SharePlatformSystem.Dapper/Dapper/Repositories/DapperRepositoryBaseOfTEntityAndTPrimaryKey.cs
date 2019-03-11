@@ -41,11 +41,11 @@ namespace SharePlatformSystem.Dapper.Repositories
         }
 
         /// <summary>
-        ///     Gets the active transaction. If Dapper is active then <see cref="IUnitOfWork" /> should be started before
-        ///     and there must be an active transaction.
+        ///获取活动事务。如果dapper处于活动状态，则应在
+        ///必须有活动事务。
         /// </summary>
         /// <value>
-        ///     The active transaction.
+        ///活动事务。
         /// </value>
         public virtual DbTransaction ActiveTransaction
         {

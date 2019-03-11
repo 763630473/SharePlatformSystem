@@ -4,29 +4,29 @@ using System.Collections.Generic;
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// Used to configure auditing.
+    /// 用于配置审核。
     /// </summary>
     public interface IAuditingConfiguration
     {
         /// <summary>
-        /// Used to enable/disable auditing system.
-        /// Default: true. Set false to completely disable it.
+        /// 用于启用/禁用审核系统。
+        /// 默认: true.设置为false以完全禁用它。
         /// </summary>
         bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Set true to enable saving audit logs if current user is not logged in.
-        /// Default: false.
+        /// 如果当前用户未登录，则设置为true以启用保存审核日志。
+        /// 默认: false.
         /// </summary>
         bool IsEnabledForAnonymousUsers { get; set; }
 
         /// <summary>
-        /// List of selectors to select classes/interfaces which should be audited as default.
+        /// 用于选择应作为默认值审核的类/接口的选择器列表。
         /// </summary>
         IAuditingSelectorList Selectors { get; }
 
         /// <summary>
-        /// Ignored types for serialization on audit logging.
+        /// 在审核日志记录中忽略用于序列化的类型。
         /// </summary>
         List<Type> IgnoredTypes { get; }
     }

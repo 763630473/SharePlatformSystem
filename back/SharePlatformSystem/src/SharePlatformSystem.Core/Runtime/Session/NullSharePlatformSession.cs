@@ -3,16 +3,15 @@
 namespace SharePlatformSystem.Runtime.Session
 {
     /// <summary>
-    /// Implements null object pattern for <see cref="ISharePlatformSession"/>.
+    /// 实现空对象模式<see cref=“ishareplatformsession”/>。
     /// </summary>
     public class NullSharePlatformSession : SharePlatformSessionBase
     {
         /// <summary>
-        /// Singleton instance.
+        /// 单例实例。
         /// </summary>
         public static NullSharePlatformSession Instance { get; } = new NullSharePlatformSession();
 
-        /// <inheritdoc/>
         public override string UserId => null;
 
 

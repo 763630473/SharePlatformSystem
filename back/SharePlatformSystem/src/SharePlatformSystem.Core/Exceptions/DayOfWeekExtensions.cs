@@ -4,12 +4,12 @@ using System.Linq;
 namespace SharePlatformSystem.Core.Exceptions
 {
     /// <summary>
-    /// Extension methods for <see cref="DayOfWeekExtensions"/>.
+    ///<see cref=“dayOfWeekExtensions”/>的扩展方法。
     /// </summary>
     public static class DayOfWeekExtensions
     {
         /// <summary>
-        /// Check if a given <see cref="DayOfWeek"/> value is weekend.
+        ///检查给定值是否为周末。
         /// </summary>
         public static bool IsWeekend(this DayOfWeek dayOfWeek)
         {
@@ -17,7 +17,7 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Check if a given <see cref="DayOfWeek"/> value is weekday.
+        ///检查给定值是否为weekday。
         /// </summary>
         public static bool IsWeekday(this DayOfWeek dayOfWeek)
         {
@@ -25,13 +25,13 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Finds the NTH week day of a month.
+        /// 查找一个月的第n个星期日。
         /// </summary>
-        /// <param name="dayOfWeek">The day of week.</param>
-        /// <param name="year">The year.</param>
-        /// <param name="month">The month.</param>
-        /// <param name="n">The nth instance.</param>
-        /// <remarks>Compensates for 4th and 5th DayOfWeek of Month</remarks>
+        /// <param name="dayOfWeek">一周中的某一天。</param>
+        /// <param name="year">这一年。</param>
+        /// <param name="month">这个月。</param>
+        /// <param name="n">第n个实例。</param>
+        /// <remarks>补偿每月第4天和第5天</remarks>
         public static DateTime FindNthWeekDayOfMonth(this DayOfWeek dayOfWeek, int year, int month, int n)
         {
             if (n < 1 || n > 5)
@@ -43,7 +43,7 @@ namespace SharePlatformSystem.Core.Exceptions
 
             var daysOfMonth = DateTimeExtensions.DaysOfMonth(year, month);
 
-            // compensate for "last DayOfWeek in month"
+            // 补偿“每月最后一天”
             var totalInstances = dayOfWeek.TotalInstancesInMonth(year, month);
             if (n == 5 && n > totalInstances)
                 n = 4;
@@ -58,11 +58,11 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Finds the total number of instances of a specific DayOfWeek in a month.
+        /// 查找一个月内特定DayOfWeek的实例总数。
         /// </summary>
-        /// <param name="dayOfWeek">The day of week.</param>
-        /// <param name="year">The year.</param>
-        /// <param name="month">The month.</param>
+        /// <param name="dayOfWeek">一周中的某一天。</param>
+        /// <param name="year">今年。</param>
+        /// <param name="month">这个月。</param>
         /// <returns></returns>
         public static int TotalInstancesInMonth(this DayOfWeek dayOfWeek, int year, int month)
         {
@@ -70,10 +70,10 @@ namespace SharePlatformSystem.Core.Exceptions
         }
 
         /// <summary>
-        /// Gets the total number of instances of a specific DayOfWeek in a month.
+        /// 获取一个月内特定DayOfWeek的实例总数。
         /// </summary>
-        /// <param name="dayOfWeek">The day of week.</param>
-        /// <param name="dateTime">The date in a month.</param>
+        /// <param name="dayOfWeek">一周中的某一天。</param>
+        /// <param name="dateTime">一个月内的日期。</param>
         /// <returns></returns>
         public static int TotalInstancesInMonth(this DayOfWeek dayOfWeek, DateTime dateTime)
         {

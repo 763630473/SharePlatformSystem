@@ -15,7 +15,7 @@ namespace SharePlatformSystem.AspNetCore.SignalR.Hubs
         protected IClientInfoProvider ClientInfoProvider { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SharePlatformCommonHub"/> class.
+        /// 初始化类的新实例。
         /// </summary>
         protected OnlineClientHubBase(
             IOnlineClientManager onlineClientManager,

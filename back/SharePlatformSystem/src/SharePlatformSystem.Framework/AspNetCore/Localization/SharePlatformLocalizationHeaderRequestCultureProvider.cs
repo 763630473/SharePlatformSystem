@@ -12,7 +12,6 @@ namespace SharePlatformSystem.Framework.AspNetCore.Localization
         private static readonly string _culturePrefix = "c=";
         private static readonly string _uiCulturePrefix = "uic=";
 
-        /// <inheritdoc />
         public override Task<ProviderCultureResult> DetermineProviderCultureResult(HttpContext httpContext)
         {
             if (httpContext == null)
@@ -31,11 +30,11 @@ namespace SharePlatformSystem.Framework.AspNetCore.Localization
         }
 
         /// <summary>
-        /// Parses a <see cref="RequestCulture"/> from the specified cookie value.
-        /// Returns <c>null</c> if parsing fails.
+        ///从指定的cookie值分析<see cref=“requestCulture”/>。
+        ///如果解析失败，则返回<c>null。
         /// </summary>
-        /// <param name="value">The cookie value to parse.</param>
-        /// <returns>The <see cref="RequestCulture"/> or <c>null</c> if parsing fails.</returns>
+        /// <param name="value">要分析的cookie值。</param>
+        /// <returns>如果解析失败，则为<see cref=“requestCulture”/>或<c>null。</returns>
         public static ProviderCultureResult ParseHeaderValue(string value)
         {
             if (string.IsNullOrWhiteSpace(value))

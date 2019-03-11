@@ -4,72 +4,72 @@ using System.Reflection;
 namespace SharePlatformSystem.Dependency
 {
     /// <summary>
-    /// Define interface for classes those are used to register dependencies.
+    /// 为那些用于注册依赖项的类定义接口。
     /// </summary>
     public interface IIocRegistrar
     {
         /// <summary>
-        /// Adds a dependency registrar for conventional registration.
+        /// 为常规注册添加依赖项注册器。
         /// </summary>
-        /// <param name="registrar">dependency registrar</param>
+        /// <param name="registrar">依赖关系注册器</param>
         void AddConventionalRegistrar(IConventionalDependencyRegistrar registrar);
 
         /// <summary>
-        /// Registers types of given assembly by all conventional registrars. See <see cref="IocManager.AddConventionalRegistrar"/> method.
+        ///由所有常规注册器注册给定程序集的类型。请参阅“iocmanager.addConventionalRegistrar”方法。
         /// </summary>
-        /// <param name="assembly">Assembly to register</param>
+        /// <param name="assembly">要注册的程序集</param>
         void RegisterAssemblyByConvention(Assembly assembly);
 
         /// <summary>
-        /// Registers types of given assembly by all conventional registrars. See <see cref="IocManager.AddConventionalRegistrar"/> method.
+        ///由所有常规注册器注册给定程序集的类型。请参阅“iocmanager.addConventionalRegistrar”方法。
         /// </summary>
-        /// <param name="assembly">Assembly to register</param>
-        /// <param name="config">Additional configuration</param>
+        /// <param name="assembly">要注册的程序集</param>
+        /// <param name="config">附加配置</param>
         void RegisterAssemblyByConvention(Assembly assembly, ConventionalRegistrationConfig config);
 
         /// <summary>
-        /// Registers a type as self registration.
+        /// 将类型注册为自注册。
         /// </summary>
-        /// <typeparam name="T">Type of the class</typeparam>
-        /// <param name="lifeStyle">Lifestyle of the objects of this type</param>
+        /// <typeparam name="T">类的类型</typeparam>
+        /// <param name="lifeStyle">这类物品的生活方式</param>
         void Register<T>(DependencyLifeStyle lifeStyle = DependencyLifeStyle.Singleton)
             where T : class;
 
         /// <summary>
-        /// Registers a type as self registration.
+        /// 将类型注册为自注册。
         /// </summary>
-        /// <param name="type">Type of the class</param>
-        /// <param name="lifeStyle">Lifestyle of the objects of this type</param>
+        /// <param name="type">类的类型</param>
+        /// <param name="lifeStyle">这类物品的生活方式</param>
         void Register(Type type, DependencyLifeStyle lifeStyle = DependencyLifeStyle.Singleton);
 
         /// <summary>
-        /// Registers a type with it's implementation.
+        /// 用它的实现注册一个类型。
         /// </summary>
-        /// <typeparam name="TType">Registering type</typeparam>
-        /// <typeparam name="TImpl">The type that implements <see cref="TType"/></typeparam>
-        /// <param name="lifeStyle">Lifestyle of the objects of this type</param>
+        /// <typeparam name="TType">正在注册类型</typeparam>
+        /// <typeparam name="TImpl">实现的类型“ttype”</typeparam>
+        /// <param name="lifeStyle">这类物品的生活方式</param>
         void Register<TType, TImpl>(DependencyLifeStyle lifeStyle = DependencyLifeStyle.Singleton)
             where TType : class
             where TImpl : class, TType;
 
         /// <summary>
-        /// Registers a type with it's implementation.
+        /// 用它的实现注册一个类型。
         /// </summary>
-        /// <param name="type">Type of the class</param>
-        /// <param name="impl">The type that implements <paramref name="type"/></param>
-        /// <param name="lifeStyle">Lifestyle of the objects of this type</param>
+        /// <param name="type">类的类型</param>
+        /// <param name="impl">实现的类型"type"</param>
+        /// <param name="lifeStyle">这类物品的生活方式</param>
         void Register(Type type, Type impl, DependencyLifeStyle lifeStyle = DependencyLifeStyle.Singleton);
 
         /// <summary>
-        /// Checks whether given type is registered before.
+        /// 检查给定类型之前是否已注册。
         /// </summary>
-        /// <param name="type">Type to check</param>
+        /// <param name="type">类型检查</param>
         bool IsRegistered(Type type);
 
         /// <summary>
-        /// Checks whether given type is registered before.
+        /// 检查给定类型之前是否已注册。
         /// </summary>
-        /// <typeparam name="TType">Type to check</typeparam>
+        /// <typeparam name="TType">类型检查</typeparam>
         bool IsRegistered<TType>();
     }
 }

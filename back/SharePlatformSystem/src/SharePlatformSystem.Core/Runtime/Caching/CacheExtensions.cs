@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Runtime.Caching
 {
     /// <summary>
-    /// Extension methods for <see cref="ICache"/>.
+    /// <see cref="ICache"/>的扩展方法。
     /// </summary>
     public static class CacheExtensions
     {

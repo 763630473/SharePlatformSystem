@@ -3,17 +3,17 @@
 namespace SharePlatformSystem.BackgroundJobs
 {
     /// <summary>
-    /// Used to configure background job system.
+    /// 用于配置后台作业系统。
     /// </summary>
     public interface IBackgroundJobConfiguration
     {
         /// <summary>
-        /// Used to enable/disable background job execution.
+        /// 用于启用/禁用后台作业执行。
         /// </summary>
         bool IsJobExecutionEnabled { get; set; }
 
         /// <summary>
-        /// Gets the SharePlatform configuration object.
+        /// 获取SharePlatform配置对象。
         /// </summary>
         ISharePlatformStartupConfiguration SharePlatformConfiguration { get; }
     }

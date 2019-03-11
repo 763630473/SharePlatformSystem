@@ -5,25 +5,25 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Applications.Services
 {
     /// <summary>
-    /// This class can be used as a base class for application services. 
+    ///此类可以用作应用程序服务的基类。
     /// </summary>
     public abstract class ApplicationService : SharePlatformServiceBase, IApplicationService, IAvoidDuplicateCrossCuttingConcerns
     {
         public static string[] CommonPostfixes = { "AppService", "ApplicationService" };
 
         /// <summary>
-        /// Gets current session information.
+        /// 获取当前会话信息。
         /// </summary>
         public ISharePlatformSession SharePlatformSession { get; set; }
-        
+
 
         /// <summary>
-        /// Gets the applied cross cutting concerns.
+        /// 获取应用的横切关注点。
         /// </summary>
         public List<string> AppliedCrossCuttingConcerns { get; } = new List<string>();
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         protected ApplicationService()
         {

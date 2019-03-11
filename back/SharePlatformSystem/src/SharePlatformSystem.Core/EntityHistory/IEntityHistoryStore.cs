@@ -3,15 +3,15 @@
 namespace SharePlatformSystem.EntityHistory
 {
     /// <summary>
-    /// This interface should be implemented by vendors to
-    /// make entity history working.
+    ///此接口应由供应商实现以
+    ///使实体历史记录工作。
     /// </summary>
     public interface IEntityHistoryStore
     {
         /// <summary>
-        /// Should save entity change set to a persistent store.
+        /// 应将实体更改集保存到持久存储。
         /// </summary>
-        /// <param name="entityChangeSet">Entity change set</param>
+        /// <param name="entityChangeSet">实体更改集</param>
         Task SaveAsync(EntityChangeSet entityChangeSet);
     }
 }

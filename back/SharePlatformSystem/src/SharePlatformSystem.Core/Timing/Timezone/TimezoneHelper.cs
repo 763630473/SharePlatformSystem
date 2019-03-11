@@ -13,7 +13,7 @@ using TimeZoneConverter;
 namespace SharePlatformSystem.Core.Timing.Timezone
 {
     /// <summary>
-    /// A helper class for timezone operations
+    ///时区操作的帮助程序类
     /// </summary>
     public static class TimezoneHelper
     {
@@ -22,7 +22,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
         static readonly object SyncObj = new object();
 
         /// <summary>
-        /// Maps given windows timezone id to IANA timezone id
+        ///将给定的Windows时区ID映射到IANA时区ID
         /// </summary>
         /// <param name="windowsTimezoneId"></param>
         /// <returns></returns>
@@ -45,7 +45,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
         }
 
         /// <summary>
-        /// Maps given IANA timezone id to windows timezone id
+        /// 将给定的IANA时区ID映射到Windows时区ID
         /// </summary>
         /// <param name="ianaTimezoneId"></param>
         /// <returns></returns>
@@ -64,11 +64,11 @@ namespace SharePlatformSystem.Core.Timing.Timezone
                 return IanaTimeZoneMappings[ianaTimezoneId];
             }
 
-            throw new Exception(string.Format("Unable to map {0} to windows timezone.", ianaTimezoneId));
+            throw new Exception(string.Format("无法映射 {0} 到Windows时区。", ianaTimezoneId));
         }
 
         /// <summary>
-        /// Converts a date from one timezone to another
+        /// 将日期从一个时区转换为另一个时区
         /// </summary>
         /// <param name="date"></param>
         /// <param name="fromTimeZoneId"></param>
@@ -88,7 +88,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
         }
 
         /// <summary>
-        /// Converts a utc datetime to a local time based on a timezone
+        /// 将UTC日期时间转换为基于时区的本地时间
         /// </summary>
         /// <param name="date"></param>
         /// <param name="toTimeZoneId"></param>
@@ -99,7 +99,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
         }
 
         /// <summary>
-        /// Converts a utc datetime in to a datetimeoffset
+        /// 将中的UTC日期时间转换为日期时间偏移量
         /// </summary>
         /// <param name="date"></param>
         /// <param name="timeZoneId"></param>
@@ -112,7 +112,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
         }
 
         /// <summary>
-        /// Converts a nullable date with a timezone to a nullable datetimeoffset
+        ///将具有时区的可空日期转换为可空日期时间偏移量
         /// </summary>
         /// <param name="date"></param>
         /// <param name="timeZoneId"></param>
@@ -128,7 +128,7 @@ namespace SharePlatformSystem.Core.Timing.Timezone
         }
 
         /// <summary>
-        /// Converts a date with a timezone to a datetimeoffset
+        /// 将时区为datetimeoffset的日期转换为datetimeoffset
         /// </summary>
         /// <param name="date"></param>
         /// <param name="timeZoneId"></param>
@@ -178,7 +178,6 @@ namespace SharePlatformSystem.Core.Timing.Timezone
             return daylightTime;
         }
 
-        //from https://stackoverflow.com/questions/6140018/how-to-calculate-2nd-friday-of-month-in-c-sharp
         private static DateTime NthOf(this DateTime currentDate, int occurrence, DayOfWeek day)
         {
             var firstDay = new DateTime(currentDate.Year, currentDate.Month, 1);

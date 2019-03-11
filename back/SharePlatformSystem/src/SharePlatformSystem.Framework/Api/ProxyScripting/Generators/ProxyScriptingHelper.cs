@@ -12,7 +12,7 @@ namespace SharePlatformSystem.Framework.Api.ProxyScripting.Generators
 
         public static string GenerateUrlWithParameters(ActionApiDescriptionModel action)
         {
-            //TODO: Can be optimized using StringBuilder?
+            //TODO: 可以使用StringBuilder进行优化吗？
             var url = ReplacePathVariables(action.Url, action.Parameters);
             url = AddQueryStringParameters(url, action.Parameters);
             return url;
@@ -48,7 +48,7 @@ namespace SharePlatformSystem.Framework.Api.ProxyScripting.Generators
             if (parameters.Length > 1)
             {
                 throw new SharePlatformException(
-                    $"Only one complex type allowed as argument to a controller action that's binding source is 'Body'. But {action.Name} ({action.Url}) contains more than one!"
+                    $"绑定源的控制器操作的参数只允许有一个复杂类型是“body”。但是 {action.Name} ({action.Url}) 包含多个！"
                     );
             }
 

@@ -55,7 +55,7 @@ namespace SharePlatformSystem.Framework.AspNetCore.EmbeddedResources
                 return new NotFoundDirectoryContents();
             }
 
-            // The file name is assumed to be the remainder of the resource name. 
+            // 文件名假定为资源名的其余部分。
             if (subpath == null)
             {
                 return new NotFoundDirectoryContents();

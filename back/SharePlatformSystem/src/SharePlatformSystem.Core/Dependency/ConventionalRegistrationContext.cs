@@ -3,22 +3,22 @@
 namespace SharePlatformSystem.Dependency
 {
     /// <summary>
-    /// This class is used to pass needed objects on conventional registration process.
+    /// 这个类用于在常规注册过程中传递所需的对象。
     /// </summary>
     internal class ConventionalRegistrationContext : IConventionalRegistrationContext
     {
         /// <summary>
-        /// Gets the registering Assembly.
+        ///获取正在注册的程序集。
         /// </summary>
         public Assembly Assembly { get; private set; }
 
         /// <summary>
-        /// Reference to the IOC Container to register types.
+        /// 引用IOC容器以注册类型。
         /// </summary>
         public IIocManager IocManager { get; private set; }
 
         /// <summary>
-        /// Registration configuration.
+        /// 注册配置。
         /// </summary>
         public ConventionalRegistrationConfig Config { get; private set; }
 

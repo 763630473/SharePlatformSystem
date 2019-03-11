@@ -4,12 +4,12 @@ using SharePlatformSystem.Core.Configuration;
 namespace SharePlatformSystem.Configuration.Startup
 {
     /// <summary>
-    /// Used to configure setting system.
+    /// 用于配置设置系统。
     /// </summary>
     public interface ISettingsConfiguration
     {
         /// <summary>
-        /// List of settings providers.
+        ///设置提供程序列表。
         /// </summary>
         ITypeList<SettingProvider> Providers { get; }
     }

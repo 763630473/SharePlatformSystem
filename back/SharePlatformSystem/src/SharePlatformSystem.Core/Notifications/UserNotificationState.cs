@@ -1,17 +1,17 @@
 ﻿namespace SharePlatformSystem.Notifications
 {
     /// <summary>
-    /// Represents state of a <see cref="UserNotification"/>.
+    /// 表示 <see cref="UserNotification"/>的状态.
     /// </summary>
     public enum UserNotificationState
     {
         /// <summary>
-        /// Notification is not read by user yet.
+        ///用户尚未读取通知。
         /// </summary>
         Unread = 0,
 
         /// <summary>
-        /// Notification is read by user.
+        /// 通知由用户读取。
         /// </summary>
         Read
     }

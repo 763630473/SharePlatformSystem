@@ -19,13 +19,13 @@ namespace SharePlatformSystem.Framework.AspNetCore.Configuration
         List<Type> FormBodyBindingIgnoredTypes { get; }
 
         /// <summary>
-        /// Default: true.
+        /// 默认值: true.
         /// </summary>
         bool IsValidationEnabledForControllers { get; set; }
 
         /// <summary>
-        /// Used to enable/disable auditing for MVC controllers.
-        /// Default: true.
+        /// 用于启用/禁用MVC控制器的审核。
+        /// 默认值: true.
         /// </summary>
         bool IsAuditingEnabled { get; set; }
 
@@ -35,12 +35,12 @@ namespace SharePlatformSystem.Framework.AspNetCore.Configuration
         bool SetNoCacheForAjaxResponses { get; set; }
 
         /// <summary>
-        /// Default: false.
+        /// 默认值: false.
         /// </summary>
         bool UseMvcDateTimeFormatForAppServices { get; set; }
 
         /// <summary>
-        /// Used to add route config for modules.
+        /// 用于为模块添加路由配置。
         /// </summary>
         List<Action<IRouteBuilder>> RouteConfiguration { get; }
 

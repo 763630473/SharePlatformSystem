@@ -3,15 +3,15 @@
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// Extension methods for <see cref="IAuditingStore"/>.
+    /// “IAuditingStore”的扩展方法。
     /// </summary>
     public static class AuditingStoreExtensions
     {
         /// <summary>
-        /// Should save audits to a persistent store.
+        /// 应将审核保存到持久存储。
         /// </summary>
-        /// <param name="auditingStore">Auditing store</param>
-        /// <param name="auditInfo">Audit informations</param>
+        /// <param name="auditingStore">审计存储</param>
+        /// <param name="auditInfo">审计信息</param>
         public static void Save(this IAuditingStore auditingStore, AuditInfo auditInfo)
         {
             AsyncHelper.RunSync(() => auditingStore.SaveAsync(auditInfo));

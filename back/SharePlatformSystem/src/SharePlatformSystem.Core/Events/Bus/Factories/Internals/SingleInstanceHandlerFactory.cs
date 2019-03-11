@@ -6,16 +6,16 @@ using SharePlatformSystem.Events.Bus.Handlers;
 namespace SharePlatformSystem.Events.Bus.Factories.Internals
 {
     /// <summary>
-    /// This <see cref="IEventHandlerFactory"/> implementation is used to handle events
-    /// by a single instance object. 
+    /// 此实现用于处理事件
+    ///通过单个实例对象。
     /// </summary>
     /// <remarks>
-    /// This class always gets the same single instance of handler.
+    /// 此类始终获取同一个处理程序实例。
     /// </remarks>
     internal class SingleInstanceHandlerFactory : IEventHandlerFactory
     {
         /// <summary>
-        /// The event handler instance.
+        ///事件处理程序实例。
         /// </summary>
         public IEventHandler HandlerInstance { get; private set; }
 

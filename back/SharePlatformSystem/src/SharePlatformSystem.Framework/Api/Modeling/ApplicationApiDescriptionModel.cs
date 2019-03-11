@@ -20,7 +20,7 @@ namespace SharePlatformSystem.Framework.Api.Modeling
         {
             if (Modules.ContainsKey(module.Name))
             {
-                throw new SharePlatformException("There is already a module with same name: " + module.Name);
+                throw new SharePlatformException("已存在同名模块: " + module.Name);
             }
 
             return Modules[module.Name] = module;

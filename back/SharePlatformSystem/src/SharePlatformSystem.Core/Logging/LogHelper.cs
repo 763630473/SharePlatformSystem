@@ -6,13 +6,13 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Logging
 {
     /// <summary>
-    /// This class can be used to write logs from somewhere where it's a hard to get a reference to the <see cref="ILogger"/>.
-    /// Normally, use <see cref="ILogger"/> with property injection wherever it's possible.
+    /// 此类可用于从难以获得对<see cref="ilogger"/>的引用的地方写入日志。
+    ///通常情况下，尽可能在属性注入时使用<see cref="ilogger"/>。
     /// </summary>
     public static class LogHelper
     {
         /// <summary>
-        /// A reference to the logger.
+        ///对记录器的引用。
         /// </summary>
         public static ILogger Logger { get; private set; }
 

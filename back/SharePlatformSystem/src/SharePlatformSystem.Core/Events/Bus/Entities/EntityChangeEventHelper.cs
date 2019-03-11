@@ -8,7 +8,7 @@ using SharePlatformSystem.Domain.Uow;
 namespace SharePlatformSystem.Events.Bus.Entities
 {
     /// <summary>
-    /// Used to trigger entity change events.
+    ///用于触发实体更改事件。
     /// </summary>
     public class EntityChangeEventHelper : ITransientDependency, IEntityChangeEventHelper
     {
@@ -101,7 +101,7 @@ namespace SharePlatformSystem.Events.Bus.Entities
                         TriggerEntityDeletedEventOnUowCompleted(changedEntity.Entity);
                         break;
                     default:
-                        throw new SharePlatformException("Unknown EntityChangeType: " + changedEntity.ChangeType);
+                        throw new SharePlatformException("未知的EntityChangeType: " + changedEntity.ChangeType);
                 }
             }
         }

@@ -11,50 +11,50 @@ namespace SharePlatformSystem.EntityHistory
     public class EntityChangeSet : Entity<string>, IHasCreationTime, IExtendableObject
     {
         /// <summary>
-        /// Maximum length of <see cref="BrowserInfo"/> property.
+        /// 属性的最大长度。。
         /// </summary>
         public const int MaxBrowserInfoLength = 512;
 
         /// <summary>
-        /// Maximum length of <see cref="ClientIpAddress"/> property.
+        /// 属性的最大长度。
         /// </summary>
         public const int MaxClientIpAddressLength = 64;
 
         /// <summary>
-        /// Maximum length of <see cref="ClientName"/> property.
+        /// 属性的最大长度。
         /// </summary>
         public const int MaxClientNameLength = 128;
 
         /// <summary>
-        /// Maximum length of <see cref="Reason"/> property.
+        /// 属性的最大长度。
         /// </summary>
         public const int MaxReasonLength = 256;
 
         /// <summary>
-        /// Browser information if this entity is changed in a web request.
+        ///在Web请求中更改此实体时的浏览器信息。
         /// </summary>
         [StringLength(MaxBrowserInfoLength)]
         public virtual string BrowserInfo { get; set; }
 
         /// <summary>
-        /// IP address of the client.
+        /// 客户端的IP地址。
         /// </summary>
         [StringLength(MaxClientIpAddressLength)]
         public virtual string ClientIpAddress { get; set; }
 
         /// <summary>
-        /// Name (generally computer name) of the client.
+        /// 客户端的名称（通常是计算机名称）。
         /// </summary>
         [StringLength(MaxClientNameLength)]
         public virtual string ClientName { get; set; }
 
         /// <summary>
-        /// Creation time of this entity.
+        /// 此实体的创建时间。
         /// </summary>
         public virtual DateTime CreationTime { get; set; }
 
         /// <summary>
-        /// A JSON formatted string to extend the containing object.
+        /// 用于扩展包含对象的JSON格式字符串。
         /// </summary>
         public virtual string ExtensionData { get; set; }
 
@@ -69,15 +69,11 @@ namespace SharePlatformSystem.EntityHistory
         public virtual long? ImpersonatorUserId { get; set; }
 
         /// <summary>
-        /// Reason for this change set.
+        /// 此更改集的原因。
         /// </summary>
         [StringLength(MaxReasonLength)]
         public virtual string Reason { get; set; }
 
-        /// <summary>
-        /// TenantId.
-        /// </summary>
-        public virtual int? TenantId { get; set; }
 
         /// <summary>
         /// UserId.
@@ -85,7 +81,7 @@ namespace SharePlatformSystem.EntityHistory
         public virtual long? UserId { get; set; }
 
         /// <summary>
-        /// Entity changes grouped in this change set.
+        /// 在此更改集中分组的实体更改。
         /// </summary>
         public virtual IList<EntityChange> EntityChanges { get; set; }
 

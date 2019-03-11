@@ -3,12 +3,12 @@
 namespace SharePlatformSystem.core.Localization.Dictionaries.Json
 {
     /// <summary>
-    /// Use it to serialize json file
+    /// 使用它来序列化JSON文件
     /// </summary>
     public class JsonLocalizationFile
     {
         /// <summary>
-        /// Constructor
+        /// 构造器
         /// </summary>
         public JsonLocalizationFile()
         {
@@ -16,12 +16,12 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Json
         }
 
         /// <summary>
-        /// get or set the culture name; eg : en , en-us, zh-CN
+        ///获取或设置文化名称；例如：en、en-us、zh-cn
         /// </summary>
         public string Culture { get; set; }
 
         /// <summary>
-        ///  Key value pairs
+        /// 键值对
         /// </summary>
         public Dictionary<string, string> Texts { get; private set; }
     }

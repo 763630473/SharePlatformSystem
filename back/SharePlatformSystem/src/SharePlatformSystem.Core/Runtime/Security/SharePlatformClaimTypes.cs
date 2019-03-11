@@ -3,7 +3,7 @@
 namespace SharePlatformSystem.Runtime.Security
 {
     /// <summary>
-    /// Used to get SharePlatform-specific claim type names.
+    /// 用于获取特定于SharePlatform的声明类型名称。
     /// </summary>
     public static class SharePlatformClaimTypes
     {
@@ -28,8 +28,7 @@ namespace SharePlatformSystem.Runtime.Security
 
         /// <summary>
         /// ImpersonatorUserId.
-        /// Default: http://www.aspnetboilerplate.com/identity/claims/impersonatorUserId
         /// </summary>
-        public static string ImpersonatorUserId { get; set; } = "http://www.aspnetboilerplate.com/identity/claims/impersonatorUserId";
+        public static string ImpersonatorUserId { get; set; } = "impersonatorUserId";
     }
 }

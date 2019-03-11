@@ -5,20 +5,20 @@ using SharePlatformSystem.Events.Bus.Handlers;
 namespace SharePlatformSystem.Events.Bus.Factories
 {
     /// <summary>
-    /// This <see cref="IEventHandlerFactory"/> implementation is used to get/release
-    /// handlers using Ioc.
+    /// 此实现用于获取/发布
+    ///使用IOC的处理程序。
     /// </summary>
     public class IocHandlerFactory : IEventHandlerFactory
     {
         /// <summary>
-        /// Type of the handler.
+        ///处理程序的类型。
         /// </summary>
         public Type HandlerType { get; }
 
         private readonly IIocResolver _iocResolver;
 
         /// <summary>
-        /// Creates a new instance of <see cref="IocHandlerFactory"/> class.
+        /// 创建类的新实例。
         /// </summary>
         /// <param name="iocResolver"></param>
         /// <param name="handlerType">Type of the handler</param>
@@ -29,9 +29,9 @@ namespace SharePlatformSystem.Events.Bus.Factories
         }
 
         /// <summary>
-        /// Resolves handler object from Ioc container.
+        /// 从IOC容器解析处理程序对象。
         /// </summary>
-        /// <returns>Resolved handler object</returns>
+        /// <returns>已解析处理程序对象</returns>
         public IEventHandler GetHandler()
         {
             return (IEventHandler)_iocResolver.Resolve(HandlerType);
@@ -43,9 +43,9 @@ namespace SharePlatformSystem.Events.Bus.Factories
         }
 
         /// <summary>
-        /// Releases handler object using Ioc container.
+        /// 使用IOC容器释放处理程序对象。
         /// </summary>
-        /// <param name="handler">Handler to be released</param>
+        /// <param name="handler">要释放的处理程序</param>
         public void ReleaseHandler(IEventHandler handler)
         {
             _iocResolver.Release(handler);

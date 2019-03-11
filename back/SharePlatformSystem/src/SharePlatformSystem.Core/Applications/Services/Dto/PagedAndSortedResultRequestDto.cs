@@ -3,7 +3,7 @@ using System;
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// Simply implements <see cref="IPagedAndSortedResultRequest"/>.
+    /// 只需实现“ipagedAndSortedResultRequest”。
     /// </summary>
     [Serializable]
     public class PagedAndSortedResultRequestDto : PagedResultRequestDto, IPagedAndSortedResultRequest

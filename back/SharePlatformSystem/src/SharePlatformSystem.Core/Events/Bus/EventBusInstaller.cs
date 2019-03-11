@@ -11,7 +11,7 @@ using SharePlatformSystem.Events.Bus.Handlers;
 namespace SharePlatformSystem.Events.Bus
 {
     /// <summary>
-    /// Installs event bus system and registers all handlers automatically.
+    ///安装事件总线系统并自动注册所有处理程序。
     /// </summary>
     internal class EventBusInstaller : IWindsorInstaller
     {
@@ -47,8 +47,8 @@ namespace SharePlatformSystem.Events.Bus
 
         private void Kernel_ComponentRegistered(string key, IHandler handler)
         {
-            /* This code checks if registering component implements any IEventHandler<TEventData> interface, if yes,
-             * gets all event handler interfaces and registers type to Event Bus for each handling event.
+            /* 此代码检查注册组件是否实现任何ieventhandler<teventdata>接口，如果是，
+             *获取每个处理事件的所有事件处理程序接口并将类型注册到事件总线。
              */
             if (!typeof(IEventHandler).GetTypeInfo().IsAssignableFrom(handler.ComponentModel.Implementation))
             {

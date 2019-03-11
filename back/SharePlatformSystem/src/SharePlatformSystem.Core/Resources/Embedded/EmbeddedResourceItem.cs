@@ -6,12 +6,12 @@ using JetBrains.Annotations;
 namespace SharePlatformSystem.Core.Resources.Embedded
 {
     /// <summary>
-    /// Stores needed information of an embedded resource.
+    /// 存储嵌入资源的所需信息。
     /// </summary>
     public class EmbeddedResourceItem
     {
         /// <summary>
-        /// File name including extension.
+        /// 文件名，包括扩展名。
         /// </summary>
         public string FileName { get; }
 
@@ -19,12 +19,12 @@ namespace SharePlatformSystem.Core.Resources.Embedded
         public string FileExtension { get; }
 
         /// <summary>
-        /// Content of the resource file.
+        /// 资源文件的内容。
         /// </summary>
         public byte[] Content { get; set; }
 
         /// <summary>
-        /// The assembly that contains the resource.
+        /// 包含资源的程序集。
         /// </summary>
         public Assembly Assembly { get; set; }
 

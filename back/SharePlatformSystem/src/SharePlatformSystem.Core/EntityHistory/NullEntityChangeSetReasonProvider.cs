@@ -3,16 +3,15 @@
 namespace SharePlatformSystem.EntityHistory
 {
     /// <summary>
-    /// Implements null object pattern for <see cref="IEntityChangeSetReasonProvider"/>.
+    /// 实现空对象模式<see cref=“IEntityChangeSetReasonProvider”/>。
     /// </summary>
     public class NullEntityChangeSetReasonProvider : EntityChangeSetReasonProviderBase
     {
         /// <summary>
-        /// Singleton instance.
+        ///单例实例。
         /// </summary>
         public static NullEntityChangeSetReasonProvider Instance { get; } = new NullEntityChangeSetReasonProvider();
 
-        /// <inheritdoc/>
         public override string Reason => null;
 
         private NullEntityChangeSetReasonProvider()

@@ -3,21 +3,21 @@
 namespace SharePlatformSystem.Runtime.Session
 {
     /// <summary>
-    /// Extension methods for <see cref="ISharePlatformSession"/>.
+    /// <see cref=“ishareplatformsession”/>的扩展方法。
     /// </summary>
     public static class SharePlatformSessionExtensions
     {
         /// <summary>
-        /// Gets current User's Id.
-        /// Throws <see cref="SharePlatformException"/> if <see cref="ISharePlatformSession.UserId"/> is null.
+        ///获取当前用户的ID。
+        ///throws<see cref=“shareplatformException”/>if<see cref=“ishareplatformsession.userid”/>为空。
         /// </summary>
-        /// <param name="session">Session object.</param>
-        /// <returns>Current User's Id.</returns>
+        /// <param name="session">会话对象。</param>
+        /// <returns>当前用户的ID。</returns>
         public static string GetUserId(this ISharePlatformSession session)
         {
             if (string.IsNullOrWhiteSpace(session.UserId))
             {
-                throw new SharePlatformException("Session.UserId is null! Probably, user is not logged in.");
+                throw new SharePlatformException("session.userid为空！可能用户没有登录。");
             }
 
             return session.UserId;

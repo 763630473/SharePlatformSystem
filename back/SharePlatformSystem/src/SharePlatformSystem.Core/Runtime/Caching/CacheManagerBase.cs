@@ -9,7 +9,7 @@ using SharePlatformSystem.Runtime.Caching.Configuration;
 namespace SharePlatformSystem.Runtime.Caching
 {
     /// <summary>
-    /// Base class for cache managers.
+    /// 缓存管理器的基类。
     /// </summary>
     public abstract class CacheManagerBase : ICacheManager, ISingletonDependency
     {
@@ -20,7 +20,7 @@ namespace SharePlatformSystem.Runtime.Caching
         protected readonly ConcurrentDictionary<string, ICache> Caches;
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         /// <param name="iocManager"></param>
         /// <param name="configuration"></param>
@@ -70,10 +70,10 @@ namespace SharePlatformSystem.Runtime.Caching
         }
 
         /// <summary>
-        /// Used to create actual cache implementation.
+        ///用于创建实际的缓存实现。
         /// </summary>
-        /// <param name="name">Name of the cache</param>
-        /// <returns>Cache object</returns>
+        /// <param name="name">缓存的名称</param>
+        /// <returns>缓存对象</returns>
         protected abstract ICache CreateCacheImplementation(string name);
     }
 }

@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.BackgroundJobs
 {
     /// <summary>
-    /// In memory implementation of <see cref="IBackgroundJobStore"/>.
-    /// It's used if <see cref="IBackgroundJobStore"/> is not implemented by actual persistent store
-    /// and job execution is enabled (<see cref="IBackgroundJobConfiguration.IsJobExecutionEnabled"/>) for the application.
+    /// “ibackgroundjobstore”的内存实现。
+    ///如果“ibackgroundjobstore”不是由实际的持久存储实现，则使用它
+    ///并且为应用程序启用了作业执行（“ibackgroundJobConfiguration.IsJobExecutionEnabled”）。
     /// </summary>
     /// <summary>
-    /// In memory implementation of <see cref="IBackgroundJobStore"/>.
-    /// It's used if <see cref="IBackgroundJobStore"/> is not implemented by actual persistent store
-    /// and job execution is enabled (<see cref="IBackgroundJobConfiguration.IsJobExecutionEnabled"/>) for the application.
+    /// “ibackgroundjobstore”的内存实现。
+    /// 如果“ibackgroundjobstore”不是由实际的持久存储实现，则使用它
+    ///并且为应用程序启用了作业执行（“ibackgroundJobConfiguration.IsJobExecutionEnabled”）。
     /// </summary>
     public class InMemoryBackgroundJobStore : IBackgroundJobStore
     {
         private readonly ConcurrentDictionary<string, BackgroundJobInfo> _jobs;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InMemoryBackgroundJobStore"/> class.
+        /// 初始化“InMemoryBackgroundJobstore”类的新实例。
         /// </summary>
         public InMemoryBackgroundJobStore()
         {
@@ -37,7 +37,7 @@ namespace SharePlatformSystem.BackgroundJobs
 
         public Task InsertAsync(BackgroundJobInfo jobInfo)
         {
-            jobInfo.Id = jobInfo.Id??Guid.NewGuid().ToString();//Interlocked.Increment(ref _lastId);
+            jobInfo.Id = jobInfo.Id??Guid.NewGuid().ToString();//联锁增量（参考lastid）；
             _jobs[jobInfo.Id] = jobInfo;
 
             return Task.FromResult(0);

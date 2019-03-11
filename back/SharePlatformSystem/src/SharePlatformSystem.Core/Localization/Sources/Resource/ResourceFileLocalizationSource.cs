@@ -12,26 +12,26 @@ using SharePlatformSystem.core.Localization;
 namespace SharePlatformSystem.Core.Localization.Sources.Resource
 {
     /// <summary>
-    /// This class is used to simplify to create a localization source that
-    /// uses resource a file.
+    /// 此类用于简化创建本地化源
+    ///使用资源A文件。
     /// </summary>
     public class ResourceFileLocalizationSource : ILocalizationSource, ISingletonDependency
     {
         /// <summary>
-        /// Unique Name of the source.
+        /// 源的唯一名称。
         /// </summary>
         public string Name { get; }
 
         /// <summary>
-        /// Reference to the <see cref="ResourceManager"/> object related to this localization source.
+        /// 引用与此本地化源相关的“ResourceManager”对象。
         /// </summary>
         public ResourceManager ResourceManager { get; }
 
         private ILogger _logger;
         private ILocalizationConfiguration _configuration;
 
-        /// <param name="name">Unique Name of the source</param>
-        /// <param name="resourceManager">Reference to the <see cref="ResourceManager"/> object related to this localization source</param>
+        /// <param name="name">源的唯一名称</param>
+        /// <param name="resourceManager">引用与此本地化源相关的“ResourceManager”对象</param>
         public ResourceFileLocalizationSource(string name, ResourceManager resourceManager)
         {
             Name = name;
@@ -39,7 +39,7 @@ namespace SharePlatformSystem.Core.Localization.Sources.Resource
         }
 
         /// <summary>
-        /// This method is called by SharePlatform before first usage.
+        /// 此方法在第一次使用之前由SharePlatform调用。
         /// </summary>
         public virtual void Initialize(ILocalizationConfiguration configuration, IIocResolver iocResolver)
         {
@@ -74,18 +74,18 @@ namespace SharePlatformSystem.Core.Localization.Sources.Resource
 
         public string GetStringOrNull(string name, bool tryDefaults = true)
         {
-            //WARN: tryDefaults is not implemented!
+            //WARN: Trydefaults未实现！
             return ResourceManager.GetString(name);
         }
 
         public string GetStringOrNull(string name, CultureInfo culture, bool tryDefaults = true)
         {
-            //WARN: tryDefaults is not implemented!
+            //WARN:Trydefaults未实现！
             return ResourceManager.GetString(name, culture);
         }
 
         /// <summary>
-        /// Gets all strings in current language.
+        ///获取当前语言中的所有字符串。
         /// </summary>
         public virtual IReadOnlyList<LocalizedString> GetAllStrings(bool includeDefaults = true)
         {
@@ -93,7 +93,7 @@ namespace SharePlatformSystem.Core.Localization.Sources.Resource
         }
 
         /// <summary>
-        /// Gets all strings in specified culture. 
+        ///获取指定区域性中的所有字符串。
         /// </summary>
         public virtual IReadOnlyList<LocalizedString> GetAllStrings(CultureInfo culture, bool includeDefaults = true)
         {

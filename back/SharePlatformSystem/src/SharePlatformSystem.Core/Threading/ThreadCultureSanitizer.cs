@@ -4,9 +4,7 @@ using System.Threading;
 namespace SharePlatformSystem.Threading
 {
     /// <summary>
-    /// This class is copied from here:
-    /// http://www.zpqrtbnk.net/posts/appdomains-threads-cultureinfos-and-paracetamol
-    /// It's a workaround for application startup problem.
+    /// 这是一个解决应用程序启动问题的方法。
     /// </summary>
     public static class ThreadCultureSanitizer
     {
@@ -14,9 +12,9 @@ namespace SharePlatformSystem.Threading
         {
             var currentCulture = CultureInfo.CurrentCulture;
 
-            // at the top of any culture should be the invariant culture,
-            // find it doing an .Equals comparison ensure that we will
-            // find it and not loop endlessly
+            //任何区域性的顶部都应该是不变的区域性，
+            //执行.equals比较，确保
+            //找到它，不要无休止地循环
             var invariantCulture = currentCulture;
             while (invariantCulture.Equals(CultureInfo.InvariantCulture) == false)
             {

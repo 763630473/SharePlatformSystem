@@ -9,11 +9,11 @@ using SharePlatformSystem.Core.Domain.Entities;
 namespace SharePlatformSystem.Dapper.Expressions
 {
     /// <summary>
-    ///     This class converts an Expression{Func{TEntity, bool}} into an IPredicate group that can be used with
-    ///     DapperExtension's predicate system
+    ///此类将表达式func tenty、bool转换为可用于
+    ///dapperExtension的谓词系统
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <typeparam name="TPrimaryKey">The type of the primary key.</typeparam>
+    /// <typeparam name="TEntity">实体的类型。</typeparam>
+    /// <typeparam name="TPrimaryKey">类型的主要关键。</typeparam>
     /// <seealso cref="System.Linq.Expressions.ExpressionVisitor" />
     internal class DapperExpressionVisitor<TEntity, TPrimaryKey> : ExpressionVisitor where TEntity : class, IEntity<TPrimaryKey>
     {
@@ -29,7 +29,7 @@ namespace SharePlatformSystem.Dapper.Expressions
         }
 
         /// <summary>
-        ///     Holds BinaryExpressions
+        ///保留二进制表达式
         /// </summary>
         public HashSet<Expression> Expressions { get; }
 
@@ -39,7 +39,7 @@ namespace SharePlatformSystem.Dapper.Expressions
             _currentGroup = _pg;
             Visit(Evaluator.PartialEval(exp));
 
-            // the 1st expression determines root group operator
+            // 第一个表达式确定根组运算符
             if (Expressions.Any())
             {
                 _pg.Operator = Expressions.First().NodeType == ExpressionType.OrElse ? GroupOperator.Or : GroupOperator.And;
@@ -86,7 +86,7 @@ namespace SharePlatformSystem.Dapper.Expressions
         {
             PredicateGroup pg = _currentGroup;
 
-            // need convert from Expression<Func<T, bool>> to Expression<Func<T, object>> as this is what Predicates.Field() requires
+            //需要从表达式<func<t，bool>>转换为表达式<func<t，object>>，因为这是谓词.field（）所需的
             Expression<Func<TEntity, object>> fieldExp = Expression.Lambda<Func<TEntity, object>>(Expression.Convert(exp, typeof(object)), exp.Expression as ParameterExpression);
 
             IFieldPredicate field = Predicates.Field(fieldExp, op, value, not);
@@ -94,7 +94,7 @@ namespace SharePlatformSystem.Dapper.Expressions
         }
 
 
-        #region The visit methods override
+        #region 访问方法覆盖
         protected override Expression VisitBinary(BinaryExpression node)
         {
             Expressions.Add(node);
@@ -142,7 +142,7 @@ namespace SharePlatformSystem.Dapper.Expressions
                 throw new NotSupportedException($"The member '{node}' is not supported");
             }
 
-            // skip if prop is part of a VisitMethodCall
+            //如果prop是visitmetholdcall的一部分，则跳过
             if (_processedProperty != null && _processedProperty == node)
             {
                 _processedProperty = null;
@@ -186,13 +186,13 @@ namespace SharePlatformSystem.Dapper.Expressions
                         throw new NotSupportedException($"The method '{node}' is not supported");
                 }
 
-                // this is a PropertyExpression but as it's internal, to use, we cast to the base MemberExpression instead (see http://social.msdn.microsoft.com/Forums/en-US/ab528f6a-a60e-4af6-bf31-d58e3f373356/resolving-propertyexpressions-and-fieldexpressions-in-a-custom-linq-provider)
+                // 这是一个PropertyExpression，但由于它是内部的，因此要使用，我们将强制转换为基memberExpression
                 _processedProperty = node.Object;
                 var me = _processedProperty as MemberExpression;
 
                 AddField(me, op, arg, _unarySpecified);
 
-                // reset if applicable
+                // 重置（如果适用）
                 _unarySpecified = false;
 
                 return node;
@@ -205,7 +205,7 @@ namespace SharePlatformSystem.Dapper.Expressions
         {
             _unarySpecified = true;
 
-            return base.VisitUnary(node); // returning base because we want to continue further processing - ie subsequent call to VisitMethodCall
+            return base.VisitUnary(node); //返回基，因为我们希望继续进一步处理-ie随后调用visitmethodcall
         }
         #endregion
     }

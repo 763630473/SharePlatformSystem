@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using SharePlatformSystem.Core.Timing;
 
 namespace SharePlatformSystem.Framework.AspNetCore.Mvc.ModelBinding
@@ -26,7 +28,8 @@ namespace SharePlatformSystem.Framework.AspNetCore.Mvc.ModelBinding
 
             if (!dateNormalizationDisabledForClass && !dateNormalizationDisabledForProperty)
             {
-                return new SharePlatformDateTimeModelBinder(context.Metadata.ModelType);
+                var loggerFactory = context.Services.GetRequiredService<ILoggerFactory>();
+                return new SharePlatformDateTimeModelBinder(context.Metadata.ModelType, loggerFactory);
             }
 
             return null;

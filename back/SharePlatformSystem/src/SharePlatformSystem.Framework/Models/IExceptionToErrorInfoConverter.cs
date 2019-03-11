@@ -3,21 +3,21 @@
 namespace SharePlatformSystem.Framework.Models
 {
     /// <summary>
-    /// This interface can be implemented to convert an <see cref="Exception"/> object to an <see cref="ErrorInfo"/> object. 
-    /// Implements Chain Of Responsibility pattern.
+    ///此接口可以实现将<see cref=“exception”/>对象转换为<see cref=“errorinfo”/>对象。
+    ///实现责任链模式。
     /// </summary>
     public interface IExceptionToErrorInfoConverter
     {
         /// <summary>
-        /// Next converter. If this converter decide this exception is not known, it can call Next.Convert(...).
+        ///下一个转换器。如果此转换器确定此异常未知，则可以调用Next.Convert（…）。
         /// </summary>
         IExceptionToErrorInfoConverter Next { set; }
 
         /// <summary>
-        /// Converter method.
+        /// 转换器方法。
         /// </summary>
-        /// <param name="exception">The exception</param>
-        /// <returns>Error info or null</returns>
+        /// <param name="exception">例外</param>
+        /// <returns>错误信息或空</returns>
         ErrorInfo Convert(Exception exception);
     }
 }

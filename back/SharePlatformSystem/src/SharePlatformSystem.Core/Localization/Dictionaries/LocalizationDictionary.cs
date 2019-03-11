@@ -6,7 +6,7 @@ using System.Globalization;
 namespace SharePlatformSystem.core.Localization.Dictionaries
 {
     /// <summary>
-    /// Represents a simple implementation of <see cref="ILocalizationDictionary"/> interface.
+    /// 表示“ilocalizationDictionary”接口的简单实现。
     /// </summary>
     public class LocalizationDictionary : ILocalizationDictionary, IEnumerable<LocalizedString>
     {
@@ -27,7 +27,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
         private readonly Dictionary<string, LocalizedString> _dictionary;
 
         /// <summary>
-        /// Creates a new <see cref="LocalizationDictionary"/> object.
+        /// 创建一个新的<see cref="LocalizationDictionary"/> 对象.
         /// </summary>
         /// <param name="cultureInfo">Culture of the dictionary</param>
         public LocalizationDictionary(CultureInfo cultureInfo)
@@ -42,13 +42,11 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
             return _dictionary.TryGetValue(name, out var localizedString) ? localizedString : null;
         }
 
-        /// <inheritdoc/>
         public virtual IReadOnlyList<LocalizedString> GetAllStrings()
         {
             return _dictionary.Values.ToImmutableList();
         }
 
-        /// <inheritdoc/>
         public virtual IEnumerator<LocalizedString> GetEnumerator()
         {
             return GetAllStrings().GetEnumerator();

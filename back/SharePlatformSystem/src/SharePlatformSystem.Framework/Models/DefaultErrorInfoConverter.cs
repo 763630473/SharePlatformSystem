@@ -9,7 +9,6 @@ using SharePlatformSystem.Framework.AspNetCore.Configuration;
 
 namespace SharePlatformSystem.Framework.Models
 {
-    //TODO@Halil: I did not like constructing ErrorInfo this way. It works wlll but I think we should change it later...
     internal class DefaultErrorInfoConverter : IExceptionToErrorInfoConverter
     {
         private readonly ISharePlatformWebCommonModuleConfiguration _configuration;
@@ -104,10 +103,10 @@ namespace SharePlatformSystem.Framework.Models
 
         private void AddExceptionToDetails(Exception exception, StringBuilder detailBuilder)
         {
-            //Exception Message
+            //异常消息
             detailBuilder.AppendLine(exception.GetType().Name + ": " + exception.Message);
 
-            //Additional info for UserFriendlyException
+            //用户友好异常的其他信息
             if (exception is UserFriendlyException)
             {
                 var userFriendlyException = exception as UserFriendlyException;
@@ -115,21 +114,21 @@ namespace SharePlatformSystem.Framework.Models
                 {
                     detailBuilder.AppendLine(userFriendlyException.Details);
                 }
-            }        
+            }
 
-            //Exception StackTrace
+            //异常堆栈跟踪
             if (!string.IsNullOrEmpty(exception.StackTrace))
             {
                 detailBuilder.AppendLine("STACK TRACE: " + exception.StackTrace);
             }
 
-            //Inner exception
+            //内部例外
             if (exception.InnerException != null)
             {
                 AddExceptionToDetails(exception.InnerException, detailBuilder);
             }
 
-            //Inner exceptions for AggregateException
+            //聚合异常的内部异常
             if (exception is AggregateException)
             {
                 var aggException = exception as AggregateException;

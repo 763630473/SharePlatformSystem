@@ -4,15 +4,15 @@ using Newtonsoft.Json;
 namespace SharePlatformSystem.Json
 {
     /// <summary>
-    /// Defines helper methods to work with JSON.
+    ///定义用于JSON的助手方法。
     /// </summary>
     public static class JsonSerializationHelper
     {
         private const char TypeSeperator = '|';
 
         /// <summary>
-        /// Serializes an object with a type information included.
-        /// So, it can be deserialized using <see cref="DeserializeWithType"/> method later.
+        ///序列化包含类型信息的对象。
+        ///因此，可以稍后使用<see cref="DeserializeWithType"/>方法对其进行反序列化。
         /// </summary>
         public static string SerializeWithType(object obj)
         {
@@ -20,8 +20,9 @@ namespace SharePlatformSystem.Json
         }
 
         /// <summary>
-        /// Serializes an object with a type information included.
-        /// So, it can be deserialized using <see cref="DeserializeWithType"/> method later.
+        ///序列化包含类型信息的对象。
+
+        ///因此，可以稍后使用<see cref="DeserializeWithType"/>方法对其进行反序列化。
         /// </summary>
         public static string SerializeWithType(object obj, Type type)
         {
@@ -36,7 +37,7 @@ namespace SharePlatformSystem.Json
         }
 
         /// <summary>
-        /// Deserializes an object serialized with <see cref="SerializeWithType(object)"/> methods.
+        ///反序列化使用<see cref="serializewithtype（object）"/>方法序列化的对象。
         /// </summary>
         public static T DeserializeWithType<T>(string serializedObj)
         {
@@ -44,7 +45,7 @@ namespace SharePlatformSystem.Json
         }
 
         /// <summary>
-        /// Deserializes an object serialized with <see cref="SerializeWithType(object)"/> methods.
+        ///反序列化使用<see cref="serializewithtype（object）"/>方法序列化的对象。
         /// </summary>
         public static object DeserializeWithType(string serializedObj)
         {

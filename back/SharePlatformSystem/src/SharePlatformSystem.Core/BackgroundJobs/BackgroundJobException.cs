@@ -15,7 +15,7 @@ namespace SharePlatformSystem.BackgroundJobs
         public object JobObject { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="BackgroundJobException"/> object.
+        /// 创建一个新的"BackgroundJobException"对象实例.
         /// </summary>
         public BackgroundJobException()
         {
@@ -23,7 +23,7 @@ namespace SharePlatformSystem.BackgroundJobs
         }
 
         /// <summary>
-        /// Creates a new <see cref="BackgroundJobException"/> object.
+        /// 创建新的“BackgroundJobException”对象。
         /// </summary>
         public BackgroundJobException(SerializationInfo serializationInfo, StreamingContext context)
             : base(serializationInfo, context)
@@ -32,10 +32,10 @@ namespace SharePlatformSystem.BackgroundJobs
         }
 
         /// <summary>
-        /// Creates a new <see cref="BackgroundJobException"/> object.
+        /// 创建新的“BackgroundJobException”对象。
         /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="innerException">Inner exception</param>
+        /// <param name="message">异常消息</param>
+        /// <param name="innerException">内部例外</param>
         public BackgroundJobException(string message, Exception innerException)
             : base(message, innerException)
         {

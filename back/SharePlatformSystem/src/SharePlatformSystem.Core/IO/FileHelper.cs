@@ -8,9 +8,9 @@ namespace SharePlatformSystem.Core.IO
     public static class FileHelper
     {
         /// <summary>
-        /// Checks and deletes given file if it does exists.
+        /// 检查并删除给定文件（如果存在）。
         /// </summary>
-        /// <param name="filePath">Path of the file</param>
+        /// <param name="filePath">文件的路径</param>
         public static void DeleteIfExists(string filePath)
         {
             if (File.Exists(filePath))

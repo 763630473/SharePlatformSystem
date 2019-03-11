@@ -4,12 +4,12 @@ using System.Threading.Tasks;
 namespace SharePlatformSystem.Notifications
 {
     /// <summary>
-    /// Null pattern implementation of <see cref="IRealTimeNotifier"/>.
+    /// 空模式实现<see cref="IRealTimeNotifier"/>.
     /// </summary>
     public class NullRealTimeNotifier : IRealTimeNotifier
     {
         /// <summary>
-        /// Gets single instance of <see cref="NullRealTimeNotifier"/> class.
+        ///获取<see cref="NullRealTimeNotifier"/>类的实例 .
         /// </summary>
         public static NullRealTimeNotifier Instance { get; } = new NullRealTimeNotifier();
 

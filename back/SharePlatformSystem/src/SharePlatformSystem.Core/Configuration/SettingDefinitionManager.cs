@@ -8,7 +8,7 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.Core.Configuration
 {
     /// <summary>
-    /// Implements <see cref="ISettingDefinitionManager"/>.
+    /// 实现"ISettingDefinitionManager".
     /// </summary>
     internal class SettingDefinitionManager : ISettingDefinitionManager, ISingletonDependency
     {
@@ -17,7 +17,7 @@ namespace SharePlatformSystem.Core.Configuration
         private readonly IDictionary<string, SettingDefinition> _settings;
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
         public SettingDefinitionManager(IIocManager iocManager, ISettingsConfiguration settingsConfiguration)
         {

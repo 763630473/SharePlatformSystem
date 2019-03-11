@@ -9,17 +9,17 @@ using System.Xml;
 namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
 {
     /// <summary>
-    /// This class is used to build a localization dictionary from XML.
+    /// 此类用于从XML构建本地化字典。
     /// </summary>
     /// <remarks>
-    /// Use static Build methods to create instance of this class.
+    /// 使用静态生成方法创建此类的实例。
     /// </remarks>
     public class XmlLocalizationDictionary : LocalizationDictionary
     {
         /// <summary>
-        /// Private constructor.
+        /// 私有构造函数。
         /// </summary>
-        /// <param name="cultureInfo">Culture of the dictionary</param>
+        /// <param name="cultureInfo">字典文化</param>
         private XmlLocalizationDictionary(CultureInfo cultureInfo)
             : base(cultureInfo)
         {
@@ -27,9 +27,9 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
         }
 
         /// <summary>
-        /// Builds an <see cref="XmlLocalizationDictionary"/> from given file.
+        /// 从给定文件生成“xmlLocalizionDictionary”。
         /// </summary>
-        /// <param name="filePath">Path of the file</param>
+        /// <param name="filePath">文件的路径</param>
         public static XmlLocalizationDictionary BuildFomFile(string filePath)
         {
             try
@@ -38,14 +38,14 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
             }
             catch (Exception ex)
             {
-                throw new SharePlatformException("Invalid localization file format! " + filePath, ex);
+                throw new SharePlatformException("本地化文件格式无效！ " + filePath, ex);
             }
         }
 
         /// <summary>
-        /// Builds an <see cref="XmlLocalizationDictionary"/> from given xml string.
+        /// 从给定的XML字符串生成“xmlLocalizionDictionary”。
         /// </summary>
-        /// <param name="xmlString">XML string</param>
+        /// <param name="xmlString">XML字符串</param>
         public static XmlLocalizationDictionary BuildFomXmlString(string xmlString)
         {
             var xmlDocument = new XmlDocument();
@@ -54,13 +54,13 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
             var localizationDictionaryNode = xmlDocument.SelectNodes("/localizationDictionary");
             if (localizationDictionaryNode == null || localizationDictionaryNode.Count <= 0)
             {
-                throw new SharePlatformException("A Localization Xml must include localizationDictionary as root node.");
+                throw new SharePlatformException("本地化XML必须包含本地化字典作为根节点。");
             }
 
             var cultureName = localizationDictionaryNode[0].GetAttributeValueOrNull("culture");
             if (string.IsNullOrEmpty(cultureName))
             {
-                throw new SharePlatformException("culture is not defined in language XML file!");
+                throw new SharePlatformException("语言XML文件中未定义区域性！");
             }
 
             var dictionary = new XmlLocalizationDictionary(CultureInfo.GetCultureInfo(cultureName));
@@ -75,7 +75,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
                     var name = node.GetAttributeValueOrNull("name");
                     if (string.IsNullOrEmpty(name))
                     {
-                        throw new SharePlatformException("name attribute of a text is empty in given xml string.");
+                        throw new SharePlatformException("在给定的XML字符串中，文本的name属性为空。");
                     }
 
                     if (dictionary.Contains(name))
@@ -89,7 +89,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries.Xml
 
             if (dublicateNames.Count > 0)
             {
-                throw new SharePlatformException("A dictionary can not contain same key twice. There are some duplicated names: " + dublicateNames.JoinAsString(", "));
+                throw new SharePlatformException("字典不能包含同一个键两次。有一些重复的名字: " + dublicateNames.JoinAsString(", "));
             }
 
             return dictionary;

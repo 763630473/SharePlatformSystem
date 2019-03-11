@@ -3,16 +3,16 @@ using System;
 namespace SharePlatformSystem.Events.Bus.Entities
 {
     /// <summary>
-    /// This type of event can be used to notify just after deletion of an Entity.
+    /// 此类事件可用于在删除实体后立即通知。
     /// </summary>
-    /// <typeparam name="TEntity">Entity type</typeparam>
+    /// <typeparam name="TEntity">实体类型</typeparam>
     [Serializable]
     public class EntityDeletedEventData<TEntity> : EntityChangedEventData<TEntity>
     {
         /// <summary>
-        /// Constructor.
+        /// 构造函数
         /// </summary>
-        /// <param name="entity">The entity which is deleted</param>
+        /// <param name="entity">删除的实体</param>
         public EntityDeletedEventData(TEntity entity)
             : base(entity)
         {

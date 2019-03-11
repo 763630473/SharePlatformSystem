@@ -4,12 +4,12 @@ using Castle.Core.Logging;
 namespace SharePlatformSystem.Auditing
 {
     /// <summary>
-    /// Implements <see cref="IAuditingStore"/> to simply write audits to logs.
+    ///实现“IAuditingStore”以简单地将审核写入日志。
     /// </summary>
     public class SimpleLogAuditingStore : IAuditingStore
     {
         /// <summary>
-        /// Singleton instance.
+        /// 单例实例。
         /// </summary>
         public static SimpleLogAuditingStore Instance { get; } = new SimpleLogAuditingStore();
 

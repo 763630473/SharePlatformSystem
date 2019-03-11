@@ -13,10 +13,10 @@ namespace SharePlatformSystem.Tests.Json
         {
             var obj = new MyClass1
             {
-                Id = 42,
+                Id = "42",
                 Value = new MyClass2
                 {
-                    Id = 42
+                    Id = "42"
                 }
             };
 

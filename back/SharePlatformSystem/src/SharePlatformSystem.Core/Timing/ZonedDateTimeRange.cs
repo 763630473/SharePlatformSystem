@@ -4,8 +4,8 @@ using System;
 namespace SharePlatformSystem.Core.Timing
 {
     /// <summary>
-    /// A basic implementation of <see cref="IZonedDateTimeRange"/> to store a date range with a timezone.
-    /// Default timezone is UTC
+    ///用于存储带有时区的日期范围的<see cref="IZonedDateTimeRange"/>基本实现。
+    /// 默认时区为UTC
     /// </summary>
     public class ZonedDateTimeRange : DateTimeRange, IZonedDateTimeRange
     {
@@ -40,12 +40,12 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// The Timezone of the datetime range
+        /// 日期时间范围的时区
         /// </summary>
         public string Timezone { get; set; } = "UTC";
 
         /// <summary>
-        /// The StartTime with Offset
+        /// 带偏移的开始时间
         /// </summary>
         public DateTimeOffset StartTimeOffset
         {
@@ -54,7 +54,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// The EndTime with Offset
+        /// 带偏移的结束时间
         /// </summary>
         public DateTimeOffset EndTimeOffset
         {
@@ -63,7 +63,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// The StartTime in UTC
+        ///以UTC表示的开始时间
         /// </summary>
         public DateTime StartTimeUtc
         {
@@ -79,7 +79,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// The EndTime in UTC
+        ///以UTC表示的结束时间
         /// </summary>
         public DateTime EndTimeUtc
         {
@@ -95,7 +95,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// The current time based on the timezone
+        /// 基于时区的当前时间
         /// </summary>
         public DateTime Now
         {
@@ -122,7 +122,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing yesterday.
+        /// 获取表示昨天的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange Yesterday
         {
@@ -134,7 +134,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing today.
+        /// 获取表示今天的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange Today
         {
@@ -146,7 +146,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing tomorrow.
+        /// 获取表示明天的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange Tomorrow
         {
@@ -158,7 +158,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing the last month.
+        /// 获取表示上个月的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange LastMonth
         {
@@ -172,7 +172,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing this month.
+        /// 获取表示此月的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange ThisMonth
         {
@@ -186,7 +186,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing the next month.
+        ///获取表示下个月的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange NextMonth
         {
@@ -201,7 +201,7 @@ namespace SharePlatformSystem.Core.Timing
 
 
         /// <summary>
-        /// Gets a zoned date range representing the last year.
+        /// 获取表示去年的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange LastYear
         {
@@ -213,7 +213,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing this year.
+        /// 获取表示今年的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange ThisYear
         {
@@ -225,7 +225,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing the next year.
+        /// 获取表示下一年的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange NextYear
         {
@@ -238,7 +238,7 @@ namespace SharePlatformSystem.Core.Timing
 
 
         /// <summary>
-        /// Gets a zoned date range representing the last 30 days (30x24 hours) including today.
+        /// 获取表示过去30天（30x24小时）包括今天的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange Last30Days
         {
@@ -250,7 +250,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing the last 30 days excluding today.
+        ///获取表示过去30天（不包括今天）的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange Last30DaysExceptToday
         {
@@ -262,7 +262,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing the last 7 days (7x24 hours) including today.
+        /// 获取表示过去7天（7x24小时）包括今天的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange Last7Days
         {
@@ -274,7 +274,7 @@ namespace SharePlatformSystem.Core.Timing
         }
 
         /// <summary>
-        /// Gets a zoned date range representing the last 7 days excluding today.
+        /// 获取表示过去7天（不包括今天）的分区日期范围。
         /// </summary>
         public new ZonedDateTimeRange Last7DaysExceptToday
         {

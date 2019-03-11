@@ -4,18 +4,18 @@ using SharePlatformSystem.Core.Configuration;
 namespace SharePlatformSystem.Dependency
 {
     /// <summary>
-    /// This class is used to pass configuration/options while registering classes in conventional way.
+    /// 这个类用于在以常规方式注册类的同时传递配置/选项。
     /// </summary>
     public class ConventionalRegistrationConfig : DictionaryBasedConfig
     {
         /// <summary>
-        /// Install all <see cref="IInterceptor"/> implementations automatically or not.
-        /// Default: true. 
+        /// 是否自动安装所有实现。
+        ///默认值：真。
         /// </summary>
         public bool InstallInstallers { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="ConventionalRegistrationConfig"/> object.
+        /// 创建新的“ConventionalRegistrationConfig”对象。
         /// </summary>
         public ConventionalRegistrationConfig()
         {

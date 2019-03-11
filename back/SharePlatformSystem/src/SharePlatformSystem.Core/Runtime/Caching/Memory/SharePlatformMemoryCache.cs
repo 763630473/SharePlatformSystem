@@ -6,16 +6,16 @@ using SharePlatformSystem.Core.Exceptions;
 namespace SharePlatformSystem.Runtime.Caching.Memory
 {
     /// <summary>
-    /// Implements <see cref="ICache"/> to work with <see cref="MemoryCache"/>.
+    /// 实现<see cref="ICache"/>以使用<see cref="MemoryCache"/>.
     /// </summary>
     public class SharePlatformMemoryCache : CacheBase
     {
         private MemoryCache _memoryCache;
 
         /// <summary>
-        /// Constructor.
+        /// 构造器.
         /// </summary>
-        /// <param name="name">Unique name of the cache</param>
+        /// <param name="name">缓存的唯一名称</param>
         public SharePlatformMemoryCache(string name)
             : base(name)
         {
@@ -31,7 +31,7 @@ namespace SharePlatformSystem.Runtime.Caching.Memory
         {
             if (value == null)
             {
-                throw new SharePlatformException("Can not insert null values to the cache!");
+                throw new SharePlatformException("无法将空值插入缓存！");
             }
 
             if (absoluteExpireTime != null)

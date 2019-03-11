@@ -1,12 +1,12 @@
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// This interface is defined to standardize to request a limited result.
+    /// 此接口定义为标准化以请求有限的结果。
     /// </summary>
     public interface ILimitedResultRequest
     {
         /// <summary>
-        /// Max expected result count.
+        ///最大预期结果计数。
         /// </summary>
         int MaxResultCount { get; set; }
     }

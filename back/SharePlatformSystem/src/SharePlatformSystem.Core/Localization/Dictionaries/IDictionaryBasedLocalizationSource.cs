@@ -3,19 +3,19 @@ using SharePlatformSystem.Core.Localization.Sources;
 namespace SharePlatformSystem.core.Localization.Dictionaries
 {
     /// <summary>
-    /// Interface for a dictionary based localization source.
+    /// 基于字典的本地化源的接口。
     /// </summary>
     public interface IDictionaryBasedLocalizationSource : ILocalizationSource
     {
         /// <summary>
-        /// Gets the dictionary provider.
+        /// 获取字典提供程序。
         /// </summary>
         ILocalizationDictionaryProvider DictionaryProvider { get; }
 
         /// <summary>
-        /// Extends the source with given dictionary.
+        /// 使用给定的字典扩展源。
         /// </summary>
-        /// <param name="dictionary">Dictionary to extend the source</param>
+        /// <param name="dictionary">扩展源的字典</param>
         void Extend(ILocalizationDictionary dictionary);
     }
 }

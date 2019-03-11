@@ -3,14 +3,14 @@
 namespace SharePlatformSystem.NHibernate.Configuration
 {
     /// <summary>
-    /// Used to configure ABP NHibernate module.
+    ///用于配置SharePlatform NHibernate模块。
     /// </summary>
     public interface ISharePlatformNHibernateModuleConfiguration
     {
         /// <summary>
-        /// Used to get and modify NHibernate fluent configuration.
-        /// You can add mappings to this object.
-        /// Do not call BuildSessionFactory on it.
+        ///用于获取和修改nhibernate fluent配置。
+        ///可以向此对象添加映射。
+        ///不要对其调用buildsessionFactory。
         /// </summary>
         FluentConfiguration FluentConfiguration { get; }
     }

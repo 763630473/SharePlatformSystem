@@ -5,14 +5,14 @@ namespace SharePlatformSystem.Core.Data
     public interface IActiveTransactionProvider
     {
         /// <summary>
-        ///     Gets the active transaction or null if current UOW is not transactional.
+        /// 获取活动事务，如果当前UOW不是事务性的，则为空。
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
         IDbTransaction GetActiveTransaction(ActiveTransactionProviderArgs args);
 
         /// <summary>
-        ///     Gets the active database connection.
+        /// 获取活动的数据库连接。
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>

@@ -11,12 +11,12 @@ using SharePlatformSystem.RealTime;
 namespace SharePlatform.AspNetCore.SignalR.Notifications
 {
     /// <summary>
-    /// Implements <see cref="IRealTimeNotifier"/> to send notifications via SignalR.
+    /// 实现通过信号器发送通知。
     /// </summary>
     public class SignalRRealTimeNotifier : IRealTimeNotifier, ITransientDependency
     {
         /// <summary>
-        /// Reference to the logger.
+        ///对记录器的引用。
         /// </summary>
         public ILogger Logger { get; set; }
 
@@ -25,7 +25,7 @@ namespace SharePlatform.AspNetCore.SignalR.Notifications
         private readonly IHubContext<SharePlatformCommonHub> _hubContext;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SignalRRealTimeNotifier"/> class.
+        ///初始化类的新实例。
         /// </summary>
         public SignalRRealTimeNotifier(
             IOnlineClientManager onlineClientManager,
@@ -36,7 +36,6 @@ namespace SharePlatform.AspNetCore.SignalR.Notifications
             Logger = NullLogger.Instance;
         }
 
-        /// <inheritdoc/>
         public Task SendNotificationsAsync(UserNotification[] userNotifications)
         {
             foreach (var userNotification in userNotifications)

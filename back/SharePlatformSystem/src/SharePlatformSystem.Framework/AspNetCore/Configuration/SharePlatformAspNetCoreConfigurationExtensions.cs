@@ -4,12 +4,12 @@ using SharePlatformSystem.Configuration.Startup;
 namespace SharePlatformSystem.Framework.AspNetCore.Configuration
 {
     /// <summary>
-    /// Defines extension methods to <see cref="IModuleConfigurations"/> to allow to configure SharePlatform ASP.NET Core module.
+    /// 将扩展方法定义为允许配置SharePlatform ASP.NET核心模块。
     /// </summary>
     public static class SharePlatformAspNetCoreConfigurationExtensions
     {
         /// <summary>
-        /// Used to configure SharePlatform ASP.NET Core module.
+        /// 用于配置SharePlatform ASP.NET核心模块。
         /// </summary>
         public static ISharePlatformAspNetCoreConfiguration SharePlatformAspNetCore(this IModuleConfigurations configurations)
         {

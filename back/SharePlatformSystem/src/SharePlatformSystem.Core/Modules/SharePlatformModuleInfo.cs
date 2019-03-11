@@ -6,37 +6,37 @@ using JetBrains.Annotations;
 namespace SharePlatformSystem.Core.Modules
 {
     /// <summary>
-    /// Used to store all needed information for a module.
+    /// 用于存储模块所需的所有信息。
     /// </summary>
     public class SharePlatformModuleInfo
     {
         /// <summary>
-        /// The assembly which contains the module definition.
+        /// 包含模块定义的程序集。
         /// </summary>
         public Assembly Assembly { get; }
 
         /// <summary>
-        /// Type of the module.
+        /// 模块的类型。
         /// </summary>
         public Type Type { get; }
 
         /// <summary>
-        /// Instance of the module.
+        ///模块的实例。
         /// </summary>
         public SharePlatformModule Instance { get; }
 
         /// <summary>
-        /// Is this module loaded as a plugin.
+        ///此模块是否作为插件加载？
         /// </summary>
         public bool IsLoadedAsPlugIn { get; }
 
         /// <summary>
-        /// All dependent modules of this module.
+        /// 此模块的所有相关模块。
         /// </summary>
         public List<SharePlatformModuleInfo> Dependencies { get; }
 
         /// <summary>
-        /// Creates a new SharePlatformModuleInfo object.
+        ///创建新的SharePlatformModuleInfo对象。
         /// </summary>
         public SharePlatformModuleInfo([NotNull] Type type, [NotNull] SharePlatformModule instance, bool isLoadedAsPlugIn)
         {

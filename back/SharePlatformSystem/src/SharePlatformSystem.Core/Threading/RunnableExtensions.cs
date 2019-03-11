@@ -1,12 +1,12 @@
 namespace SharePlatformSystem.Threading
 {
     /// <summary>
-    /// Some extension methods for <see cref="IRunnable"/>.
+    /// <see cref=“irunnable”/>的一些扩展方法。
     /// </summary>
     public static class RunnableExtensions
     {
         /// <summary>
-        /// Calls <see cref="IRunnable.Stop"/> and then <see cref="IRunnable.WaitToStop"/>.
+        /// 回调 <see cref="IRunnable.Stop"/> 然后<see cref="IRunnable.WaitToStop"/>.
         /// </summary>
         public static void StopAndWaitToStop(this IRunnable runnable)
         {

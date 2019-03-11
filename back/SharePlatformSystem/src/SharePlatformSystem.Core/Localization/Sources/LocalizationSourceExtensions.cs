@@ -4,17 +4,17 @@ using System.Globalization;
 namespace SharePlatformSystem.Core.Localization.Sources
 {
     /// <summary>
-    /// Extension methods for <see cref="ILocalizationSource"/>.
+    /// “ilocalizationsource”的扩展方法。
     /// </summary>
     public static class LocalizationSourceExtensions
     {
         /// <summary>
-        /// Get a localized string by formatting string.
+        /// 通过格式化字符串获取本地化字符串。
         /// </summary>
-        /// <param name="source">Localization source</param>
-        /// <param name="name">Key name</param>
-        /// <param name="args">Format arguments</param>
-        /// <returns>Formatted and localized string</returns>
+        /// <param name="source">本地化源</param>
+        /// <param name="name">键名</param>
+        /// <param name="args">设置参数格式</param>
+        /// <returns>格式化和本地化字符串</returns>
         public static string GetString(this ILocalizationSource source, string name, params object[] args)
         {
             if (source == null)
@@ -26,13 +26,13 @@ namespace SharePlatformSystem.Core.Localization.Sources
         }
 
         /// <summary>
-        /// Get a localized string in given language by formatting string.
+        /// 通过格式化字符串来获取给定语言中的本地化字符串。
         /// </summary>
-        /// <param name="source">Localization source</param>
-        /// <param name="name">Key name</param>
-        /// <param name="culture">Culture</param>
-        /// <param name="args">Format arguments</param>
-        /// <returns>Formatted and localized string</returns>
+        /// <param name="source">本地化源</param>
+        /// <param name="name">键名</param>
+        /// <param name="culture">文化</param>
+        /// <param name="args">设置参数格式</param>
+        /// <returns>格式化和本地化字符串</returns>
         public static string GetString(this ILocalizationSource source, string name, CultureInfo culture, params object[] args)
         {
             if (source == null)

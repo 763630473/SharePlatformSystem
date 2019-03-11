@@ -8,10 +8,10 @@ namespace SharePlatformSystem.Dapper.Utils
     internal static class TypeExtensions
     {
         /// <summary>
-        ///     Checks whether <paramref name="child" /> implements/inherits <paramref name="parent" />
+        /// 检查是否<paramref name="child" />实现/继承<paramref name=“parent”/>
         /// </summary>
-        /// <param name="child">Current Type</param>
-        /// <param name="parent">Parent Type</param>
+        /// <param name="child">当前类型</param>
+        /// <param name="parent">父类型</param>
         /// <returns></returns>
         public static bool IsInheritsOrImplements(this Type child, Type parent)
         {

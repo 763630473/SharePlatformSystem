@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 namespace SharePlatformSystem.RealTime
 {
     /// <summary>
-    /// Used to manage online clients those are connected to the application.
+    /// 用于管理连接到应用程序的联机客户端。
     /// </summary>
     public interface IOnlineClientManager<T> : IOnlineClientManager
     {
@@ -23,27 +23,27 @@ namespace SharePlatformSystem.RealTime
         event EventHandler<OnlineUserEventArgs> UserDisconnected;
 
         /// <summary>
-        /// Adds a client.
+        /// 添加客户端。
         /// </summary>
         /// <param name="client">The client.</param>
         void Add(IOnlineClient client);
 
         /// <summary>
-        /// Removes a client by connection id.
+        /// 按连接ID删除客户端。
         /// </summary>
-        /// <param name="connectionId">The connection id.</param>
-        /// <returns>True, if a client is removed</returns>
+        /// <param name="connectionId">连接ID。</param>
+        /// <returns>如果删除了客户端，则为true</returns>
         bool Remove(string connectionId);
 
         /// <summary>
-        /// Tries to find a client by connection id.
-        /// Returns null if not found.
+        ///尝试通过连接ID查找客户端。
+        ///如果找不到，则返回空值。
         /// </summary>
-        /// <param name="connectionId">connection id</param>
+        /// <param name="connectionId">连接ID</param>
         IOnlineClient GetByConnectionIdOrNull(string connectionId);
 
         /// <summary>
-        /// Gets all online clients.
+        /// 获取所有联机客户端。
         /// </summary>
         IReadOnlyList<IOnlineClient> GetAllClients();
 

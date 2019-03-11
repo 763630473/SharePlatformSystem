@@ -1,12 +1,12 @@
 namespace SharePlatformSystem.Applications.Services.Dto
 {
     /// <summary>
-    /// This interface is defined to standardize to request a paged result.
+    /// 此接口定义为标准化以请求分页结果。
     /// </summary>
     public interface IPagedResultRequest : ILimitedResultRequest
     {
         /// <summary>
-        /// Skip count (beginning of the page).
+        /// 跳过计数（页面开头）。
         /// </summary>
         int SkipCount { get; set; }
     }

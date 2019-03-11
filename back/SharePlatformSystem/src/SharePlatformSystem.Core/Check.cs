@@ -27,7 +27,7 @@ namespace SharePlatformSystem.Core
         {
             if (value.IsNullOrEmpty())
             {
-                throw new ArgumentException($"{parameterName} can not be null or empty!", parameterName);
+                throw new ArgumentException($"{parameterName} 不能为空！", parameterName);
             }
 
             return value;
@@ -38,7 +38,7 @@ namespace SharePlatformSystem.Core
         {
             if (value.IsNullOrWhiteSpace())
             {
-                throw new ArgumentException($"{parameterName} can not be null, empty or white space!", parameterName);
+                throw new ArgumentException($"{parameterName} 不能为空或空白！", parameterName);
             }
 
             return value;
@@ -49,7 +49,7 @@ namespace SharePlatformSystem.Core
         {
             if (value.IsNullOrEmpty())
             {
-                throw new ArgumentException(parameterName + " can not be null or empty!", parameterName);
+                throw new ArgumentException(parameterName + " 不能为空！", parameterName);
             }
 
             return value;

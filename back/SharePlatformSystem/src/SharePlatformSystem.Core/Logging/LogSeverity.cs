@@ -1,7 +1,7 @@
 namespace SharePlatformSystem.Logging
 {
     /// <summary>
-    /// Indicates severity for log.
+    /// 指示日志的严重性。
     /// </summary>
     public enum LogSeverity
     {

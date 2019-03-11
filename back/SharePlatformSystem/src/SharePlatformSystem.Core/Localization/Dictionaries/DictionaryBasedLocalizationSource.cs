@@ -11,13 +11,13 @@ using SharePlatformSystem.Dependency;
 namespace SharePlatformSystem.core.Localization.Dictionaries
 {
     /// <summary>
-    /// This class is used to build a localization source
-    /// which works on memory based dictionaries to find strings.
+    ///此类用于生成本地化源
+    ///它使用基于内存的字典来查找字符串。
     /// </summary>
     public class DictionaryBasedLocalizationSource : IDictionaryBasedLocalizationSource
     {
         /// <summary>
-        /// Unique Name of the source.
+        /// 源的唯一名称。
         /// </summary>
         public string Name { get; }
 
@@ -41,7 +41,6 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
             DictionaryProvider = dictionaryProvider;
         }
 
-        /// <inheritdoc/>
         public virtual void Initialize(ILocalizationConfiguration configuration, IIocResolver iocResolver)
         {
             LocalizationConfiguration = configuration;
@@ -53,13 +52,11 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
             DictionaryProvider.Initialize(Name);
         }
 
-        /// <inheritdoc/>
         public string GetString(string name)
         {
             return GetString(name, CultureInfo.CurrentUICulture);
         }
 
-        /// <inheritdoc/>
         public string GetString(string name, CultureInfo culture)
         {
             var value = GetStringOrNull(name, culture);
@@ -82,7 +79,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
             var cultureName = culture.Name;
             var dictionaries = DictionaryProvider.Dictionaries;
 
-            //Try to get from original dictionary (with country code)
+            //试着从原始字典（带国家代码）
             ILocalizationDictionary originalDictionary;
             if (dictionaries.TryGetValue(cultureName, out originalDictionary))
             {
@@ -98,7 +95,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
                 return null;
             }
 
-            //Try to get from same language dictionary (without country code)
+            //试着从同一语言字典（没有国家代码）
             if (cultureName.Contains("-")) //Example: "tr-TR" (length=5)
             {
                 ILocalizationDictionary langDictionary;
@@ -112,7 +109,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
                 }
             }
 
-            //Try to get from default language
+            //尝试从默认语言获取
             var defaultDictionary = DictionaryProvider.DefaultDictionary;
             if (defaultDictionary == null)
             {
@@ -128,25 +125,23 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
             return strDefault.Value;
         }
 
-        /// <inheritdoc/>
         public IReadOnlyList<LocalizedString> GetAllStrings(bool includeDefaults = true)
         {
             return GetAllStrings(CultureInfo.CurrentUICulture, includeDefaults);
         }
 
-        /// <inheritdoc/>
         public IReadOnlyList<LocalizedString> GetAllStrings(CultureInfo culture, bool includeDefaults = true)
         {
-            //TODO: Can be optimized (example: if it's already default dictionary, skip overriding)
+            //TODO:可以优化（例如：如果它已经是默认字典，则跳过覆盖）
 
             var dictionaries = DictionaryProvider.Dictionaries;
 
-            //Create a temp dictionary to build
+            //创建要生成的临时字典
             var allStrings = new Dictionary<string, LocalizedString>();
 
             if (includeDefaults)
             {
-                //Fill all strings from default dictionary
+                //填充默认字典中的所有字符串
                 var defaultDictionary = DictionaryProvider.DefaultDictionary;
                 if (defaultDictionary != null)
                 {
@@ -156,7 +151,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
                     }
                 }
 
-                //Overwrite all strings from the language based on country culture
+                //基于国家文化覆盖语言中的所有字符串
                 if (culture.Name.Contains("-"))
                 {
                     ILocalizationDictionary langDictionary;
@@ -170,7 +165,7 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
                 }
             }
 
-            //Overwrite all strings from the original dictionary
+            //覆盖原始字典中的所有字符串
             ILocalizationDictionary originalDictionary;
             if (dictionaries.TryGetValue(culture.Name, out originalDictionary))
             {
@@ -184,9 +179,9 @@ namespace SharePlatformSystem.core.Localization.Dictionaries
         }
 
         /// <summary>
-        /// Extends the source with given dictionary.
+        /// 使用给定的字典扩展源。
         /// </summary>
-        /// <param name="dictionary">Dictionary to extend the source</param>
+        /// <param name="dictionary">扩展源的字典</param>
         public virtual void Extend(ILocalizationDictionary dictionary)
         {
             DictionaryProvider.Extend(dictionary);

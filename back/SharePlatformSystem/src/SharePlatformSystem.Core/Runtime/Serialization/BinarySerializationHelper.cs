@@ -6,16 +6,15 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace SharePlatformSystem.Runtime.Serialization
 {
     /// <summary>
-    /// This class is used to simplify serialization/deserialization operations.
-    /// Uses .NET binary serialization.
-    /// </summary>
+    ///此类用于简化序列化/反序列化操作。
+    ///使用.NET二进制序列化。    /// </summary>
     public static class BinarySerializationHelper
     {
         /// <summary>
-        /// Serializes an object and returns as a byte array.
+        ///序列化对象并作为字节数组返回。
         /// </summary>
-        /// <param name="obj">object to be serialized</param>
-        /// <returns>bytes of object</returns>
+        /// <param name="obj">要序列化的对象</param>
+        /// <returns>对象的字节数</returns>
         public static byte[] Serialize(object obj)
         {
             using (var memoryStream = new MemoryStream())
@@ -26,21 +25,21 @@ namespace SharePlatformSystem.Runtime.Serialization
         }
 
         /// <summary>
-        /// Serializes an object into a stream.
+        /// 将对象序列化为流。
         /// </summary>
-        /// <param name="obj">object to be serialized</param>
-        /// <param name="stream">Stream to serialize in</param>
-        /// <returns>bytes of object</returns>
+        /// <param name="obj">要序列化的对象</param>
+        /// <param name="stream">要序列化的流</param>
+        /// <returns>对象字节数</returns>
         public static void Serialize(object obj, Stream stream)
         {
             CreateBinaryFormatter().Serialize(stream, obj);
         }
 
         /// <summary>
-        /// Deserializes an object from given byte array.
+        /// 从给定的字节数组反序列化对象。
         /// </summary>
-        /// <param name="bytes">The byte array that contains object</param>
-        /// <returns>deserialized object</returns>
+        /// <param name="bytes">包含对象的字节数组</param>
+        /// <returns>反序列化对象</returns>
         public static object Deserialize(byte[] bytes)
         {
             using (var memoryStream = new MemoryStream(bytes))
@@ -50,22 +49,22 @@ namespace SharePlatformSystem.Runtime.Serialization
         }
 
         /// <summary>
-        /// Deserializes an object from given stream.
+        /// 从给定流反序列化对象。
         /// </summary>
-        /// <param name="stream">The stream that contains object</param>
-        /// <returns>deserialized object</returns> 
+        /// <param name="stream">包含对象的流</param>
+        /// <returns>反序列化对象</returns> 
         public static object Deserialize(Stream stream)
         {
             return CreateBinaryFormatter().Deserialize(stream);
         }
 
         /// <summary>
-        /// Deserializes an object from given byte array.
-        /// Difference from <see cref="Deserialize(byte[])"/> is that; this method can also deserialize
-        /// types that are defined in dynamically loaded assemblies (like PlugIns).
+        ///反序列化给定字节数组中的对象。
+        ///与<see cref=“deserialize（byte[]）”/>的区别在于；此方法还可以反序列化
+        ///在动态加载的程序集中定义的类型（如插件）。
         /// </summary>
-        /// <param name="bytes">The byte array that contains object</param>
-        /// <returns>deserialized object</returns>        
+        /// <param name="bytes">包含对象的字节数组</param>
+        /// <returns>反序列化对象</returns>        
         public static object DeserializeExtended(byte[] bytes)
         {
             using (var memoryStream = new MemoryStream(bytes))
@@ -75,12 +74,12 @@ namespace SharePlatformSystem.Runtime.Serialization
         }
 
         /// <summary>
-        /// Deserializes an object from given stream.
-        /// Difference from <see cref="Deserialize(Stream)"/> is that; this method can also deserialize
-        /// types that are defined in dynamically loaded assemblies (like PlugIns).
+        ///反序列化给定流中的对象。
+        ///与<see cref=“deserialize（stream）”/>的区别在于，此方法还可以反序列化
+        ///在动态加载的程序集中定义的类型（如插件）。
         /// </summary>
-        /// <param name="stream">The stream that contains object</param>
-        /// <returns>deserialized object</returns> 
+        /// <param name="stream">包含对象的流</param>
+        /// <returns>反序列化对象</returns> 
         public static object DeserializeExtended(Stream stream)
         {
             return CreateBinaryFormatter(true).Deserialize(stream);
@@ -103,8 +102,8 @@ namespace SharePlatformSystem.Runtime.Serialization
         }
 
         /// <summary>
-        /// This class is used in deserializing to allow deserializing objects that are defined
-        /// in assemlies that are load in runtime (like PlugIns).
+        ///此类用于反序列化，以允许反序列化定义的对象
+        ///在运行时加载的assemlies中（如插件）。
         /// </summary>
         private sealed class ExtendedSerializationBinder : SerializationBinder
         {

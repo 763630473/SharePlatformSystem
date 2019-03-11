@@ -3,21 +3,21 @@ using System;
 namespace SharePlatformSystem.Events.Bus.Entities
 {
     /// <summary>
-    /// Used to pass data for an event that is related to with an <see cref="IEntity"/> object.
+    /// 用于传递与<see cref=“ientity”/>对象相关的事件的数据。
     /// </summary>
-    /// <typeparam name="TEntity">Entity type</typeparam>
+    /// <typeparam name="TEntity">实体类型</typeparam>
     [Serializable]
     public class EntityEventData<TEntity> : EventData , IEventDataWithInheritableGenericArgument
     {
         /// <summary>
-        /// Related entity with this event.
+        /// 与此事件相关的实体。
         /// </summary>
         public TEntity Entity { get; private set; }
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数
         /// </summary>
-        /// <param name="entity">Related entity with this event</param>
+        /// <param name="entity">与此事件相关的实体</param>
         public EntityEventData(TEntity entity)
         {
             Entity = entity;

@@ -4,18 +4,18 @@ using System.Collections.Generic;
 namespace SharePlatformSystem.Core.Collections.Extensions
 {
     /// <summary>
-    /// Extension methods for Dictionary.
+    /// 字典的扩展方法。
     /// </summary>
     public static class DictionaryExtensions
     {
         /// <summary>
-        /// This method is used to try to get a value in a dictionary if it does exists.
+        /// 此方法用于尝试在字典中获取值（如果存在）。
         /// </summary>
-        /// <typeparam name="T">Type of the value</typeparam>
-        /// <param name="dictionary">The collection object</param>
-        /// <param name="key">Key</param>
-        /// <param name="value">Value of the key (or default value if key not exists)</param>
-        /// <returns>True if key does exists in the dictionary</returns>
+        /// <typeparam name="T">值的类型</typeparam>
+        /// <param name="dictionary">集合对象</param>
+        /// <param name="key">键值</param>
+        /// <param name="value">键的值（如果键不存在，则为默认值）</param>
+        /// <returns>如果字典中确实存在键，则为true</returns>
         internal static bool TryGetValue<T>(this IDictionary<string, object> dictionary, string key, out T value)
         {
             object valueObj;
@@ -30,13 +30,13 @@ namespace SharePlatformSystem.Core.Collections.Extensions
         }
 
         /// <summary>
-        /// Gets a value from the dictionary with given key. Returns default value if can not find.
+        ///从字典中获取具有给定键的值。如果找不到，则返回默认值。
         /// </summary>
-        /// <param name="dictionary">Dictionary to check and get</param>
-        /// <param name="key">Key to find the value</param>
-        /// <typeparam name="TKey">Type of the key</typeparam>
-        /// <typeparam name="TValue">Type of the value</typeparam>
-        /// <returns>Value if found, default if can not found.</returns>
+        /// <param name="dictionary">要检查和获取的词典</param>
+        /// <param name="key">找到值的键</param>
+        /// <typeparam name="TKey">键的类型</typeparam>
+        /// <typeparam name="TValue">值的类型</typeparam>
+        /// <returns>值（如果找到），默认值（如果找不到）。</returns>
         public static TValue GetOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
         {
             TValue obj;
@@ -44,14 +44,14 @@ namespace SharePlatformSystem.Core.Collections.Extensions
         }
 
         /// <summary>
-        /// Gets a value from the dictionary with given key. Returns default value if can not find.
+        /// 从字典中获取具有给定键的值。如果找不到，则返回默认值。
         /// </summary>
-        /// <param name="dictionary">Dictionary to check and get</param>
-        /// <param name="key">Key to find the value</param>
-        /// <param name="factory">A factory method used to create the value if not found in the dictionary</param>
-        /// <typeparam name="TKey">Type of the key</typeparam>
-        /// <typeparam name="TValue">Type of the value</typeparam>
-        /// <returns>Value if found, default if can not found.</returns>
+        /// <param name="dictionary">要检查和获取的词典</param>
+        /// <param name="key">找到值的键</param>
+        /// <param name="factory">如果在字典中找不到值，则用于创建值的工厂方法。</param>
+        /// <typeparam name="TKey">键的类型</typeparam>
+        /// <typeparam name="TValue">值的类型</typeparam>
+        /// <returns>值（如果找到），默认值（如果找不到）。</returns>
         public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Func<TKey, TValue> factory)
         {
             TValue obj;
@@ -62,16 +62,16 @@ namespace SharePlatformSystem.Core.Collections.Extensions
 
             return dictionary[key] = factory(key);
         }
-        
+
         /// <summary>
-        /// Gets a value from the dictionary with given key. Returns default value if can not find.
+        /// 从字典中获取具有给定键的值。如果找不到，则返回默认值。
         /// </summary>
-        /// <param name="dictionary">Dictionary to check and get</param>
-        /// <param name="key">Key to find the value</param>
-        /// <param name="factory">A factory method used to create the value if not found in the dictionary</param>
-        /// <typeparam name="TKey">Type of the key</typeparam>
-        /// <typeparam name="TValue">Type of the value</typeparam>
-        /// <returns>Value if found, default if can not found.</returns>
+        /// <param name="dictionary">要检查和获取的词典</param>
+        /// <param name="key">找到值的键</param>
+        /// <param name="factory">如果在字典中找不到值，则用于创建值的工厂方法。</param>
+        /// <typeparam name="TKey">键的类型</typeparam>
+        /// <typeparam name="TValue">值的类型</typeparam>
+        /// <returns>值（如果找到），默认值（如果找不到）。</returns>
         public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Func<TValue> factory)
         {
             return dictionary.GetOrAdd(key, k => factory());
